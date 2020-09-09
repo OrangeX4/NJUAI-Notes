@@ -209,3 +209,22 @@ $$
 $$
 1 + 2^2 + 3^2 + \cdots + n^2 = \frac{2n^3 + 3n^2 + n}{6}
 $$
+
+---
+
+连续分式：
+
+$$
+\displaystyle
+x = a_0 + \frac{1}{
+    \displaystyle
+        a_1 + \frac{1}{
+            \displaystyle
+            a_2 + \frac{1}{
+                \displaystyle
+                a_3 + \frac{1}{a_4}
+            }
+    }}
+$$
+
+$\sqrt[n]{1 + x + x^2 + x^3 + \cdots + x^n}$

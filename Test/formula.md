@@ -187,3 +187,25 @@ $\empty$
 
 ---
 
+$\displaystyle f(x, y) = {{x + y} \over {x - y}}$
+
+$\displaystyle f(x, y) = {{x + y} \over {x - y}}$
+
+---
+
+有了宽和高，把它们乘起来就是矩形的面积。于是，所有矩形的**面积之和S**就可以写成这样：
+
+$$
+\begin{aligned}
+S &= { {1 \over n} {\left( 1 \over n \right)}^2 +  {1 \over n} {\left( 2 \over n \right)}^2 +  {1 \over n} {\left( 3 \over n \right)}^2 + \cdots { {1 \over n} {\left( n \over n \right)}^2}}\\
+&= {1 \over n^3}{(1 + 2^2 + 3^2 + \cdots + n^2)}\\
+&= {1 \over n^3}{({{2n^3 + 3n^2 + n} \over 6})}\\
+&= \frac{1}{3} + \frac{1}{2n} + \frac{1}{6n^2}
+\end{aligned}
+$$
+
+这只是一段简单的化简，相信大家只要知道**平方和公式**是下面这样就秒懂了：
+
+$$
+1 + 2^2 + 3^2 + \cdots + n^2 = \frac{2n^3 + 3n^2 + n}{6}
+$$

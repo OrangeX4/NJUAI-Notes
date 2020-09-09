@@ -56,7 +56,80 @@ $\left( \displaystyle\frac{x+y}{y+z} \right)$
 
 ${n+1 \choose k}={n \choose k}+{n \choose k-1}$
 
-$\displaystyle\sum{k_0,k_1,\ldots>0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$
+$\displaystyle \sum {k_0, k_1, \ldots >0 \atop k_0 + k_1 + \cdots = n} A_{k_0} A_{k_1} \cdots$
 
 ---
+四则运算
+
+$x + y = z$
+
+$x - y = z$
+
+$x \pm y = z$
+
+$x \mp y = z$
+
+$x \times y = z$
+
+$x \cdot y = z$
+
+$x \ast y = z$
+
+$x \div y = z$
+
+$x / y = z$
+
+$\frac {x + y}{x - y}$
+
+$\displaystyle \frac {x + y}{x - y}$
+
+${x + y} \over {x - y}$
+
+$|x + y|$
+
+---
+
+$\overline{xyz}$
+
+$\sqrt x$
+
+$\sqrt [3]{x + y}$
+
+$\log {x \atop y}$
+
+$\log ^x_y$
+
+$\lim^{x \to +\infty}_{y \to 0} {\frac x y}$
+
+$\displaystyle \lim^{x \to +\infty}_{y \to 0} \frac x y$
+
+$\sum^{x \to \infty}_{y \to 0} \frac x y$
+
+$\displaystyle \int ^{\infty}_0 {x \ dx}$
+
+$\displaystyle {{\partial x} \over {\partial y}}$
+
+$$
+\begin{bmatrix}
+1      &2      &\cdots &4      &5  &6  &\cdots &8
+\\
+\vdots &\vdots &\ddots &\vdots &13 &14 &\cdots &16
+\end{bmatrix}
+$$
+
+$$
+\begin{gathered}
+\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}
+\quad
+\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
+\quad
+\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}
+\quad
+\begin{Bmatrix} 1 & 0 \\ 0 & -1 \end{Bmatrix}
+\quad
+\begin{vmatrix} a & b \\ c & d \end{vmatrix}
+\quad
+\begin{Vmatrix} i & 0 \\ 0 & -i \end{Vmatrix}
+\end{gathered}
+$$
 

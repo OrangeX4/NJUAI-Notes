@@ -133,3 +133,57 @@ $$
 \end{gathered}
 $$
 
+---
+
+$x + y = z$
+
+$x + y > z$
+
+$x + y < z$
+
+$x + y \geq z$
+
+$x + y \leq z$
+
+$x + y \neq z$
+
+$x + y \ngeq z$
+
+$x + y \not \leq z$
+
+$x + y \approx z$
+
+$x + y \equiv z$
+
+---
+
+$x \in y$
+
+$x \not \in y$
+
+$x \notin y$
+
+$x \subset y$
+
+$x \supset y$
+
+$x \subseteq y$
+
+$x \cup y$
+
+$x \cap y$
+
+$x \setminus y$
+
+$x \bigodot y$
+
+$x \bigotimes y$
+
+$\mathbb{R}$
+
+$\mathbb{Z}$
+
+$\empty$
+
+---
+

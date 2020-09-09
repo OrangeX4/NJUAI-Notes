@@ -228,3 +228,50 @@ x = a_0 + \frac{1}{
 $$
 
 $\sqrt[n]{1 + x + x^2 + x^3 + \cdots + x^n}$
+
+$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$
+
+$\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$
+
+$\displaystyle \sum_{k+1}^N k^2$
+
+$\displaystyle \int_{k+1}^N k^2$
+
+$a \xLeftarrow{x + y + z} b$
+
+$a \stackrel{x + y + z}{\leftarrow} b$
+
+---
+
+复杂公式输入：
+
+$$
+\begin{aligned}
+a & = b + c \\
+  & = d + e
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+a & = 1 & b & = 2 & c & = 3 \\
+d & = -1 & e & = -2 & f & = -5
+\end{aligned}
+$$
+
+$$
+\begin{matrix}
+x & y \\
+z & v
+\end{matrix}
+$$
+
+$$
+A_{m, n} =
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} \\
+\end{pmatrix}
+$$

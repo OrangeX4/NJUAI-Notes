@@ -275,3 +275,91 @@ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n} \\
 \end{pmatrix}
 $$
+
+---
+Array:
+
+$$
+\begin{array}{|c|c||c|}
+a & b & S \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0
+\end{array}
+$$
+
+$$
+f(n) =
+\begin{cases}
+n/2, & \text{if } n \text{ is even} \\
+3n+1, & \text{if } n \text{ is odd}
+\end{cases}
+\\
+\begin{cases}
+3x + 5y + z = 1 \\
+7x - 2y + 4z = 2 \\
+-6x + 3y + 2z = 3
+\end{cases}
+$$
+
+$\displaystyle \left < \frac{a}{b} \right >$
+
+$$
+\land \qquad \lor \qquad \lnot \qquad \forall \qquad \exist \qquad \cup \qquad \cap \qquad \in \qquad \ni
+$$
+
+$$
+\ln X \qquad \log_2 X \\
+\Box \qquad \Diamond \qquad \triangle \qquad \perp \qquad \angle BAC = 45^\circ \qquad \propto \qquad \sim \qquad \cong
+$$
+
+$^1_2X^3_4$
+
+$^1_2\!X^3_4$
+
+$\overset{\to}{x}$
+
+$\vec x$
+
+$$\sum_{k = 1}^N k^2$$
+
+$$\prod_{i = 1}^N x_i$$
+
+$$\coprod_{i = 1}^N x_i$$
+
+$$\lim_{n \to \infty} x_n$$
+
+$$\int_{-N}^N e^x \ dx$$
+
+$$\iint_{D}^W dx \ dy$$
+
+$$\iiint_{E}^V dx \ dy \ dz$$
+
+$$\oint_{C} x^3 \ dx + 4y^2 \ dy$$
+
+---
+
+$$
+\Gamma \ \gamma \\
+\Delta \ \delta \\
+\Theta \ \theta \\
+\Lambda \ \lambda \\
+\Xi \ \xi \\
+\Pi \ \pi \\
+\Sigma \ \sigma \\
+\Upsilon \ \upsilon \\
+\Phi \ \phi \\
+\Psi \ \psi \\
+\Omega \ \omega \\
+\Alpha \ \alpha \\
+\Beta \ \beta \\
+\Zeta \ \zeta \\
+\Eta \ \eta \\
+\Iota \ \iota \\
+\Kappa \ \kappa \\
+\Mu \ \mu \\
+\Nu \ \nu \\
+\Xi \ \xi \\
+$$

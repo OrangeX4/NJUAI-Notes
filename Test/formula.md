@@ -366,4 +366,6 @@ $$
 \Xi \ \xi \\
 $$
 
-$\bar{z}_{i}=-\bar{a}_{i} \cdot \operatorname{sgn}\left(\sum_{j=1}^{n} s_{j} Y_{j i}\right) \quad i=1, \cdots, m$
+$$
+\bar{z}_{i}=-\bar{a}_{i} \cdot \operatorname{sgn}\left(\sum_{j=1}^{n} s_{j} Y_{j i}\right) \quad i=1, \cdots, m
+$$

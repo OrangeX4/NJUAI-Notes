@@ -327,6 +327,8 @@ $$\sum_{k = 1}^N k^2$$
 
 $$\prod_{i = 1}^N x_i$$
 
+
+
 $$\coprod_{i = 1}^N x_i$$
 
 $$\lim_{n \to \infty} x_n$$
@@ -363,3 +365,5 @@ $$
 \Nu \ \nu \\
 \Xi \ \xi \\
 $$
+
+$\bar{z}_{i}=-\bar{a}_{i} \cdot \operatorname{sgn}\left(\sum_{j=1}^{n} s_{j} Y_{j i}\right) \quad i=1, \cdots, m$

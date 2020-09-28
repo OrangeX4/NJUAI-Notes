@@ -344,6 +344,7 @@ $$\oint_{C} x^3 \ dx + 4y^2 \ dy$$
 ---
 
 $$
+\begin{aligned}
 \Gamma \ \gamma \\
 \Delta \ \delta \\
 \Theta \ \theta \\
@@ -364,6 +365,7 @@ $$
 \Mu \ \mu \\
 \Nu \ \nu \\
 \Xi \ \xi \\
+\end{aligned}
 $$
 
 $$

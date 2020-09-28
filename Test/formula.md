@@ -17,6 +17,10 @@ $^{16}_{8}O^{2+}_{2}$
 ---
 
 
+
+---
+
+
 字体控制，符号：\displaystyle，如：$\displaystyle\frac{x+y}{y+z}$
 
 下划线符号，符号：\underline，如：$\underline{x+y}$
@@ -296,7 +300,7 @@ f(n) =
 n/2, & \text{if } n \text{ is even} \\
 3n+1, & \text{if } n \text{ is odd}
 \end{cases}
-\\
+
 \begin{cases}
 3x + 5y + z = 1 \\
 7x - 2y + 4z = 2 \\
@@ -311,7 +315,7 @@ $$
 $$
 
 $$
-\ln X \qquad \log_2 X \\
+\ln X \qquad \log_2 X 
 \Box \qquad \Diamond \qquad \triangle \qquad \perp \qquad \angle BAC = 45^\circ \qquad \propto \qquad \sim \qquad \cong
 $$
 

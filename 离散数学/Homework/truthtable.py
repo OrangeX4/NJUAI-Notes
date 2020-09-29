@@ -76,9 +76,4 @@ def truthtable(func, *set):
     block(0, len(set) - 1)
 
 
-
-def function(p):
-    return imply(imply(imply(p[0], p[1]), p[2]), p[3])
-
-
-truthtable(function, 'p', 'q', 'r', 's', 'Ans')
+truthtable(lambda p: imply(imply(imply(p[0], p[1]), p[2]), p[3]), 'p', 'q', 'r', 's', 'Ans')

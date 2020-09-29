@@ -78,7 +78,7 @@ def truthtable(func, *set):
 
 
 def function(p):
-    return p[0] and p[1]
+    return imply(imply(imply(p[0], p[1]), p[2]), p[3])
 
 
-truthtable(function, 'p', 'q', 'Ans')
+truthtable(function, 'p', 'q', 'r', 's', 'Ans')

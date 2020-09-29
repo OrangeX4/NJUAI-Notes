@@ -35,3 +35,24 @@ $$
 $$
 (p \land r) \to \neg q
 $$
+
+# Problem 2
+
+|p |q |r |s |$p \to q$|$(p \to q)\to r$|$((p \to q)\to r)\to s$|
+|--|--|--|--|---------|----------------|-----------------------|
+|F |F |F |F |T        |F               |T                      |
+|F |F |F |T |T        |F               |T                      |
+|F |F |T |F |T        |T               |F                      |
+|F |F |T |T |T        |T               |T                      |
+|F |T |F |F |T        |F               |T                      |
+|F |T |F |T |T        |F               |T                      |
+|F |T |T |F |T        |T               |F                      |
+|F |T |T |T |T        |T               |T                      |
+|T |F |F |F |F        |T               |F                      |
+|T |F |F |T |F        |T               |T                      |
+|T |F |T |F |F        |T               |F                      |
+|T |F |T |T |F        |T               |T                      |
+|T |T |F |F |T        |F               |T                      |
+|T |T |F |T |T        |F               |T                      |
+|T |T |T |F |T        |T               |F                      |
+|T |T |T |T |T        |T               |T                      |

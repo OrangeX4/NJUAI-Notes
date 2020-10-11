@@ -76,4 +76,4 @@ def truthtable(func, *set):
     block(0, len(set) - 1)
 
 
-truthtable(lambda p: imply(imply(imply(p[0], p[1]), p[2]), p[3]), 'p', 'q', 'r', 's', 'Ans')
+truthtable(lambda p: imply(imply(p[0], p[2]) and imply(p[1], p[2]) and (p[0] or p[1]), not p[2]), 'p', 'q', 'r', '$((p \to r) \land (q \to r) \land (p \lor q)) \to \lnot r$')

@@ -59,3 +59,19 @@ pompous ass  华而不实的人
 
 
 league => group => team => club => society => association
+
+leader => captain
+
+# Reply
+
+Strong and harsh disagreement
+
+No way!
+
+Absolutely not!
+
+Are you kidding me?
+
+# 
+
+Talk about => get at

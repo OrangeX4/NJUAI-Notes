@@ -172,4 +172,48 @@ $\forall x(S(x) \lor Q(x))$
 
 论域为所有实数.
 
-$\forall a \forall b \forall c \exist x_1 \exist x_2 \forall x(a \neq 0 \land ax^2+bx+c=0 \to x=x_1 \lor x=x_2)$
+$\forall a \forall b \forall c \exist x_1 \exist x_2 \forall x(a \neq 0 \land ax^2+bx+c=0 \land x_1 \neq x_2 \to x=x_1 \lor x=x_2)$
+
+
+# Problem 8
+
+a) 正确, 假言推理
+
+b) 错误, 肯定结论的谬误
+
+c) 错误, 否定假设的谬误
+
+
+# Problem 9
+
+1. $\exist x (P(x)\land \lnot R(x))$  (前提引入)
+2. $P(c) \land \lnot R(c)$  (存在实例, 由1.)
+3. $\forall x(P(x) \to Q(x))$  (前提引入)
+4. $P(c) \to Q(c)$  (全称实例, 由3.)
+5. $P(c)$  (化简, 由1)
+6. $Q(c)$  (假言推理, 由4.5.)
+7. $\lnot R(c)$  (化简, 由2)
+8. $Q(c) \land \lnot R(c)$  (合取, 由6.7.)
+9. $\exist x (Q(x) \land \lnot R(x))$  (存在引入, 由8.)
+
+所以用了存在实例, 存在引入, 全称实例, 化简, 合取, 假言推理这六条推理规则.
+
+
+# Problem 10
+
+$3. \to 4.$ 和 $5. \to 6.$错误, 没有证明对任意$c$均成立, 无法使用全称引入推理规则.
+
+# Problem 11
+
+1. $\exist x \lnot P(x)$  (前提引入)
+2. $\lnot P(c)$  (存在实例, 由1.)
+3. $\forall x (P(x) \lor Q(x))$  (前提引入)
+4. $P(c) \lor Q(c)$  (全称实例, 由3.)
+5. $\forall x (\lnot Q(x) \lor S(x))$  (前提引入)
+6. $\lnot Q(c) \lor S(c)$  (全称实例, 由5.)
+7. $P(c) \lor S(c)$  (消解律, 由4.6.)
+8. $S(c)$  (取拒式, 由2.7.)
+9. $\forall x (R(x) \to \lnot S(x))$  (前提引入)
+10. $R(c) \to \lnot S(c)$  (全称实例, 由9.)
+11. $\lnot R(c)$  (取拒式, 由8.10.)
+12. $\exist x\lnot R(x)$  (存在引入, 由11.)

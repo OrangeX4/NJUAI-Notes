@@ -2,7 +2,7 @@
 
 # Problem 1
 
-a) $!\exist x(C(x) \land D(x) \land F(x))$
+a) $\exist! x(C(x) \land D(x) \land F(x))$
 
 b) $\forall x(C(x) \land D(x) \land F(x))$
 

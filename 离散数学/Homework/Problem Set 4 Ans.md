@@ -178,4 +178,114 @@ $P(x) \to Q(x)成立.$
 # Problem 7
 
 原式可转化为:
-$\forall a \forall b (P(x) \land Q(x) \to \exist c(a < c < b))$
+$\forall a \forall b (P(a) \land Q(b) \to \exist c(a < c < b \land P(c)))$
+$\land\forall a \forall b (Q(a) \land P(b) \to \exist c(a < c < b \land P(c)))$
+
+$P(x): x是无理数, Q(x): x是有理数.$
+
+$论域为实数.$
+
+### 证明:
+
+使用归谬法.
+
+$假设a,b分别是无理数和有理数,c\displaystyle 是个有理数, a < c < b, 且c=\frac{a+b}{2}$
+
+$\therefore 2c - b = a$
+
+$易知等式左边是个有理数, 等式右边是个无理数, 二者不可能相等, 则假设不成立$
+
+$\therefore c是无理数$
+
+$\because a<\displaystyle\frac{a+b}{2}<b$
+
+$\therefore \forall a \forall b (P(a) \land Q(b) \to \exist c(a < c < b \land P(c))) 成立$
+
+$同理\forall a \forall b (Q(a) \land P(b) \to \exist c(a < c < b \land P(c))) 成立$
+
+$\therefore 原式成立.$
+
+
+# Problem 8
+
+原式可转化为:
+
+$\forall xN(x) \to \lnot(n^2+n^3=100)$
+
+$N(x): x为正整数$
+
+### 证明:
+
+使用直接证明法.
+
+$设数列\{a_n\}的通项公式为a_n = n^3 + n^2.$
+
+$易知\{a_n\}是个递增数列.$
+
+$\because a_4=4^3+4^2=80, a_5=5^3+5^2=150$
+
+$\therefore 在4和5之间不存在另一个正整数m使得a_m=100$
+
+$\therefore \forall xN(x) \to \lnot(n^2+n^3=100) 成立$
+
+
+# Problem 9
+
+原式可转化为:
+
+$\forall r Q(r)\to \lnot(r^3+r+1=0)$
+
+$Q(r): r是有理数$
+
+### 证明:
+
+使用归谬法.
+
+$假设存在有理数r使得r^3+r+1=0成立.$
+
+$\because r^3 + r + 1 = 0$
+
+$\displaystyle\therefore r_1=\sqrt[3]{-\frac{1}{2}+\sqrt{\frac{1}{4}+\frac{1}{27}}}+\sqrt[3]{-\frac{1}{2}-\sqrt{\frac{1}{4}+\frac{1}{27}}}$
+
+$\displaystyle r_2=\omega\sqrt[3]{-\frac{1}{2}+\sqrt{\frac{1}{4}+\frac{1}{27}}}+\omega^2\sqrt[3]{-\frac{1}{2}-\sqrt{\frac{1}{4}+\frac{1}{27}}}$
+
+$\displaystyle r_2=\omega^2\sqrt[3]{-\frac{1}{2}+\sqrt{\frac{1}{4}+\frac{1}{27}}}+\omega^3\sqrt[3]{-\frac{1}{2}-\sqrt{\frac{1}{4}+\frac{1}{27}}}$
+
+$其中\omega = \displaystyle \frac{-1+\sqrt 3i}{2}$
+
+$易知r_1, r_2, r_3都不是有理数.$
+
+$\therefore 与假设存在有理数r矛盾.$
+
+$\therefore \forall r Q(r)\to \lnot(r^3+r+1=0) 成立$
+
+
+# Problem 10
+
+原式转化为:
+
+$P(x) \to Q(x), 其中P(x): x是\sqrt[3]2, Q(x): x是无理数.$
+
+论域为实数.
+
+### 证明:
+
+使用归谬法.
+
+$假设 \sqrt[3]2是有理数, 则不妨令\sqrt[3]2=\displaystyle\frac{p}{q},其中p, q是不为零且互质的自然数.$
+
+$\therefore 2=\displaystyle\frac{p^3}{q^3}$
+
+$\therefore 2q^3=p^3$
+
+$\therefore p^3是偶数$
+
+$\therefore p是偶数$
+
+$\therefore q^3= \displaystyle\frac{p^3}{2} 是偶数$
+
+$\therefore q是偶数$
+
+$\therefore p, q都是偶数, 不互质, 与题设矛盾$
+
+$\therefore P(x) \to Q(x)成立$

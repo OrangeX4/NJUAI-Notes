@@ -177,3 +177,5 @@ $P(x) \to Q(x)成立.$
 
 # Problem 7
 
+原式可转化为:
+$\forall a \forall b (P(x) \land Q(x) \to \exist c(a < c < b))$

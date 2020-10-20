@@ -1,3 +1,4 @@
-1. Write a outline.
-2. Listen: P.15. task 1.3.4.
-3. Memory 
+1. 词汇confirm到displace 
+2. 朗读背诵中国文化素材（1）
+3. 听力：第二单元part four的task1,3,4; 看第二单元text1微课视频预习并作书上练习
+4. 口语：从上次课布置的口语话题中选一个写出outline，根据提纲练习完整的表达。

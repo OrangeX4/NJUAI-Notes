@@ -34,3 +34,32 @@ $有A\cup C= B\cup C = \{3\}, 但A\neq B$
 ## c)
 
 $能.$
+
+
+# Problem 6
+
+# Problem 7
+
+# Problem 8
+
+# Problem 9
+
+# Problem 10
+
+## a)
+
+$A \cap (B - C)$
+
+![](2020-10-21-19-48-18.png)
+
+## b)
+
+$(A \cap \overline B) \cup (A \cap \overline C)$
+
+![](2020-10-21-19-59-14.png)
+
+## c)
+
+$(A \cap B) \cup (A \cap C)$
+
+![](2020-10-21-19-58-08.png)

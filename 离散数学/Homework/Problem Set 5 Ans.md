@@ -2,6 +2,14 @@
 
 # Problem 1
 
+## a)
+
+$不能.$
+
+$例如A=\{1,2,3\},B=\{1,2\},C=\{3,4\}时,$
+
+$有A\cup C= B\cup C=\{1,2,3,4\}, 但A\neq B$
+
 # Problem 2
 
 # Problem 3

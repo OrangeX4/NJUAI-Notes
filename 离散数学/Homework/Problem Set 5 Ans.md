@@ -32,18 +32,68 @@ $\therefore 2^{A}\cup 2^{B}=\{\{1\}\}\cup\{\{2\}\}=\{\{1\},\{2\}\}$
 
 $命题为真.$
 
-$$
+$
+\begin{aligned}
+2^{A\cap B} &= \{x|x\subseteq A\cap B\} \\
+&= \{x|\forall y(y \in x \to y\in A \cap B)\} \\
+&= \{x|\forall y(y \in x \to y\in A \land y\in B)\} \\
+&= \{x|\forall y(y \not\in x \lor (y\in A \land y\in B))\} \\
+&= \{x|\forall y((y \not\in x \lor y\in A) \land (y \not\in x \lor y\in B))\} \\
+&= \{x|\forall y((y \in x \to y\in A) \land (y \in x \to y\in B))\} \\
+&= \{x|\forall y(y \in x \to y\in A) \land \forall y(y \in x \to y\in B)\} \\
+&= \{x|x \subseteq A \land x \subseteq B\} \\
+&= \{x|x\in \{x|x\subseteq A\} \land x\in \{x|x\subseteq B\}\} \\
+&= \{x|x \in 2^A \land x \in 2^B\} \\
+&= 2^A\cap 2^B \\
+\end{aligned}
+$
+
+$\therefore 2^{A\cap B}=2^A\cap 2^B$
 
 # Problem 2
 
+### 结论: 
+
+$A=\empty 或 B=\empty$
+
+### 证明:
+
+$\because A\times B=\empty$
+
+$\therefore A\times B=\{(x, y)|x \in A \land y \in B\}=\empty$
+
+$\therefore \exist x \exist y(x \in A \land y \in B) \equiv F$
+
+$\therefore \forall x \forall y(x \not\in A \lor y \not\in B) \equiv T$
+
+$\therefore 不存在x\in A或不存在y\in B$
+
+$\therefore A=\empty 或 B=\empty$
+
 # Problem 3
 
-a) $(-\sqrt{3}, \sqrt{3})$
+a) $\{-1, 0, 1\}$
 
-b) $\displaystyle\{-\frac{1}{2}\}$
+b) $\empty$
 
 
 # Problem 4
+
+## a)
+
+$$
+\begin{aligned}
+A-B &= \{x|x \in A \land x \not\in B\} \\
+&= \{x|x \in A \land x \in \overline{B}\} \\
+&= A \cap \overline{B}
+\end{aligned}
+$$
+
+## b)
+
+$$
+(A\cap B)\cup (A\cap \overline{B})=A\cap(B\cup \overline{B})=A
+$$
 
 # Problem 5
 
@@ -69,6 +119,14 @@ $能.$
 
 
 # Problem 6
+
+$$
+\begin{aligned}
+A\subseteq B &\equiv \forall x(x\in A\to x\in B)\\
+&\equiv \forall x(x\not\in B\to x\not\in A)\\
+&\equiv \overline{B} \subseteq \overline{A}\\
+\end{aligned}
+$$
 
 # Problem 7
 

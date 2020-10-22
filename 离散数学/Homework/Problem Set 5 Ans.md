@@ -81,19 +81,17 @@ b) $\empty$
 
 ## a)
 
-$$
+$
 \begin{aligned}
 A-B &= \{x|x \in A \land x \not\in B\} \\
 &= \{x|x \in A \land x \in \overline{B}\} \\
 &= A \cap \overline{B}
 \end{aligned}
-$$
+$
 
 ## b)
 
-$$
-(A\cap B)\cup (A\cap \overline{B})=A\cap(B\cup \overline{B})=A
-$$
+$(A\cap B)\cup (A\cap \overline{B})=A\cap(B\cup \overline{B})=A$
 
 # Problem 5
 
@@ -120,15 +118,25 @@ $能.$
 
 # Problem 6
 
-$$
+$
 \begin{aligned}
 A\subseteq B &\equiv \forall x(x\in A\to x\in B)\\
 &\equiv \forall x(x\not\in B\to x\not\in A)\\
 &\equiv \overline{B} \subseteq \overline{A}\\
 \end{aligned}
-$$
+$
+
+$\therefore A\subseteq B \equiv \overline{B} \subseteq \overline{A}$
 
 # Problem 7
+
+## a) 
+
+$A \oplus A=(A-A)\cup(A-A)=\empty$
+
+## b)
+
+$A \oplus U = (A \cup U)-(A \cap U) =U-A=\overline{A}$
 
 # Problem 8
 

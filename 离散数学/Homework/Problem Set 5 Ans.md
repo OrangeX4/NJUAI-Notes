@@ -140,7 +140,33 @@ $A \oplus U = (A \cup U)-(A \cap U) =U-A=\overline{A}$
 
 # Problem 8
 
+## a)
+
+$\because A_i=\{1,2,3,\dots,i\}, i=1,2,3,\dots$
+
+$\therefore 当i\geq 2时, A_{i-1}\subseteq A_i, A_{i-1}\cup A_i=A_i$
+
+$\therefore \displaystyle\bigcup _{i=1}^n A_i=A_n=\{1,2,3,\dots,n\}$
+
+## b)
+
+$\because A_i=\{1,2,3,\dots,i\}, i=1,2,3,\dots$
+
+$\therefore 当i\geq 2时, A_{i-1}\subseteq A_i, A_{i-1}\cap A_i=A_{i-1}$
+
+$\therefore \displaystyle\bigcup _{i=1}^n A_i=A_1=\{1\}$
+
 # Problem 9
+
+$
+\begin{aligned}    
+(A-B)\oplus B&=((A-B)\cup B)-((A-B)\cap B) \\
+&=A\cup B - \empty \\
+&=A\cup B
+\end{aligned}
+$
+
+$\therefore (A-B)\oplus B = A \cup B$
 
 # Problem 10
 

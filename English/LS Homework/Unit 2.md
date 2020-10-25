@@ -7,6 +7,7 @@
 # 1.Words
 
 
+
 # 2.Speak & Memory
 
 The ancient Yellow River flows uninterrupted from east to west for thousands of years. Silk was made into cloth while clay was made into pottery and ceramics. Millions of stones were piled into the Great Wall.
@@ -18,5 +19,27 @@ This is Zhongguo. Hope you can understand her, appreciate her and love her. All 
 
 # 3.Listen
 
+Complete.
 
 # 4.Speech
+
+## Outline
+
+### We can benefit a lot from charity.
+
+* Improve personal capability;
+* Gain social experience;
+* Expand social relationship;
+* Learn how to organize an event.
+
+### People in need can benefit a lot from charity.
+
+* Get better living conditions;
+* Have a chance to get education;
+* Spread warmth to others.
+
+### College students should play a part in charity.
+
+* Study is not the only thing that matters;
+* Education should focus on many aspects;
+* Help those in need by means of charity.

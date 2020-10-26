@@ -104,3 +104,34 @@ beyond one's imagination
 preserve our existing woodlands
 
 integrity
+
+*On the Origin of Species*: 《物种起源》
+
+Original: Creative
+
+landmark publication => epochmaking publication
+
+outstanding => excelent
+
+generated a passion for science
+
+seek help
+
+a number of surprises
+
+intellectually
+
+contribute to
+
+take intellectual risks => take academic risk
+
+become disillutioned => lose imagination
+
+increidible species: valuable and rare species
+
+develop the skills and passion for being a lifelong learner
+
+related to and outside of
+
+as far as sth be concerned
+

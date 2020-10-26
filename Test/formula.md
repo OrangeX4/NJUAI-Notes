@@ -29,7 +29,7 @@ $^{16}_{8}O^{2+}_{2}$
 
 下大括号，符号：\underbrace{算式}，如：$a+\underbrace{b+c}_{1.0}+d$
 
-上位符号，符号：\stacrel{上位符号}{基位符号}，如：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$
+上位符号，符号：\stacrel{上位符号}{基位符号}，如：$\vec{x}\stackrel{\mathrm{def}}{=}{(x_1,\dots,x_n)}$
 
 ---
 Some Placeholders:

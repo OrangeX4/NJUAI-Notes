@@ -41,13 +41,50 @@ $\therefore S \circ R=\{(1,1),(1,2),(2,1),(2,2)\}$
 
 # Problem 5
 
-$设\displaystyle R=\bigcup_{i=1}^n\{(a_i,b_i),(b_i,a_i)\} \cup \bigcup_{i=1}^m\{(e_i,e_i)\} \cup \bigcup_{i=1}^j\{(c_i,d_i),(d_i,c_i)\}\cup \bigcup_{i=1}^k\{(f_i,f_i)\}$
+$\because R=R^{-1},S=S^{-1}$
 
-$设\displaystyle S=\bigcup_{i=1}^n\{(a_i,b_i),(b_i,a_i)\} \cup \bigcup_{i=1}^m\{(e_i,e_i)\} \cup \bigcup_{i=1}^l\{(p_i,q_i),(q_i,p_i)\}\cup \bigcup_{i=1}^g\{(r_i,r_i)\}$
+$\therefore (R\circ S)^{-1}=S^{-1}\circ R^{-1}=S\circ R$
 
-$易知此时R和S满足R=R^{-1},S=S^{-1},$
-$且R和S第一部分是重合的, 第二部分是不重合的.$
+$\because R\circ S \subseteq S\circ R$
 
-$\therefore R\circ S=\{\}$
+$\therefore R\circ S\subseteq (R\circ S)^{-1}$
+
+$\because 显然|R\circ S|=|(R\circ S)^{-1}|, 即元素个数相等$
+
+$\therefore R\circ S = (R\circ S)^{-1}$
+
+$\therefore (R\circ S)^{-1}\subseteq R\circ S$
+
+$\therefore S \circ R\subseteq R\circ S$
+
+$\therefore R\circ S = S\circ R$
+
+
+# Problem 6
+
+## (1)
 
 $$
+\begin{aligned}
+\begin{pmatrix}
+0 &1 &1 \\
+1 &0 &0 \\
+1 &0 &0 \\
+\end{pmatrix}
+&
+\begin{pmatrix}
+1 &0 &1 \\
+1 &1 &1 \\
+1 &1 &1 \\
+\end{pmatrix}
+\\
+&
+\begin{pmatrix}
+0 &1 &1 \\
+1 &0 &0 \\
+1 &0 &0 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+$当a是b的导师, 或者a是b的导师的导师的时候.$

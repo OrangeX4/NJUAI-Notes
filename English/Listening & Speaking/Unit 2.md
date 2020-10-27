@@ -8,4 +8,6 @@ love / enjoy / like / be fond of / be interested in / (formal) be keen on / (inf
 
 ## 
 
-# 
+Under no circumstance
+
+gorgeous => beautiful => excellent

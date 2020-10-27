@@ -64,27 +64,50 @@ $\therefore R\circ S = S\circ R$
 
 ## (1)
 
+$当a是b的导师, 或者a是b的导师的导师的时候.$
+
+## (2)
+
+# Problem 7
+
+
+# Problem 8
+
+a) $有2^{4^2}=2^{16}=256\times 256=65536种关系.$
+
+b) $有2^{(4^2-1)}=2^{15}=256\times 128=32768种关系.$
+
+# Problem 9
+
+a) $R\circ S=\{(x,y)|y=2x+5\}$
+
+b) $R\circ S=\{(x,y)|y=x^2+3x-3\}$
+
+c) $R\circ S=\{(x,y)|y=2^{\sqrt{x}} \lor y=2^{-\sqrt{x}}\}$
+
+d) $R\circ S=\{(x,y)|y=2^{x^2}\}$
+
+# Problem 10
+
+## a)
+
 $$
 \begin{aligned}
-\begin{pmatrix}
-0 &1 &1 \\
-1 &0 &0 \\
-1 &0 &0 \\
-\end{pmatrix}
-&
-\begin{pmatrix}
-1 &0 &1 \\
-1 &1 &1 \\
-1 &1 &1 \\
-\end{pmatrix}
-\\
-&
-\begin{pmatrix}
-0 &1 &1 \\
-1 &0 &0 \\
-1 &0 &0 \\
-\end{pmatrix}
+(R_1\cup R_2)^{-1}&=\{(y,x)|(x,y)\in R_1\cup R_2\} \\
+&=\{(y,x)|(x,y)\in R_1 \lor (x,y)\in R_2\} \\
+&=\{(y,x)|(y,x)\in R_1^{-1} \lor (y,x)\in R_2^{-1}\} \\
+&=R_1^{-1}\cup R_2^{-1}
 \end{aligned}
 $$
 
-$当a是b的导师, 或者a是b的导师的导师的时候.$
+## b)
+
+$$
+\begin{aligned}
+(R_1\cap R_2)^{-1}&=\{(y,x)|(x,y)\in R_1\cap R_2\} \\
+&=\{(y,x)|(x,y)\in R_1 \land (x,y)\in R_2\} \\
+&=\{(y,x)|(y,x)\in R_1^{-1} \land (y,x)\in R_2^{-1}\} \\
+&=R_1^{-1}\cap R_2^{-1}
+\end{aligned}
+$$
+

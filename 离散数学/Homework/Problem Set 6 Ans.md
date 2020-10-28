@@ -64,11 +64,23 @@ $\therefore R\circ S = S\circ R$
 
 ## (1)
 
-$当a是b的导师, 或者a是b的导师的导师的时候.$
+$b的论文导师的论文导师是a的时候.$
 
 ## (2)
 
+$b的n辈论文导师是a的时候.$
+
 # Problem 7
+
+a) $R_1\cup R_2=\{(a,b)|a\equiv b(mod3) \lor a\equiv b(mod4)\}$
+
+b) $R_1\cap R_2=\{(a,b)|a\equiv b(mod3) \land a\equiv b(mod4)\}$
+
+c) $R_1 - R_2=\{(a,b)|a\equiv b(mod3) \land a\not\equiv b(mod4)\}$
+
+d) $R_2 - R_1=\{(a,b)|a\not\equiv b(mod3) \land a\equiv b(mod4)\}$
+
+e) $R_1 \oplus R_2=\{(a,b)|(a\equiv b(mod3) \land a\not\equiv b(mod4))\lor (a\not\equiv b(mod3) \land a\equiv b(mod4))\}$
 
 
 # Problem 8

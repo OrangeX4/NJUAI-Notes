@@ -10,6 +10,8 @@
 
 # 2. Listening
 
+## (1)
+
 There is more. Felina brushs and combs me twice a day. She takes me to the Pet Beauty Clinic once a week for a bath and shampoo. Really, cats can take care of themselves. Doesn't she know we have tongues that we use to look after ourselves and keep clean? And the flea powder she put on me, it smells awful. And I think it may give me my skin cancer. 
 
 Felina thinks she know what kind of food I like. She doesn't even have a clue. She feeds me this gourmet cat food and she put it in a silver dish. Really, who cares? All I want is some day old fish that stinks and a little water. That is all. Is that asking too much?
@@ -20,7 +22,16 @@ Once I had a relationship with a real sexy siamese down the street. But Felina s
 
 What a life!
 
+---
 
-Words and phrases:
+**Words and phrases:**
 
 combs, clinic, tongue, flea powder, gourmet, day old fish that stinks, garbage, chase, siamese cat.
+
+## (2)
+
+Complete.
+
+
+# Word
+

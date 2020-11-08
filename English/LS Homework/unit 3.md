@@ -6,9 +6,9 @@
 
 # 1. Speak
 
+Complete.
 
-
-# 2. Listening
+# 2. Listen
 
 ## (1)
 
@@ -32,6 +32,6 @@ combs, clinic, tongue, flea powder, gourmet, day old fish that stinks, garbage, 
 
 Complete.
 
-
 # Word
 
+fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate fluctuate focus focus focus focus focus focus focus focus focus focus format format format format format format format format format format formula format format format format focus focus focus format format format formula formula formula forthcoming forthcoming forthcoming found found found found found found found found found foundation foundation foundation foundation foundation foundation framework framework framework framework function function function function fund fund fund fund fund function function function function function function function fundamental fundamental fundamental fundamental fundamental framework framework formula fundamental fundamental fundamental fundamental furthermore furthermore furthermore furthermore furthermore gender gender gender gender gender gender generate generate generate generate generate generate generation generation generation globle globe globe globe global globe globe globe goal goal goal goal goal goal goal goal goal goal goal goal grade grade grade grade grade grade grade grade grade grade grade grade goal goal grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guarantee guideline guideline guideline guideline guideline hence hence guarantee guarantee guarantee hence hence hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy hierarchy

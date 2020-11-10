@@ -12,7 +12,9 @@ Complete.
 
 ## (1)
 
-There is more. Felina brushs and combs me twice a day. She takes me to the Pet Beauty Clinic once a week for a bath and shampoo. Really, cats can take care of themselves. Doesn't she know we have tongues that we use to look after ourselves and keep clean? And the flea powder she put on me, it smells awful. And I think it may give me my skin cancer. 
+There is more. Felina brushs and combs me twice a day. She takes me to the Pet Beauty Clinic once a week for a bath and shampoo. Really, cats can take care of themselves. Doesn't she know we have tongues that we use to look after ourselves and keep clean? And the flea powder she put on me, it smells awful. And I think it may give me skin cancer. 
+
+look after -> lick
 
 Felina thinks she know what kind of food I like. She doesn't even have a clue. She feeds me this gourmet cat food and she put it in a silver dish. Really, who cares? All I want is some day old fish that stinks and a little water. That is all. Is that asking too much?
 

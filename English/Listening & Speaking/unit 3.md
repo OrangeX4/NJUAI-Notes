@@ -80,3 +80,12 @@ What's Tom Cat's problem?
 
 "get sb. fixed" means what?
 
+# Text 1
+
+cute => endearing
+
+impulsive
+
+rehearse
+
+reversal

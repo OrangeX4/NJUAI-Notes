@@ -18,7 +18,7 @@
 
 ## (1)
 
-$不妨定义f_A: \mathbb{N}\xrightarrow{1-1,onto} A, f_B: \mathbb{N}\xrightarrow{1-1,onto} B, f:\mathbb{N}\to A\cup B$
+$不妨定义f_A: \mathbb{N}\xrightarrow[onto]{1-1} A, f_B: \mathbb{N}\xrightarrow[onto]{1-1} B, f:\mathbb{N}\to A\cup B$
 
 $①对于x=0时,$
 
@@ -65,24 +65,99 @@ c) $有限的$
 
 d) $不可数的$
 
-$$
+e)$
 可数无限的, 取f(x)=
 \begin{cases}
-(2,\frac{}{}), &x=2k,k\in \mathbb{N} \\
-(3,), &x=2k+1,k\in \mathbb{N} \\
+(2,\displaystyle\frac{x}{2}+1), &x=2k,k\in \mathbb{N} \\
+(3,\displaystyle\frac{x+1}{2}), &x=2k+1,k\in \mathbb{N} \\
 \end{cases}
-$$
+$
+
+f)$
+可数无限的, 取f(x)=
+\begin{cases}
+5x, &x=2k,k\in \mathbb{N} \\
+-5x-5, &x=2k+1,k\in \mathbb{N} \\
+\end{cases}
+$
 
 # Problem 4
 
+
+
 # Problem 5
 
+$\because A是可数集合$
+
+$当A是有穷集时, 不妨记A\approx n, 则有g:n\xrightarrow[onto]{1-1}A$
+
+$\because 存在f:A\xrightarrow[onto]{1-1}B$
+
+$\therefore f\circ g:n\xrightarrow[onto]{1-1}B$
+
+$\therefore B\approx n$
+
+$\therefore B是有穷集$
+
+$\therefore B是可数的$
+
+$当A是无穷可列集时, A\approx \mathbb{N}$
+
+$\therefore 同理可知B\approx \mathbb{N}$
+
+$\therefore B是可数的$
+
 # Problem 6
+
+$取f_A:|A|\xrightarrow[onto]{1-1} A, f_B:|B|\xrightarrow[onto]{1-1} B$
+
+$\because A\subset B$
+
+$\therefore |A|<|B|$
+
+$\therefore 令f:A\to B, f(f_A(n))=f_B(n)$
+
+$易知f是单射函数$
+
+$\therefore A\prec\cdot B$
 
 # Problem 7
 
 # Problem 8
 
+(1) $
+是, 取f(x)=
+\begin{cases}
+x, &x=2k,k\in \mathbb{N} \\
+-x-1, &x=2k+1,k\in \mathbb{N} \\
+\end{cases}
+$
+
+(2) $不是, (0,0.5)\approx \mathbb{R}\not\approx \mathbb{N}$
+
+(3) $
+是, 取f(x)=
+\begin{cases}
+\displaystyle\frac{7x}{2}, &x=2k,k\in \mathbb{N} \\
+\displaystyle\frac{-7x-7}{2}, &x=2k+1,k\in \mathbb{N} \\
+\end{cases}
+$
+
+(4) $
+是, 取f(x)=
+\begin{cases}
+\displaystyle\frac{3x}{2}+1, &x=2k,k\in \mathbb{N} \\
+\displaystyle\frac{x-1}{2}+2, &x=2k+1,k\in \mathbb{N} \\
+\end{cases}
+$
+
 # Problem 9
 
+a) $A=\mathbb{R},B=\mathbb{R}$
+
+b) $A=\mathbb{R},B=\mathbb{R}-\mathbb{N}$
+
+c) $A=P(\mathbb{R}),B=\mathbb{R}$
+
 # Problem 10
+

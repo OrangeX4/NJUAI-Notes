@@ -20,7 +20,7 @@
 
 $令C=B-A, 易知C也是可数集$
 
-$\therefore A\cup B=A\cup (B-A)=A\cup C$
+$\therefore A\cup B=A\cup (B-A)=A\cup C, A\cap C=\empty$
 
 $不妨假设|A|\leq|C|, 否则将A与C对调$
 
@@ -139,7 +139,7 @@ $\therefore 令f:A\to B, f(f_A(n))=f_B(n)$
 
 $易知f是单射函数$
 
-$\therefore A\prec\cdot B$
+$\therefore A\preceq\cdot B$
 
 # Problem 7
 
@@ -200,23 +200,45 @@ c) $A=P(\mathbb{R}),B=\mathbb{R}$
 
 # Problem 10
 
-$设这些可数集合为S_i, i=1,2,\cdots,m$
+$设这些可数集合为C_i, \quad(i=1,2,\cdots,m)$
 
-$不妨定义f_A: |A|\xrightarrow[onto]{1-1} A, f_B: |B|\xrightarrow[onto]{1-1} B, f:\mathbb{N}\to A\cup B$
+$令S_1=C_1,S_i=C_j-(C_1\cup \cdots\cup C_{j-1}),\quad (j=2,3,\cdots,m)$
+$易知S_i也是可数集, 且互不相同的两个S_i的交集为空$
 
-$$
-\begin{matrix}
-\mathbb{N}&: &0 &1 &2 &3 &4 &5 &\cdots \\
-A\cup B&: &f_A(0) &f_B(0) &f_A(1) &f_A(2) &f_B(2) &f_A(3) &\cdots \\
-\end{matrix}
-$$
+$不妨假定|S_1|<|S_2|<\cdots<|S_m|, 否则交换它们的位置$
 
-$若f_B(n)与f_A(i)相同,\quad i=1或2或\cdots 或n,$
-$ 则跳过f_B(n), 如此处跳过f_B(1)作为示例$
+$\therefore C_1\cup C_2\cup\cdots\cup C_i=S_1\cup S_2\cup\cdots\cup S_i, \quad(i=1,2,\cdots,m)$
 
-$若f_A(n),f_B(n)无定义则跳过, 直至两者均无定义则停止$
+$由S_i均为可数集可定义f_{S_i}: |S_i|\xrightarrow[onto]{1-1} A$
 
-$\therefore 易知f是一个\mathbb{N}或n_0到A\cup B双射函数$
-$\quad (其中n_0是小于等于|A|+|B|的自然数)$
+$定义函数f:|C_1\cup C_2\cup\cdots\cup C_i| \to C_1\cup C_2\cup\cdots\cup C_i$
 
-$\therefore A\cup B是可列集$
+$当0\leq x<m|S_1|时,$
+
+$
+f(x)=
+\begin{cases}
+f_{S_1}(\displaystyle\frac{x}{m}), &x=mk, k\in \mathbb{N} \\
+f_{S_2}(\displaystyle\frac{x-1}{m}), &x=mk+1, k\in \mathbb{N} \\
+\cdots \\
+f_{S_m}(\displaystyle\frac{x-m+1}{m}), &x=mk+m-1, k\in \mathbb{N} \\
+\end{cases}
+$
+
+$当\displaystyle\sum_{i=1}^n(m-i+1)|S_i|\leq x<\sum_{i=1}^{n+1}(m-i+1)|S_i|时,$
+
+$
+f(x)=
+\begin{cases}
+f_{S_n}(\displaystyle\frac{x}{m-n}), &x=(m-n)(\displaystyle\sum_{i=1}^n(m-i+1)|S_i|+k), k\in \mathbb{N} \\
+f_{S_{n+1}}(\displaystyle\frac{x-1}{m-n}), &x=(m-n)(\displaystyle\sum_{i=1}^n(m-i+1)|S_i|+k)+1, k\in \mathbb{N} \\
+\cdots \\
+f_{S_m}(\displaystyle\frac{x-m+n+1}{m-n}), &x=(m-n)(\displaystyle\sum_{i=1}^n(m-i+1)|S_i|+k)+m-n-1, k\in \mathbb{N} \\
+\end{cases}
+$
+
+$其中n=1,2,\cdots,m-1$
+
+$\therefore 易知f为双射函数, |C_1\cup C_2\cup\cdots\cup C_i|\in \mathbb{N}或|C_1\cup C_2\cup\cdots\cup C_i|=\aleph_0$
+
+$\therefore C_1\cup C_2\cup\cdots\cup C_i是可数集$

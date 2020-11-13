@@ -205,7 +205,7 @@ $设这些可数集合为C_i, \quad(i=1,2,\cdots,m)$
 $令S_1=C_1,S_i=C_j-(C_1\cup \cdots\cup C_{j-1}),\quad (j=2,3,\cdots,m)$
 $易知S_i也是可数集, 且互不相同的两个S_i的交集为空$
 
-$不妨假定|S_1|<|S_2|<\cdots<|S_m|, 否则交换它们的位置$
+$不妨假定|S_1|\leq|S_2|\leq\cdots\leq|S_m|, 否则交换它们的位置$
 
 $\therefore C_1\cup C_2\cup\cdots\cup C_i=S_1\cup S_2\cup\cdots\cup S_i, \quad(i=1,2,\cdots,m)$
 

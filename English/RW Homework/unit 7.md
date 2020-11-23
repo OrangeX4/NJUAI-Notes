@@ -13,3 +13,18 @@ But why so many people want to attend those famous universities? Everybody tell 
 First of all, attending famous universities is helpful for us to build our relationship network. You may meet excellent engineers and great scientists who will assign you in the future. Secondly, you can attain the greatest academic resources in famous universities so that you can go further in the path of research. Further more, attending famous universities makes you more famous. Most of people in the society will give you the basic brief. For example, employer prefer to employ the person from famous universities.
 
 Above all, I think it is reasonable partly that it is important for us to go to a famous university. It is my honor I was admitted to Nanjing University.
+
+
+---
+
+be inclined to
+
+go to great lengths to
+
+first and foremost
+
+be blessed with
+
+be immersed
+
+deliver speeches

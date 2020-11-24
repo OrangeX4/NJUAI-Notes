@@ -28,7 +28,7 @@ Hello, Mike? This is Joy.
 
 Hi, yes, it is about my parents again.
 
-They want me to have a full-time job and be on my own. I mean, I understand, but I can't stand their attitudes
+They want me to have a full-time 34hn job and be on my own. I mean, I understand, but I can't stand their attitudes
 
 They like show no respect for my value. Do you remember when I was really depressed once time, and almost killed myself. I was saved by the songs of the Rock Group Live. I think they are super and the power I receive with their concert. It give me the energy to live. They are my life. 
 

@@ -132,6 +132,8 @@ $综上|abc|=|bca|=|cab|$
 
 # Problem 7
 
+$法一:$
+
 $已知G为偶数阶群, 设阶数为2k$
 
 $可知存在a\in G, a\neq e, 有a^{2k}=e$
@@ -141,6 +143,22 @@ $\because a^k\in G$
 $\therefore (a^k)^2=a^{2k}=e$
 
 $\therefore 存在二阶元a^k$
+
+$法二:$
+
+$已知G为偶数阶群, 设阶数为2k$
+
+$对于a\in G, 若|a|>2, 则a\neq a^{-1}$
+
+$若不然, 则a=a^{-1}, 从而a^2=e, |a|\leq 2与|a|>2矛盾$
+
+$\therefore G中阶大于2的元素a与其逆a^{-1}成对出现, 所以个数是偶数个$
+
+$\therefore G中阶小于等于2的元素a个数也是偶数个, 最少也有两个$
+
+$\because 只有|e|=1$
+
+$\therefore 必定存在一个元素a, 使得|a|=2$
 
 # Problem 8
 

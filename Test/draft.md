@@ -81,3 +81,6 @@ $$
 \lim_{x\to 0^+}[\frac{(1+x)^{\frac{1}{x}}}{e}]^{\frac{1}{x}}=\lim_{x\to 0^+}\frac{(1+x)^{\frac{1}{2x}}}{e^{\frac{1}{x}}}
 \end{aligned}
 $$
+
+
+---

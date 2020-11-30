@@ -47,5 +47,5 @@ set sth. firmly into
 
 If pressed, the average American might point to the early twentieth century and Sam's frequent appearance on army recruitment posters.
 
-The War of 1812 sparked a renewed interest in national identity which had faded since the revolutional war.
+The War of 1812 sparked a renewed interest in national identity which had faded since the revolutionary war.
 

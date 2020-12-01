@@ -13,11 +13,12 @@ protocol  protocol protocol protocol protocol psychology psychology psychology p
 # 2. Listen
 
 1. My son is going aboard on the school trip. They go on the mid clue.
+   1. Correct: My son is going aboard on the school trip. They go on a Mediterranean cruise.
 2. One last thing, we will go cycling on the mountain. What is the coverage like?
-3. Basically if you down slow on cycling, it is much safer to be in control with your bicycle. This way you can make call and still be in control.
-4. color  promote  worry  prove
+3. Basically if he does a lot cycling, it is much safer to be in control with your bicycle. This way you can make call and still be in control.
+4. color  promote  worry  price
 5. scheduled  ring  
-6. package  long  promotion
+6. package  launch  promotional
 
 # 3. Speak
 
@@ -40,6 +41,6 @@ I think the best means of communication is Instant Message.
 
 Compared to other means like calling and talking face-to-face, Instant Message have severals benefits.
 
-Firstly, we can texting messages to our friends without worrying about disturbing others when I am out. It is very embarrassed for one to make a call in public. Secondly, it is more convenient for us to send a message to other one than e-mail, because e-mail is written formally. Thirdly, you can edit the text you want to send and recall the wrong message.
+Firstly, we can texting messages to our friends without worrying about disturbing others when I am out. It is very embarrassed for me to make a call in public. Secondly, it is more convenient for us to send a message to other one than e-mail, because e-mail is written formally. Thirdly, you can edit the text you want to send and recall the wrong message.
 
 After all, I think Instant Message is the best means of communication.

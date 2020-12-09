@@ -9,7 +9,7 @@ role role role role role role route route route route route route scenario scena
 
 # 2. Listen
 
-But with the photos taken twenty-five or more years after the weddings, the judgments were quite successful in deciding who is married to whom. They were particularly successful with the most happily married couples. Dr.Smith believes there are several reasons why couples are alike. One have something to do with is unconscious ?? He said human being usually take facial expression of people they admire. Another possible reason he said is the tendency for common experiences to mode the faces in similar way. If a couple do a lot of sadness for example, Dr.Smith said their faces are likely to alter in a similar way.
+But with the photos taken twenty-five or more years after the weddings, the judges were quite successful at deciding who was married to whom. They were particularly successful with the most happily married couples. Dr.Smith believes there are several reasons why couples grow alike. One have something to do with unconsciously mimicry. He says human beings imitate facial expression of people they admire. Another possible reason he said is the tendency for common experiences to mode the faces in similar way. If a couple do a lot of sadness for example, Dr.Smith said their faces are likely to alter in a similar way.
 
 
 # 3. Speak

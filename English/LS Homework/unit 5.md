@@ -15,3 +15,15 @@ But with the photos taken twenty-five or more years after the weddings, the judg
 # 3. Speak
 
 Complete.
+
+# 4. Speech
+
+I choose the second topic, the Internet dating.
+
+Compared with past years without the Internet, there are a lot of new ways to find the one that you love. Cyber love, which is born of the invention of the Internet, is accepted by people gradually.
+
+The biggest advantage of cyber love is you can find one who has similar interests of you. I like to browse a video website called bilibili, where I find some upers get their true love from the website, because they have similar interests and be connected by the Internet.
+
+In my opinion, true love can be found online. We can believe that true love can be found in school, working and introduction by parents and friend, so why not believe that the Internet is able to perform the same function? We live on a pluralistic society, we should also accept a pluralistic way to find true love.
+
+That's all. Thanks.

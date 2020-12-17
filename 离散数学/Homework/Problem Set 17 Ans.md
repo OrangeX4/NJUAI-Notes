@@ -39,6 +39,21 @@ $$
 \begin{aligned}
 \because (x\oplus y)\oplus z
 &=([(x\land y')\lor(x'\land y)]\land z')\lor([(x\land y')\lor(x'\land y)]'\land z) \\
-&=(x\land y'\land z')\lor(x'\land y\land z')\lor((x'\lor y)\land(x\lor y')\land z) \\
+&=(x\land y'\land z')\lor(x'\land y\land z')\lor[(x'\lor y)\land(x\lor y')\land z] \\
+&=(x\land y'\land z')\lor(x'\land y\land z')\lor[(x'\lor y)\land(x\land z)]\lor [(x'\lor y)\land(y'\land z)] \\
+&=(x\land y'\land z')\lor(x'\land y\land z')\lor[(x'\land x\land z)\lor (y\land x\land z)]\lor [(x'\land y'\land z)\lor (y\land y'\land z)] \\
+&=(x\land y'\land z')\lor(x'\land y\land z')\lor(x'\land y'\land z)\lor(x\land y\land z) \\
 \end{aligned}
 $$
+
+$$
+\begin{aligned}
+\quad x\oplus (y\oplus z)
+&=(x\land[(y\land z')\lor(y'\land z)]')\lor(x'\land[(y\land z')\lor(y'\land z)]) \\
+&=[x\land(y'\lor z)\land(y\lor z')]\lor(x'\land y\land z')\lor (x'\land y'\land z) \\
+&=(x\land y'\land z')\lor(x'\land y\land z')\lor(x'\land y'\land z)\lor(x\land y\land z) \\
+\end{aligned}
+$$
+
+$\therefore \langle B,\oplus\rangle满足结合律, $
+

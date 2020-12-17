@@ -76,4 +76,4 @@ def truthtable(func, *set):
     block(0, len(set) - 1)
 
 
-truthtable(lambda p: ((p[0] and p[1]) or (p[0] and p[1] and p[2]) or (p[1] and p[2])), 'a', 'b', 'c', 'Ans')
+truthtable(lambda p: (not onlyif(p[0], not onlyif(p[1], p[2]))), 'x', 'y', 'z', 'Ans')

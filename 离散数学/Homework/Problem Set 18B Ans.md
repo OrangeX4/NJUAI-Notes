@@ -57,3 +57,52 @@ $同上述论证, 同理可知成立$
 
 # Problem 4
 
+$设正则图G中d(v)=k, 阶数为v$
+
+$\because G和\overline{G}是同构的$
+
+$\therefore 2k=v-1, 即v=2k+1, k\in \mathbb{N}$
+
+$\therefore v\equiv 1 (mod 2)$
+
+$\therefore v\equiv 1 (mod 4) 或 v\equiv 3 (mod 4)$
+
+$对于v\equiv 3 (mod 4):$
+
+$即顶点数v=4n+3, n\in \mathbb{N}$
+
+$\therefore v=4n+3=2k+1 \Rightarrow k=2n+1, k为奇数$
+
+$\therefore 由握手定理可知边数|E_G|=\frac{1}{2}vk, 其中v和k都是奇数, |E_G|不是整数, 导致矛盾$
+
+$所以舍去该情况$
+
+$\therefore v\equiv 1 (mod 4)$
+
+
+# Problem 5
+
+## (1)
+
+$若有一个点有n-1度即与其他边均相连,$
+$则补图该点必定与其他点都不相连, 不可能与原图重构, 排除该种情况$
+
+$对于4阶图如上左下左, 易知互为补图且重构, 因此4阶自补图有一个$
+
+$对于5阶图, 如图可知有两个$
+
+![](2020-12-22-16-24-38.png)
+
+![](2020-12-22-16-51-14.png)
+
+## (2)
+
+$对于任意一个n阶全图, 由握手定理可知有\displaystyle\frac{n(n-1)}{2}条边$
+
+$一个n阶自补图G和补图\overline{G}同构, 即也有相同数目的边$
+
+$又知道G和\overline{G}的并图是全图K_n, 则可知G的边数为\displaystyle\frac{n(n-1)}{4}$
+
+$对于3阶图, 边数\displaystyle\frac{n(n-1)}{4}=\frac{3}{2}不是整数, 因此自补图不存在$
+
+$对于6阶图, 边数\displaystyle\frac{n(n-1)}{4}=\frac{15}{2}不是整数, 因此自补图不存在$

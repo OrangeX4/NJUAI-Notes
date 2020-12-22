@@ -161,11 +161,11 @@ I think it is helpful for students to raise money for charity.
 
 Not only can it help poor people live better, but also it give students confidence and sense of responsibility.
 
-During the proccess of raising money for charity, students have learned how to form a team and work together to attain a common goal.
+During the process of raising money for charity, students have learned how to form a team and work together to attain a common goal.
 
 They need to choose whom they should help, publicize their charity project to public and raise money from kind people.
 
-They can get valuable experience from it, and it will also be beneficial to their job huntting.
+They can get valuable experience from it, and it will also be beneficial to their job hunting.
 
 The poor people who get their help can also live with better conditions. Goodwill will spread from one to another one.
 

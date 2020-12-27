@@ -4,21 +4,28 @@
 
 ## (1)
 
-$对任意简单图G, 有\kappa(G)\leq \lambda(G)$
 
-$用反证法, 假设\kappa(G)=p<\lambda(G)\leq \delta(G), n-2\leq \delta(G)$
+$用反证法, 设S为G的最小点割集, 假设\kappa(G)=|S|<n-2$
 
-$则存在最小点割集T\subseteq V(G)使得|T|=p,$
-$且G-T包含两个连通分支或成为平凡图$
+$\therefore 令G_1=G-S, |G_1|=n-|S|\geq 3, G_1的连通分支数p(G)\geq 2$
 
-$当n\geq 4时,$
+$\therefore 存在其中的一个连通分支V_0, 使得剩下的连通分支的点的数目\geq 2$
 
-$不妨设|G_1|\leq |G_2|, 则|G_1|\leq [\frac{n-p}{2}]$
+$\therefore 对于V_0其中的一个点v_0来说,$
+$\quad 在G中的点度数d(v_0)\leq|S|+(|G_1|-2-1)=n-3$
 
-$\because G是简单图$
+$\therefore d(v_0)\leq n-3<n-2\leq \delta(G), 产生矛盾$
 
-$\therefore\displaystyle\sum_{v\in V(G_1)}{\rm d}(v)\leq |G_1|(|G_1|-1)+(n-2)p-p<$
+$\therefore |S|\geq n-2$
 
+$\because 对任意简单图G, 有\kappa(G)=|S|\leq \delta(G)$
+
+$考虑是否存在|S|=n-2, \delta(G)=n-1的情况:$
+
+$任何一个全图, 去掉任意n-2个点之后,$
+$都依然存在一条边相连剩下的两个点, 即这种可能性不存在$
+
+$\therefore 综上, \kappa(G)=\delta(G)$
 
 
 ## (2)

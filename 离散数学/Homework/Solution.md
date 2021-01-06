@@ -280,4 +280,30 @@ $\therefore G不是友谊图$
 
 ## (3)
 
-$???$
+$题目修改为任意两个不相邻的顶点度数相等$
+
+![](2021-01-06-16-39-10.png)
+
+$对于任意两个不相邻的顶点x,y, 它们的公共顶点为w$
+
+$先证\deg(x)\leq \deg(y):$
+
+$设S为与x相邻的顶点集合,$
+$Q为S中任意一点与y点的公共顶点的集合$
+
+$\because S中任意点都与x相邻, 可知x为S任意两点的唯一公共顶点$
+
+$\therefore S中有两点u,v, 假设u,y和v,y的公共点是同一个$
+
+$\therefore 这个公共点即是x, 但x与y不相邻, 假设不成立,$
+$\quad 可知S中任意两点与y的公共点不同$
+
+$假设Q中含有w, 那么S中存在一点u, 使得ux相邻,1 uw相邻$
+
+$\therefore S\approx Q$
+
+$\therefore \deg(x)=|S|=|Q|\leq \deg(y)$
+
+$同理可证\deg(y)\leq \deg(x)$
+
+$\therefore \deg(x)=\deg(y)$

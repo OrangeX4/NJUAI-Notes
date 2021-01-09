@@ -298,8 +298,6 @@ $\therefore S中有两点u,v, 假设u,y和v,y的公共点是同一个$
 $\therefore 这个公共点即是x, 但x与y不相邻, 假设不成立,$
 $\quad 可知S中任意两点与y的公共点不同$
 
-$假设Q中含有w, 那么S中存在一点u, 使得ux相邻,1 uw相邻$
-
 $\therefore S\approx Q$
 
 $\therefore \deg(x)=|S|=|Q|\leq \deg(y)$
@@ -307,3 +305,5 @@ $\therefore \deg(x)=|S|=|Q|\leq \deg(y)$
 $同理可证\deg(y)\leq \deg(x)$
 
 $\therefore \deg(x)=\deg(y)$
+
+![]()

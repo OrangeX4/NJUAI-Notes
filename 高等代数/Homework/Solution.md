@@ -107,6 +107,7 @@ $\therefore M=\begin{bmatrix}1&0&0\\0&1&0\\200&0&1\end{bmatrix}\begin{bmatrix}a_
 # 五
 
 $令A=[\alpha_1\quad\alpha_2\quad\cdots \quad\alpha_n]$
+$(给向量组降维使之变为方阵)$
 
 $\because A^TA=\begin{bmatrix}\alpha_1^T\\\alpha_2^T\\\vdots \\\alpha_n^T\end{bmatrix}[\alpha_1\quad\alpha_2\quad\cdots \quad\alpha_n]=\begin{vmatrix}\alpha_1^T\alpha_1&\alpha_1^T\alpha_2&\cdots &\alpha_1^T\alpha_n\\\alpha_2^T\alpha_1&\alpha_2^T\alpha_2&\cdots &\alpha_2^T\alpha_n\\\vdots &\vdots & &\vdots \\\alpha_n^T\alpha_1&\alpha_n^T\alpha_2&\cdots &\alpha_n^T\alpha_n\end{vmatrix}$
 
@@ -238,20 +239,45 @@ $只有零解$
 
 $\Leftrightarrow$
 
-$对任意1\leq i\leq n 均有$
-$
-\begin{cases}
-a_{11}k_{i1}+\cdots +a_{1n}k_{in}=0 \\
-\cdots \\
-a_{n1}k_{i1}+\cdots +a_{nn}k_{in}=0 \\
-\end{cases}
-$
-$只有零解$
-
-$\Leftrightarrow$
-
 $|A^T|=|A|\neq 0成立$
 
+---
+
+$系数矩阵\begin{vmatrix}\alpha_1\alpha_1^T&\alpha_2\alpha_1^T&\cdots &\alpha_n\alpha_1^T\\\alpha_1\alpha_2^T&\alpha_2\alpha_2^T&\cdots &\alpha_n\alpha_2^T\\\vdots &\vdots & &\vdots \\\alpha_1\alpha_n^T&\alpha_2\alpha_n^T&\cdots &\alpha_n\alpha_n^T\end{vmatrix}对应的的线性方程组即为$
+
+$\displaystyle\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^n\sum_{j=1}^ma_{iq}a_{pj}k_{ij}=0$
+
+
+$\displaystyle\bigcap_{p=1}^m\sum_{i=1}^na_{ip}k_i=0\rightarrow \forall k_i=0\rightarrow \bigcap_{i=1}^n k_i=0$
+$\Rightarrow$
+$\displaystyle\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^n\sum_{j=1}^ma_{iq}a_{pj}k_{ij}=0\rightarrow \forall k_{ij}=0:$
+
+$
+\begin{aligned}
+&\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^n\sum_{j=1}^ma_{iq}a_{pj}k_{ij}=0 \\
+\Leftrightarrow&\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^na_{iq}\sum_{j=1}^ma_{pj}k_{ij}=0 \\
+\Rightarrow&\bigcap_{p=1}^n\bigcap_{i=1}^n\sum_{j=1}^ma_{pj}k_{ij}=0  \qquad(带入已知)\\
+\Leftrightarrow&\bigcap_{i=1}^n\bigcap_{p=1}^n\sum_{j=1}^ma_{pj}k_{ij}=0 \\
+\Leftrightarrow&\bigcap_{i=1}^n\bigcap_{p=1}^n\sum_{j=1}^na_{pj}k_{ij}=0 \qquad(n=m)\\
+\Leftrightarrow&\bigcap_{i=1}^n\bigcap_{p=1}^n\sum_{j=1}^na_{jp}k_{ij}=0 \qquad(转置)\\
+\Rightarrow&\bigcap_{i=1}^n\bigcap_{j=1}^nk_{ij}=0 \qquad(带入已知)\\
+\Rightarrow&\forall k_{ij}=0 \qquad(带入已知)\\
+\end{aligned}
+$
+
+$\displaystyle\bigcap_{p=1}^m\sum_{i=1}^na_{ip}k_i=0\rightarrow \exist k_i\neq 0$
+$\Rightarrow$
+$\displaystyle\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^n\sum_{j=1}^ma_{iq}a_{pj}k_{ij}=0\rightarrow \exist k_{ij}\neq 0:$
+
+$
+\begin{aligned}
+&\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{i=1}^n\sum_{j=1}^ma_{iq}a_{pj}k_{ij}=0 \\
+\Leftrightarrow&\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{j=1}^m\sum_{i=1}^na_{iq}a_{pj}k_{ij}=0 \\
+\Leftrightarrow&\bigcap_{p=1}^n\bigcap_{q=1}^m\sum_{j=1}^ma_{pj}\sum_{i=1}^na_{iq}k_{ij}=0 \\
+\end{aligned}
+$
+
+$带入\exist k_i\neq 0, 可知\exist k_{ij}\neq 0使得方程组成立$
 
 # 六
 

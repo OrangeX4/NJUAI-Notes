@@ -168,7 +168,7 @@ a_{n1}(a_{1n}k_{11}+\cdots +a_{nn}k_{n1})+\cdots +a_{nn}(a_{1n}k_{1n}+\cdots +a_
 $
 $有非零解k_{ij}$
 
-$\Leftrightarrow$
+$\Leftarrow 或 \Rightarrow 或\Leftrightarrow 或都不是?$
 
 $
 \begin{cases}
@@ -187,6 +187,70 @@ $存在不全等于0的k_i使得k_1\alpha_1+k_2\alpha_2+\cdots +k_n\alpha_n=0$
 $\Leftrightarrow$
 
 $\alpha_1,\alpha_2,\cdots,\alpha_n线性无关$
+
+$'|A|方程组有非零解 \Rightarrow D方程组有非零解'易证$
+
+$'D有非零解 \Rightarrow |A|有非零解'的逆否命题是'|A|只有零解 \Rightarrow D只有零解'$
+
+$参照(2)和(5)可知$
+
+$
+\begin{cases}
+a_{11}k_{11}+\cdots +a_{1n}k_{1n}=0 \\
+\cdots \\
+a_{11}k_{n1}+\cdots +a_{1n}k_{nn}=0 \\
+\cdots \\
+\cdots \\
+a_{n1}k_{11}+\cdots +a_{nn}k_{1n}=0 \\
+\cdots \\
+a_{n1}k_{n1}+\cdots +a_{nn}k_{nn}=0 \\
+\end{cases}
+$
+$只有零解$
+
+$\Leftrightarrow$
+
+$
+\begin{cases}
+a_{11}k_{11}+\cdots +a_{1n}k_{1n}=0 \\
+\cdots \\
+a_{n1}k_{11}+\cdots +a_{nn}k_{1n}=0 \\
+\cdots \\
+\cdots \\
+a_{11}k_{n1}+\cdots +a_{1n}k_{nn}=0 \\
+\cdots \\
+a_{n1}k_{n1}+\cdots +a_{nn}k_{nn}=0 \\
+\end{cases}
+$
+$只有零解$
+
+$\Leftrightarrow$
+
+$对任意1\leq i\leq n 均有$
+$
+\begin{cases}
+a_{11}k_{i1}+\cdots +a_{1n}k_{in}=0 \\
+\cdots \\
+a_{n1}k_{i1}+\cdots +a_{nn}k_{in}=0 \\
+\end{cases}
+$
+$只有零解$
+
+$\Leftrightarrow$
+
+$对任意1\leq i\leq n 均有$
+$
+\begin{cases}
+a_{11}k_{i1}+\cdots +a_{1n}k_{in}=0 \\
+\cdots \\
+a_{n1}k_{i1}+\cdots +a_{nn}k_{in}=0 \\
+\end{cases}
+$
+$只有零解$
+
+$\Leftrightarrow$
+
+$|A^T|=|A|\neq 0成立$
 
 
 # 六

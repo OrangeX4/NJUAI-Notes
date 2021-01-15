@@ -114,7 +114,7 @@ $理论依据: 添加一些系数全为零的方程相当于加入0=0, 是恒成
 
 **$当s>n时, 即向量维度大于向量个数, 矩阵的宽度大于长度$**
 
-$有两种选择,$
+$有三种选择,$
 
 **$一是减少维度, 最为常用$**
 $运用解方程理论必定可以让所有向量s-n个维度变为0$
@@ -126,14 +126,18 @@ $进而升维到s\times s, 采用方阵相关理论即可解$
 
 **$这两种方式均不会改变|A|的零性, 也就不会影响前n个向量的线性相关性$**
 
+**$三是使用子式$**
+$一矩阵的秩是r⇔矩阵中有一个r级子式不为零,同时所有的r+1级子式(如果有的话)全为零$
+
+
 
 # 求和运算法则
 
-* $\displaystyle\sum_{i=1}^nx_i=x_1+x_2+\cdots +x_n$
-* $\displaystyle\sum_{i=1}^nkx_i=k\sum_{i=1}^nx_i$
-* $\displaystyle\sum_{i=1}^n(x_i+y_i)=\sum_{i=1}^nx_i+\sum_{i=1}^ny_i$
-* $\displaystyle\sum_{i=1}^nx_i\sum_{j=1}^my_j=\sum_{j=1}^my_j\sum_{i=1}^nx_i=\sum_{i=1}^n\sum_{j=1}^mx_iy_j=\sum_{j=1}^m\sum_{i=1}^nx_iy_j$
-* $\displaystyle\sum_{i=1}^nx_i\sum_{j=1}^my_jz_{ij}=\sum_{j=1}^my_j\sum_{i=1}^nx_iz_{ij}=\sum_{i=1}^n\sum_{j=1}^mx_iy_jz_{ij}=\sum_{j=1}^m\sum_{i=1}^nx_iy_jz_{ij}$
+* **$\displaystyle\sum_{i=1}^nx_i=x_1+x_2+\cdots +x_n$**
+* **$\displaystyle\sum_{i=1}^nkx_i=k\sum_{i=1}^nx_i$**
+* **$\displaystyle\sum_{i=1}^n(x_i+y_i)=\sum_{i=1}^nx_i+\sum_{i=1}^ny_i$**
+* **$\displaystyle\sum_{i=1}^nx_i\sum_{j=1}^my_j=\sum_{j=1}^my_j\sum_{i=1}^nx_i=\sum_{i=1}^n\sum_{j=1}^mx_iy_j=\sum_{j=1}^m\sum_{i=1}^nx_iy_j$**
+* **$\displaystyle\sum_{i=1}^nx_i\sum_{j=1}^my_jz_{ij}=\sum_{j=1}^my_j\sum_{i=1}^nx_iz_{ij}=\sum_{i=1}^n\sum_{j=1}^mx_iy_jz_{ij}=\sum_{j=1}^m\sum_{i=1}^nx_iy_jz_{ij}$**
 
 $常见的向量求和运算:$
 
@@ -150,3 +154,53 @@ f_n(\vec{x})=b_n \\
 **$\displaystyle\bigcap_{p=1}^n\sum_{i=1}^na_{ip}k_i=0\rightarrow 是否\forall k_i=0$**
 **$\Leftrightarrow$**
 **$\displaystyle\bigcap_{p=1}^n\sum_{i=1}^na_{pi}k_i=0\rightarrow 是否\forall k_i=0$**
+
+
+# 分块矩阵和初等矩阵
+
+### 广义三角矩阵行列式
+
+$\begin{vmatrix}A_1&\cdots &\cdots &\cdots \\O&A_2&\cdots &\cdots \\\vdots &\vdots &\ddots &\vdots \\O&O&\cdots &A_n\end{vmatrix}=|A_1||A_2|\cdots |A_n|$
+
+### 分块对角矩阵逆矩阵
+
+$\begin{bmatrix}A_1&O &\cdots  &O \\O&A_2&\cdots &O \\\vdots &\vdots &\ddots &\vdots \\O&O&\cdots &A_n\end{bmatrix}^{-1}=\begin{bmatrix}A_1^{-1}&O &\cdots  &O \\O&A_2^{-1}&\cdots &O \\\vdots &\vdots &\ddots &\vdots \\O&O&\cdots &A_n^{-1}\end{bmatrix}$
+
+### 初等矩阵
+
+$对一个矩阵A实施了初等行变换P和初等列变换Q即为矩阵乘法PAQ$
+
+$其中P和Q均为对单位矩阵E进行了初等行列变换的结果$
+
+#### 初等行变换矩阵
+
+* $互换E的i,j两行, 记作P(i,j)$
+  * $|P(i,j)|=-1$
+  * $P(i,j)^{-1}=P(i,j)$
+* $E的第i行乘以不等于零的数k, 记作P(i(k))$
+  * $|P(i(k))|=k$
+  * $P(i(k))^{-1}=P(i(\displaystyle\frac{1}{k}))$
+* $E的第j行的k倍加到第i行上, 记作P(i,j)$
+  * $|P(i,j(k))|=1$
+  * $P(i,j(k))^{-1}=P(i,j(-k))$
+
+$(A\quad E)\xrightarrow{初等行变换}(E\quad A^{-1})$
+
+$(A\quad B)\xrightarrow{初等行变换}(E\quad A^{-1}B)$
+
+#### 初等行变换矩阵
+
+* $P(i,j)=Q(i,j)$
+* $P(i(k))=Q(i(k))$
+* **$P(i,j(k))=Q(j,i(k))$**
+
+$\begin{pmatrix}A\\E\end{pmatrix}\xrightarrow{初等列变换}\begin{pmatrix}E\\A^{-1}\end{pmatrix}$
+
+$\begin{pmatrix}A\\B\end{pmatrix}\xrightarrow{初等列变换}\begin{pmatrix}E\\BA^{-1}\end{pmatrix}$
+
+### 分块矩阵运算
+
+$若A可逆$
+
+$\begin{bmatrix}E_m&O\\-CA^{-1}&E_n\end{bmatrix}\begin{bmatrix}A&B\\C&D\end{bmatrix}=\begin{bmatrix}A&B\\O&D-CA^{-1}B\end{bmatrix}$
+

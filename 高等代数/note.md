@@ -203,4 +203,3 @@ $\begin{pmatrix}A\\B\end{pmatrix}\xrightarrow{初等列变换}\begin{pmatrix}E\\
 $若A可逆$
 
 $\begin{bmatrix}E_m&O\\-CA^{-1}&E_n\end{bmatrix}\begin{bmatrix}A&B\\C&D\end{bmatrix}=\begin{bmatrix}A&B\\O&D-CA^{-1}B\end{bmatrix}$
-

@@ -1,1 +1,1 @@
-print('This\nis\nTom')
+print(list(map(lambda x: int(x), '123')))

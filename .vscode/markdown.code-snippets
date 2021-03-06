@@ -13,5 +13,13 @@
 			"\\overset{\\vee}{B_r}(\\vec{a})",
 		],
 		"description": "accumulate"
-	}
+	},
+	"text": {
+		"scope": "markdown",
+		"prefix": "\\\\text",
+		"body": [
+			"\\text{${1}}",
+		],
+		"description": "text"
+	},
 }

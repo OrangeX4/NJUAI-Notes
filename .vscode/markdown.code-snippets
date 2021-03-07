@@ -14,6 +14,16 @@
 		],
 		"description": "accumulate"
 	},
+	"ditaa": {
+		"scope": "markdown",
+		"prefix": "\\\\ditaa",
+		"body": [
+			"```ditaa {cmd=true args=[\"-E\"] hide=true}",
+			"${1}",
+			"```",
+		],
+		"description": "ditaa"
+	},
 	"text": {
 		"scope": "markdown",
 		"prefix": "\\\\text",

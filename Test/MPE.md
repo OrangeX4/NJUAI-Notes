@@ -2,7 +2,7 @@
 
 ## 流程图
 
-``` flow
+``` flow {align=center}
 start=>start
 end=>end
 operation=>operation: My Operation
@@ -228,7 +228,7 @@ graph G {
 
 ## Vega
 
-```vega-lite
+``` vega-lite
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple bar chart with embedded data.",

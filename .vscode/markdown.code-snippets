@@ -32,4 +32,12 @@
 		],
 		"description": "text"
 	},
+	"phi": {
+		"scope": "markdown",
+		"prefix": "\\\\phi",
+		"body": [
+			"\\varphi",
+		],
+		"description": "phi"
+	},
 }

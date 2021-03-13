@@ -21,10 +21,7 @@ def xor(p, q):
 
 
 def boolToString(p):
-    if p:
-        return 'T'
-    else:
-        return 'F'
+    return 'T' if p else 'F'
 
 
 def truthtable(func, name = 'Ans'):
@@ -36,7 +33,7 @@ def truthtable(func, name = 'Ans'):
 
     def block(begin, end):
 
-        if begin < end:
+        if begin < end - 1:
             current = set[begin]
             input[current] = False
             block(begin + 1, end)

@@ -40,4 +40,12 @@
 		],
 		"description": "phi"
 	},
+	"ms": {
+		"scope": "markdown",
+		"prefix": "\\\\ms",
+		"body": [
+			" \\ \\text{${1:m}}/\\text{${2:s}}",
+		],
+		"description": "m per s"
+	},
 }

@@ -10,42 +10,24 @@
 		"scope": "markdown",
 		"prefix": "\\\\accumulate",
 		"body": [
-			"\\overset{\\vee}{B_r}(\\vec{a})",
+            "\\overset{\\vee}{B_r}(\\vec{a})",
 		],
 		"description": "accumulate"
 	},
-	"ditaa": {
-		"scope": "markdown",
-		"prefix": "\\\\ditaa",
+	"pd": {
+        "scope": "markdown",
+		"prefix": "\\\\pd",
 		"body": [
-			"```ditaa {cmd=true args=[\"-E\"] hide=true}",
-			"${1}",
-			"```",
+            "\\overset{\\cdot}{${1:x}}",
 		],
-		"description": "ditaa"
+		"description": "pd"
 	},
-	"text": {
-		"scope": "markdown",
-		"prefix": "\\\\text",
+	"pdd": {
+        "scope": "markdown",
+		"prefix": "\\\\pdd",
 		"body": [
-			"\\text{${1}}",
+			"\\overset{\\cdot\\cdot}{${1:x}}",
 		],
-		"description": "text"
-	},
-	"phi": {
-		"scope": "markdown",
-		"prefix": "\\\\phi",
-		"body": [
-			"\\varphi",
-		],
-		"description": "phi"
-	},
-	"ms": {
-		"scope": "markdown",
-		"prefix": "\\\\ms",
-		"body": [
-			" \\ \\text{${1:m}}/\\text{${2:s}}",
-		],
-		"description": "m per s"
+		"description": "pdd"
 	},
 }

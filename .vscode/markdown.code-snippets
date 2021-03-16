@@ -14,20 +14,4 @@
 		],
 		"description": "accumulate"
 	},
-	"pd": {
-        "scope": "markdown",
-		"prefix": "\\\\pd",
-		"body": [
-            "\\overset{\\cdot}{${1:x}}",
-		],
-		"description": "pd"
-	},
-	"pdd": {
-        "scope": "markdown",
-		"prefix": "\\\\pdd",
-		"body": [
-			"\\overset{\\cdot\\cdot}{${1:x}}",
-		],
-		"description": "pdd"
-	},
 }

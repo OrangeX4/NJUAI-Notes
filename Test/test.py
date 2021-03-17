@@ -1,4 +1,10 @@
-str = input()
-num = sum([int(ch) ** 3 for ch in str])
+import schemdraw
+import schemdraw.elements as elm
 
-print(num == int(str))
+elm.Resistor().label('R1')
+
+d = schemdraw.Drawing()
+d.add(elm.Resistor())
+d.add(elm.Capacitor())
+d.add(elm.Diode())
+d.draw()

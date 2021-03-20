@@ -1,77 +1,68 @@
 def imply(p, q):
-    if not p:
-        return True
-    elif q:
-        return True
-    else:
-        return False
+    return not p or q
 
 
 def onlyif(p, q):
-    if p and q:
-        return True
-    elif not p and not q:
-        return True
-    else:
-        return False
+    return not p ^ q
 
 
-def xor(p, q):
-    return not onlyif(p, q)
+def bool_to_string(p, true_value, false_value):
+    return true_value if p else false_value
 
 
-def boolToString(p):
-    return 'T' if p else 'F'
-
-
-def truthtable(func, name = 'Ans'):
-    # Init input
-    input = {}
-    set = list(func.__code__.co_varnames) + [name]
-    for i in range(0, len(set)):
-        input[set[i]] = False
+def truthtable(*expressions, names=['Ans'], true_value='T', false_value='F'):
+    # Initiate arguments
+    arguments = {}
+    # Get arguments of the first expression
+    arguments_names = list(expressions[0].__code__.co_varnames)
 
     def block(begin, end):
-
-        if begin < end - 1:
-            current = set[begin]
-            input[current] = False
+        if begin < end:
+            current_argument = arguments_names[begin]
+            arguments[current_argument] = False
             block(begin + 1, end)
 
-            input[current] = True
+            arguments[current_argument] = True
             block(begin + 1, end)
         else:
-            def printOut():
+            # Arguments
+            out = ''
+            for i in range(0, end):
+                out += '| ' + bool_to_string(arguments[arguments_names[i]], true_value, false_value) + ' '
 
-                out = ''
-                for i in range(0, end):
-                    out = out + '| ' + boolToString(input[set[i]]) + ' '
-                out = out + '| '+ boolToString(func(*tuple(input.values())[:-1:])) +' |'
+            # Expressions' values
+            for expression in expressions:
+                value = expression(*tuple(arguments.values()))
+                out += '| ' + bool_to_string(value, true_value, false_value) + ' '
+            out += '|'
 
-                print(out)
-            
-            current = set[begin]
-            input[current] = False
-            printOut()
-
-            input[current] = True
-            printOut()
-
+            print(out)
             return
 
+    # First line
     out = ''
-    for i in range(0, len(set)):
-        out = out + '| ' + set[i] + ' '
-    out = out + '|'
+    for arguments_name in arguments_names:
+        out += '| ' + arguments_name + ' '
+    for name in names:
+        out += '| ' + name + ' '
+    out += '|'
     print(out)
 
+    # Second line
     out = ''
-    for i in range(0, len(set)):
-        out = out + '|---'
-    out = out + '|'
+    for arguments_name in arguments_names:
+        out += '|' + '-' * (len(arguments_name) + 2)
+    for name in names:
+        out += '|' + '-' * (len(name) + 2)
+    out += '|'
     print(out)
 
-    block(0, len(set) - 1)
+    # Main values
+    block(0, len(arguments_names))
 
 
-truthtable(lambda x, y, z: (not onlyif(x, not onlyif(y, z))))
+truthtable(lambda x, y: imply(x, y), true_value='1', false_value='0')
+
+print()
+
+truthtable(lambda x, y: x and y, lambda x, y: x or y, names=['And', 'Or'])

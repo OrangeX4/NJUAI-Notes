@@ -174,16 +174,16 @@ $\therefore (A-B)\oplus B = A \cup B$
 
 $A \cap (B - C)$
 
-![](2020-10-21-19-48-18.png)
+![](./image/2020-10-21-19-48-18.png)
 
 ## b)
 
 $(A \cap \overline B) \cup (A \cap \overline C)$
 
-![](2020-10-21-19-59-14.png)
+![](./image/2020-10-21-19-59-14.png)
 
 ## c)
 
 $(A \cap B) \cup (A \cap C)$
 
-![](2020-10-21-19-58-08.png)
+![](./image/2020-10-21-19-58-08.png)

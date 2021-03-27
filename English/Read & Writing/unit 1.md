@@ -33,11 +33,11 @@ He recalls about their "father-daughter connection"
 
 ## Body
  
-![](2020-10-12-14-20-27.png)
+![](./image/2020-10-12-14-20-27.png)
 
 ## Conclusion
 
-![](2020-10-12-14-26-24.png)
+![](./image/2020-10-12-14-26-24.png)
 
 treasure => cherish
 

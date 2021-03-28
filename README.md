@@ -26,7 +26,7 @@ git clone https://github.com/OrangeX4/Notes.git --depth=1
 
 Clone 完成之后用 VSCode 打开该文件夹.
 
-点开一个你想看的markdown文件, 按下快捷键 `Ctrl + K` , 再按下 `V` 键即可.
+点开一个你想看的 Markdown 文件, 按下快捷键 `Ctrl + K` , 再按下 `V` 键即可.
 
 ## 其他
 

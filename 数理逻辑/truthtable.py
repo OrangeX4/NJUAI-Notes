@@ -73,4 +73,4 @@ def truthtable(*expressions, names=['Ans'], true_value='T', false_value='F'):
     block(0, len(arguments_names))
 
 
-truthtable(lambda A, B, C: selector([B, C], A), true_value='1', false_value='0')
+truthtable(lambda A, B, C: selector([B ^ C, not (B or C)], A), true_value='1', false_value='0')

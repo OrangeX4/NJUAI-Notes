@@ -10,6 +10,18 @@ def bool_to_string(p, true_value, false_value):
     return true_value if p else false_value
 
 
+def eight(input, s):
+    return input[4 * s[0] + 2 * s[1] + s[2]]
+
+
+def four(input, s):
+    return input[2 * s[0] + s[1]]
+
+
+def selector(input, s):
+    return input[s]
+
+
 def truthtable(*expressions, names=['Ans'], true_value='T', false_value='F'):
     # Initiate arguments
     arguments = {}
@@ -61,8 +73,4 @@ def truthtable(*expressions, names=['Ans'], true_value='T', false_value='F'):
     block(0, len(arguments_names))
 
 
-truthtable(lambda x, y: imply(x, y), true_value='1', false_value='0')
-
-print()
-
-truthtable(lambda x, y: x and y, lambda x, y: x or y, names=['And', 'Or'])
+truthtable(lambda A, B, C: selector([B, C], A), true_value='1', false_value='0')

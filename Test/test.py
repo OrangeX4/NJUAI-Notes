@@ -1,10 +1,24 @@
-import schemdraw
-import schemdraw.elements as elm
+import matplotlib
+matplotlib.use('TkAgg')
+from schemdraw import elements as elm
+from schemdraw import Drawing, logic
 
-elm.Resistor().label('R1')
+d = Drawing()
+d += (A := elm.Line().down().label('A', 'right'))
 
-d = schemdraw.Drawing()
-d.add(elm.Resistor())
-d.add(elm.Capacitor())
-d.add(elm.Diode())
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+
+d += elm.Line().right().at(A.end)
+d += logic.Not().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
+d += elm.Line().down()
 d.draw()

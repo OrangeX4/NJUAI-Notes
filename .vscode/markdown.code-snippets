@@ -28,4 +28,28 @@
         ],
         "description": "logicparse"
     },
+    "jacobi": {
+        "scope": "markdown",
+        "prefix": "\\\\jacobi",
+        "body": [
+            "\\begin{pmatrix}\\frac{\\partial ${1:f}_1}{\\partial ${2:x}_1}&\\frac{\\partial ${1:f}_1}{\\partial ${2:x}_2}&\\cdots&\\frac{\\partial ${1:f}_1}{\\partial ${2:x}_${3:n}}\\\\\\\\\\frac{\\partial ${1:f}_2}{\\partial ${2:x}_1}&\\frac{\\partial ${1:f}_2}{\\partial ${2:x}_2}&\\cdots&\\frac{\\partial ${1:f}_2}{\\partial ${2:x}_${3:n}}\\\\\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\\\\\frac{\\partial ${1:f}_${3:m}}{\\partial ${2:x}_1}&\\frac{\\partial ${1:f}_${3:m}}{\\partial ${2:x}_2}&\\cdots&\\frac{\\partial ${1:f}_${3:m}}{\\partial ${2:x}_${3:n}}\\end{pmatrix}"
+        ],
+        "description": "logicparse"
+    },
+    "multiplus": {
+        "scope": "markdown",
+        "prefix": "\\\\multiplus",
+        "body": [
+            "${1:a}_{i1}${2:x}_1+${1:a}_{i2}${2:x}_1+\\cdots+${1:a}_{i${3:n}}${2:x}_${3:n}"
+        ],
+        "description": "logicparse"
+    },
+    "i=": {
+        "scope": "markdown",
+        "prefix": "\\\\i=",
+        "body": [
+            "i=1,2,\\cdots,n"
+        ],
+        "description": "logicparse"
+    },
 }

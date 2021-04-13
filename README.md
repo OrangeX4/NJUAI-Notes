@@ -10,6 +10,8 @@
 * Markdown Preview Enhanced (VSCode 插件)
 * Better Markdown & Latex Shortcuts (VSCode 插件)
 
+镜像 [NJU GitLab](https://git.nju.edu.cn/201300035/NJUAI-Notes)
+
 ## 在线浏览
 
 可以直接访问我写的一个笔记查看应用.

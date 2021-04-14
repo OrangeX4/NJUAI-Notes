@@ -52,4 +52,12 @@
         ],
         "description": "logicparse"
     },
+    "vdash": {
+        "scope": "markdown",
+        "prefix": "\\\\vdash",
+        "body": [
+            "\\vdash"
+        ],
+        "description": "logicparse"
+    },
 }

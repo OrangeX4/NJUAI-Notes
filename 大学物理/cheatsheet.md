@@ -1,6 +1,6 @@
 # Cheat Sheet for Physics
 
-## Vector
+## 向量
 
 $A\cdot B=||A||\cdot ||B||\cos\theta$
 
@@ -14,7 +14,7 @@ $\displaystyle\frac{{\rm d}}{{\rm d}t}[\boldsymbol{u}(t)\cdot\boldsymbol{v}(t)]=
 
 $\displaystyle\frac{{\rm d}}{{\rm d}t}[\boldsymbol{u}(t)\times\boldsymbol{v}(t)]=\frac{{\rm d}}{{\rm d}t}\boldsymbol{u}(t)\times \boldsymbol{v}(t)+\boldsymbol{u}(t)\times \frac{{\rm d}}{{\rm d}t}\boldsymbol{v}(t)$
 
-## Polar
+## 极坐标
 
 ![](./image/2021-03-15-22-47-21.png)
 
@@ -29,22 +29,22 @@ $\displaystyle\frac{{\rm d}}{{\rm d}t}[\boldsymbol{u}(t)\times\boldsymbol{v}(t)]
 $\because \boldsymbol{e}_{\rho}=\cos\phi i+\sin\phi j$
 $\quad\boldsymbol{e}_{\phi}=-\sin\phi i+\cos\phi j$
 
-$\therefore\displaystyle\frac{{\rm d}\boldsymbol{e}_{\rho}}{{\rm d}t}=(-\sin\phi i+\cos\phi j)\overset{\cdot}{\phi}=\overset{\cdot}{\phi}\boldsymbol{e}_{\phi}$
-$\quad\displaystyle\frac{{\rm d}\boldsymbol{e}_{\rho}}{{\rm d}t}=(-\cos\phi i-\sin\phi j)\overset{\cdot}{\phi}=-\overset{\cdot}{\phi}\boldsymbol{e}_{\rho}$
+$\therefore\displaystyle\frac{{\rm d}\boldsymbol{e}_{\rho}}{{\rm d}t}=(-\sin\phi i+\cos\phi j)\dot{\phi}=\dot{\phi}\boldsymbol{e}_{\phi}$
+$\quad\displaystyle\frac{{\rm d}\boldsymbol{e}_{\rho}}{{\rm d}t}=(-\cos\phi i-\sin\phi j)\dot{\phi}=-\dot{\phi}\boldsymbol{e}_{\rho}$
 
-$\therefore\displaystyle\overset{\cdot}{\boldsymbol{\rho}}=\frac{{\rm d}}{{\rm d}t}(\rho\boldsymbol{e}_{\rho})=\overset{\cdot}{\rho}\boldsymbol{e}_{\rho}+\rho\overset{\cdot}{\phi}\boldsymbol{e}_{\phi}\quad$ (常常代表速度)
-$\quad\displaystyle\overset{\cdot\cdot}{\boldsymbol{\rho}}=(\overset{\cdot\cdot}{\rho}-\rho\overset{\cdot}{\phi^2})\boldsymbol{e}_{\rho}+(\rho\overset{\cdot\cdot}{\phi}+2\overset{\cdot}{\rho}\overset{\cdot}{\phi})\boldsymbol{e}_{\phi}\quad$ (常常代表加速度)
+$\therefore\displaystyle\dot{\boldsymbol{\rho}}=\frac{{\rm d}}{{\rm d}t}(\rho\boldsymbol{e}_{\rho})=\dot{\rho}\boldsymbol{e}_{\rho}+\rho\dot{\phi}\boldsymbol{e}_{\phi}\quad$ (常常代表速度)
+$\quad\displaystyle\ddot{\boldsymbol{\rho}}=(\ddot{\rho}-\rho\dot{\phi^2})\boldsymbol{e}_{\rho}+(\rho\ddot{\phi}+2\dot{\rho}\dot{\phi})\boldsymbol{e}_{\phi}\quad$ (常常代表加速度)
 
 应用于圆周运动, 得
 
-$\overset{\cdot}{\rho}=\rho\overset{\cdot}{\varphi}\boldsymbol{e}_{\varphi}$
-$\overset{\cdot\cdot}{\rho}=-\overset{\cdot}{\varphi^2}\rho\boldsymbol{e}_{\rho}+\rho\overset{\cdot\cdot}{\varphi}\boldsymbol{e}_{\varphi}$
+$\dot{\rho}=\rho\dot{\varphi}\boldsymbol{e}_{\varphi}$
+$\ddot{\rho}=-\dot{\varphi}^2\rho\boldsymbol{e}_{\rho}+\rho\ddot{\varphi}\boldsymbol{e}_{\varphi}$
 
-角速度大小 $\omega=\overset{\cdot}{\varphi}$
+角速度大小 $\omega=\dot{\varphi}$
 
 角速度方向使 $\boldsymbol{e}_{\rho}, \boldsymbol{e}_{\varphi}, \boldsymbol{\omega}$ 三者满足右手螺旋关系, 即沿旋转轴方向
 
-那么就有圆周运动速度 $\overset{\cdot}{\boldsymbol{\rho}}=\boldsymbol{\omega}\times\boldsymbol{\rho}$, 且方向为 $\boldsymbol{e}_{\varphi}$ 方向
+那么就有圆周运动速度 $\dot{\boldsymbol{\rho}}=\boldsymbol{\omega}\times\boldsymbol{\rho}$, 且方向为 $\boldsymbol{e}_{\varphi}$ 方向
 
 
 ## Simple Harmonic Oscillation
@@ -52,7 +52,7 @@ $\overset{\cdot\cdot}{\rho}=-\overset{\cdot}{\varphi^2}\rho\boldsymbol{e}_{\rho}
 $
 \begin{cases}
 \theta=\theta_0\cos\omega t \\
-\overset{\cdot}{\theta}=-\omega\theta_0\sin\omega t \\
+\dot{\theta}=-\omega\theta_0\sin\omega t \\
 \end{cases}
 $
 
@@ -102,8 +102,8 @@ $\displaystyle\frac{{\rm d}\boldsymbol{r}}{{\rm d}t}=\frac{{\rm d}\boldsymbol{r}
 
 $
 \begin{aligned}
-\displaystyle\frac{{\rm d}\overset{\cdot}{\boldsymbol{r}}}{{\rm d}t}
-&=\frac{{\rm d}\overset{\cdot}{\boldsymbol{r}}}{{\rm d}t'}+\boldsymbol{\omega}\times\overset{\cdot}{\boldsymbol{r}} \\
+\displaystyle\frac{{\rm d}\dot{\boldsymbol{r}}}{{\rm d}t}
+&=\frac{{\rm d}\dot{\boldsymbol{r}}}{{\rm d}t'}+\boldsymbol{\omega}\times\dot{\boldsymbol{r}} \\
 &=\frac{{\rm d}}{{\rm d}t'}(\frac{{\rm d}\boldsymbol{r}}{{\rm d}t'}+\boldsymbol{\omega}\times\boldsymbol{r})+\boldsymbol{\omega}\times(\frac{{\rm d}\boldsymbol{r}}{{\rm d}t'}+\boldsymbol{\omega}\times\boldsymbol{r}) \\
 &=\frac{{\rm d}^2\boldsymbol{r}}{{\rm d}t'^2}+2\boldsymbol{\omega}\times\frac{{\rm d}\boldsymbol{r}}{{\rm d}t}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})
 \end{aligned}
@@ -117,3 +117,47 @@ $
 $\boldsymbol{g}=\boldsymbol{g}_0-2\boldsymbol{\omega}\times\boldsymbol{v}'-\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})$
 
 科里奥利加速度指向运动方向的右手边
+
+
+## 伯努利方程
+
+伯努利方程为 $\displaystyle p+\frac{1}{2}\rho v^2+\rho gz=C$, 其中 $C$ 为常量.
+
+可以用于求流体力学里的压强. 同时可以解释伯努利现象.
+
+
+## 转动惯量
+
+在旋转坐标系中:
+
+* 角速度 $\dot\theta$ 的地位等同于惯性系的速度;
+* 角加速度 $\ddot\theta$ 的地位等同于惯性系的加速度; 
+* 转动惯量 $\displaystyle I=\int\rho^2{\rm d}m$ 的地位等同于惯性系的质量;
+* 力矩 $\boldsymbol{F}\times\boldsymbol{r}$ 的地位等同于惯性系里的力.
+
+转动动能: $\displaystyle E=\frac{1}{2}I\dot\theta^2$
+
+类似牛顿第二定律: $\displaystyle\boldsymbol{F}\times\boldsymbol{r}=I\ddot\theta=\int\rho{\rm d}m \ddot\theta$
+
+圆环以直径为轴旋转时的转动惯量为
+
+$\displaystyle I=2\int_0^\pi\frac{m}{2\pi R}(R\sin\theta)^2{\rm d}\theta=\frac{1}{2}mR^2$
+
+圆球的转动惯量为:
+
+$\displaystyle I=\int{\rm d}m(r\sin\theta)^2=\int\frac{m}{\frac{4}{3}\pi R^3}[2\pi(r\sin\theta)r{\rm d}r{\rm d}\theta](r\sin\theta)^2=\frac{2}{5}mR^2$
+
+木棍沿着中心的转动惯量为:
+
+$\displaystyle I=\int_{-\frac{l}{2}}^{\frac{l}{2}}\frac{m}{l}{\rm d}xx^2=\frac{1}{12}ml^2$
+
+平行轴定理, 可以实现两个不同的平行轴之间转动惯量的转换, 其中 $I_C$ 为经过质心的转轴的转动惯量, $d$ 为两个轴之间的距离:
+
+$I=I_C+md^2$
+
+使用平行轴定理可知, 木棍沿着端点的轴为:
+
+$\displaystyle I=\frac{1}{12}ml^2+m(\frac{l}{2})^2=\frac{1}{3}ml^2$
+
+
+

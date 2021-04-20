@@ -1,4 +1,4 @@
-![](./image/2020-12-14-14-10-19.png)
+![](./images/2020-12-14-14-10-19.png)
 
 Time to Protect Our Environment
 

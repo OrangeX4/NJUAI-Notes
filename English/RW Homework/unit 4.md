@@ -1,4 +1,4 @@
-![](./image/2020-12-04-22-54-36.png)
+![](./images/2020-12-04-22-54-36.png)
 
 Factors to success
 

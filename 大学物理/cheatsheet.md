@@ -16,7 +16,7 @@ $\displaystyle\frac{{\rm d}}{{\rm d}t}[\boldsymbol{u}(t)\times\boldsymbol{v}(t)]
 
 ## 极坐标
 
-![](./image/2021-03-15-22-47-21.png)
+![](./images/2021-03-15-22-47-21.png)
 
 任意矢量 $A=A_{\rho}\boldsymbol{e}_{\rho}+A_{\phi}\boldsymbol{e}_{\phi}$
 
@@ -74,7 +74,7 @@ $
 
 ## Coriolis
 
-![](./image/2021-03-15-23-39-52.png)
+![](./images/2021-03-15-23-39-52.png)
 
 有相对桌面参考系 $S$ 和匀速圆周运动参考系 $S'$
 

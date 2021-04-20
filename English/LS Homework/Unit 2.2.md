@@ -14,7 +14,7 @@ Complete.
 
 # 3. Speech
 
-![](./image/2020-11-02-16-27-22.png)
+![](./images/2020-11-02-16-27-22.png)
 
 My favorite entertainment is watching videos uploaded by personal makers.
 

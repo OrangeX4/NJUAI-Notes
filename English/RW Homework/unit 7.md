@@ -1,6 +1,6 @@
 # 作文
 
-![](./image/2020-10-26-15-38-06.png)
+![](./images/2020-10-26-15-38-06.png)
 
 # Attending Famous Universities
 

@@ -93,7 +93,7 @@ $\quad 拐点为x=-1$
 
 $\quad\displaystyle 渐近线为x=-1和y=\frac{1}{2}x$
 
-![](./image/2021-01-09-23-59-50.png)
+![](./images/2021-01-09-23-59-50.png)
 
 
 # 三

@@ -190,7 +190,7 @@ $\begin{bmatrix}A_1&O &\cdots  &O \\O&A_2&\cdots &O \\\vdots &\vdots &\ddots &\v
 * $E$ 的第 $i$ 行乘以不等于零的数 $k$, 记作 $P(i(k))$
   * $|P(i(k))|=k$
   * $P(i(k))^{-1}=P(i(\displaystyle\frac{1}{k}))$
-* $E$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行上, 记作 $P(i,j)$
+* $E$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行上, 记作 $P(i,j(k))$
   * $|P(i,j(k))|=1$
   * $P(i,j(k))^{-1}=P(i,j(-k))$
 

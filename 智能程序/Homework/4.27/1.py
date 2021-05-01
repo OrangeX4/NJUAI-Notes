@@ -1,18 +1,20 @@
 import numpy as np
 
 
-def interchange(mat, row1, row2):
+def interchange(mat: np.ndarray, row1: int, row2: int) -> None:
     """
         Row switching. A row within the matrix 'mat' will be switched with another row.
-        
+
         Args:
             mat (numpy.matrix): the matrix to apply row switching transformation.
             row1 (int): the row index to be switched. The row index is in [0, mat.shape[0]-1]
             row2 (int): the another row index to be switched. The row index is in [0, mat.shape[0]-1]
     """
+    mat[[row1, row2]] = mat[[row2, row1]] 
 
 
-def scale(mat, row, scale):
+
+def scale(mat: np.ndarray, row: int, scale: int) -> None:
     """
         Row multiplication. Each element in a given row will be multiplied by a non-zero constant. It is also known as scaling a row.
 
@@ -21,9 +23,10 @@ def scale(mat, row, scale):
             row (int): the row index to be multiplied. The row index is in [0, mat.shape[0]-1]
             scale (int or float): the multiplier value.
     """
+    mat[row] *= scale
 
 
-def add(mat, row1, row2, scale):
+def add(mat: np.ndarray, row1: int, row2: int, scale: int) -> None:
     """
         Row addition. A given row will be replaced by the sum of that row and a multiple of another row.
         Which mean (row2 of mat) = (row2 of mat) + scale * (row1 of mat).
@@ -34,7 +37,7 @@ def add(mat, row1, row2, scale):
             row2 (int): the row index2. The row index is in [0, mat.shape[0]-1]
             scale (int or float): the multiplier value.
     """
-
+    mat[row2] += scale * mat[row1]
 
 
 def test1():
@@ -74,7 +77,8 @@ def test1():
     test_mat = np.array([[1, 2, 3], [4, 5, 6], [0, 8, 9]], dtype=np.float_)
     orig_mat = test_mat.copy()
     dest_mat1 = np.array([[2, 4, 6], [4, 5, 6], [0, 8, 9]], dtype=np.float_)
-    dest_mat2 = np.array([[2, 4, 6], [6.0, 7.5, 9.0], [0, 8, 9]], dtype=np.float_)
+    dest_mat2 = np.array(
+        [[2, 4, 6], [6.0, 7.5, 9.0], [0, 8, 9]], dtype=np.float_)
     scale(test_mat, 0, 2.0)
     assert np.all(
         test_mat == dest_mat1
@@ -92,7 +96,8 @@ def test1():
 
     test_mat = np.array([[1, 2, 3], [4, 5, 6], [0, 8, 9]], dtype=np.float_)
     orig_mat = test_mat.copy()
-    dest_mat1 = np.array([[1, 2, 3], [4, 5, 6], [0.5, 9.0, 10.5]], dtype=np.float_)
+    dest_mat1 = np.array(
+        [[1, 2, 3], [4, 5, 6], [0.5, 9.0, 10.5]], dtype=np.float_)
     add(test_mat, 0, 2, 0.5)
     assert np.all(
         test_mat == dest_mat1
@@ -119,12 +124,14 @@ def test3():
 
 
 if __name__ == "__main__":
-    import sys
+    # import sys
 
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "test1":
-            test1()
-        elif sys.argv[1] == "test2":
-            test2()
-        elif sys.argv[1] == "test3":
-            test3()
+    # if len(sys.argv) > 1:
+    #     if sys.argv[1] == "test1":
+    #         test1()
+    #     elif sys.argv[1] == "test2":
+    #         test2()
+    #     elif sys.argv[1] == "test3":
+    #         test3()
+    
+    test1()

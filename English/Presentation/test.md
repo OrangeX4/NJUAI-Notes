@@ -77,13 +77,13 @@ To spend 300 million dollars in 17 years, you’ve got to spend 48,348 bucks eve
 
 (Robert Krulwich:)
 
-Well, starting with the ladies, his first divorce, from Robin Givens, cost 10.5 million dollars. His second from Monica Turner cost another 6.5 million, plus she got a house. His houses were high maintenance. This one, for example, has 61 rooms; 18 bedrooms, 38 bathrooms, 7 kitchens, a disco, indoor racquetball, indoor pool, gym, private screening room and a master bedroom with 5 televisions. Lawn care alone at three of these homes, he says, cost 748,000 dollars. He liked pets --- unusual pets. He bought two Siberian tigers ---- these aren’t his, but they cost 70,000 bucks each and required a trainer. He liked cars. He had five of these Bentley convertibles at 320,000 dollars each. In the late 1980s, he bought 110 cars for himself and his friends. Then there’s Don King, the fight promoter who the now accuses of stealing tens of millions of his earnings. The two are suing each other, which means, of course, that Tyson has had to hire lawyers ---- lots of lawyers, ‘cause he keeps getting into trouble.’
+Well, starting with the ladies, his first divorce, from Robin Givens, cost 10.5 million dollars. His second from Monica Turner cost another 6.5 million, plus she got a house. His houses were high maintenance. This one, for example, has 61 rooms; 18 bedrooms, 38 bathrooms, 7 kitchens, a disco, indoor racquetball, indoor pool, gym, private screening room and a master bedroom with 5 televisions. Lawn care alone at three of these homes, he says, cost 748,000 dollars. He liked pets --- unusual pets. He bought two Siberian tigers ---- these aren’t his, but they cost 70,000 bucks each and required a trainer. He liked cars. He had five of these Bentley convertibles at 320,000 dollars each. In the late 1980s, he bought 110 cars for himself and his friends. Then there’s Don King, the fight promoter who the now accuses of stealing tens of millions of his earnings. The two are suing each other, which means, of course, that Tyson has had to hire lawyers ---- lots of lawyers, 'cause he keeps getting into trouble.'
 
 (Fight announcer:) What happened here?
 
 (Robert Krulwich:)
 
-For biting Evander Holyfield’s ear, for being convicted of rape, for getting into fights at bars and hotels, for nonpayment of taxes, for filing bankruptcy, lawyers have cost Tyson millions. But is he embarrassed or regretful? A year ago anyway, he told ESPN, “Not at all.”
+For biting Evander Holyfield's ear, for being convicted of rape, for getting into fights at bars and hotels, for nonpayment of taxes, for filing bankruptcy, lawyers have cost Tyson millions. But is he embarrassed or regretful? A year ago anyway, he told ESPN, “Not at all.”
 
 (Mike Tyson:)
 

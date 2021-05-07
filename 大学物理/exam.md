@@ -1,5 +1,3 @@
-# Cheat Sheet
-
 ## 向量
 
 $A\cdot B=||A||\cdot ||B||\cos\theta$
@@ -7,8 +5,6 @@ $A\cdot B=||A||\cdot ||B||\cos\theta$
 $A\times (B\times C) = B(A\cdot C)-C(A\cdot B)$
 
 $(A\times B)\cdot C=(C\times A)\cdot B=(B\times C)\cdot A$
-
-$\boldsymbol{F}, \boldsymbol{v}, \boldsymbol{v}=\boldsymbol{\omega}\times\boldsymbol{r}, \boldsymbol{\omega}=\boldsymbol{r}\times\boldsymbol{F}$
 
 $\displaystyle\frac{{\rm d}}{{\rm d}t}[\boldsymbol{u}(t)\cdot\boldsymbol{v}(t)]=\frac{{\rm d}}{{\rm d}t}\boldsymbol{u}(t)\cdot \boldsymbol{v}(t)+\boldsymbol{u}(t)\cdot \frac{{\rm d}}{{\rm d}t}\boldsymbol{v}(t)$
 
@@ -272,6 +268,17 @@ $\therefore$ 楔块以加速度 $a$ 在桌面上匀加速直线运动.
 
 $\quad$ 立方块 m 水平加速度和竖直加速度恒定, 且初速度为零, 说明是沿着一定的角度 $\alpha$ 做匀加速直线运动, 且 $\tan\alpha=\displaystyle|\frac{\ddot{y}}{\ddot{x}}|=\frac{m+m'}{m'}\tan\theta.$ -->
 
+## 常微分方程
+
+$y'+P(x)y=0$ 对应的解是 $\displaystyle y=Ce^{-\int P(x){\rm d}x}$
+
+$y'+P(x)y=Q(x)$ 对应的解是 $\displaystyle y=e^{-\int P(x){\rm d}x}\left( \int Q(x)e^{\int P(x){\rm d}x}{\rm d}x+C \right)$
+
+![](images/2021-05-07-18-04-13.png)
+
+![](images/2021-05-07-18-04-19.png)
+
+
 ## 自由落体
 
 物体下落过程中受到空气的阻力 $F_d=−kv$, 其中 $v$ 是物体的速度, $k$ 为与速度无关的常量. 
@@ -326,6 +333,7 @@ $\therefore\displaystyle x=\frac{m^2g}{k^2}e^0+C=0$
 $\therefore\displaystyle C=-\frac{m^2g}{k^2}$
 
 $\therefore\displaystyle x=\frac{mgt}{k}+\frac{m^2g}{k^2}e^{-\frac{k}{m}t}-\frac{m^2g}{k^2}$
+
 
 <!-- 
 ## 7.8

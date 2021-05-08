@@ -147,6 +147,10 @@ $
 
 在地球上, 由于重力加速度是相对 $S$ 而言的, 所以有
 
+$\boldsymbol{g}_0=\boldsymbol{g}+2\boldsymbol{\omega}\times\boldsymbol{v}'+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})$
+
+移项可得
+
 $\boldsymbol{g}=\boldsymbol{g}_0-2\boldsymbol{\omega}\times\boldsymbol{v}'-\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})$
 
 科里奥利加速度指向运动方向的右手边.

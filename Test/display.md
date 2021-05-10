@@ -1,1 +1,3 @@
-There is an useful function.
+$$
+
+$$

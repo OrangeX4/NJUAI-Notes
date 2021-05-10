@@ -1,5 +1,4 @@
 class Matrix:
-
     def __init__(self, n, m, fill=0, matrix=None, stroke=(0, 0)) -> None:
         self.shape_r = n
         self.shape_c = m

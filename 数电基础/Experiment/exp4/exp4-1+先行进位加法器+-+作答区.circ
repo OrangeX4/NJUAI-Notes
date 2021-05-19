@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.16.1.2.exe" version="1.0">
+This file is intended to be loaded by Logisim http://logisim.altervista.org
+<lib desc="#Wiring" name="0">
+    <tool name="Constant">
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#TTL" name="2"/>
+  <lib desc="#Plexers" name="3">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Decoder">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="4"/>
+  <lib desc="#Memory" name="5">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#Base" name="7">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 14"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="7" map="Button2" name="Poke Tool"/>
+    <tool lib="7" map="Button3" name="Menu Tool"/>
+    <tool lib="7" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="7" name="Poke Tool"/>
+    <tool lib="7" name="Edit Tool"/>
+    <sep/>
+    <tool lib="7" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 14"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <wire from="(40,30)" to="(40,370)"/>
+    <wire from="(120,340)" to="(120,350)"/>
+    <wire from="(140,330)" to="(180,330)"/>
+    <wire from="(140,320)" to="(150,320)"/>
+    <wire from="(150,250)" to="(150,320)"/>
+    <wire from="(150,250)" to="(160,250)"/>
+    <wire from="(150,130)" to="(160,130)"/>
+    <wire from="(150,130)" to="(150,250)"/>
+    <wire from="(450,90)" to="(450,200)"/>
+    <wire from="(380,90)" to="(450,90)"/>
+    <wire from="(450,200)" to="(470,200)"/>
+    <wire from="(380,100)" to="(440,100)"/>
+    <wire from="(440,100)" to="(440,230)"/>
+    <wire from="(430,110)" to="(430,260)"/>
+    <wire from="(380,110)" to="(430,110)"/>
+    <wire from="(430,260)" to="(470,260)"/>
+    <wire from="(380,120)" to="(420,120)"/>
+    <wire from="(420,290)" to="(470,290)"/>
+    <wire from="(350,210)" to="(470,210)"/>
+    <wire from="(440,230)" to="(470,230)"/>
+    <wire from="(350,220)" to="(410,220)"/>
+    <wire from="(410,220)" to="(410,240)"/>
+    <wire from="(410,240)" to="(470,240)"/>
+    <wire from="(350,230)" to="(400,230)"/>
+    <wire from="(400,230)" to="(400,270)"/>
+    <wire from="(400,270)" to="(470,270)"/>
+    <wire from="(350,240)" to="(390,240)"/>
+    <wire from="(390,300)" to="(470,300)"/>
+    <wire from="(390,240)" to="(390,300)"/>
+    <wire from="(670,230)" to="(670,320)"/>
+    <wire from="(570,230)" to="(670,230)"/>
+    <wire from="(570,220)" to="(680,220)"/>
+    <wire from="(680,220)" to="(680,320)"/>
+    <wire from="(570,210)" to="(690,210)"/>
+    <wire from="(690,210)" to="(690,320)"/>
+    <wire from="(700,200)" to="(700,320)"/>
+    <wire from="(570,200)" to="(700,200)"/>
+    <wire from="(720,120)" to="(720,340)"/>
+    <wire from="(720,340)" to="(740,340)"/>
+    <wire from="(710,340)" to="(720,340)"/>
+    <wire from="(310,80)" to="(310,250)"/>
+    <wire from="(300,250)" to="(310,250)"/>
+    <wire from="(310,250)" to="(330,250)"/>
+    <wire from="(350,80)" to="(350,130)"/>
+    <wire from="(350,130)" to="(360,130)"/>
+    <wire from="(90,350)" to="(120,350)"/>
+    <wire from="(70,350)" to="(90,350)"/>
+    <wire from="(420,120)" to="(420,290)"/>
+    <wire from="(90,180)" to="(470,180)"/>
+    <wire from="(90,180)" to="(90,350)"/>
+    <wire from="(860,30)" to="(860,370)"/>
+    <wire from="(40,30)" to="(860,30)"/>
+    <wire from="(40,370)" to="(860,370)"/>
+    <wire from="(40,410)" to="(860,410)"/>
+    <wire from="(310,250)" to="(310,310)"/>
+    <wire from="(320,300)" to="(330,300)"/>
+    <wire from="(320,130)" to="(320,300)"/>
+    <wire from="(320,130)" to="(350,130)"/>
+    <wire from="(300,130)" to="(320,130)"/>
+    <wire from="(330,300)" to="(330,310)"/>
+    <wire from="(740,170)" to="(740,260)"/>
+    <wire from="(740,170)" to="(780,170)"/>
+    <wire from="(740,260)" to="(780,260)"/>
+    <wire from="(570,260)" to="(740,260)"/>
+    <wire from="(40,410)" to="(40,770)"/>
+    <wire from="(40,770)" to="(860,770)"/>
+    <wire from="(860,410)" to="(860,770)"/>
+    <wire from="(550,610)" to="(550,670)"/>
+    <wire from="(300,610)" to="(300,670)"/>
+    <wire from="(670,590)" to="(670,670)"/>
+    <wire from="(420,610)" to="(420,670)"/>
+    <wire from="(90,110)" to="(110,110)"/>
+    <wire from="(90,110)" to="(90,180)"/>
+    <wire from="(90,80)" to="(90,110)"/>
+    <wire from="(180,660)" to="(180,670)"/>
+    <wire from="(150,660)" to="(180,660)"/>
+    <wire from="(150,660)" to="(150,690)"/>
+    <wire from="(70,640)" to="(70,690)"/>
+    <wire from="(70,690)" to="(150,690)"/>
+    <wire from="(70,640)" to="(90,640)"/>
+    <wire from="(130,640)" to="(180,640)"/>
+    <wire from="(180,610)" to="(180,640)"/>
+    <comp lib="0" loc="(780,170)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp lib="0" loc="(550,670)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="S"/>
+    </comp>
+    <comp lib="7" loc="(466,442)" name="Text">
+      <a name="text" val="本地Logisim验证区域"/>
+    </comp>
+    <comp lib="7" loc="(492,538)" name="Text">
+      <a name="text" val="="/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="7" loc="(426,538)" name="Text">
+      <a name="text" val="Y"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="7" loc="(245,538)" name="Text">
+      <a name="text" val="+"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="0" loc="(330,310)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="7" loc="(672,539)" name="Text">
+      <a name="text" val="Cout"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="0" loc="(740,340)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="4"/>
+      <a name="label" val="S"/>
+    </comp>
+    <comp lib="6" loc="(670,590)" name="LED">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(130,640)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(70,350)" name="Clock"/>
+    <comp lib="0" loc="(350,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="0" loc="(780,260)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(300,610)" name="Hex Digit Display"/>
+    <comp lib="0" loc="(710,340)" name="Splitter">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(300,670)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(110,110)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp lib="0" loc="(90,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp lib="5" loc="(300,130)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="dataWidth" val="4"/>
+      <a name="label" val="X取值"/>
+      <a name="contents">addr/data: 4 4
+0 1 2 3 4 5 6 7
+8 9 a b c d e f
+</a>
+    </comp>
+    <comp lib="0" loc="(420,670)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="6" loc="(550,610)" name="Hex Digit Display"/>
+    <comp lib="7" loc="(364,538)" name="Text">
+      <a name="text" val="+"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="0" loc="(330,250)" name="Splitter"/>
+    <comp lib="0" loc="(180,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="halt"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(305,538)" name="Text">
+      <a name="text" val="X"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="0" loc="(720,120)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="S"/>
+    </comp>
+    <comp lib="5" loc="(300,250)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="dataWidth" val="4"/>
+      <a name="label" val="Y取值"/>
+      <a name="contents">addr/data: 4 4
+a 0 1 2 3 a b c
+d f e d c 0 1 1
+</a>
+    </comp>
+    <comp lib="7" loc="(185,538)" name="Text">
+      <a name="text" val="Cin"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+    <comp lib="7" loc="(469,54)" name="Text">
+      <a name="text" val="顶层模块与自制子模块连接部分"/>
+    </comp>
+    <comp lib="0" loc="(360,130)" name="Splitter"/>
+    <comp lib="0" loc="(310,310)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(670,670)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp loc="(560,170)" name="4位CLA"/>
+    <comp lib="0" loc="(310,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="6" loc="(180,610)" name="Hex Digit Display"/>
+    <comp lib="5" loc="(140,320)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0xf"/>
+    </comp>
+    <comp lib="7" loc="(471,468)" name="Text">
+      <a name="text" val="按Control+K触发执行，再次按Control+K暂停触发"/>
+    </comp>
+    <comp lib="0" loc="(180,670)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp lib="6" loc="(420,610)" name="Hex Digit Display"/>
+    <comp lib="7" loc="(553,538)" name="Text">
+      <a name="text" val="S"/>
+      <a name="font" val="Dialog plain 20"/>
+    </comp>
+  </circuit>
+  <circuit name="1位全加器">
+    <a name="circuit" val="1位全加器"/>
+    <a name="clabel" val="FA"/>
+    <a name="clabelup" val="north"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <appear>
+      <rect fill="#58ff49" height="65" rx="5" ry="5" stroke="#000000" stroke-width="2" width="60" x="40" y="55"/>
+      <circ-port height="8" pin="40,170" width="8" x="36" y="66"/>
+      <circ-port height="8" pin="40,220" width="8" x="36" y="86"/>
+      <circ-port height="8" pin="40,250" width="8" x="36" y="96"/>
+      <circ-port height="10" pin="690,480" width="10" x="95" y="65"/>
+      <circ-port height="10" pin="690,510" width="10" x="95" y="85"/>
+      <circ-port height="10" pin="690,540" width="10" x="95" y="95"/>
+      <circ-anchor facing="east" height="6" width="6" x="97" y="57"/>
+    </appear>
+    <wire from="(660,30)" to="(660,650)"/>
+    <wire from="(70,30)" to="(70,650)"/>
+    <wire from="(70,30)" to="(660,30)"/>
+    <wire from="(70,650)" to="(660,650)"/>
+    <comp lib="0" loc="(40,170)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cin"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,540)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="G"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="F"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,510)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="P"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,250)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(374,52)" name="Text">
+      <a name="text" val="全加法器子模块实现区域"/>
+    </comp>
+  </circuit>
+  <circuit name="4位CLU">
+    <a name="circuit" val="4位CLU"/>
+    <a name="clabel" val="4-bit CLU"/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <appear>
+      <rect fill="#54ff36" height="160" rx="1" ry="1" stroke="#000000" stroke-width="2" width="40" x="60" y="50"/>
+      <circ-port height="8" pin="40,160" width="8" x="56" y="76"/>
+      <circ-port height="10" pin="690,490" width="10" x="95" y="75"/>
+      <circ-port height="10" pin="690,520" width="10" x="95" y="105"/>
+      <circ-port height="8" pin="40,190" width="8" x="56" y="86"/>
+      <circ-port height="8" pin="40,240" width="8" x="56" y="106"/>
+      <circ-port height="8" pin="40,270" width="8" x="56" y="116"/>
+      <circ-port height="8" pin="40,320" width="8" x="56" y="136"/>
+      <circ-port height="8" pin="40,350" width="8" x="56" y="146"/>
+      <circ-port height="8" pin="40,400" width="8" x="56" y="166"/>
+      <circ-port height="8" pin="40,430" width="8" x="56" y="176"/>
+      <circ-port height="8" pin="40,90" width="8" x="76" y="46"/>
+      <circ-port height="10" pin="690,550" width="10" x="95" y="135"/>
+      <circ-port height="10" pin="690,580" width="10" x="95" y="165"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="47"/>
+    </appear>
+    <wire from="(660,30)" to="(660,650)"/>
+    <wire from="(70,30)" to="(70,650)"/>
+    <wire from="(70,30)" to="(660,30)"/>
+    <wire from="(70,650)" to="(660,650)"/>
+    <comp lib="0" loc="(40,190)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,580)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,160)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="P1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,520)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,550)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="P3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(338,53)" name="Text">
+      <a name="text" val="先行进位逻辑单元子模块实现区域"/>
+    </comp>
+    <comp lib="0" loc="(40,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="C0"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,270)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,240)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="P2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,490)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,400)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="P4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,430)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,350)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+  <circuit name="4位CLA">
+    <a name="circuit" val="4位CLA"/>
+    <a name="clabel" val="4-bit CLA"/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <appear>
+      <rect fill="#14ff0e" height="150" rx="10" ry="10" stroke="#000000" stroke-width="2" width="100" x="50" y="50"/>
+      <circ-port height="8" pin="40,140" width="8" x="46" y="76"/>
+      <circ-port height="10" pin="690,480" width="10" x="145" y="75"/>
+      <circ-port height="10" pin="690,510" width="10" x="145" y="85"/>
+      <circ-port height="10" pin="690,540" width="10" x="145" y="95"/>
+      <circ-port height="10" pin="690,570" width="10" x="145" y="105"/>
+      <circ-port height="8" pin="40,170" width="8" x="46" y="86"/>
+      <circ-port height="8" pin="40,220" width="8" x="46" y="106"/>
+      <circ-port height="8" pin="40,250" width="8" x="46" y="116"/>
+      <circ-port height="8" pin="40,300" width="8" x="46" y="136"/>
+      <circ-port height="8" pin="40,330" width="8" x="46" y="146"/>
+      <circ-port height="8" pin="40,380" width="8" x="46" y="166"/>
+      <circ-port height="8" pin="40,410" width="8" x="46" y="176"/>
+      <circ-port height="8" pin="40,90" width="8" x="46" y="56"/>
+      <circ-port height="10" pin="690,600" width="10" x="145" y="135"/>
+      <circ-anchor facing="east" height="6" width="6" x="137" y="47"/>
+    </appear>
+    <wire from="(70,30)" to="(70,650)"/>
+    <wire from="(70,30)" to="(660,30)"/>
+    <wire from="(70,650)" to="(660,650)"/>
+    <wire from="(660,30)" to="(660,650)"/>
+    <comp lib="0" loc="(40,140)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,170)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,330)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,510)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cin"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,540)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,410)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,300)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X3"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(374,52)" name="Text">
+      <a name="text" val="先行进位加法器子模块实现区域"/>
+    </comp>
+    <comp lib="0" loc="(690,600)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(690,570)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,250)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(40,380)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X4"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+</project>

@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {一、}实验目的}{2}{section.1}%
+\contentsline {section}{\numberline {二、}实验原理(背景知识)}{2}{section.2}%
+\contentsline {subsection}{\numberline {1.}晶体管}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.}逻辑表达式}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {3.}Logisim 的基础使用}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {三、}实验环境/器材}{5}{section.3}%
+\contentsline {paragraph}{Logisim-ITA V2.16.1.2}{5}{paragraph*.2}%
+\contentsline {paragraph}{头歌线上评测平台}{5}{paragraph*.3}%
+\contentsline {section}{\numberline {四、}实验内容}{5}{section.4}%
+\contentsline {subsection}{\numberline {1.}利用晶体管构建或门}{5}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {a)}实验原理}{5}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {b)}实验步骤}{6}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {c)}仿真验证}{8}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {d)}实验结果}{9}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {2.}双控开关}{9}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {a)}实验原理}{9}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {b)}实验步骤}{10}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {c)}仿真验证}{10}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {d)}实验结果}{11}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {3.}多数表决器}{12}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {a)}实验原理}{12}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {b)}实验步骤}{12}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {c)}仿真验证}{13}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {d)}实验结果}{14}{subsubsection.4.3.4}%
+\contentsline {section}{\numberline {五、}实验中遇到的问题和解决的办法}{14}{section.5}%
+\contentsline {subsection}{\numberline {1.}本地仿真模拟与平台上运行不一致}{14}{subsection.5.1}%

@@ -199,6 +199,9 @@ $B$ 函数: $\displaystyle B(p,q)=\int_0^1x^{p-1}\cdot (1-x)^{q-1}{\rm d}x$
 
 $\displaystyle B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
 
+或者说
+
+令 $x=\cos\theta$, 则 $\displaystyle B(p,q)=2\int_0^{\frac{\pi}{2}}\cos^{2p-1}\theta\cdot\sin^{2q-1}\theta\mathrm{d}\theta$
 
 ## 6.
 

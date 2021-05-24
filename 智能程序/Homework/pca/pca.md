@@ -6,7 +6,8 @@
 
 PCA 可以用两种方式进行数学推导, 分别称为**最大可分型**和**最近重构型**, 前者基于基变换之后的方差最大, 后者基于点到划分平面的距离最小. 在这里, 我们使用最大可分型的方式进行数学推导.
 
-本文大部分数学推导基于[【机器学习】降维——PCA —— 知乎@阿泽](https://zhuanlan.zhihu.com/p/77151308), 但是做了更为完整易懂的解释, 并且附上了以 [iris 数据集 (鸢尾花卉数据集)](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) 为案例的相应的 python 代码实现.
+本文大部分数学推导基于[【机器学习】降维——PCA —— 知乎@阿泽](https://zhuanlan.zhihu.com/p/77151308), 但修复了其中的一些小问题, 并做了更为完整易懂的解释, 附上了以 [iris 数据集 (鸢尾花卉数据集)](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) 为案例的相应的 python 代码实现.
+
 
 ## 投影
 
@@ -322,9 +323,9 @@ $$
 1. 将原始数据转化成为一个 $n$ 行 $m$ 列的数据矩阵 $X$;
 2. 每一行减去均值, 进行"中心化";
 3. 求出协方差矩阵 $\displaystyle P=\frac{1}{m}XX^T$;
-4. 求出协方差矩阵的特征值和特征向量, 并按特征值由大到小排列;
-5. 选取前面 $k$ 个特征向量, 排列形成矩阵 $E_{k}=\begin{pmatrix}e_1&e_2&\cdots&e_k\end{pmatrix}$
-6. 计算 $X'=E_{k}^TX$, $X'$ 即为降维过后的数据.
+4. 求出协方差矩阵的特征值和特征向量, 形成特征矩阵;
+5. 计算 $X'=E_{k}^TX$, $X'$ 即为降维过后的数据;
+6. 将数据按特征值由大到小排列, 并选取前 $k$ 维数据输出.
 
 
 ## 示例
@@ -352,14 +353,13 @@ def pca(data, n_component):
  
     # 4. Calculate the eigenvalue and eigenvector
     eigenvalues, eigenmatrix = np.linalg.eig(cov_matrix)
- 
-    # 5. Sort eigenmatrix by eigenvalues
-    eigenmatrix = eigenmatrix[sorted(range(len(eigenvalues)),  key=lambda v: -eigenvalues[v])]
- 
-    # 6. Get data after dimensionality reduction
-    new_data = eigenmatrix.T[:n_component] @ data
-    return new_data
 
+    # 5. Get data after dimensionality reduction and Sort eigenmatrix by eigenvalues
+    new_data = eigenmatrix.T @ data
+
+    # 6. Sort data and reduce dimension
+    return new_data[sorted(range(len(eigenvalues)),  key=lambda v: -eigenvalues[v])][:n_component]
+    
 new_data = pca(data, 2)
 
 print(new_data.T[:5])
@@ -446,13 +446,12 @@ def pca(data, n_component):
  
     # 4. Calculate the eigenvalue and eigenvector
     eigenvalues, eigenmatrix = np.linalg.eig(cov_matrix)
- 
-    # 5. Sort eigenmatrix by eigenvalues
-    eigenmatrix = eigenmatrix[sorted(range(len(eigenvalues)),  key=lambda v: -eigenvalues[v])]
- 
-    # 6. Get data after dimensionality reduction
-    new_data = eigenmatrix.T[:n_component] @ data
-    return new_data
+
+    # 5. Get data after dimensionality reduction and Sort eigenmatrix by eigenvalues
+    new_data = eigenmatrix.T @ data
+
+    # 6. Sort data and reduce dimension
+    return new_data[sorted(range(len(eigenvalues)),  key=lambda v: -eigenvalues[v])][:n_component]
 
 new_data = pca(data, 3)
 

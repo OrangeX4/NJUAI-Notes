@@ -1,3 +1,4 @@
+``` python
 from typing import List
 
 class CustomError(Exception):
@@ -176,3 +177,4 @@ class CourierPoint:
 
 while True:
     exec(input())
+```

@@ -120,6 +120,18 @@ $
 \end{cases}
 $
 
+当 $n$ 为奇数时:
+
+$\therefore \displaystyle \int_{0}^{\pi}\sin^{n}x\mathrm{d}x=2I_{n}, \int_{0}^{\pi}\cos^{n}x\mathrm{d}x=0$
+
+$\therefore \displaystyle \int_{0}^{2\pi}\sin^{n}x\mathrm{d}x=0, \int_{0}^{2\pi}\cos^{n}x\mathrm{d}x=0$
+
+当 $n$ 为偶数时:
+
+$\therefore \displaystyle \int_{0}^{\pi}\sin^{n}x\mathrm{d}x=2I_{n}, \int_{0}^{\pi}\cos^{n}x\mathrm{d}x=2I_{n}$
+
+$\therefore \displaystyle \int_{0}^{2\pi}\sin^{n}x\mathrm{d}x=4I_{n}, \int_{0}^{2\pi}\cos^{n}x\mathrm{d}x=4I_{n}$
+
 ### (3)
 
 $\displaystyle\iiint_{\Omega}z^2{\rm d}v, \Omega: x^2+y^2+z^2\leq a^2, x^2+y^2+(z-a)^2\leq a^2$

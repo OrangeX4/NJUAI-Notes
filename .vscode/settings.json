@@ -22,6 +22,7 @@
         "documentclass",
         "eigenvals",
         "eigenvects",
+        "funct",
         "gnuplot",
         "imcredible",
         "inputoutput",

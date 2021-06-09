@@ -1,3 +1,9 @@
+---
+puppeteer:
+  format: "A4"
+  printBackground: true
+---
+
 # kNN 近邻分类算法及简单的 Python 实现
 
 <style>

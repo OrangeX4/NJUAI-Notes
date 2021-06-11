@@ -1,12 +1,13 @@
----
+#! https://zhuanlan.zhihu.com/p/379723118
+<!-- ---
 puppeteer:
   format: "A4"
   printBackground: true
----
+--- -->
 
 # k-means 聚类算法
 
-<style>
+<!-- <style>
 img {
     margin: 0 auto; 
     display: block;
@@ -15,7 +16,7 @@ img {
 
 ## 0. 目录
 
-[TOC]
+[TOC] -->
 
 
 ## 1. 概念
@@ -66,10 +67,7 @@ def get_sample_class(sample: np.ndarray, centers: np.ndarray):
     return distances.index(max(distances))
 
 predict_y = np.array([get_sample_class(sample, centers) for sample in X])
-```
 
-
-``` python
 # 重新计算中心
 old_centers = generate_X_samples(3, X)
 index_dict = {}

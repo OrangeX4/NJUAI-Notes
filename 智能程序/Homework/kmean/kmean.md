@@ -1,13 +1,12 @@
-#! https://zhuanlan.zhihu.com/p/379723118
-<!-- ---
+---
 puppeteer:
   format: "A4"
   printBackground: true
---- -->
+---
 
 # k-means 聚类算法
 
-<!-- <style>
+<style>
 img {
     margin: 0 auto; 
     display: block;
@@ -16,7 +15,7 @@ img {
 
 ## 0. 目录
 
-[TOC] -->
+[TOC]
 
 
 ## 1. 概念

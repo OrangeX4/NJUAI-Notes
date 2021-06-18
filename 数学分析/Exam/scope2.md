@@ -159,3 +159,122 @@ $
 我们又知道 $\displaystyle \iint_{\Sigma'}u^{2}\mathrm{d}S=\iint_{\Sigma'}v^{2}\mathrm{d}S=\iint_{\Sigma'}w^{2}\mathrm{d}S=\frac{1}{3}\iint_{\Sigma'}(u^{2}+v^{2}+w^{2})\mathrm{d}S=\frac{4}{3}\pi R^{4}$
 
 $\displaystyle I=\frac{1}{R}\iint_{\Sigma}2(au^{2}+bv^{2}+cw^{2})\mathrm{d}S=\frac{8}{3}\pi R^{3}(a+b+c)$
+
+
+### 7.
+
+判断 $\displaystyle \sum_{n=1}^{\infty}(-1)^{n}\tan(\sqrt{n^{2}+2})\pi$ 是否收敛, 绝对收敛还是条件收敛?
+
+$\therefore \displaystyle \tan(\sqrt{n^{2}+2})\pi=\tan(\sqrt{n^{2}+2}-n)\pi=\tan(\frac{2}{\sqrt{n^{2}+2}+n})\pi$
+
+$\therefore \tan(\sqrt{n^{2}+2})\pi$ 单调递减.
+
+$\therefore \displaystyle \sum_{n=1}^{\infty}(-1)^{n}\tan(\sqrt{n^{2}+2})\pi$ 收敛.
+
+而 $\displaystyle \tan(\frac{2}{\sqrt{n^{2}+2}+n})\pi>\frac{2\pi}{\sqrt{n^{2}+2}+n}$
+
+后者级数发散, 因此原级数并不绝对收敛.
+
+所以原级数条件收敛.
+
+我们不能直接说 $\displaystyle (-1)^{n}\tan\sqrt{n^{2}+2}\pi\sim(-1)^{n}\frac{2}{\sqrt{n^{2}+2}+n}\pi\sim(-1)^{n}\frac{\pi}{n}$
+
+因为比较判别法只能用于正项级数.
+
+
+### 8.
+
+$\displaystyle \sum_{n=1}^{\infty}u_{n}, (u_{n}>0), S_{n}=u_1+\cdots+u_{n}$, 证明若 $\displaystyle \sum_{n=1}^{\infty}u_{n}$ 发散, 则 $\displaystyle \sum_{n=1}^{\infty}\frac{u_{n}}{S_{n}}$ 发散且 $\displaystyle \sum_{n=1}^{\infty}\frac{u_{n}}{S_{n}^{2}}$ 收敛.
+
+#### (1)
+
+$\because \displaystyle \sum_{n=1}^{\infty}u_{n}$ 发散.
+
+$\therefore \exists \varepsilon>0, \forall N\in \mathbb{N}^{+}, \exists n>N, \exists p>0, |u_{n+1}+\cdots+u_{n+p}|>\varepsilon$
+
+$\because S_{n+p}>S_{n}$
+
+$\therefore \displaystyle \left| \frac{u_{n+1}}{S_{n+1}}+\cdots+\frac{u_{n+p}}{S_{n+p}} \right|>\left| \frac{u_{n+1}}{S_{n+p}}+\cdots+\frac{u_{n+p}}{S_{n+p}} \right|=\left| \frac{S_{n+p}-S_{n}}{S_{n+p}} \right|=1-\frac{S_{n}}{S_{n+p}}>1-\frac{1}{2}=\frac{1}{2}$
+
+其中, 取 $\displaystyle \varepsilon=\frac{1}{2}$, 然后就能有对应的 $p$.
+
+#### (2)
+
+$\because \displaystyle \frac{u_{n}}{S_{n}^{2}}<\frac{u_{n}}{S_{n}S_{n-1}}=\frac{S_{n}-S_{n-1}}{S_{n}S_{n-1}}=\frac{1}{S_{n-1}}-\frac{1}{S_{n}}$
+
+而后者 $\displaystyle \sum_{n=2}^{\infty}(\frac{1}{S_{n-1}}-\frac{1}{S_{n}})=\frac{1}{u_{1}}-\lim_{n \to \infty}\frac{1}{S_{n}}=\frac{1}{u_1}$ 收敛.
+
+因此前者也收敛.
+
+
+## 9.
+
+$\{u_{n}\}$ 是一个单调递增的正数列, 证明 $\displaystyle \sum_{n=1}^{\infty}\left( 1-\frac{u_{n}}{u_{n+1}} \right)$ 收敛 $\Leftrightarrow \{u_{n}\}$ 有界.
+
+**$\Leftarrow$:**
+
+$\displaystyle a_{n}=\frac{u_{n+1}-u_{n}}{u_{n+1}}$
+
+<!-- $$
+\begin{aligned}
+\left| S_{n+p}-S_{n} \right|
+&=\left| \frac{u_{n+1}-u_{n}}{u_{n+1}}+\cdots+\frac{u_{n+p}-u_{n+p-1}}{u_{n+p}} \right| \\
+&\leqslant \frac{u_{n+1}-u_{n}+\cdots+u_{n+p}-u_{n+p-1}}{u_{n+1}} \\
+&=\frac{u_{n+p}-u_{n}}{u_{n+1}} \\
+\end{aligned}
+$$ -->
+
+我们可以看成 $\displaystyle \frac{1}{u_{n+1}}\cdot (u_{n+1}-u_{n})$, 使用 Abel 判别法, 就可以说明其收敛.
+
+**$\Rightarrow$:**
+
+我们使用 8. 的结论.
+
+假设 $\{u_{n}\}$ 无界即发散, 我们令 $u_{n}=S_{n}$
+
+则 $\displaystyle a_{n}=\frac{u_{n+1}-u_{n}}{u_{n+1}}$ 也发散.
+
+与题设收敛矛盾.
+
+或者也可以用:
+
+$\displaystyle \left| \frac{u_{n+1}-u_{n}}{u_{n+1}}+\cdots+\frac{u_{n+p+1}-u_{n+p}}{u_{n+p+1}} \right|>\frac{u_{n+p+1}-u_{n}}{u_{n+p+1}}=1-\frac{u_{n}}{u_{n+p+1}}>1-\frac{1}{2}=\frac{1}{2}$
+
+
+## 10.
+
+求 $\displaystyle \sum_{n=1}^{\infty}\frac{x^{n}}{4n-3}$ 的和函数 $(x\geqslant 0)$
+
+收敛半径 $\displaystyle R=\lim_{n \to \infty}\frac{a_{n}}{a_{n+1}}=\lim_{n \to \infty}\frac{4n+1}{4n-3}=1$
+
+收敛范围 $[0,1)$.
+
+令 $x=t^{4}$, 则级数变为
+
+$\displaystyle \sum_{n=1}^{\infty}\frac{t^{4n}}{4n-3}=t^{3}\sum_{n=1}^{\infty}\frac{t^{4n-3}}{4n-3}=t^{3}\sum_{n=1}^{\infty}\left( \int_{0}^{t}t^{4n-4}\mathrm{d}t \right)=t^{3}\int_{0}^{t}\sum_{n=1}^{\infty} t^{4n-4} \mathrm{d}t$
+
+
+## 11.
+
+将 $\displaystyle f(x)=\frac{1}{x^{2}+4x+3}$ 在 $x_0=1$ 处展开.
+
+$\because \displaystyle f(x)=\frac{1}{x^{2}+4x+3}=\frac{1}{(x+1)(x+3)}=\frac{1}{2}\cdot \frac{1}{x+1}-\frac{1}{2}\cdot \frac{1}{x+3}$
+
+令 $t=x-1$ 即 $x=t+1$, 则 $\displaystyle f(x)=\frac{1}{4}\cdot \frac{1}{\frac{t}{2}+1}-\frac{1}{8}\cdot \frac{1}{\frac{t}{4}+1}$
+
+$\because \displaystyle \frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^{n}x^{n}, x\in (-1,1)$
+
+$\therefore \displaystyle \frac{1}{1+\frac{t}{2}}=\sum_{n=0}^{\infty}(-1)^{n}(\frac{t}{2})^{n}=\sum_{n=0}^{\infty}(-\frac{1}{2})^{n}t^{n}, t\in (-2,2)$
+
+$\quad \displaystyle \frac{1}{1+\frac{t}{4}}=\sum_{n=0}^{\infty}(-1)^{n}(\frac{t}{4})^{n}=\sum_{n=0}^{\infty}(-\frac{1}{4})^{n}t^{n}, t\in (-4,4)$
+
+$\therefore \displaystyle f(x)=\sum_{n=0}^{\infty}\left[\frac{1}{4}\cdot (-\frac{1}{2})^{n}-\frac{1}{8}\cdot (-\frac{1}{4})^{n}\right]t^{n}, x\in (-1,3)$
+
+
+## 12.
+
+$\displaystyle I=\oiint_{\Sigma}x^{2}yz^{2}\mathrm{d}y\mathrm{d}z-xy^{2}z^{2}\mathrm{d}z\mathrm{d}x+z(1+xyz)\mathrm{d}x\mathrm{d}y, \Sigma$ 是由 $\displaystyle z=a^{2}-x^{2}-y^{2}$ 与 $z=0$ 所围立体 $\Omega$ 的外侧. 其中 $\Omega$ 的体积为 $V$.
+
+使用 Gauss 公式.
+
+$\therefore \displaystyle I=\iiint_{\Omega}(2xyz^{2}-2xyz^{2}+1+xyz+xyz)\mathrm{d}V=\iiint_{\Omega}\mathrm{d}V=V$

@@ -1,0 +1,60 @@
+###########################################################################
+############          The TeX Gyre Collection of Fonts         ############
+###########################################################################
+
+Font: Latin Modern Math
+Authors: Bogus\l{}aw Jackowski, Piotr Strzelczyk and Piotr Pianowski
+Version: 1.959
+Date: 5 IX 2014
+
+Copyright 2012--2014 for TeX Gyre math extensions by B. Jackowski,
+P. Strzelczyk and P. Pianowski (on behalf of TeX Users Groups).
+
+This work can be freely used and distributed under
+the GUST Font License (GFL -- see GUST-FONT-LICENSE.txt)
+which is actually an instance of the LaTeX Project Public License
+(LPPL -- see http://www.latex-project.org/lppl.txt).
+
+This work has the maintenance status "maintained". The Current Maintainer
+of this work is Bogus\l{}aw Jackowski, Piotr Strzelczyk and Piotr Pianowski.
+
+This work consists of the files listed in this file.
+
+Below, in three sections required by the GUST Font License,
+font names and file names specific for the Latin Modern Math
+font are listed.
+
+NOTE: the names of the directories are not subject to the renaming
+restrictions.
+
+1. Fonts whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   1.1 OTF menu names
+       Latin Modern Math
+       LatinModernMath-Regular
+
+2. Files whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   2.1 otf/latinmodern-math.otf
+
+   2.2 doc/MANIFEST-Latin-Modern-Math.txt
+       doc/README-Latin-Modern-Math.txt
+       doc/presentation-lmodern_math.pdf
+       doc/math-test.tex
+       doc/math-test-context.tex
+       doc/test-context-latinmodern_math.pdf
+       doc/test-context-latinmodern_math.tex
+       doc/test-lualatex-latinmodern_math.pdf
+       doc/test-lualatex-latinmodern_math.tex
+       doc/test-xelatex-latinmodern_math.pdf
+       doc/test-xelatex-latinmodern_math.tex
+       doc/test-word-tg_latinmodern_math.docx
+       doc/test-word-tg_latinmodern_math.pdf
+
+3. Files whose names need not be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+       doc/GUST-FONT-LICENSE.txt
+       doc/INSTALL.txt

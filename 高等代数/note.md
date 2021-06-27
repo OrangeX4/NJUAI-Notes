@@ -64,7 +64,7 @@ $
 要注意到:
 
 * 此时向量维度与向量个数相等
-* 方程组参数或者说行列式是否转置与方程组是否仅有零解无关$
+* 方程组参数或者说行列式是否转置与方程组是否仅有零解无关
 
 ### Cramer法则
 
@@ -213,3 +213,25 @@ $\begin{pmatrix}A\\B\end{pmatrix}\xrightarrow{初等列变换}\begin{pmatrix}E\\
 若A可逆
 
 $\begin{bmatrix}E_m&O\\-CA^{-1}&E_n\end{bmatrix}\begin{bmatrix}A&B\\C&D\end{bmatrix}=\begin{bmatrix}A&B\\O&D-CA^{-1}B\end{bmatrix}$
+
+
+## 常见化简
+
+方差 (未除以 $n$):
+
+$
+\begin{aligned}
+\sum_{i=1}^{n}(x_{i}-\frac{1}{n}\sum_{i=1}^{n}x_{i})^{2}
+&=\sum_{i=1}^{n}(x_{i}^{2}-x_{i}(\frac{1}{n}\sum_{i=1}^{n}x_{i})+(\frac{1}{n}\sum_{i=1}^{n}x_{i})^{2}) \\
+&=\sum_{i=1}^{n}x_{i}^{2}-\sum_{i=1}^{n}x_{i}(\frac{1}{n}\sum_{i=1}^{n}x_{i})+\sum_{i=1}^{n}(\frac{1}{n}\sum_{i=1}^{n}x_{i})^{2} \\
+&=\sum_{i=1}^{n}x_{i}^{2}-\frac{1}{n}(\sum_{i=1}^{n}x_{i})^{2} \\
+\end{aligned}
+$
+
+即我们有
+
+$\displaystyle n\sum_{i=1}^{n}x_{i}^{2}-(\sum_{i=1}^{n}x_{i})^{2}=n\sum_{i=1}^{n}(x_{i}-\frac{1}{n}\sum_{i=1}^{n}x_{i})^{2}$
+
+我们还有
+
+$\displaystyle n\sum_{i=1}^{n}x_{i}^{2}-(\sum_{i=1}^{n}x_{i})^{2}=(n-1)\sum_{i=1}^{n}x_{i}^{2}-2\sum_{1\leqslant i<j\leqslant n}x_{i}x_{j}=\sum_{1\leqslant i<j\leqslant n}(x_{i}-x_{j})^{2}$

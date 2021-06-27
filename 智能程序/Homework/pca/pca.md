@@ -1,4 +1,4 @@
-@ import "../../../style/latex.css"
+<!-- @ import "../../../style/latex.css" -->
 
 # PCA 主成分分析与数据降维
 

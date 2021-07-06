@@ -1,11 +1,18 @@
+### 旋转坐标系
 
-## 伯努利方程
+一般关系式: $\displaystyle(\frac{{\rm d}\boldsymbol{A}}{{\rm d}t})_S=(\frac{{\rm d}\boldsymbol{A}}{{\rm d}t})_{S'}+\boldsymbol{\omega}\times\boldsymbol{A}$
+
+将位置矢量带入得速度: $\displaystyle\frac{{\rm d}\boldsymbol{r}}{{\rm d}t}=\frac{{\rm d}\boldsymbol{r}}{{\rm d}t'}+\boldsymbol{\omega}\times\boldsymbol{r}$
+
+再带入得加速度: $\displaystyle\frac{{\rm d}\dot{\boldsymbol{r}}}{{\rm d}t}=\frac{{\rm d}\dot{\boldsymbol{r}}}{{\rm d}t'}+\boldsymbol{\omega}\times\dot{\boldsymbol{r}}=\frac{{\rm d}^2\boldsymbol{r}}{{\rm d}t'^2}+2\boldsymbol{\omega}\times\frac{{\rm d}\boldsymbol{r}}{{\rm d}t}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})$
+
+### 伯努利方程
 
 伯努利方程为 $\displaystyle p+\frac{1}{2}\rho v^2+\rho gz=C$, 其中 $C$ 为常量.
 
 可以用于求流体力学里的压强. 同时可以解释伯努利现象.
 
-## 旋转坐标系中的各种量
+### 旋转坐标系中的各种量
 
 在旋转坐标系中:
 
@@ -32,7 +39,7 @@
 
 使用平行轴定理可知, 木棍沿着端点的轴的转动惯量为: $\displaystyle I=\frac{1}{12}ml^2+m(\frac{l}{2})^2=\frac{1}{3}ml^2$
 
-## 两体系统
+### 两体系统
 
 对于只有两质点之间相互作用的系统, 有运动方程:
 
@@ -48,9 +55,9 @@ $m_1\boldsymbol{\ddot{r}}_1=-f(r)\boldsymbol{r}$, $m_2\boldsymbol{\ddot{r}}_2=f(
 
 $\displaystyle\boldsymbol{r}_1=\frac{m_2}{m_1+m_2}\boldsymbol{r}+\boldsymbol{r}_C, \boldsymbol{r}_2=\frac{m_1}{m_1+m_2}\boldsymbol{r}+\boldsymbol{r}_C$
 
-## 波动方程
+### 波动方程
 
-### 柔软绳上的横波
+#### 柔软绳上的横波
 
 只需要记住:
 
@@ -58,11 +65,11 @@ $\displaystyle \frac{\partial^2u}{\partial x^2}-\frac{1}{v^2}\frac{\partial^2u}{
 
 $u$ 为质点的位移, $x$ 为质点的位置, $t$ 为时间, $v$ 为波传播的速度, $F_T$ 为绳子的张力, $\rho$ 为绳子的密度. 
 
-### 驻波
+#### 驻波
 
 驻波也可以看作是两频率相等方向相反行波的叠加, 振动最弱点称为波节或节点而振动最强为波腹或反节点.
 
-## 洛伦茨变换
+### 洛伦茨变换
 
 $
 \begin{cases}
@@ -74,7 +81,7 @@ t'=\gamma(t-\frac{u}{c^2}x) \\
 $
 
 
-## 热力学
+### 热力学
 
 - 热力学第零定律定义了温度这一物理量, 指出了相互接触的两个系统, 热流的方向.
 - 热力学第一定律指出内能这一物理量的存在, 并且与系统整体运动的动能和系统与环境相互作用的势能是不同的, 区分出热与功的转换.
@@ -93,7 +100,7 @@ $\displaystyle \Delta S=\left( \int_{333}^{T_{f}}+\int_{T_{f}}^{288} \right) \fr
 
 ![](images/2021-06-28-00-15-15.png)
 
-## 麦克斯韦方程组
+### 麦克斯韦方程组
 
 高斯电场定律说穿过闭合曲面的电通量正比于这个曲面包含的电荷量. $\displaystyle \oiint D\cdot \mathrm{d}S=q$
 
@@ -104,6 +111,8 @@ $\displaystyle \Delta S=\left( \int_{333}^{T_{f}}+\int_{T_{f}}^{288} \right) \fr
 安培-麦克斯韦定律说穿过曲面的电通量的变化率和曲面包含的电流等于感生磁场的环流. $\displaystyle \oint H\cdot \mathrm{d}l= I$
 
 还有电矢量和磁矢量的构成关系: $\displaystyle D=\varepsilon_0 E+P; \quad H=\frac{1}{\mu_0}B-M$
+
+安培环路定律的应用: $\displaystyle B=\frac{\mu_0}{4\pi}\oint \frac{I\mathrm{d}l\times r}{r^{3}}$, 对一根通电长导线即为 $\displaystyle B=\frac{\mu_0}{4\pi}\cdot \frac{2I}{r}$.
 
 然后麦克斯韦方程组: $\begin{cases} \displaystyle \oiint E\cdot \mathrm{d}S=\frac{Q}{\varepsilon_0} \\ \displaystyle \oiint B\cdot \mathrm{d}S=0 \\ \displaystyle \oint E\cdot \mathrm{d}l=-\frac{\mathrm{d}}{\mathrm{d}t}\int B\cdot \mathrm{d}S \\ \displaystyle \oint B\cdot \mathrm{d}l=\mu_0 I+\mu_0\varepsilon_0\frac{\mathrm{d}}{\mathrm{d}t}\int E\cdot \mathrm{d}S \end{cases}$
 
@@ -132,7 +141,7 @@ $\begin{cases} \nabla \cdot D=\rho_{f} \\ \nabla \cdot B=0 \\ \displaystyle  \na
 
 
 
-## 能量量子化
+### 能量量子化
 
 能量密度仅是温度的函数, 否则, 若还与空腔材料形状等因素有关, 会违背热力学第二定律, 让永动机成为可能.
 
@@ -147,7 +156,7 @@ $\begin{cases} \nabla \cdot D=\rho_{f} \\ \nabla \cdot B=0 \\ \displaystyle  \na
 里德伯发现了: $\displaystyle \frac{1}{\lambda}=R_{\infty}\left( \frac{1}{m^{2}}-\frac{1}{n^{2}} \right)$, 当 $m=2$ 时即为巴耳末系.
 
 
-## 物质波
+### 物质波
 
 光的波粒二象性: $\displaystyle E=hv;\quad p=\frac{hv}{c}=\frac{h}{\lambda}=\hbar k$
 
@@ -158,14 +167,14 @@ $\begin{cases} \nabla \cdot D=\rho_{f} \\ \nabla \cdot B=0 \\ \displaystyle  \na
 另一个重要的不确定关系: $\displaystyle \Delta E\cdot \Delta t\geqslant \frac{1}{2}\hbar$
 
 
-## 薛定谔方程
+### 薛定谔方程
 
 $\displaystyle i\hbar\frac{\partial}{\partial t}\Psi=-\frac{\hbar^{2}}{2m}\nabla^{2}\Psi$ 或加上势能 $\displaystyle i\hbar\frac{\partial}{\partial t}\Psi=-\frac{\hbar^{2}}{2m}\nabla^{2}\Psi+U\Psi$
 
 其中 $\Psi$ 是波函数, 是概率波, $|\Psi|^{2}=\Psi^*\Psi$ 是概率密度.
 
 
-## 核力
+### 核力
 
 有关核力的知识如下: 
 
@@ -184,7 +193,7 @@ $\displaystyle i\hbar\frac{\partial}{\partial t}\Psi=-\frac{\hbar^{2}}{2m}\nabla
 - 核子几乎不碰撞.
 
 
-## 轻子和夸克
+### 轻子和夸克
 
 我们已经知道了电子, 光子, 质子, 中子和中微子等粒子. 我们也知道核力牵涉到强作用, $\beta$ 衰变牵涉到弱相互作用.
 

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.13)  5 JUL 2021 22:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.13)  4 JUL 2021 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Notes/数电基础/experiment/exp1/report
-(d:/Notes/数电基础/experiment/exp1/report.tex
+**d:/Notes/Test/report
+(d:/Notes/Test/report.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (d:/Program/Latex/texlive/2020/texmf-dist/tex/latex/ctex/ctexart.cls (d:/Program/Latex/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
@@ -512,68 +512,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 56.
- [1] [2] [3]
-File: images/logisim.png Graphic file (type bmp)
-<images/logisim.png>
- [4]
-File: images/gates.jpg Graphic file (type bmp)
-<images/gates.jpg>
+ [1] [2] [3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
  [5]
-File: images/not.jpg Graphic file (type bmp)
-<images/not.jpg>
- [6]
-File: images/nor.jpg Graphic file (type bmp)
-<images/nor.jpg>
-File: images/or.jpg Graphic file (type bmp)
-<images/or.jpg>
- [7]
-File: images/sim.jpg Graphic file (type bmp)
-<images/sim.jpg>
-File: images/native.jpg Graphic file (type bmp)
-<images/native.jpg>
- [8]
-File: images/test.jpg Graphic file (type bmp)
-<images/test.jpg>
- [9]
-File: images/xor.jpg Graphic file (type bmp)
-<images/xor.jpg>
-File: images/sim2.jpg Graphic file (type bmp)
-<images/sim2.jpg>
- [10]
-File: images/native2.jpg Graphic file (type bmp)
-<images/native2.jpg>
-File: images/test2.jpg Graphic file (type bmp)
-<images/test2.jpg>
- [11] [12]
-File: images/vote.jpg Graphic file (type bmp)
-<images/vote.jpg>
-File: images/native3.jpg Graphic file (type bmp)
-<images/native3.jpg>
- [13]
-File: images/test3.jpg Graphic file (type bmp)
-<images/test3.jpg>
-File: images/native0.png Graphic file (type bmp)
-<images/native0.png>
-File: images/test0.png Graphic file (type bmp)
-<images/test0.png>
- [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 463.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 463.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 463.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 463.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 127.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: BE16A7F6B7B60AC8E50528914BC12AF9;2537.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 463.
+(rerunfilecheck)             Checksum: F81481B47BD02D64713A61AE7397757F;704.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
  ) 
 Here is how much of TeX's memory you used:
- 15356 strings out of 481358
- 341400 string characters out of 5926509
- 793742 words of memory out of 5000000
- 32525 multiletter control sequences out of 15000+600000
+ 15299 strings out of 481358
+ 343013 string characters out of 5926509
+ 800742 words of memory out of 5000000
+ 32486 multiletter control sequences out of 15000+600000
  533960 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,7n,68p,889b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,7n,68p,873b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (16 pages).
+Output written on report.pdf (6 pages).

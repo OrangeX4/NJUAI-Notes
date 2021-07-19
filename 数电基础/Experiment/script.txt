@@ -1,1 +1,0 @@
-java -jar logisim.jar exp1-1.circ -tty table

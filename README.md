@@ -44,9 +44,6 @@ Clone 完成之后用 VSCode 打开该文件夹.
 
 点开一个你想看的 Markdown 文件, 按下快捷键 `Ctrl + K` , 再按下 `V` 键即可.
 
-**例如:**
-
-![](https://pic3.58cdn.com.cn/nowater/webim/big/n_v2b2320be711064790834dd85cc2d3b764.png)
 
 ## 其他
 

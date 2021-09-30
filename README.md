@@ -20,11 +20,9 @@
 
 ### [OrangeX4's Notes](https://notes.orangex4.cool/?git=gitlab)
 
-![](https://pic3.58cdn.com.cn/nowater/webim/big/n_v2107d04ca70fb43868e6b060896704d75.png)
+![](https://pic1.zhimg.com/v2-64a8fe27b9dc4a3e6c78ce51309a9c64_b.png)
 
-![](https://pic3.58cdn.com.cn/nowater/webim/big/n_v2db809fd3683444ba8a60989fc99d8fe9.png)
-
-![](https://pic3.58cdn.com.cn/nowater/webim/big/n_v269cc40fab42c40cca572cd0639e152fb.png)
+![](https://pic2.zhimg.com/v2-b1c79c871655824b95d9292d9b508461_b.png)
 
 ## 本地查看与编辑
 

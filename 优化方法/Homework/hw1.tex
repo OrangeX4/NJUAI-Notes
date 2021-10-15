@@ -1,0 +1,126 @@
+\documentclass[a4paper]{article}
+% \usepackage[margin=1.25in]{geometry}
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+% \usepackage{ctex}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{enumerate}
+
+\newcommand{\homework}[5]{
+    \pagestyle{myheadings}
+    \thispagestyle{plain}
+    \newpage
+    \setcounter{page}{1}
+    \noindent
+    \begin{center}
+    \framebox{
+        \vbox{\vspace{2mm}
+        \hbox to 6.28in { {\bf Optimization Methods \hfill #2} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\Large \hfill #1 \hfill} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\it Instructor: {\rm #3} \hfill Name: {\rm #4}, StudentId: {\rm #5}}}
+        \vspace{2mm}}
+    }
+    \end{center}
+    % \markboth{#4 -- #1}{#4 -- #1}
+    \vspace*{4mm}
+}
+
+
+\newenvironment{solution}
+{\color{blue} \paragraph{Solution.}}
+{\newline \qed}
+
+\begin{document}
+%- Write your name and id here
+\homework{Homework 1}{Fall 2021}{Lijun Zhang}{Student name}{Student id}
+
+\paragraph{Notice}
+\begin{itemize}
+    \item The submission email is: \textbf{zhangzhenyao@lamda.nju.edu.cn}.
+    \item Please use the provided \LaTeX{} file as a template.
+    \item If you are not familiar with \LaTeX{}, you can also use Word to generate a \textbf{PDF} file.
+\end{itemize}
+
+\paragraph{Problem 1: Inequalities}
+~\\
+
+\noindent
+Let $x\in\mathbb{R}^n,y\in\mathbb{R}^n$, where $n$ is a positive integer. Let $\|\cdot\|$ denote the Euclidean norm.
+\begin{enumerate}[a)]
+	\item Prove the triangle inequality $\|x+y\|\leq\|x\|+\|y\|$.
+	\item Prove $\|x+y\|^2\leq(1+\epsilon)\|x\|^2+(1+\frac{1}{\epsilon})\|y\|^2$ for any $\epsilon>0$.
+\end{enumerate}
+\emph{Hint}: You may need the Young's inequality for products, i.e. if $a$ and $b$ are nonnegative real numbers and $p$ and $q$ are real numbers greater than 1 such that $1/p+1/q=1$, then $ab\leq\frac{a^p}{p}+\frac{b^q}{q}$.
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\paragraph{Problem 2: Convex sets}
+~\\
+
+\begin{enumerate}[a)]
+    \item Show that a polyhedron $P=\{x\in \mathbb{R}^n: Ax \leq b, A\in \mathbb{R}^{m\times n}, b\in\mathbb{R}^m\}$ is convex.
+
+    \item Show that if $S\subseteq  \mathbb{R}^n$ is convex, and $A \in \mathbb{R}^{m \times n}$,
+  then $A(S) = \{ Ax : x \in S \}$, is convex.
+
+    \item Show that if $S\subseteq  \mathbb{R}^m$ is convex, and $A \in \mathbb{R}^{m \times n}$,
+  then $A^{-1}(S) = \{ x : Ax \in S \}$, is convex.
+\end{enumerate}
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\paragraph{Problem 3: Hyperplane}
+~\\
+
+\noindent
+What is the distance between two parallel hyperplanes, i.e.,$\{x|a^\top x=b\}$ and $\{x|a^\top x=c\}$ ?
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\paragraph{Problem 4: Examples}
+~\\
+
+\noindent
+Let~$C \subseteq \mathbb{R}^n$~be the solution set of a quadratic inequality,
+\begin{center}
+$C = \{x \in \mathbb{R}^n|x^TAx + b^Tx + c \leqslant 0\}$
+\end{center}
+with~$A \in \mathbb{S}^n$, $b \in \mathbb{R}^n$, and~$c \in \mathbb{R}$.
+\begin{enumerate}[a)]
+    \item Show that~$C$~is convex if~$A \succeq 0$.
+
+    \item Is the following statement true? The intersection of~$C$~and the hyperplane defined by~$g^Tx+h=0$~is convex if~$A+\lambda gg^T \succeq 0$~for some~$\lambda \in \mathbb{R}$.
+\end{enumerate}
+
+
+\paragraph{Problem 5: Generalized Inequalities}
+~\\
+
+\noindent
+Let~$K^*$~be the dual cone of a convex cone K. Prove the following,
+\begin{enumerate}[a)]
+    \item $K^*$~is indeed a convex cone.
+
+    \item $K_1 \subseteq K_2$~implies~$K^*_2 \subseteq K^*_1$.
+
+\end{enumerate}
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\end{document}

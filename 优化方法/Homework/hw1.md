@@ -148,9 +148,13 @@ $\{x\in \mathbb{R}^{n}|x^{T}(A+\lambda gg^{T})x+(b^{T}+\lambda hg^{T})x+c\leqsla
 
 **(a)**
 
-$\because \displaystyle K^*=\{y|x^{T}y\geqslant 0, \forall x\in K\}=\bigcap_{x\in K}\{y|x^{T}y\geqslant 0\}$
+$\because \displaystyle K^*=\{y|x^{T}y\geqslant 0, \forall x\in K\}$
 
-$\therefore K^*$ 是一系列以原点为共同交点的半空间的交集.
+$\therefore \forall y_1, y_2\in S$, 我们有 $x^{T}y_1\geqslant 0, x^{T}y_2\geqslant 0$, 对于 $\forall x\in K$
+
+$\therefore 0\leqslant \theta\leqslant 1$, 我们有 $\theta x^{T}y_1+(1-\theta)x^{T}y_2=x^{T}(\theta y_1+(1-\theta)y_2)\geqslant 0$
+
+$\therefore \theta y_1+(1-\theta)y_2\in K^*$
 
 $\therefore K^*$ 是一个凸锥.
 

@@ -1,0 +1,36 @@
+digraph G {
+    graph [nodesep=0.1]
+    node [shape=circle]
+    edge [arrowhead=vee]
+    8 [group=8]
+    4 [group=4]
+    8 -> 4
+    2 [group=2]
+    4 -> 2
+    2 -> 1
+    _2 [group=2, label="", width=0, style=invis]
+    2 -> _2 [style=invis]
+    2 -> 3
+    _4 [group=4, label="", width=0, style=invis]
+    4 -> _4 [style=invis]
+    6 [group=6]
+    4 -> 6
+    6 -> 5
+    _6 [group=6, label="", width=0, style=invis]
+    6 -> _6 [style=invis]
+    6 -> 7
+    {rank=same; _4; 5}
+    _8 [group=8, label="", width=0, style=invis]
+    8 -> _8 [style=invis]
+    10 [group=10]
+    8 -> 10
+    10 -> 9
+    _10 [group=10, label="", width=0, style=invis]
+    10 -> _10 [style=invis]
+    12 [group=12]
+    10 -> 12
+    12 -> 11
+    _12 [group=12, label="", width=0, style=invis]
+    12 -> _12 [style=invis]
+    {rank=same; _8; 9}
+}

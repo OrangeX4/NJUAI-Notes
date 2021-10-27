@@ -1,0 +1,11 @@
+index,attempts,name,qualify,score
+0,1,Anastasia,yes,12.5
+1,3,Dima,no,9.0
+2,2,Katherine,yes,16.5
+3,3,James,no,NaN
+4,2,Emily, no,9.0
+5,3,Michael,yes,20.0
+6,1,Matthew,yes,14.5
+7,1,Laura,no,NaN
+8,2, Kevin,no,8.0
+9,1,Jonas,yes,19.0

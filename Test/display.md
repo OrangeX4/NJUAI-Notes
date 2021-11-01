@@ -1,10 +1,18 @@
+# 文本
 
-排列组合:
+这是一段文本.
 
-$\displaystyle (5)_{3}=60$
+> 这是一段引用.
 
-$\displaystyle \frac{\displaystyle \sum_{i=1}^{5}\binom{5}{i}(3-1)^{5-i}}{10^{5}}=\frac{211}{100000}$
+中间文本.
 
-无穷级数:
+> 这是两段引用.
+> 这是两段引用.
 
-$\displaystyle \sum_{k=0}^{\infty}\binom{n}{k}x^{k}=\begin{cases} \left(x + 1\right)^{n} & \text{for}\: \left(\operatorname{re}{\left(n\right)} \leq -1 \vee \left|{x}\right| \leq 1\right) \wedge \left(\left|{x}\right| \leq 1 \vee \left|{x}\right| < 1\right) \wedge \left(\operatorname{re}{\left(n\right)} > -1 \vee \operatorname{re}{\left(n\right)} > 0 \vee \left|{x}\right| < 1\right) \wedge \left(\operatorname{re}{\left(n\right)} \leq -1 \vee \operatorname{re}{\left(n\right)} > 0 \vee x \neq -1\right) \wedge \left(\operatorname{re}{\left(n\right)} > 0 \vee \left|{x}\right| < 1 \vee x \neq -1\right) \\\sum_{k=0}^{\infty} x^{k} {\binom{n}{k}} & \text{otherwise} \end{cases}$
+还有呢?
+
+再次测试.
+
+## 啊?
+
+> 这是一段引用.

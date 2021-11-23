@@ -1,0 +1,162 @@
+\documentclass[a4paper]{article}
+% \usepackage[margin=1.25in]{geometry}
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+% \usepackage{ctex}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{braket}
+
+\newcommand{\homework}[5]{
+    \pagestyle{myheadings}
+    \thispagestyle{plain}
+    \newpage
+    \setcounter{page}{1}
+    \noindent
+    \begin{center}
+    \framebox{
+        \vbox{\vspace{2mm}
+        \hbox to 6.28in { {\bf Optimization Methods \hfill #2} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\Large \hfill #1 \hfill} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\it Instructor: {\rm #3} \hfill Name: {\rm #4}, StudentId: {\rm #5}}}
+        \vspace{2mm}}
+    }
+    \end{center}
+    % \markboth{#4 -- #1}{#4 -- #1}
+    \vspace*{4mm}
+}
+
+
+\newenvironment{solution}
+{\color{blue} \paragraph{Solution.}}
+{\newline \qed}
+
+\begin{document}
+%- Write your name and id here
+\homework{Homework 2}{Fall 2021}{Lijun Zhang}{Student name}{Student id}
+
+\paragraph{Notice}
+\begin{itemize}
+    \item The submission email is: \textbf{zhangzhenyao@lamda.nju.edu.cn}.
+    \item Please use the provided \LaTeX{} file as a template.
+    \item If you are not familiar with \LaTeX{}, you can also use Word to generate a \textbf{PDF} file.
+\end{itemize}
+
+\paragraph{Problem 1: Convex functions}
+~\\
+
+\begin{enumerate}[a)]
+	\item Prove  that the function~$f : \mathbb{R}^n_{++} \rightarrow \mathbb{R}$, defined as
+    \begin{equation}
+    f(x) = - \sum^n_{i=1} \log (x_i), \notag
+    \end{equation}
+    is strictly convex.
+
+	\item Let~$f$~be twice differentiable, with~$dom(f)$~convex. Prove that~$f$~is convex if and only if
+    \begin{equation}
+    \left( \nabla f(x) - \nabla f(y) \right)^T (x - y) \geqslant 0, \notag
+    \end{equation}
+    for all x, y.
+
+    \item Let~$f : \mathbb{R}^n \rightarrow \mathbb{R}$~be a function. Its perspective transform~$g : \mathbb{R}^{n+1} \rightarrow \mathbb{R}$~is defined by
+    \begin{equation}
+    g(x, t) = t f(\frac{x}{t}), \notag
+    \end{equation}
+    with domain~$dom(g) = \{(x, t) \in \mathbb{R}^{n+1} : x \in dom(f), t > 0\}$. Use the definition of convexity to prove that if~$f$~is convex, then so is its perspective transform~$g$.
+\end{enumerate}
+
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+
+\paragraph{Problem 2: Concave function}
+~\\
+
+\noindent
+Suppose~$p < 1, p \neq 0$. Show that the function
+\begin{equation}
+f(x) = \left( \sum^n_{i=1} x^p_i \right)^{\frac{1}{p}} \notag
+\end{equation}
+with~$dom(f) = \mathbb{R}_{++}$~is concave.
+
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+
+\paragraph{Problem 3: Convexity}
+~\\
+
+\noindent
+Let~$\psi : \Omega \mapsto \mathbb{R}$~be a strictly convex and continuously differentiable function. We define
+\begin{equation}
+\Delta_{\psi} (x, y) = \psi(x) - \psi(y) - \Braket{\nabla \psi(y), x - y}, ~~\forall x, y \in \Omega. \notag
+\end{equation}
+
+\begin{enumerate}[a)]
+    \item Prove that~$\psi(x, y) \geqslant 0$, $\forall x, y \in \Omega$~and the equality holds only when~$x = y$.
+    
+    \item Let~$L$~be a convex and differentiable function defined on~$\Omega$~and~$C \subset \Omega$~be a convex set. 
+    Let~$x_0 \in \Omega - C$ and define
+    \begin{equation}
+        x^* = \mathop{\arg\min}\limits_{x \in C} L(x) + \Delta_{\psi} (x, x_0). \notag
+    \end{equation}
+    Prove that for any~$y \in C$,
+    \begin{equation}
+        L(y) + \Delta_{\psi}(y, x_0) \geqslant L(x^*) + \Delta_{\psi} (x^*, x_0) + \Delta_{\psi} (y, x^*). \notag
+    \end{equation}
+\end{enumerate}
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\paragraph{Problem 4: Projection}
+~\\
+
+\noindent
+For any point~$y$, the projection onto a nonempty and closed convex set~$X$~is defined as
+\begin{equation}
+\Pi_X (y) = \mathop{\arg\min}\limits_{x \in X} \frac{1}{2} \Vert x - y \Vert^2_2. \notag
+\end{equation}
+
+\begin{enumerate}[a)]
+    \item Prove that~$\Vert \Pi_X (x) - \Pi_X (y) \Vert^2_2 \leqslant \Braket{\Pi_X (x) - \Pi_X (y), x - y}$.
+
+    \item Prove that~$\Vert \Pi_X (x) - \Pi_X (y) \Vert_2 \leqslant \Vert x - y \Vert_2$.
+\end{enumerate}
+
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\paragraph{Problem 5: Conjugate Function}
+~\\
+
+\noindent
+Derive the conjugates of the following functions.
+\begin{enumerate}[a)]
+    \item $f(x) = \max \{0, 1 - x\}$.
+
+    \item $f(x) = \ln (1 + e^{-x})$.
+\end{enumerate}
+
+
+% \begin{solution}
+% Write your answer here.
+% \end{solution}
+
+\end{document}

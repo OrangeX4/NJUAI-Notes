@@ -26,7 +26,7 @@
 - If you are not familiar with LaTeX, you can also use Word to generate a **PDF** file.
 
 
-<!-- ## Problem 1: Convex functions
+## Problem 1: Convex functions
 
 **(a)**
 
@@ -156,20 +156,30 @@ $\displaystyle \Delta_{\psi}(x,y)=\psi(x)-\psi(x)-\left<\nabla \psi(y),x-x\right
 
 可知 $L(y)\geqslant L(x^{*})+[\nabla \psi(x_0)-\nabla \psi(x^{*})]^{T}(y-x^{*})$ 成立
 
-因此原式成立. -->
+因此原式成立.
 
 
 ## Problem 4: Projection
 
 **(a)**
 
-使用反证法.
+因为 $\Pi_{X}(x)$ 是在凸集 $X$ 上离 $x$ 最近的点, 因此与 $x-\Pi_{X}(x)$ 垂直的, 过点 $\Pi_{X}(x)$ 的超平面 $S_{x}$ 是 $X$ 的一个支撑超平面, 同理 $S_{y}$ 也是 $X$ 的一个支撑超平面.
 
-假设 $\displaystyle \|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}>$
+过 $\Pi_{X}(x), \Pi_{X}(y), x$ 三点作一个二维平面 $P$, 将 $y-\Pi_{X}(y)$ 直线投影至 $P$ 上得 $y'-\Pi_{X}(y)$, 其中的 $x-y'$ 与 $\Pi_{X}(x)-\Pi_{X}(y)$ 平行. 并且 $P$ 分别与 $S_{x}, S_{y}$ 形成了两条切线 $l_{x}, l_{y}$, $P$ 与 $X$ 的交集形成了一个新的二维凸集 $X'$.
 
-$\displaystyle \frac{\Pi_{X}(x)+\Pi_{X}(y)}{2}$
+通过这种方式, 根据点乘的几何意义即可将问题转化为 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant [\Pi_{X}(x)-\Pi_{X}(y)]^{T}(x-y')$
 
+对于 $x, y', \Pi_{X}(x), \Pi_{X}(y)$ 在同一条直线上时易知成立.
 
+对于不在同一条直线上的情况, 设 $\Pi_{X}(x)$ 和 $\Pi_{X}(y)$ 的中点为 $O$, 且以 $O-\Pi_{X}(y)$ 为横坐标轴正方向建立坐标系, 且凸集 $X'$ 位于横坐标轴下方, $x, y'$ 位于横坐标轴上方. 接下来证明位于 $O$ 左侧的过 $\Pi_{X}(x)$ 的切线 $l_{x}$ 斜率大于等于零, $l_{y}$ 斜率小于等于零.
+
+使用反证法, 假设 $l_{x}$ 斜率小于零, 即 $l_{x}$ 向右下方倾斜, 那么 $O$ 就会处于 $l_{x}$ 的下方, 再根据支撑超平面的性质可知, $O$ 点不在凸集 $X$ 上, 这与 $\displaystyle O=\frac{\Pi_{X}(x)+\Pi_{X}(y)}{2}$ 位于凸集 $X$ 上矛盾. 因此假设不成立, $l_{x}$ 斜率大于等于零, 同理 $l_{y}$ 斜率小于等于零.
+
+然后观察图像, 我们可知 $\Pi_{X}(x)-\Pi_{X}(y)$, $x-y'$ 同向, 并且 $\Pi_{X}(x)-\Pi_{X}(y)$, $x-y'$, $l_{x}$, $l_{y}$ 形成了一个梯形, 因此我们有 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}\leqslant \|x-y\|_{2}$
+
+可知 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant [\Pi_{X}(x)-\Pi_{X}(y)]^{T}(x-y')=\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}\|x-y\|_{2}$ 成立.
+
+综上可知, $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant \left<\Pi_{X}(x)-\Pi_{X}(y), x-y\right>$ 成立.
 
 **(b)**
 
@@ -181,7 +191,7 @@ $\displaystyle \frac{\Pi_{X}(x)+\Pi_{X}(y)}{2}$
 
 
 
-<!-- ## Problem 5: 
+## Problem 5: 
 
 **(a)**
 
@@ -205,7 +215,7 @@ $f(x)=\ln(1+e^{-x})$ 的图像如图所示
 
 即 $\displaystyle y+(y+1)e^{-x}=0 \Rightarrow x=-\ln\frac{-y}{y+1}$ 时有最大值
 
-$\displaystyle f^{*}(y)=y\cdot (-\ln\frac{-y}{y+1})-\ln(1+\frac{-y}{y+1})=(y+1)\ln(y+1)-y\ln(-y)$ -->
+$\displaystyle f^{*}(y)=y\cdot (-\ln\frac{-y}{y+1})-\ln(1+\frac{-y}{y+1})=(y+1)\ln(y+1)-y\ln(-y)$
 
 
 

@@ -72,16 +72,14 @@ $\displaystyle (\nabla f(x)-\nabla f(y))^{T}t(x-y)\geqslant 0$ 成立, 因为 $t
 
 **(c)**
 
-因为 $f$ 是凸函数, 因此我们有 $\displaystyle f(\frac{\theta x_1+(1-\theta)x_2}{\theta t_1+(1-\theta)t_2})\leqslant \theta f(\frac{x_1}{t_1})+(1-\theta) f(\frac{x_2}{t_2})$
-
 $
 \begin{aligned}
 &\quad\ g(\theta x_1+(1-\theta)x_2, \theta t_1+(1-\theta)t_2) \\
 &= (\theta t_1+(1-\theta)t_2)f(\frac{\theta x_1+(1-\theta)x_2}{\theta t_1+(1-\theta)t_2}) \\
-&= \theta t_1f(\frac{\theta x_1+(1-\theta)x_2}{\theta t_1+(1-\theta)t_2})+(1-\theta)t_2f(\frac{\theta x_1+(1-\theta)x_2}{\theta t_1+(1-\theta)t_2}) \\
-&\leqslant \theta t_1[\theta f(\frac{x_1}{t_1})+(1-\theta) f(\frac{x_2}{t_2})]+(1-\theta)t_2[\theta f(\frac{x_1}{t_1})+(1-\theta) f(\frac{x_2}{t_2})] \\
-&= \theta t_1f(\frac{x_1}{t_1})+(1-\theta)t_2f(\frac{x_2}{t_2}) \\
-&= \theta g(x_1, t_1)+(1-\theta)g(x_2,t_2) \\
+&= (\theta t_1+(1-\theta)t_2)f(\frac{\theta t_1}{\theta t_1+(1-\theta)t_2}\cdot \frac{x_1}{t_1}+\frac{(1-\theta) t_2}{\theta t_1+(1-\theta)t_2}\cdot \frac{x_2}{t_2}) \\
+&\leqslant (\theta t_1+(1-\theta)t_2)(\frac{\theta t_1}{\theta t_1+(1-\theta)t_2}\cdot f(\frac{x_1}{t_1})+\frac{(1-\theta) t_2}{\theta t_1+(1-\theta)t_2}\cdot f(\frac{x_2}{t_2})) \\
+&=\theta t_1 f(\frac{x_1}{t_1})+(1-\theta) t_2 f(\frac{x_2}{t_2}) \\
+&=\theta g(x_1, t_1)+(1-\theta)g(x_2, t_2)
 \end{aligned}
 $
 

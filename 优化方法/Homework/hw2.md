@@ -161,23 +161,29 @@ $\displaystyle \Delta_{\psi}(x,y)=\psi(x)-\psi(x)-\left<\nabla \psi(y),x-x\right
 
 **(a)**
 
-因为 $\Pi_{X}(x)$ 是在凸集 $X$ 上离 $x$ 最近的点, 因此与 $x-\Pi_{X}(x)$ 垂直的, 过点 $\Pi_{X}(x)$ 的超平面 $S_{x}$ 是 $X$ 的一个支撑超平面, 同理 $S_{y}$ 也是 $X$ 的一个支撑超平面.
 
-过 $\Pi_{X}(x), \Pi_{X}(y), x$ 三点作一个二维平面 $P$, 将 $y-\Pi_{X}(y)$ 直线投影至 $P$ 上得 $y'-\Pi_{X}(y)$, 其中的 $x-y'$ 与 $\Pi_{X}(x)-\Pi_{X}(y)$ 平行. 并且 $P$ 分别与 $S_{x}, S_{y}$ 形成了两条切线 $l_{x}, l_{y}$, $P$ 与 $X$ 的交集形成了一个新的二维凸集 $X'$.
+使用反证法, 假设 $\displaystyle \|\Pi_{X}(x)-\Pi_{X}(x)\|_{2}^{2}> \left<\Pi_{X}(x)-\Pi_{X}(y), x-y\right>$
 
-通过这种方式, 根据点乘的几何意义即可将问题转化为 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant [\Pi_{X}(x)-\Pi_{X}(y)]^{T}(x-y')$
+即有 $\displaystyle \left<\Pi_{X}(x)-\Pi_{X}(y), \Pi_{X}(x)-\Pi_{X}(y)\right> > \left<\Pi_{X}(x)-\Pi_{X}(y), (x-\Pi_{X}(x))+(\Pi_{X}(x)-\Pi_{X}(y))+(\Pi_{X}(y)-y)\right>$
 
-对于 $x, y', \Pi_{X}(x), \Pi_{X}(y)$ 在同一条直线上时易知成立.
+即有 $\displaystyle \left<\Pi_{X}(x)-\Pi_{X}(y), x-\Pi_{X}(x)\right>+\left<\Pi_{X}(x)-\Pi_{X}(y), \Pi_{X}(y)-y\right><0$
 
-对于不在同一条直线上的情况, 设 $\Pi_{X}(x)$ 和 $\Pi_{X}(y)$ 的中点为 $O$, 且以 $O-\Pi_{X}(y)$ 为横坐标轴正方向建立坐标系, 且凸集 $X'$ 位于横坐标轴下方, $x, y'$ 位于横坐标轴上方. 接下来证明位于 $O$ 左侧的过 $\Pi_{X}(x)$ 的切线 $l_{x}$ 斜率大于等于零, $l_{y}$ 斜率小于等于零.
+即有 $\displaystyle \left<\Pi_{X}(x)-\Pi_{X}(y), \Pi_{X}(x)-x\right>+\left<\Pi_{X}(y)-\Pi_{X}(x), \Pi_{X}(y)-y\right> >0$
 
-使用反证法, 假设 $l_{x}$ 斜率小于零, 即 $l_{x}$ 向右下方倾斜, 那么 $O$ 就会处于 $l_{x}$ 的下方, 再根据支撑超平面的性质可知, $O$ 点不在凸集 $X$ 上, 这与 $\displaystyle O=\frac{\Pi_{X}(x)+\Pi_{X}(y)}{2}$ 位于凸集 $X$ 上矛盾. 因此假设不成立, $l_{x}$ 斜率大于等于零, 同理 $l_{y}$ 斜率小于等于零.
+记 $x, y, \Pi_{X}(x), \Pi_{X}(y)$ 为点 $A,B,C,D$, 则上式变为
 
-然后观察图像, 我们可知 $\Pi_{X}(x)-\Pi_{X}(y)$, $x-y'$ 同向, 并且 $\Pi_{X}(x)-\Pi_{X}(y)$, $x-y'$, $l_{x}$, $l_{y}$ 形成了一个梯形, 因此我们有 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}\leqslant \|x-y\|_{2}$
+$\displaystyle |BD|\cdot |CD|\cos\angle BDC+|AC|\cdot |CD|\cos\angle ACD>0$
 
-可知 $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant [\Pi_{X}(x)-\Pi_{X}(y)]^{T}(x-y')=\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}\|x-y\|_{2}$ 成立.
+因此 $\cos\angle BDC$ 和 $\cos\angle ACD$ 至少有一个大于 $0$, 我们不妨设 $\cos\angle BDC>0$
 
-综上可知, $\|\Pi_{X}(x)-\Pi_{X}(y)\|_{2}^{2}\leqslant \left<\Pi_{X}(x)-\Pi_{X}(y), x-y\right>$ 成立.
+因此 $\angle BDC$ 是锐角, 我们过 $B$ 作 $CD$ 的垂线, 垂点为 $O$,
+
+则由锐角性质, 以及 $\Pi_{X}(y)$ 为 $X$ 上最接近 $y$ 的点这一条件可知, $O$ 位于 $CD$ 上, 所以 $O$ 也在凸集 $X$ 上
+
+那么就有 $\displaystyle \frac{1}{2}\|O-y\|_{2}^{2}<\frac{1}{2}\|D-y\|_{2}^{2}$, 与 $D=\Pi_{X}(y)$, 是 $X$ 上离 $y$ 最近的点矛盾, 假设不成立
+
+因此原命题 $\|\Pi_{X}(x)-\Pi_{X}(x)\|_{2}^{2}\leqslant \left<\Pi_{X}(x)-\Pi_{X}(y), x-y\right>$ 成立.
+
 
 **(b)**
 

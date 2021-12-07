@@ -1,0 +1,151 @@
+\documentclass[a4paper]{article}
+% \usepackage[margin=1.25in]{geometry}
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+% \usepackage{ctex}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{enumerate}
+
+\newcommand{\homework}[5]{
+    \pagestyle{myheadings}
+    \thispagestyle{plain}
+    \newpage
+    \setcounter{page}{1}
+    \noindent
+    \begin{center}
+    \framebox{
+        \vbox{\vspace{2mm}
+        \hbox to 6.28in { {\bf Optimization Methods \hfill #2} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\Large \hfill #1 \hfill} }
+        \vspace{6mm}
+        \hbox to 6.28in { {\it Instructor: {\rm #3} \hfill Name: {\rm #4}, StudentId: {\rm #5}}}
+        \vspace{2mm}}
+    }
+    \end{center}
+    % \markboth{#4 -- #1}{#4 -- #1}
+    \vspace*{4mm}
+}
+
+\def\R{\mathbb{R}}
+\def\dom{\mathrm{dom}}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\newenvironment{solution}
+{\color{blue} \paragraph{Solution:\\}}
+{\newline \qed}
+
+\begin{document}
+%==========================Put your name and id here==========================
+\homework{Homework 3}{Fall 2021}{Lijun Zhang}{Student name}{Student id}
+
+\paragraph{Notice}
+\begin{itemize}
+    \item The submission email is: \textbf{zhangzhenyao@lamda.nju.edu.cn}.
+    \item Please use the provided \LaTeX{} file as a template. If you are not familiar with \LaTeX{}, you can also use Word to generate a \textbf{PDF} file.
+\end{itemize}
+
+\paragraph{Problem 1: One inequality constraint}
+~\\
+~\\
+With $c\neq 0$, express the dual problem of 
+\begin{align*}
+    \min \quad &c^\top x \\
+    \text{s.t.} \quad &f(x)\leq 0
+\end{align*}
+in terms of the conjugate $f^\star$. 
+~\\
+
+\begin{solution}
+   Write your solution here.
+\end{solution}
+
+\paragraph{Problem 2: KKT conditions}
+~\\
+~\\
+Consider the problem
+\begin{align*}
+\min _{x \in \mathbb{R}^{2}} \quad &x_{1}^{2}+x_{2}^{2}\\
+\text { s.t. } \quad & \left(x_{1}-1\right)^{2}+\left(x_{2}-1\right)^{2} \leq 2 \\
+& \left(x_{1}-1\right)^{2}+\left(x_{2}+1\right)^{2} \leq 2
+\end{align*}
+where $x=\left[\begin{array}{ll}x_{1} & x_{2}\end{array}\right]^{\top} \in \mathbb{R}^{2}$. \\
+\begin{enumerate}[(1)]
+\item Write the Lagrangian for this problem.
+\item Does strong duality hold in this problem?
+\item Write the KKT conditions for this optimization problem.
+\end{enumerate}
+
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+
+\paragraph{Problem 3: Equality Constrained Least-squares}
+~\\
+~\\
+Consider the equality constrained least-squares problem
+\begin{gather*}
+\begin{matrix}
+\text{minimize~~} & \frac{1}{2}\|Ax-b\|_2^2\\
+\text{subject to} & Gx=h~~\\
+\end{matrix}
+\end{gather*}
+where $A\in\mathbf{R}^{m\times n}$ with $\mathbf{rank}~A=n$, and $G\in\mathbf{R}^{p\times n}$ with $\mathbf{rank}~G=p$.
+\begin{enumerate}[(1)]
+    \item Derive the Lagrange dual problem with Lagrange multiplier vector $v$.
+    \item Derive expressions for the primal solution $x^\star$ and the dual solution $v^\star$.
+\end{enumerate}
+
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\paragraph{Problem 4: Negative-entropy Regularization}
+~\\
+~\\
+Please show how to compute
+\begin{equation*}
+\argmin_{x\in \Delta^n} \quad b^\top x+c\cdot\sum_{i=1}^n x_i\ln x_i
+\end{equation*}
+where $\Delta^n=\{x|\sum_{i=1}^n x_i=1,x_i\geq0,i=1,\cdots,n\}$, $b\in\mathbb{R}^n$ and $c\in\mathbb{R}$.
+
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+
+\paragraph{Problem 5: Support Vector Machines}
+~\\
+Consider the following optimization problem
+\begin{gather*}
+\begin{matrix}
+\text{minimize~~} & \sum_{i=1}^n\max\left(0,1-y_i(w^Tx_i+b)\right)+\frac{\lambda}{2}\|w\|_2^2\\
+\end{matrix}
+\end{gather*}
+where $x_i\in\mathbf{R}^{d},y_i\in \mathbf{R},i=1,\cdots,n$ are given, and $w\in \mathbf{R}^d,b\in\mathbf{R}$ are the variables.
+\begin{enumerate}[(1)]
+    \item Derive an equivalent problem by introducing new variables $u_i,i=1,\cdots,n$ and equality constraints \[u_i=y_i(w^Tx_i+b),i=1,\cdots,n.\]
+    \item Derive the Lagrange dual problem of the above equivalent problem.
+    \item Give the Karush-Kuhn-Tucker conditions.
+\end{enumerate}
+
+\noindent\emph{Hint: Let $\ell(x)=\max(0,1-x)$. Its conjugate function $\ell^\ast(y)=\sup\limits_{x}(yx-\ell(x))=\left\{
+\begin{aligned}
+&y, \quad-1\leq y\leq0 \\
+&\infty,\quad\text{otherwise}
+\end{aligned}
+\right.$}
+
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\end{document}

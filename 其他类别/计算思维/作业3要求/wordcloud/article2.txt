@@ -1,0 +1,115 @@
+Artificial Intelligence, Machine Learning, Blockchain, and Fintech
+Healthcare
+Social Media and Shared Economy
+Web
+Supply Chain
+Cybersecurity
+Software Management
+Data Quality and Data Mining
+Sequencing and Scheduling
+Optimal design of e-commerce servers
+Web server capacity planning
+Software development
+Expert systems
+Platform Business Models
+Social Media and User-Generated Content
+Search Engine Advertising
+Economics of Information Systems
+Inventory and supply chain management
+responsible and sustainable supply chains
+operational innovation
+disruptive technologies and operations management
+cloud computing value chains
+economics of Information systems
+keyword auctions
+advertising and pricing
+the economics of online review
+block chain and data ownership
+Recommender Systems
+Data privacy
+Software and support
+Social networks
+sourcing and procurement
+supply chain management
+innovative operations
+data and business analytics
+supply chain management
+coordination mechanisms in supply chains
+healthcare
+public health policy
+Social media and user generated content
+Microcharity
+Online opinion formation
+Health IT
+Economic and social networks
+Open source software development
+Peer-to-peer network
+Digital content distribution channels
+Economics of Internet interconnectivity
+Online trust management
+Pricing of Internet services
+incentives and user behaviors in online collaborative platforms and social media
+fraud and fake news detection as well as its business and social impacts
+platform economy and business models
+economic aspects of digital transformation
+machine learning and data science
+Waste Management
+Sustainability in Supply Chains
+AI and the Environment
+online platforms and social media
+Applied probability and stochastic models
+Stochastic systems: performance analysis and optimal control
+revenue management
+operations management
+supply chain finance
+competitive channel and supply chain management
+interface between operations management and marketing
+business analytics
+electronic commerce
+platform competition
+IT strategies
+pricing
+supply chain management
+business analytics
+information security
+behavioral economics
+Design and Evaluation of IT-based Markets and Business Models
+Societal Impact and Business Value of Information Technology
+Human-AI Interaction and Business Analytics
+Economics of Information Systems and Security 
+Big data and business analytics 
+Software Development, Maintenance, and Reuse
+Business Intelligence/Big Data Analytics
+data quality/Decision-making issues under imperfect information
+The adoption and diffusion of scientific and technological innovation
+Information Product Economics
+economics of information systems
+interface of operations management and information systems
+advertising strategies in electronic retailing
+data analytics services
+online learning
+Digital Marketing 
+Human Knowledge Capital Development
+Software Development and Pricing
+strategies for managing innovation and excellence for corporate transformation
+Data Science and Artificial Intelligence
+Emerging Technologies and Digital Transformation
+Digital Business Strategy
+Operations and Supply Chain Strategy
+Service and Manufacturing Technology Management
+Healthcare
+Economics of Information Systems
+Social Technology: Prediction Markets, Social Networks, and Social Media
+Platform Technology: E-commerce Platforms, Healthcare, and Sharing/Gig Economy
+Telecommunications Technology
+Artificial Intelligence (AI) and Fintech
+Digital Markets, Social Media/Networks
+Online Communities, Open Innovation
+Business value of information systems
+Electronic Commerce
+Social Networks
+Vendor-managed inventory (VMI) and collaborative planning, forecasting and replenishment (CPFR)
+Incentive mechanism in supply chain collaborations
+Supply Chain Management
+Manufacturing System Design
+Business Analytics

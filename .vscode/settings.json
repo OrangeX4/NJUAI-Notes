@@ -5,6 +5,7 @@
         "addl",
         "aname",
         "andi",
+        "argmax",
         "astype",
         "Bacus",
         "bcmp",

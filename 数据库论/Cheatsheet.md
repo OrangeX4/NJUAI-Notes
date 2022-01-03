@@ -194,11 +194,12 @@ select cid from Order
 排序语句:
 
 ``` sql
-select a.aid, a.aname, year(o.ordno) as yea, sum(o.dols) as casales, count(o.ordno) as ocnt, count(distinct o.cid) as ccnt
-    from Agent a, Order o
-    where o.aid == a.aid
-    group by a.aid, yea
-    order by yea asc, casales desc;
+select a.aid, a.aname, year(o.ordno) as yea, sum(o.dols) as casales,
+    count(o.ordno) as ocnt, count(distinct o.cid) as ccnt
+        from Agent a, Order o
+        where o.aid == a.aid
+        group by a.aid, yea
+        order by yea asc, casales desc;
 ```
 
 ### 2.2 其他语句

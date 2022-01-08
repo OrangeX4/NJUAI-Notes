@@ -64,7 +64,7 @@ $\displaystyle \nabla f(x)^{T}(x-y)\geqslant \nabla f(y)^{T}(x-y)$
 
 经过观察, 计算 $tx+(1-t)y-y=tx-ty=t(x-y)$, 那么我们只需将 $tx+(1-t)y$ 带入 $x$ 的位置, 根据 $\displaystyle (\nabla f(x)-\nabla f(y))^{T}(x-y)\geqslant 0$ 有
 
-$\displaystyle (\nabla f(x)-\nabla f(y))^{T}t(x-y)\geqslant 0$ 成立, 因为 $t\geqslant 0$, 可知 $g'(t)\geqslant g'(0)$
+$\displaystyle (\nabla f(tx+(1-t)y)-\nabla f(y))^{T}t(x-y)\geqslant 0$ 成立, 因为 $t\geqslant 0$, 可知 $g'(t)\geqslant g'(0)$
 
 最后有 $\displaystyle f(x)=g(1)=g(0)+\int_{0}^{1}g'(t)\mathrm{d}t\geqslant g(0)+g'(0)=g(y)+\nabla f(y)(x-y)$
 
@@ -184,6 +184,17 @@ $\displaystyle |BD|\cdot |CD|\cos\angle BDC+|AC|\cdot |CD|\cos\angle ACD>0$
 
 因此原命题 $\|\Pi_{X}(x)-\Pi_{X}(x)\|_{2}^{2}\leqslant \left<\Pi_{X}(x)-\Pi_{X}(y), x-y\right>$ 成立.
 
+Correct:
+
+利用凸优化问题的最优性准则可知
+
+$\nabla f_0(\Pi_{X}(y))^{T}(z-\Pi_{X}(y))=(\Pi_{X}(y)-y)^{T}(z-\Pi_{X}(y))\geqslant 0, z\in X$
+
+令 $z=\Pi_{X}(x)$ 有 $(\Pi_{X}(y)-y)^{T}(\Pi_{X}(x)-\Pi_{X}(y))$
+
+同理有 $(\Pi_{X}(x)-x)^{T}(\Pi_{X}(y)-\Pi_{X}(x))$
+
+合并两式即可.
 
 **(b)**
 

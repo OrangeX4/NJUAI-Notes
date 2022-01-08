@@ -71,6 +71,10 @@ $\therefore \forall y_1, y_2\in A(S), 0\leqslant \theta\leqslant 1$, 我们有 $
 
 $\therefore A(S)$ 是凸集.
 
+Correct:
+
+有 $x_1\in S, x_2\in S$, 求证 $\theta Ax_1+(1-\theta)Ax_2\in A(S)$
+
 **(c)**
 
 $\because S$ 是凸集.
@@ -84,6 +88,10 @@ $\therefore \forall Ay_1, Ay_2\in S, 0\leqslant \theta\leqslant 1$, 我们有 $\
 $\because A^{-1}(S)=\{x| Ax \in S\}$
 
 $\therefore \forall y_1, y_2\in A^{-1}(S), 0\leqslant \theta\leqslant 1$, 我们有 $\theta y_1+(1-\theta)y_2\in A^{-1}(S)$
+
+Correct:
+
+有 $Ax_1\in S, Ax_2\in S$, 求证 $A(\theta x_1+(1-\theta)x_2)\in S$
 
 
 ## Problem 3: Hyperplane
@@ -162,7 +170,7 @@ $\therefore K^*$ 是一个凸锥.
 
 $\because K^*=\{y|x^{T}y\geqslant 0, \forall x\in K\}$
 
-$\because K_1^*=\{y|x^{T}y\geqslant 0, \forall x\in K_1\}$
+$\therefore K_2^*=\{y|x^{T}y\geqslant 0, \forall x\in K_2\}$
 
 $\therefore$ 对于 $\forall x \in K_2$, 我们都有 $y\in K_2^*\Rightarrow x^{T}y\geqslant 0$
 

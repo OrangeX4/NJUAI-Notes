@@ -15,6 +15,8 @@
 - 齐次性: $f(tx)=|t|f(x)$
 - 三角不等式: $f(x+y)\leqslant f(x)+f(y)$
 
+对偶范数 $\|z\|_{*}=\sup \{z^{T}x|\|x\|\leqslant 1\}$, 因此有不等式 $z^{T}x\leqslant \|x\|\|z\|_{*}$
+
 常见对偶范数存在关系 $\displaystyle \frac{1}{p}+\frac{1}{q}=1$
 
 比如 $l_{2}$ 范数和 $l_{2}$ 范数自身是对偶范数.
@@ -32,6 +34,10 @@ $\|X\|_{2}=\sigma_{\max}(X)=(\lambda_{\max}(X^{T}X))^{\frac{1}{2}}$
 $\|Z\|_{2*}=\sigma_1(Z)+\cdots+\sigma_{r}(Z)=tr(Z^{T}Z)^{\frac{1}{2}}$
 
 $\displaystyle \|A\|_{F}=(\sum_{i=1}^{n}\sigma_{i}^{2})^{\frac{1}{2}}$
+
+矩阵的 Frobenius 范数:
+
+$\displaystyle \|X\|_{F}=(tr(X^{T}X))^{\frac{1}{2}}=(\sum_{i=1}^{m}\sum_{j=1}^{n}X_{ij}^{2})^{\frac{1}{2}}$
 
 ### 0.2 矩阵
 
@@ -237,12 +243,12 @@ $\displaystyle P=\{x|Ax\preceq b, Cx=d\}$
 - 交集, 可以扩展到无穷个凸集的交集
   - 半正定锥
 - 仿射函数, 即线性函数和一个常数的和
-  - 伸缩
-  - 平移
-  - 投影
+  - 伸缩 $kS$
+  - 平移 $S+x_0$
+  - 投影 $\{(x)|(x,y)\in S\}$
   - 集合的和 $S_1+S_2=\{x+y|x\in S_1, y\in S_2\}$
   - 集合的乘积 $S_1\times S_2$
-  - 集合的部分和 $S_1+S_2=\{(x, y_1+y_2)|(x,y_1)\in S_1, (x,y_2)\in S_2\}$
+  - 集合的部分和 $\{(x, y_1+y_2)|(x,y_1)\in S_1, (x,y_2)\in S_2\}$
 - 线性分式
   - 透视 $P(z, t)=z / t$, 其中 $t\in \mathbb{R}_{++}$
   - 透视函数复合仿射函数得到线性分式函数
@@ -327,7 +333,7 @@ $f(\theta x+(1-\theta)y)\leqslant \theta f(x)+(1-\theta)f(y)$
 
 对任意 $0<t\leqslant 1$ 有 $x+t(y-x)\in \text{dom }f$
 
-有 $f(x+t(y-x))\leqslant (1-t)f(x)$
+有 $f(x+t(y-x))\leqslant (1-t)f(x)+tf(y)$
 
 两边同时除 $t$ 得 $\displaystyle f(y)\geqslant f(x)+\frac{f(x+t(y-x))-f(x)}{t}$
 

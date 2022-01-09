@@ -457,6 +457,14 @@ $f'(x)=0 \Rightarrow f''(x)\geqslant 0$
 
 ### 4.1 凸优化问题
 
+$
+\begin{aligned}
+\min \quad & f_0(x) \\
+\mathrm{s.t.} \quad & f_{i}(x)\leqslant 0, & i=1,2,\cdots,m \\
+& Ax=b 
+\end{aligned}
+$
+
 设 $f_0$ 为凸优化问题的目标函数, $X$ 为其可行集.
 
 最优性准则:
@@ -464,6 +472,135 @@ $f'(x)=0 \Rightarrow f''(x)\geqslant 0$
 $x\in X$ 是最优解, 当且仅当 $\nabla f_0(x)^{T}(y-x)\geqslant 0, \forall y\in X$
 
 
+
+## 5. 对偶
+
+### 5.1 Lagrange 对偶函数
+
+标准形式优化问题:
+
+$
+\begin{aligned}
+\min \quad & f_0(x) \\
+\mathrm{s.t.} \quad & f_{i}(x)\leqslant 0, & i=1,2,\cdots,m \\
+& h_{i}(x)=0 & i=1,2,\cdots,p
+\end{aligned}
+$
+
+Lagrange 函数:
+
+$\displaystyle L(x,\lambda,v)=f_0(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}v_{i}h_{i}(x)$
+
+Lagrange 对偶函数:
+
+$\displaystyle g(\lambda, v)=\inf_{x\in D}L(x,\lambda,v)=\inf_{x\in D}(f_0(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}v_{i}h_{i}(x))$
+
+对偶函数总是凹函数, 因为是一系列仿射函数的逐点下确界.
+
+对任何 $\lambda\succeq 0$ 和 $v$ 均有 $g(\lambda, v)\leqslant p^{*}$ 成立.
+
+### 5.2 Lagrange 对偶问题
+
+对偶问题:
+
+$
+\begin{aligned}
+\max \quad & g(\lambda, v) \\
+\mathrm{s.t.} \quad & \lambda\succeq 0
+\end{aligned}
+$
+
+对偶问题是一个凸优化问题. 其对偶最优解 $(\lambda^{*}, v^{*})$ 也叫最优 Lagrange 乘子.
+
+但是实际上 $g(\lambda,v)$ 存在隐式约束, 即它的非 $-\infty$ 定义域.
+
+我们用 $d^{*}$ 表示 Lagrange 对偶问题的最优值, $p^{*}$ 表示原问题的最优值.
+
+$p^{*}-d^{*}$ 为原问题的最优对偶间隙.
+
+### 5.3 强对偶性
+
+如果 $d^{*}=p^{*}$ 成立, 那么强对偶性成立.
+
+Slater 条件:
+
+如果原问题是凸优化问题, 并且满足 Slater 条件, 即
+
+存在一点 $x\in \text{relint }D$ 使得 $f_{i}(x)<0$ 与 $Ax=b$ 成立, 也称为严格成立, 则强对偶性成立.
+
+如果部分 $f_{i}(x)$ 是仿射函数, 则只需仿射函数 $f_{i}(x)\leqslant 0$ 即可.
+
+### 5.4 KKT 最优性条件
+
+如果强对偶性成立, 最优解必须满足 KKT 条件.
+
+因为我们知道 $L(x,\lambda^{*},v^{*})$ 在 $x^{*}$ 处的导数必须为零, 即
+
+$\displaystyle \nabla f_0(x^{*})+\sum_{i=1}^{m}\lambda_{i}^{*}\nabla f_{i}(x^{*})+\sum_{i=1}^{p}v_{i}^{*}\nabla h_{i}(x^{*})=0$
+
+因此, 我们有 KKT 条件:
+
+$
+\begin{aligned}
+f_{i}(x^{*})\leqslant 0, \quad & i=1,2,\cdots,m \\
+h_{i}(x^{*})= 0, \quad & i=1,2, \cdots,p \\
+\lambda_{i}^{*}\geqslant 0, \quad & i=1,2,\cdots,m \\
+\lambda_{i}^{*}f_{i}(x^{*})=0, \quad & i=1,2,\cdots,m \\
+\nabla f_0(x^{*})+\sum_{i=1}^{m}\lambda_{i}^{*}\nabla f_{i}(x^{*})+\sum_{i=1}^{p}v_{i}^{*}\nabla h_{i}(x^{*})=0, \quad
+\end{aligned}
+$
+
+对于非凸问题, 最优解和 KKT 条件只是单向的.
+
+对于凸问题, 满足 KKT 条件的点也是原问题和对偶问题的最优解, 是双向的.
+
+
+
+
+## 6. 应用
+
+### 6.1 范数逼近
+
+$\min\|Ax-b\|$
+
+### 6.2 强凸性
+
+存在 $m>0$ 使得 $\nabla^{2}f(x)\succeq mI$, 则有
+
+1. 二次下界不等式 $\displaystyle f(y)\geqslant f(x)+\nabla f(x)^{T}(y-x)+\frac{m}{2}\|y-x\|_{2}^{2}$
+2. 次优性条件 $\displaystyle f(x)-p^{*}\leqslant \frac{1}{2m}\|\nabla f(x)\|_{2}^{2}$, 即梯度足够小, 则解接近最优
+3. 上界 $\displaystyle \|x^{*}-x\|_{2}\leqslant \frac{2}{m}\|\nabla f(x)\|_{2}$
+
+### 6.3 平滑性
+
+存在 $M>0$ 使得 $\nabla^{2}f(x)\preceq MI$, 则有
+
+1. 二次上界不等式 $\displaystyle f(y)\leqslant f(x)+\nabla f(x)^{T}(y-x)+\frac{M}{2}\|y-x\|_{2}^{2}$
+2. 梯度上界 $\displaystyle \frac{1}{2M}\|\nabla f(x)\|_{2}^{2}\leqslant f(x)-p^{*}$
+
+### 6.4 下降方法
+
+一个优化点列 $x^{(k+1)}=x^{(k)}+t^{(k)}\Delta x^{(k)}$
+
+此处 $\Delta x$ 是一个向量, 被称为步径或搜索方向; $t^{(k)}$ 被称为第 $k$ 次迭代的步进或步长.
+
+只要不是最优点就成立 $f(x^{(k+1)})<f(x^{(k)})$
+
+因此一个下降方法中的搜索方向必须满足 $\nabla f(x^{(k)})^{T}\Delta x^{(k)}<0$
+
+即它和负梯度方向的夹角必须是锐角.
+
+选取 $\Delta x=-\nabla f(x)$ 是一种很自然的选择, 相应的方法被称为梯度下降法.
+
+选取 $t^{(k)}$ 的方法有精准直线搜索和回溯直线搜索.
+
+精确直线搜索: $\displaystyle t=\argmin_{s\geqslant 0}f(x+s\Delta x)$
+
+回溯直线搜索:
+
+给定参数 $\alpha\in (0,0,5), \beta\in (0,1)$, 初始值 $t:=1$
+
+如果 $f(x+t\Delta x)>f(x)+\alpha t\nabla f(x)^{T}\Delta x$, 则令 $t:=\beta t$
 
 
 

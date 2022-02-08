@@ -50,4 +50,4 @@ Clone 完成之后用 VSCode 打开该文件夹.
 
 ## 版权声明
 
-自由转载-标注作者-禁止商用-允许衍生 ([CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh))
+自由转载-标注作者-禁止商用-允许衍生 ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh))

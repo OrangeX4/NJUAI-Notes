@@ -1,0 +1,5 @@
+本课程共三本辅助书籍，书1和2用于知识扩展，书3用作参考书（工具书）。三本书阅读周期为整个学期，不做强制阅读要求但期待阅读，有助于对KR领域的了解和基础知识的巩固和深入理解。
+
+1. AI-A Modern Approach一书阅读章节为：7, 8, 9, 12
+2. Knowledge Representation and Reasoning一书阅读章节为：1,2,3,4,5,16
+3. An Introduction to Description Logic为参考书籍，课上不懂的地方可以在这本书找到一些解释和线索。

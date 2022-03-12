@@ -1,1 +1,0 @@
-$\begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\  \frac{1}{\sqrt{2}} &  \frac{1}{\sqrt{2}}\\\end{bmatrix}^{-1}=\begin{bmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\- \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{bmatrix}$

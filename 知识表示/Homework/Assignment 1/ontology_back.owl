@@ -1,0 +1,1828 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#"
+     xml:base="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#begin_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#begin_time">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#end_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#end_time">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#has_gold_medal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#has_gold_medal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Downhill_segment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Downhill_segment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Slalom_segment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Slalom_segment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Super_G -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Super_G">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Alpine_Skiing_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Alpine_Skiing_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Giant_Slalom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Giant_Slalom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Slalom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Slalom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Super_G -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Super_G">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Biathlon_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_20km_Individual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_20km_Individual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_75km_Sprint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_75km_Sprint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Sliding_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Cross_Country_Skiing_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_Classic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_Classic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_10km_Classic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_10km_Classic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Aquatics_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Bronze_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Bronze_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Gold_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Event">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Stadium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Capital_Indoor_Stadium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Free_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Free_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Short_Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Short_Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_Genting_Snow_Park"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_Mixed_Team_Aerials -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_Mixed_Team_Aerials">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Indoor_Stadium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Wukesong_Sports_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Sliding_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Doubles -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Doubles">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Team_Relay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Team_Relay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_NH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_NH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_1500_m_QuarterSemiFinal_W_1000_m_Qual_W_3000_m_Relay_Semifinals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_1500_m_QuarterSemiFinal_W_1000_m_Qual_W_3000_m_Relay_Semifinals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Capital_Indoor_Stadium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1000_m_QuarterSemiFinal_M_500_m_Qual_M_5000_m_Relay_Semifinal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1000_m_QuarterSemiFinal_M_500_m_Qual_M_5000_m_Relay_Semifinal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Sliding_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_1_and_2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_1_and_2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Ski_Jumping_Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_W_Individual_NH_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_W_Individual_NH_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_Genting_Snow_Park"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Big_Air_Shougang"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Halfpipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Halfpipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_WM_Parallel_Giant_Slalom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_WM_Parallel_Giant_Slalom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Halfpipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Halfpipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#isLocatedAt"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Speed_Skating_Oval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_10000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_10000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1500_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1500_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_5000_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_5000_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Sport"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Big_Air_Shougang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Big_Air_Shougang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Capital_Indoor_Stadium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Capital_Indoor_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Closing_Ceremony -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Closing_Ceremony">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Event"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-20T00:00:00</begin_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_20_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_20_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-20T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-20T14:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Aquatics_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Aquatics_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Indoor_Stadium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Indoor_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Speed_Skating_Oval -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Speed_Skating_Oval">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Stadium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#National_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Opening_Ceremony -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Opening_Ceremony">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Event"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T00:00:00</begin_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Wukesong_Sports_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Wukesong_Sports_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Alpine_Skiing_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Alpine_Skiing_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Sliding_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Yanqing_National_Sliding_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_Genting_Snow_Park -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_Genting_Snow_Park">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Biathlon_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Biathlon_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Cross_Country_Skiing_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Cross_Country_Skiing_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Ski_Jumping_Centre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Ski_Jumping_Centre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Downhill_segment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Super_G"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Super_G"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Alpine_Combined_Slalom_segment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Giant_Slalom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Slalom"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Speed_Events"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Technical_Events"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_Speed_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Nordic_Combined"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_20km_Individual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_75km_Sprint"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_3_and_4"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_MW_Individual_Sprint_Free_Qual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_Classic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_10km_Classic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Bronze_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_MD_Gold_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Free_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_M_Short_Program"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_Mixed_Team_Aerials"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Doubles"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_Team_Relay"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_3_and_4"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_NH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Qual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_W_Individual_NH_Final"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_1500_m_QuarterSemiFinal_W_1000_m_Qual_W_3000_m_Relay_Semifinals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1000_m_QuarterSemiFinal_M_500_m_Qual_M_5000_m_Relay_Semifinal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_M_Heat_3_and_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_1_and_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Cross"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Halfpipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_WM_Parallel_Giant_Slalom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Cross"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Halfpipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_10000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1500_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_5000_m"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

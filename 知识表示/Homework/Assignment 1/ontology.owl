@@ -387,6 +387,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh__W_Monobob_Heat_3_and_4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh__W_Monobob_Heat_3_and_4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross-Country_Skiing_Nordic_Combined">
@@ -530,6 +538,14 @@
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling"/>
     </owl:Class>
     
@@ -738,6 +754,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe">
@@ -749,6 +773,14 @@
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopesyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopesyle">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
     </owl:Class>
     
@@ -790,6 +822,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing"/>
     </owl:Class>
     
 
@@ -846,6 +886,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Bronze_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Bronze_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round">
@@ -865,6 +921,14 @@
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey"/>
     </owl:Class>
     
@@ -1234,6 +1298,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Cross -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Cross">
@@ -1278,6 +1358,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_And_Freestyle_Skiing_Big_Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Qual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Qual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard"/>
     </owl:Class>
     
 
@@ -1433,10 +1529,293 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill_2022_02_06_11_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill_2022_02_06_11_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Downhill"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T11:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T13:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom_2022_02_09_10_15_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom_2022_02_09_10_15_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T10:15:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T12:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom_2022_02_09_13_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom_2022_02_09_13_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Giant_Slalom"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T13:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T16:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom_2022_02_12_10_15_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom_2022_02_12_10_15_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T10:15:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T12:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom_2022_02_12_13_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom_2022_02_12_13_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_M_Slalom"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T13:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T15:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event_2022_02_15_11_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event_2022_02_15_11_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_Team_Event"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T11:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T13:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment_2022_02_13_10_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment_2022_02_13_10_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Downhill_segment"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T10:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment_2022_02_13_14_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment_2022_02_13_14_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Alpine_Combined_Slalom_segment"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T14:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T15:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill_2022_02_11_11_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill_2022_02_11_11_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Alpine_Skiing_W_Downhill"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T11:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T13:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint_2022_02_08_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint_2022_02_08_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_10km_Sprint"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T18:25:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit_2022_02_09_18_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit_2022_02_09_18_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_125km_Pursuit"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T18:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T19:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start_2022_02_14_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start_2022_02_14_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_15km_Mass_Start"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T17:55:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay_2022_02_11_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay_2022_02_11_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_M_4x75km_Relay"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T18:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay_2022_02_05_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay_2022_02_05_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_Mixed_Relay"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit_2022_02_09_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit_2022_02_09_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_10km_Pursuit"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T17:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start_2022_02_15_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start_2022_02_15_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_125km_Mass_Start"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T17:55:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual_2022_02_07_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual_2022_02_07_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_15km_Individual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T18:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay_2022_02_12_15_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay_2022_02_12_15_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Biathlon_W_4x6km_Relay"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T15:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T17:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Big_Air_Shougang -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Big_Air_Shougang">
         <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2_2022_02_15_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2_2022_02_15_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T12:05:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4_2022_02_16_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4_2022_02_16_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Four_Man_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T12:25:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2_2022_02_10_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2_2022_02_10_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T22:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4_2022_02_11_20_15_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4_2022_02_11_20_15_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_M_Two_Man_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T20:15:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T22:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2_2022_02_14_20_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2_2022_02_14_20_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T20:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T22:15:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4_2022_02_15_20_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4_2022_02_15_20_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_Two_Woman_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T20:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T22:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2_2022_02_09_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2_2022_02_09_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh_W_Monobob_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T11:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh__W_Monobob_Heat_3_and_4_2022_02_10_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh__W_Monobob_Heat_3_and_4_2022_02_10_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Bobsleigh__W_Monobob_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
     </owl:NamedIndividual>
     
 
@@ -1458,12 +1837,1013 @@
     
 
 
-    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_20_12_10_00 -->
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon_2022_02_06_15_00_00 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_20_12_10_00">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon_2022_02_06_15_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_15km_15km_Skiathlon"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T15:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T16:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree_2022_02_09_15_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree_2022_02_09_15_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_4x10km_Relay_ClassicFree"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T15:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T16:55:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free_2022_02_15_14_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free_2022_02_15_14_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_M_50km_Mass_Start_Free"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T14:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T16:55:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final_2022_02_12_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final_2022_02_12_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T20:20:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual_2022_02_12_17_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual_2022_02_12_17_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_WM_Team_Sprint_Classic_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T17:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T18:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free_2022_02_16_14_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free_2022_02_16_14_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_30km_Mass_Start_Free"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T14:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T16:40:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree_2022_02_08_15_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree_2022_02_08_15_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_4x5km_Relay_ClassicFree"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T15:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T17:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon_2022_02_05_15_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon_2022_02_05_15_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Cross_Country_Skiing_W_75km_75km_Skiathlon"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T15:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T16:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_08_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_09_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_10_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_11_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_12_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin_2022_02_13_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_MW_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal_2022_02_14_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal_2022_02_14_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Bronze_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T17:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal_2022_02_15_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal_2022_02_15_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_M_Gold_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T17:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_2022_02_07_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_2022_02_07_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T11:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_2022_02_07_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_2022_02_07_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_02_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_02_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-02T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-02T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T11:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T16:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_03_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_04_08_35_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_04_08_35_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T08:35:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T10:30:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_04_13_35_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_04_13_35_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T13:35:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T15:30:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T11:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T16:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_05_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T11:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_14_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_14_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T14:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T16:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin_2022_02_06_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_Mixed_Doubles_Round_Robin"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal_2022_02_15_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal_2022_02_15_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Bronze_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T23:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal_2022_02_16_09_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal_2022_02_16_09_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Gold_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T09:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T12:20:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal_2022_02_14_20_05_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal_2022_02_14_20_05_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Curling_W_Semifinal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T20:05:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T23:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition_2022_02_16_12_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition_2022_02_16_12_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Gala_Exhibition"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T12:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T14:30:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance_2022_02_10_09_15_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance_2022_02_10_09_15_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Free_Dance"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T09:15:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance_2022_02_08_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance_2022_02_08_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Ice_Dance_Rhythm_Dance"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T22:40:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating_2022_02_15_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating_2022_02_15_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Free_Skating"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T22:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program_2022_02_14_18_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program_2022_02_14_18_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Pairs_Short_Program"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T18:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T21:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating_2022_02_07_09_15_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating_2022_02_07_09_15_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Free_Skating_Ice_Dance_Free_Dance_W_Free_Skating"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T09:15:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T12:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program_2022_02_04_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program_2022_02_04_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_M_Short_Program_Ice_Dance_Rhythm_Dance_Pairs_Short_Program"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T14:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating_2022_02_06_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating_2022_02_06_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_Team_Event_W_Short_Program_Pairs_Free_Skating"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T12:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating_2022_02_13_18_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating_2022_02_13_18_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Free_Skating"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T18:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T22:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program_2022_02_11_18_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program_2022_02_11_18_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Figure_Skating_W_Short_Program"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T18:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T22:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials_2022_02_11_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials_2022_02_11_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T20:15:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials_2022_02_12_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials_2022_02_12_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Aerials"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T20:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air_Qual_2022_02_07_13_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air_Qual_2022_02_07_13_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Big_Air_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T13:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T15:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe_2022_02_13_12_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe_2022_02_13_12_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T12:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T14:10:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe_2022_02_15_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe_2022_02_15_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Halfpipe"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T11:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle_2022_02_10_12_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle_2022_02_10_12_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopestyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T14:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopesyle_2022_02_11_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopesyle_2022_02_11_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Freeski_Slopesyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T11:05:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_03_19_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_03_19_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T19:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T20:30:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_05_18_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_05_18_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_05_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls_2022_02_05_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T21:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross_2022_02_14_11_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross_2022_02_14_11_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T11:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T12:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross_2022_02_14_14_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross_2022_02_14_14_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_M_Ski_Cross"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T14:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T15:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials_2022_02_09_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials_2022_02_09_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T20:15:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials_2022_02_10_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials_2022_02_10_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Aerials"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T20:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air_Qual_2022_02_07_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air_Qual_2022_02_07_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Big_Air_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T11:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe_2022_02_13_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe_2022_02_13_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T11:10:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe_2022_02_14_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe_2022_02_14_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Halfpipe"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T11:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle_2022_02_09_10_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle_2022_02_09_10_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T10:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T12:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle_2022_02_10_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle_2022_02_10_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Freeski_Slopestyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T11:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_03_18_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_03_18_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T18:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T18:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_06_18_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_06_18_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T18:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T18:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_06_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls_2022_02_06_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Moguls"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T21:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross_2022_02_13_11_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross_2022_02_13_11_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T11:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T12:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross_2022_02_13_14_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross_2022_02_13_14_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Freestyle_Skiing_W_Ski_Cross"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T14:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T15:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Bronze_Medal_2022_02_15_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Bronze_Medal_2022_02_15_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Bronze_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T23:40:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_16_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal_2022_02_16_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Gold_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-16T14:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_08_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round_2022_02_09_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs_2022_02_11_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Qualification_Playoffs"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_14_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_14_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T14:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T16:15:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_21_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals_2022_02_12_21_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T21:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T23:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals_2022_02_14_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals_2022_02_14_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals_2022_02_14_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals_2022_02_14_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_M_Semifinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal_2022_02_12_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal_2022_02_12_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Bronze_Medal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T21:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal_2022_02_13_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal_2022_02_13_12_10_00">
         <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Gold_Medal"/>
-        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-20T12:10:00</begin_time>
-        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-20T14:45:00</end_time>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T14:55:00</end_time>
         <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
     </owl:NamedIndividual>
     
@@ -1475,6 +2855,187 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
         <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T12:10:00</begin_time>
         <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_03_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-03T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_04_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_04_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_05_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_06_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_06_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_06_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_06_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round_2022_02_07_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Preliminary_Round"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals_2022_02_08_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals_2022_02_08_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals_2022_02_08_16_40_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals_2022_02_08_16_40_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Quarterfinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T16:40:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T18:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals_2022_02_10_12_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals_2022_02_10_12_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T14:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals_2022_02_10_21_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals_2022_02_10_21_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ice_Hockey_W_Semifinals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T21:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T23:25:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2_2022_02_05_19_10_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2_2022_02_05_19_10_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T19:10:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T22:00:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4_2022_02_06_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4_2022_02_06_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_M_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T22:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2_2022_02_07_19_50_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2_2022_02_07_19_50_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Luge_W_Heat_1_and_2"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T19:50:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T22:40:00</end_time>
     </owl:NamedIndividual>
     
 
@@ -1511,11 +3072,347 @@
     
 
 
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km_2022_02_11_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km_2022_02_11_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_10km"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T19:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH_2022_02_11_16_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH_2022_02_11_16_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Individual_LH"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T16:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T16:55:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km_2022_02_13_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km_2022_02_13_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_4x5km"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T20:10:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH_2022_02_13_16_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH_2022_02_13_16_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Nordic_Combined_M_Team_LH"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T16:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T16:40:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Opening_Ceremony -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Opening_Ceremony">
         <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Event"/>
         <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-04T00:00:00</begin_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final_2022_02_09_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final_2022_02_09_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_M_500_m_QuarterSemiFinal_W_3000_m_Relay_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T20:40:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final_2022_02_12_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final_2022_02_12_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_1500_m_QuarterSemiFinal_M_5000m_Relay_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-12T21:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal_2022_02_05_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal_2022_02_05_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_Qual_M_1000_m_Qual_Mixed_Team_Relay_QuarterSemiFinal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T21:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal_2022_02_07_19_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal_2022_02_07_19_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Short_Track_W_500_m_QuarterSemiFinal_M_1000_m_QuarterSemiFinal"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T19:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T21:25:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4_2022_02_08_20_20_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4_2022_02_08_20_20_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Skeleton_W_Heat_3_and_4"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T20:20:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T22:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final_2022_02_08_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final_2022_02_08_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_LH_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T20:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final_2022_02_05_18_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final_2022_02_05_18_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T20:20:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final_2022_02_06_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final_2022_02_06_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T20:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual_2022_02_05_14_20_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual_2022_02_05_14_20_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Individual_NH_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T14:20:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T15:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH_2022_02_10_19_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH_2022_02_10_19_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_M_Team_LH"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T19:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T21:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH_2022_02_07_19_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH_2022_02_07_19_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Ski_Jumping_Mixed_Team_NH"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T19:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T21:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Final_2022_02_11_13_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Final_2022_02_11_13_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T13:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T14:20:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Qual_2022_02_10_13_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Qual_2022_02_10_13_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Big_Air_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T13:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T15:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle_2022_02_07_12_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle_2022_02_07_12_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_M_Snowboard_Slopestyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T12:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T13:30:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross_2022_02_08_10_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross_2022_02_08_10_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_Mixed_Team_Snowboard_Cross"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T10:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T11:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Final_2022_02_11_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Final_2022_02_11_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Final"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T10:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Qual_2022_02_10_09_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Qual_2022_02_10_09_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Big_Air_Qual"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T09:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T11:45:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle_2022_02_05_10_45_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle_2022_02_05_10_45_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T10:45:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T12:50:00</end_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start_2022_02_15_15_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start_2022_02_15_15_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_MW_Mass_Start"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T15:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-15T17:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m_2022_02_14_16_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m_2022_02_14_16_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_1000_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T16:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T17:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m_2022_02_06_16_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m_2022_02_06_16_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_5000_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T16:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T18:25:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m_2022_02_09_21_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m_2022_02_09_21_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_M_Team_Pursuit_Quarterfinals_W_500_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T21:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-09T22:50:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals_2022_02_11_14_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals_2022_02_11_14_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_WM_Team_Pursuit_Finals"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T14:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-11T17:15:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m_2022_02_13_16_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m_2022_02_13_16_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1000_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T16:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-13T17:55:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m_2022_02_07_16_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m_2022_02_07_16_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_1500_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T16:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-07T18:00:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m_2022_02_05_16_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m_2022_02_05_16_30_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_3000_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T16:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-05T18:05:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m_2022_02_08_16_00_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m_2022_02_08_16_00_00">
+        <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Speed_Skating_W_Team_Pursuit_Quarterfinals_M_500_m"/>
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T16:00:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-08T17:45:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
     </owl:NamedIndividual>
     
 
@@ -1572,6 +3469,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Zhangjiakou_National_Ski_Jumping_Centre">
         <rdf:type rdf:resource="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle_Final_09:30_11:00_M_Snowboard_Slopestyle_2022_02_06_12_30_00 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/orangex4/ontologies/2022/2/beijing-2022-olympic-winter-games-schedule#Snowboard_W_Snowboard_Slopestyle_Final_09:30_11:00_M_Snowboard_Slopestyle_2022_02_06_12_30_00">
+        <begin_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T12:30:00</begin_time>
+        <end_time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-06T14:35:00</end_time>
+        <has_gold_medal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</has_gold_medal>
     </owl:NamedIndividual>
     
 
@@ -1826,3 +3733,4 @@
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

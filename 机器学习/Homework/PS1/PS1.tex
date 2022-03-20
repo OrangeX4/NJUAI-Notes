@@ -1,0 +1,233 @@
+% 请确保文件编码为utf-8，使用XeLaTex进行编译，或者通过overleaf进行编译
+
+\documentclass[answers]{exam}  % 使用此行带有作答模块
+% \documentclass{exam} % 使用此行只显示题目
+
+\usepackage{xeCJK}
+\usepackage{zhnumber}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{amssymb}
+
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{南京大学}{机器学习导论}{习题一}
+\runningheader{南京大学}
+{机器学习导论}
+{习题一}
+\runningheadrule
+\firstpagefooter{}{第\thepage\ 页（共\numpages 页）}{}
+\runningfooter{}{第\thepage\ 页（共\numpages 页）}{}
+
+
+\setlength\linefillheight{.5in}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{解：}\par\noindent}
+
+\renewcommand{\thequestion}{\zhnum{question}}
+\renewcommand{\questionlabel}{\thequestion .}
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thepartno .}
+
+
+\begin{document}
+\Large
+\noindent
+% 姓名学号
+姓名：方盛俊 \\
+学号：201300035 \\
+\begin{questions}
+  \question [30] \textbf{概率论基础}
+
+  教材附录C介绍了常见的概率分布.
+  给定随机变量$X$的概率密度函数如下,
+
+  \begin{equation}
+    f_X(x) =
+    \begin{cases}
+      \frac{1}{4} & 0<x<1;            \\
+      \frac{3}{8} & 3<x<5;            \\
+      0           & \mbox{otherwise.}
+    \end{cases}
+  \end{equation}
+
+  \begin{enumerate}
+    \item  请计算随机变量$X$的累积分布函数$F_X(x)$;
+    \item  随机变量$Y$定义为$Y = 1/X$, 求随机变量$Y$对应的概率密度函数$f_Y(y)$;
+    \item  试证明, 对于非负随机变量$Z$, 如下两种计算期望的公式是等价的.
+          \begin{equation}
+            \label{ch1-eq-expect-1}
+            \mathbb{E}[Z] = \int_{z=0}^{\infty}zf(z) \mathrm{d} z.
+          \end{equation}
+
+          \begin{equation}
+            \label{ch1-eq-expect-2}
+            \mathbb{E}[Z] = \int_{z=0}^{\infty}\Pr[Z\geq z] \mathrm{d} z.
+          \end{equation}
+          同时, 请分别利用上述两种期望公式计算随机变量$X$和$Y$的期望, 验证你的结论.
+  \end{enumerate}
+  \begin{solution}
+    % 请在此处作答
+    \begin{enumerate}
+      \item 当 $x \le 0$ 时, $F_{X}(x) = 0$
+
+            当 $0 < x \le 1$ 时, $\displaystyle F_{X}(x) = \int_{0}^{x} \frac{1}{4} \mathrm{d}x = \frac{x}{4}$
+
+            当 $1 < x \le 3$ 时, $\displaystyle F_{X}(x) = F_{X}(1) = \frac{1}{4}$
+
+            当 $3 < x \le 5$ 时, $\displaystyle F_{X}(x) = F_{X}(3) + \int_{3}^{x} \frac{3}{8} \mathrm{d}x = \frac{3 x}{8} - \frac{7}{8}$
+
+            当 $x > 5$ 时, $\displaystyle F_{X}(x) = F_{X}(5) = 1$
+
+            综上即有
+
+            \begin{equation}
+              F_{X}(x) =
+              \begin{cases}
+                0,                          & x\le 0      \\
+                \frac{x}{4},                & 0 < x \le 1 \\
+                \frac{1}{4},                & 1 < x \le 3 \\
+                \frac{3x}{8} - \frac{7}{8}, & 3 < x \le 5 \\
+                1,                          & x > 5       \\
+              \end{cases}
+            \end{equation}
+
+      \item 当 $y \le 0$ 时, 有 $x < 0$, 因此 $F_{Y}(x) = 0$
+
+            当 $y > 0$ 时,
+
+            $F_{Y}(y) = \operatorname{Pr}(Y < y) = \operatorname{Pr}(\frac{1}{X} < y) = \operatorname{Pr}(X > \frac{1}{y}) = 1 - F_{X}(\frac{1}{y})$
+
+            因此
+
+            \begin{equation}
+              F_{Y}(y) =
+              \begin{cases}
+                0,                         & y < \frac{1}{5}                 \\
+                \frac{15}{8}-\frac{3}{8y}, & \frac{1}{5} \le y < \frac{1}{3} \\
+                \frac{3}{4},               & \frac{1}{3} \le y < 1           \\
+                1 - \frac{1}{4y},          & y \ge 1                         \\
+              \end{cases}
+            \end{equation}
+
+            进而有
+
+            \begin{equation}
+              f_{Y}(y) =
+              \begin{cases}
+                0,                 & y < \frac{1}{5}                 \\
+                \frac{3}{8 y^{2}}, & \frac{1}{5} \le y < \frac{1}{3} \\
+                0,                 & \frac{1}{3} \le y < 1           \\
+                \frac{1}{4 y^{2}}, & y \ge 1                         \\
+              \end{cases}
+            \end{equation}
+
+      \item 首先观察到 $\displaystyle Z = \int_{0}^{Z} 1 \mathrm{d}t = \int_{0}^{\infty} \mathbb{I}(Z > t) \mathrm{d}t$
+
+            与公式 $\displaystyle \mathbb{E}[Z] = \int_{0}^{\infty} zf(z) \mathrm{d}z$
+
+            则有
+
+            $
+              \begin{aligned}
+                \mathbb{E}[Z] & = \displaystyle \mathbb{E}[\int_{0}^{\infty} \mathbb{I}(Z > t) \mathrm{d}t]                                                                          \\
+                              & = \displaystyle \int_{0}^{\infty} f(z)\int_{0}^{\infty} \mathbb{I}(z > t) \mathrm{d}t \mathrm{d}z                                                    \\
+                              & = \displaystyle \int_{0}^{\infty} [\int_{0}^{\infty} \mathbb{I}(z > t)f(z) \mathrm{d}z] \mathrm{d}t                                                  \\
+                              & = \displaystyle \int_{0}^{\infty} [\int_{0}^{t} \mathbb{I}(z > t)f(z) \mathrm{d}z + \int_{t}^{\infty} \mathbb{I}(z > t)f(z) \mathrm{d}z] \mathrm{d}t \\
+                              & = \displaystyle \int_{0}^{\infty} [\int_{t}^{\infty} f(z) \mathrm{d}z] \mathrm{d}t                                                                   \\
+                              & = \int_{0}^{\infty} \operatorname{Pr}[Z \ge t] \mathrm{d}t                                                                                           \\
+                              & = \int_{0}^{\infty} \operatorname{Pr}[Z \ge z] \mathrm{d}z                                                                                           \\
+              \end{aligned}
+            $
+
+            计算随机变量 $X$ 的期望:
+
+            $\displaystyle \mathbb{E}[X] = \int_{0}^{\infty} xf_{X}(x) \mathrm{d}x = \int_{0}^{1} \frac{1}{4} x\mathrm{d}x + \int_{3}^{5} \frac{3}{8} x\mathrm{d}x = \frac{25}{8}$
+
+            $
+              \begin{aligned}
+                \mathbb{E}[X] & = \int_{0}^{\infty} \operatorname{Pr}[X \ge x] \mathrm{d}x                                                \\
+                              & = \int_{0}^{1} (1 - \frac{x}{4}) \mathrm{d}x + \int_{1}^{3} (1 - \frac{1}{4}) \mathrm{d}x                 \\
+                              & \quad + \int_{3}^{5} (1 - \frac{3x}{8} + \frac{7}{8}) \mathrm{d}x + \int_{5}^{\infty} (1 - 1) \mathrm{d}x \\
+                              & = \frac{7}{8} + \frac{3}{2} + \frac{3}{4}                                                                 \\
+                              & = \frac{25}{8}                                                                                            \\
+                \\
+              \end{aligned}
+            $
+
+            计算随机变量 $Y$ 的期望:
+
+            $\displaystyle \mathbb{E}[Y] = \int_{0}^{\infty} yf_{Y}(y) \mathrm{d}y = \int_{\frac{1}{5}}^{\frac{1}{3}} \frac{3}{8y^{2}} \cdot y \mathrm{d}y + \int_{1}^{\infty} \frac{1}{4y^{2}} \cdot y \mathrm{d}y = - \frac{3 \ln{\left(3 \right)}}{8} + \frac{3 \ln{\left(5 \right)}}{8} + \infty$
+
+            $
+            \begin{aligned}
+            \mathbb{E}[Y] &= \int_{\frac{1}{5}}^{\frac{1}{3}} (1 - \frac{15}{8} + \frac{3}{8y}) \mathrm{d}y + \int_{\frac{1}{3}}^{1} (1 - \frac{3}{4}) \mathrm{d}y + \int_{1}^{\infty} \frac{1}{4y} \mathrm{d}y \\
+            &= - \frac{3 \ln{\left(3 \right)}}{8} - \frac{7}{60} + \frac{3 \ln{\left(5 \right)}}{8} + \frac{1}{6} + \infty \\
+            \end{aligned}
+            $
+
+            均为不收敛.
+    \end{enumerate}
+  \end{solution}
+
+
+  \question [40] \textbf{评估方法}
+
+  教材2.2.3节描述了自助法~(bootstrapping), 下面考虑将自助法用于对统计量估计这一场景, 并对自助法做进一步分析.
+  考虑$m$个从分布$p(x)$中独立同分布抽取的（互不相等的）观测值$x_1, x_2, \ldots, x_m$, $p(x)$的均值为$\mu$, 方差为$\sigma^2$. 通过$m$个样本, 可使用如下方式估计分布的均值
+  \begin{equation}
+    \bar{x}_m = \frac{1}{m} \sum_{i=1}^{m} x_{i}\;,\label{ch2_eq:estimate_mean}
+  \end{equation}
+  和方差
+  \begin{equation}
+    \bar{\sigma}^2_m=\frac{1}{m-1} \sum_{i=1}^{m}\left(x_{i}-\bar{x}_m\right)^{2}\label{ch2_eq:estimate_variance}
+  \end{equation}
+  设$x^*_1, x^*_2, \ldots, x^*_m$为通过自助法采样得到的结果, 且
+  \begin{equation}
+    \bar{x}^*_m = \frac{1}{m} \sum_{i=1}^{m} x^*_{i}\;,
+  \end{equation}
+  \begin{enumerate}
+    \item 请证明$\mathbb E[\bar{x}_m] = \mu$且$\mathbb E[\bar{\sigma}^2_m] = \sigma^2$;
+    \item 计算$var[\bar{x}_m]$;
+    \item 计算$\mathbb E[\bar{x}^*_m \mid x_1, \ldots, x_m]$和$var[\bar{x}^*_m \mid x_1, \ldots, x_m]$;
+    \item 计算$\mathbb E[\bar{x}^*_m]$和$var[\bar{x}^*_m]$;
+    \item 针对上述证明分析自助法和交叉验证法的不同.
+  \end{enumerate}
+
+  \begin{solution}
+    %请在此处作答
+  \end{solution}
+
+
+  \question [30] \textbf{性能度量}
+
+  教材2.3节介绍了机器学习中常用的性能度量. 假设数据集包含8个样例, 其对应的真实标记和学习器的输出值（从大到小排列）如表~\ref{table:roc}所示. 该任务是一个二分类任务, 标记1和0表示真实标记为正例或负例.
+  学习器的输出值代表学习器认为该样例是正例的概率.
+  \begin{table}[!h]
+    \centering
+    \caption{样例表} \vspace{2mm}\label{table:roc}
+    \begin{tabular}{c|c c c c c c c c c c c}\toprule
+      样例         & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_{6}$ & $x_{7}$ & $x_{8}$ \\
+      \midrule
+      标记         & 1     & 1     & 0     & 1     & 0     & 1       & 0       & 0       \\
+      \midrule
+      分类器输出值 & 0.81  & 0.74  & 0.62  & 0.55  & 0.44  & 0.35    & 0.25    & 0.21    \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{enumerate}
+    \item 计算P-R曲线每一个端点的坐标并绘图;
+    \item 计算ROC曲线每一个端点的坐标并绘图, 计算AUC;
+  \end{enumerate}
+  \begin{solution}
+    %请在此处作答
+  \end{solution}
+
+\end{questions}
+
+
+\end{document}

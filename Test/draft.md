@@ -1,1 +1,2 @@
-$\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \\\end{bmatrix}$
+$x^{2} + 2 x y + y^{2}$
+

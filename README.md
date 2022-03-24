@@ -4,11 +4,15 @@
 
 以 Markdown 为主, 在 Markdown 内部使用 Latex 的公式支持.
 
-编辑方式为:
+编辑工具为:
 
 * VSCode
 * Markdown Preview Enhanced (VSCode 插件)
 * Better Markdown & Latex Shortcuts (VSCode 插件)
+* HyperSnips for Math (VSCode 插件)
+* Latex Sympy Calculator (VSCode 插件)
+
+我还写了一份记录这样的「数字化」笔记的 [教程](https://zhuanlan.zhihu.com/p/366596949).
 
 镜像 [NJU GitLab](https://git.nju.edu.cn/201300035/NJUAI-Notes)
 
@@ -23,6 +27,12 @@
 ![](https://pic1.zhimg.com/v2-64a8fe27b9dc4a3e6c78ce51309a9c64_b.png)
 
 ![](https://pic2.zhimg.com/v2-b1c79c871655824b95d9292d9b508461_b.png)
+
+## 云端查看与编辑
+
+GitHub 提供了 VSCode for Web 的功能, 你可以在本 Repo 按下 「.」键进入:
+
+![](https://gitee.com/orangex4/picgo/raw/master/images/20220324214603.png)
 
 ## 本地查看与编辑
 

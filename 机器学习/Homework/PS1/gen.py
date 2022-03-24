@@ -21,10 +21,10 @@ for i in range(1, len(values) + 1):
     TPR.append(TP / (TP + FN))
     FPR.append(FP / (TN + FP))
 
-P.append(0.0)
-R.append(1.0)
-TPR.append(1.0)
-FPR.append(1.0)
+# P.append(0.0)
+# R.append(1.0)
+# TPR.append(1.0)
+# FPR.append(1.0)
 
 S = 0.5 * sum([(FPR[i] - FPR[i - 1]) * (TPR[i] + TPR[i - 1])  for i in range(1, len(TPR))])
 

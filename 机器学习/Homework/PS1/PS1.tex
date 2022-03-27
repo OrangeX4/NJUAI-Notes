@@ -239,10 +239,11 @@
 
             \begin{equation}
               \begin{aligned}
-                \operatorname{Var}[x_i^{*} | x_1, \cdots, x_m] & = \mathbb{E}[(x_i - \mathbb{E}[x_i^{*} | x_1, \cdots, x_m])^{2} | x_1, \cdots, x_m] \\
-                                                               & = \mathbb{E}[(x_i - \bar{x}_m)^{2} | x_1, \cdots, x_m]                              \\
-                                                               & = \frac{1}{m}\sum_{i=1}^{m} (x_i - \bar{x}_m)^{2}                                   \\
-                                                               & = \frac{m-1}{m}\bar{\sigma}_m^{2}                                                   \\
+                \operatorname{Var}[x_i^{*} | x_1, \cdots, x_m]
+                 & = \mathbb{E}[(x_i^{*} - \mathbb{E}[x_i^{*} | x_1, \cdots, x_m])^{2} | x_1, \cdots, x_m] \\
+                 & = \mathbb{E}[(x_i^{*} - \bar{x}_m)^{2} | x_1, \cdots, x_m]                              \\
+                 & = \frac{1}{m}\sum_{i=1}^{m} (x_i - \bar{x}_m)^{2}                                   \\
+                 & = \frac{m-1}{m}\bar{\sigma}_m^{2}                                                   \\
               \end{aligned}
             \end{equation}
 
@@ -319,11 +320,11 @@
               \centering
               \caption{P-R 曲线} \vspace{2mm}\label{table:roc}
               \begin{tabular}{c|c c c c c c c c c c c}\toprule
-                点         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+                点 & 1   & 2    & 3   & 4    & 5    & 6    & 7    & 8    & 9   \\
                 \midrule
-                P        &  1.0 &  1.0 &  1.0 &  0.67 &  0.75 &  0.6 &  0.67 &  0.57 &  0.5       \\
+                P  & 1.0 & 1.0  & 1.0 & 0.67 & 0.75 & 0.6  & 0.67 & 0.57 & 0.5 \\
                 \midrule
-                R  &  0.0 &  0.25 &  0.5 &  0.5 &  0.75 &  0.75 &  1.0 &  1.0 &  1.0    \\
+                R  & 0.0 & 0.25 & 0.5 & 0.5  & 0.75 & 0.75 & 1.0  & 1.0  & 1.0 \\
                 \bottomrule
               \end{tabular}
             \end{table}
@@ -341,11 +342,11 @@
               \centering
               \caption{P-R 曲线} \vspace{2mm}\label{table:roc}
               \begin{tabular}{c|c c c c c c c c c c c}\toprule
-                点         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+                点  & 1   & 2    & 3   & 4    & 5    & 6    & 7   & 8    & 9   \\
                 \midrule
-                TPR      &  0.0 &  0.25 &  0.5 &  0.5 &  0.75 &  0.75 &  1.0 &  1.0 &  1.0       \\
+                TPR & 0.0 & 0.25 & 0.5 & 0.5  & 0.75 & 0.75 & 1.0 & 1.0  & 1.0 \\
                 \midrule
-                FPR  &  0.0 &  0.0 &  0.0 &  0.25 &  0.25 &  0.5 &  0.5 &  0.75 &  1.0    \\
+                FPR & 0.0 & 0.0  & 0.0 & 0.25 & 0.25 & 0.5  & 0.5 & 0.75 & 1.0 \\
                 \bottomrule
               \end{tabular}
             \end{table}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.28)  5 APR 2022 00:57
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.28)  5 APR 2022 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,7 +710,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 ) [1
 
-] [2]
+]
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -728,7 +728,7 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 160.
-(./LinearRegression.py [3]) [4] [5] [6]
+(./LinearRegression.py [2]) [3] [4] [5]
 This exam contains 5 questions with 0 parts, 0 subparts, and 0 subsubparts.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
@@ -737,15 +737,19 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 228.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 228.
 Package rerunfilecheck Info: File `PS2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
  ) 
 Here is how much of TeX's memory you used:
  19357 strings out of 481342
  366131 string characters out of 5925287
- 930091 words of memory out of 5000000
+ 907091 words of memory out of 5000000
  36108 multiletter control sequences out of 15000+600000
  546184 words of font info for 100 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  45i,15n,66p,378b,1555s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PS2.pdf (6 pages).
+Output written on PS2.pdf (5 pages).

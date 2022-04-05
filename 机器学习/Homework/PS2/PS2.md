@@ -32,3 +32,157 @@ $$
 $$
 
 可以看出, 总误差依然与学习算法无关, 因此对于其他的性能度量, NFL 定理依然成立.
+
+
+<!-- ## 二、
+
+我们定义 $\hat{\bm{w}} = [\bm{w}; b], \mathbf{X} = [\bm{X}, \bm{1}]$
+
+则原式可用矩阵表示为
+
+$$
+(\bm{w}^{*}, b^{*}) = \hat{\bm{w}}^{*} = \argmin_{\hat{\bm{w}}}(\bm{y}-\mathbf{X}\hat{\bm{w}})^{\top}(\bm{y}-\mathbf{X}\hat{\bm{w}})
+$$
+
+令 $E_{\hat{\bm{w}}} = (\bm{y}-\mathbf{X}\hat{\bm{w}})^{\top}(\bm{y}-\mathbf{X}\hat{\bm{w}})$, 对 $\hat{\bm{w}}$ 求导得
+
+$$
+\frac{\partial \bm{E_{\hat{w}}}}{\partial \hat{\bm{w}}} = 2\mathbf{X}^{\top}(\mathbf{X}\hat{\bm{w}}-\bm{y})
+$$
+
+令上式等于零即可得到 $\hat{\bm{w}}$ 的最优解的闭式解.
+
+当 $\mathbf{X}^{\top}\mathbf{X}$ 是满秩矩阵时, 令该式等于零即可得
+
+$$
+(\hat{\bm{w}}^{*}, b^{*}) = \hat{\bm{w}}^{*} = (\mathbf{X}^{\top}\mathbf{X})^{-1}\mathbf{X}^{\top}\bm{y}
+$$
+
+令 $\hat{\bm{x}}_{i} = [\bm{x}_{i}, 1]$, 则最终线性回归模型为
+
+$$
+f(\hat{\bm{x}}_{i}) = \hat{\bm{x}}_{i}^{\top}(\mathbf{X}^{\top}\mathbf{X})^{-1}\mathbf{X}^{\top}\bm{y}
+$$ -->
+
+
+## 二、
+
+原式可用矩阵表示为
+
+$$
+(\bm{w}^{*}, b^{*}) = \argmin_{(\bm{w}, b)}\frac{1}{2}(\bm{y}-\bm{X}\bm{w}-\bm{1}b)^{\top}(\bm{y}-\bm{X}\bm{w}-\bm{1}b)
+$$
+
+令 $\bm{E} = (\bm{y}-\bm{X}\bm{w}-\bm{1}b)^{\top}(\bm{y}-\bm{X}\bm{w}-\bm{1}b)$
+
+对 $\bm{w}$ 求导得
+
+$$
+\frac{\partial \bm{E}}{\partial \bm{w}} = \bm{X}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
+$$
+
+令上式等于零即可得到 $\bm{w}$ 的最优解的闭式解.
+
+当 $\bm{X}^{\top}\bm{X}$ 是满秩矩阵时, 令该式等于零即可得
+
+$$
+\bm{w}^{*} = (\bm{X}^{\top}\bm{X})^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
+$$
+
+再对 $b$ 求导得
+
+$$
+\frac{\partial \bm{E}}{\partial b} = \bm{1}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
+$$
+
+令该式等于零即可得
+
+$$
+b^{*} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+$$
+
+
+## 三、
+
+**(1)**
+
+令 $\displaystyle \bm{E} = \frac{1}{2}\left\| \bm{X}\bm{w}+\bm{1}b-\bm{y} \right\|_{2}^{2} + \lambda\left\| \bm{w} \right\|_{2}^{2}$
+
+对 $\bm{w}$ 求导得
+
+$$
+\frac{\partial \bm{E}}{\partial \bm{w}} = \bm{X}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y}) + 2\lambda \bm{w}
+$$
+
+当 $(\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)$ 是满秩矩阵时, 令该式等于零即可得
+
+$$
+\bm{w}^{*}_{\mathbf{Ridge}} = (\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
+$$
+
+对 $b$ 求导得
+
+$$
+\frac{\partial \bm{E}}{\partial b} = \bm{1}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
+$$
+
+令该式等于零即可得
+
+$$
+b^{*}_{\mathbf{Ridge}} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+$$
+
+加上第二题的结果, 可以看出, 对于 $b^{*}$ 来说, 最优解和原始最优解相同, 即有
+
+$$
+b^{*}_{\mathbf{Ridge}} = b^{*}_{\mathbf{LS}} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+$$
+
+而对于 $\bm{w}^{*}$ 来说, 原始最优解
+
+$$
+\bm{w}^{*}_{\mathbf{LS}} = (\bm{X}^{\top}\bm{X})^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
+$$
+
+和最优解不同, 两者括号内相差了一个 $2\lambda \bm{I}_d$ 项.
+
+**(2)**
+
+将恒等式
+
+$$
+\bm{X} = \bm{X}
+$$
+
+右端乘上 $(\bm{X}^{\top}\bm{X}+\lambda I_{d})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}$ 即 $I_{d}$ 则有
+
+$$
+\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+$$
+
+将 $\bm{X}$ 乘入括号内则有
+
+$$
+\bm{X} = (\bm{X}\bm{X}^{\top}\bm{X}+\lambda \bm{X})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+$$
+
+再将 $\bm{X}$ 提出至右侧则有
+
+$$
+\bm{X} = (\bm{X}\bm{X}^{\top}+\lambda I_{m})\bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+$$
+
+最后则有
+
+$$
+(\bm{X}\bm{X}^{\top}+\lambda I_{m})^{-1}\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+$$
+
+式子成立.
+
+这个结论能够帮助岭回归的计算.
+
+当样例的维度 $d$ 大于样例数目 $m$ 的时候, 将 $\bm{X}(\bm{X}^{\top}\bm{X}+2\lambda I_{d})^{-1}$ 转为 $(\bm{X}\bm{X}^{\top}+2\lambda I_{m})^{-1}\bm{X}$ 能够将矩阵求逆的矩阵维度减少, 进而加快矩阵求逆的速度.
+
+**(3)**
+

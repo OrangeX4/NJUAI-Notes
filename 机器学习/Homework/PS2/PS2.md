@@ -34,7 +34,7 @@ $$
 可以看出, 总误差依然与学习算法无关, 因此对于其他的性能度量, NFL 定理依然成立.
 
 
-<!-- ## 二、
+## 二、
 
 我们定义 $\hat{\bm{w}} = [\bm{w}; b], \mathbf{X} = [\bm{X}, \bm{1}]$
 
@@ -55,14 +55,14 @@ $$
 当 $\mathbf{X}^{\top}\mathbf{X}$ 是满秩矩阵时, 令该式等于零即可得
 
 $$
-(\hat{\bm{w}}^{*}, b^{*}) = \hat{\bm{w}}^{*} = (\mathbf{X}^{\top}\mathbf{X})^{-1}\mathbf{X}^{\top}\bm{y}
+(\bm{w}^{*}, b^{*}) = \hat{\bm{w}}^{*} = (\mathbf{X}^{\top}\mathbf{X})^{-1}\mathbf{X}^{\top}\bm{y}
 $$
 
 令 $\hat{\bm{x}}_{i} = [\bm{x}_{i}, 1]$, 则最终线性回归模型为
 
 $$
 f(\hat{\bm{x}}_{i}) = \hat{\bm{x}}_{i}^{\top}(\mathbf{X}^{\top}\mathbf{X})^{-1}\mathbf{X}^{\top}\bm{y}
-$$ -->
+$$
 
 
 ## 二、
@@ -81,24 +81,47 @@ $$
 \frac{\partial \bm{E}}{\partial \bm{w}} = \bm{X}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
 $$
 
-令上式等于零即可得到 $\bm{w}$ 的最优解的闭式解.
-
-当 $\bm{X}^{\top}\bm{X}$ 是满秩矩阵时, 令该式等于零即可得
-
-$$
-\bm{w}^{*} = (\bm{X}^{\top}\bm{X})^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
-$$
-
-再对 $b$ 求导得
+对 $b$ 求导得
 
 $$
 \frac{\partial \bm{E}}{\partial b} = \bm{1}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
 $$
 
-令该式等于零即可得
+令上面两式同时等于零即可得到 $\bm{w}$ 和 $b$ 的最优解的闭式解.
+
+当 $\bm{X}^{\top}\bm{X}$ 是满秩矩阵时, 则有
 
 $$
-b^{*} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+\bm{w}^{*} = (\bm{X}^{\top}\bm{X})^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*})
+$$
+
+令 $\bm{T} = (\bm{X}^{\top}\bm{X})^{-1}$, 则
+
+$$
+\bm{w}^{*} = \bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*})
+$$
+
+代入有
+
+$$
+\begin{aligned}
+b^{*}
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}^{*}  \\
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*})  \\
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} + \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1}b^{*}  \\
+\end{aligned}
+$$
+
+最后有
+
+$$
+b^{*} = \frac{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} - \bm{1}^{\top}\bm{y}}{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1} - 1}
+$$
+
+最后将 $b^{*}$ 带回即可求出
+
+$$
+\bm{w}^{*} = \bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}\frac{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} - \bm{1}^{\top}\bm{y}}{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1} - 1})
 $$
 
 
@@ -114,37 +137,50 @@ $$
 \frac{\partial \bm{E}}{\partial \bm{w}} = \bm{X}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y}) + 2\lambda \bm{w}
 $$
 
-当 $(\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)$ 是满秩矩阵时, 令该式等于零即可得
-
-$$
-\bm{w}^{*}_{\mathbf{Ridge}} = (\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
-$$
-
 对 $b$ 求导得
 
 $$
 \frac{\partial \bm{E}}{\partial b} = \bm{1}^{\top}(\bm{X}\bm{w}+\bm{1}b-\bm{y})
 $$
 
-令该式等于零即可得
+当 $(\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)$ 是满秩矩阵时, 令该式等于零即可得
 
 $$
-b^{*}_{\mathbf{Ridge}} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+\bm{w}^{*}_{\mathbf{Ridge}} = (\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*}_{\mathbf{Ridge}})
 $$
 
-加上第二题的结果, 可以看出, 对于 $b^{*}$ 来说, 最优解和原始最优解相同, 即有
+令 $\bm{T} = (\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_d)^{-1}$, 则
 
 $$
-b^{*}_{\mathbf{Ridge}} = b^{*}_{\mathbf{LS}} = \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}
+\bm{w}^{*}_{\mathbf{Ridge}} = \bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*}_{\mathbf{Ridge}})
 $$
 
-而对于 $\bm{w}^{*}$ 来说, 原始最优解
+代入有
 
 $$
-\bm{w}^{*}_{\mathbf{LS}} = (\bm{X}^{\top}\bm{X})^{-1}\bm{X}^{\top}(\bm{y}-\bm{1}b)
+\begin{aligned}
+b^{*}_{\mathbf{Ridge}}
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{w}^{*}_{\mathbf{Ridge}}  \\
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}b^{*}_{\mathbf{Ridge}})  \\
+&= \bm{1}^{\top}\bm{y} - \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} + \bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1}b^{*}_{\mathbf{Ridge}}  \\
+\end{aligned}
 $$
 
-和最优解不同, 两者括号内相差了一个 $2\lambda \bm{I}_d$ 项.
+最后有
+
+$$
+b^{*}_{\mathbf{Ridge}} = \frac{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} - \bm{1}^{\top}\bm{y}}{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1} - 1}
+$$
+
+最后将 $b^{*}_{\mathbf{Ridge}}$ 带回即可求出
+
+$$
+\bm{w}^{*}_{\mathbf{Ridge}} = \bm{T}\bm{X}^{\top}(\bm{y}-\bm{1}\frac{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{y} - \bm{1}^{\top}\bm{y}}{\bm{1}^{\top}\bm{X}\bm{T}\bm{X}^{\top}\bm{1} - 1})
+$$
+
+加上第二题的结果, 可以看出, 使用矩阵 $\bm{T}$ 抽象之后, 最优解和原始最优解的形式是一样的, 不同的是 $\bm{T}$ 的值, 二者的矩阵 $\bm{T}$ 括号内相差了一个 $2\lambda \bm{I}_d$ 项.
+
+所以我们可以认为 $\bm{w}^{*}_{\mathbf{LS}}$ 和 $b^{*}_{\mathbf{LS}}$ 是 $\lambda=0$ 的 $\bm{w}^{*}_{\mathbf{Ridge}}$ 和 $b^{*}_{\mathbf{Ridge}}$ 特殊情况.
 
 **(2)**
 
@@ -182,7 +218,20 @@ $$
 
 这个结论能够帮助岭回归的计算.
 
-当样例的维度 $d$ 大于样例数目 $m$ 的时候, 将 $\bm{X}(\bm{X}^{\top}\bm{X}+2\lambda I_{d})^{-1}$ 转为 $(\bm{X}\bm{X}^{\top}+2\lambda I_{m})^{-1}\bm{X}$ 能够将矩阵求逆的矩阵维度减少, 进而加快矩阵求逆的速度.
+当样例的维度 $d$ 大于样例数目 $m$ 的时候, 将 $\bm{X}(\bm{X}^{\top}\bm{X}+2\lambda I_{d})^{-1}$ 转为 $(\bm{X}\bm{X}^{\top}+2\lambda I_{m})^{-1}\bm{X}$ 能够将矩阵求逆求 $\bm{T}$ 的矩阵维度减少, 进而加快矩阵求逆的速度.
 
 **(3)**
 
+**(a)**
+
+算出线性回归模型测试集上的 MSE 结果为 20.724023437336253.
+
+**(b)**
+
+取不同的权重所得结果为
+
+| -2.0 | -1.6 | -1.2 | -0.8 | -0.4 | 0.0 | 0.4 | 0.8 | 1.2 | 1.6 | 2.0|
+|---|---|---|---|---|---|---|---|---|---|---|
+| 23.04 | 23.36 | 24.17 | 28.20 | 33.61 | 20.72 | 21.09 | 21.31 | 21.45 | 21.54 | 21.60 |
+
+![](Figure_1.png)

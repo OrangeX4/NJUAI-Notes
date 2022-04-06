@@ -57,7 +57,7 @@ print(linReg(trainx, trainy))
 print(ridgeReg(trainx, trainy, 0))
 print(reportLinRegMSE())
 print(reportRidgeRegMSE(0))
-lmbds = np.arange(-2, 2.1, 0.4)
+lmbds = np.arange(0, 2.1, 0.2)
 mses = [reportRidgeRegMSE(lmbd) for lmbd in lmbds]
 print(lmbds)
 print(mses)

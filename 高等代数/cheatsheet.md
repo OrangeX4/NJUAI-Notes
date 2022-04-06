@@ -24,6 +24,15 @@ $\mathcal{N}(A) = \{ x | Ax = 0 \}$
 
 $\mathcal{N}(A) = \mathcal{R}(A^{\top})^{\bot}$
 
+## 秩的性质
+
+- 初等行变换不改变矩阵的秩
+- 对于 $A \in \mathbb{R}^{m\times n}, B \in \mathbb{R}^{n\times r}$ 有
+  - $\operatorname{rank}(A)+\operatorname{rank}(B)-n\le \operatorname{rank}(AB)\le \min \{ \operatorname{rank}(A), \operatorname{rank}(B) \}$
+  - $\operatorname{rank}(A + B) \le \operatorname{rank}(A) + \operatorname{rank}(B)$
+- 对于任意矩阵 $A$ 有
+  - $\operatorname{rank}(A) = \operatorname{rank}(A^{\top}) = \operatorname{rank}(A A^{\top}) = \operatorname{rank}(A^{\top}A)$
+
 ## 合同与相似
 
 设 $A,B\in P^{n\times n}$, 若存在可逆矩阵 $C\in P^{n\times n}$, 使得 $B=C^{\top} AC$, 则称 $A$ 与 $B$ **合同**.

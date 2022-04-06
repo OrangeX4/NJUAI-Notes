@@ -1,6 +1,6 @@
 # PS2
 
-## 一、
+<!-- ## 一、
 
 **(1)**
 
@@ -235,3 +235,66 @@ $$
 | 23.04 | 23.36 | 24.17 | 28.20 | 33.61 | 20.72 | 21.09 | 21.31 | 21.45 | 21.54 | 21.60 |
 
 ![](./Figure_1.png)
+
+可以看出, 当 $\lambda < 0$ 时, 最终 MSE 变化波动巨大, 很少有规律性, 所以一般不会选择; 当 $\lambda > 0$ 时, MSE 随着 $\lambda$ 的增大而缓慢增大, 所以我们可以选择一个相对较小但仍然为正数的 $\lambda$ 值. -->
+
+
+## 四、
+
+**(1)**
+
+由贝叶斯公式可知
+
+$$
+\begin{aligned}
+p(y=n|\bm{x}) & = \frac{p(y=n)p(\bm{x}|y=n)}{p(\bm{x})}  \\
+& = \frac{\displaystyle \pi_{n}\cdot ((2\pi)^{\frac{d}{2}}\det (\bm{\Sigma})^{\frac{1}{2}})^{-1}\exp (-\frac{1}{2}(\bm{x}-\bm{\mu}_{n})^{\top}\bm{\Sigma}^{-1}(\bm{x}-\bm{\mu}_{n}))}{p(\bm{x})}  \\
+& = \frac{\displaystyle \pi_{n}\cdot ((2\pi)^{\frac{d}{2}}\det (\bm{\Sigma})^{\frac{1}{2}})^{-1}\exp (\bm{x}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}-\frac{1}{2}\bm{\mu}_{n}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}-\frac{1}{2}\bm{x}^{\top}\bm{\Sigma}^{-1}\bm{x})}{p(\bm{x})}  \\
+\end{aligned}
+$$
+
+并且 $\argmax_{n}p(y=m|\bm{x})$ 可以转化为 $\argmax_{n}\ln p(y=m|\bm{x})$ 即有
+
+$$
+\begin{aligned}
+\argmax_{n} &\ln \pi_{n}+\ln ((2\pi)^{\frac{d}{2}}\det (\bm{\Sigma})^{\frac{1}{2}})^{-1}+\bm{x}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n} \\&-\frac{1}{2}\bm{\mu}_{n}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}-\frac{1}{2}\bm{x}^{\top}\bm{\Sigma}^{-1}\bm{x}-\ln p(\bm{x}) \\
+\end{aligned}
+$$
+
+去除与 $n$ 无关的项即可得
+
+$$
+\argmax_{n} \bm{x}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}-\frac{1}{2}\bm{\mu}_{n}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}+\ln \pi_{n}
+$$
+
+**(2)**
+
+将式子
+
+$$
+\bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}(\hat{\bm{\mu}}_{2}-\hat{\bm{\mu}}_{1}) > \frac{1}{2}(\hat{\bm{\mu}}_{2}-\hat{\bm{\mu}}_{1})^{\top}\hat{\bm{\Sigma}}^{-1}(\hat{\bm{\mu}}_{2} - \hat{\bm{\mu}}_{1}) - \ln \frac{m_{2}}{m_{1}}
+$$
+
+拆开可得
+
+$$
+\bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2} - \bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1} > \frac{1}{2}\hat{\bm{\mu}}_{2}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2} - \frac{1}{2}\hat{\bm{\mu}}_{1}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1}-\ln \frac{m_{2}}{m_{1}}
+$$
+
+进行移项
+
+$$
+\bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2}-\frac{1}{2}\hat{\bm{\mu}}_{2}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2}+\ln \frac{m_{2}}{m} > \bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1}-\frac{1}{2}\hat{\bm{\mu}}_{1}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1}+\ln \frac{m_{1}}{m}
+$$
+
+将 $\displaystyle \ln \frac{m_{n}}{m}$ 替换为 $\ln \hat{\pi}_{n}$ 可得
+
+$$
+\bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2}-\frac{1}{2}\hat{\bm{\mu}}_{2}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{2}+\ln \hat{\pi}_{2} > \bm{x}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1}-\frac{1}{2}\hat{\bm{\mu}}_{1}^{\top}\hat{\bm{\Sigma}}^{-1}\hat{\bm{\mu}}_{1}+\ln \hat{\pi}_{1}
+$$
+
+即有 $n^{*} = \argmax_{n} \bm{x}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}-\frac{1}{2}\bm{\mu}_{n}^{\top}\bm{\Sigma}^{-1}\bm{\mu}_{n}+\ln \pi_{n} = 2$
+
+所以此时 LDA 将样例预测为第 2 类.
+
+

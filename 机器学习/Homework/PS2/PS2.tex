@@ -328,7 +328,7 @@
               \caption{lambda} \vspace{2mm}\label{table:roc}
               \begin{tabular}{c|c c c c c c c c c c c}\toprule
                 \hline
-                $\lambda$ & 0.0 & 0.2 & 0.4 & 0.6 & 0.8 & 1.0 & 1.2 & 1.4 & 1.6 & 1.8 & 2.0  \\ \midrule
+                $\lambda$ & 0.0   & 0.2   & 0.4   & 0.6   & 0.8   & 1.0   & 1.2  & 1.4   & 1.6   & 1.8   & 2.0   \\ \midrule
                 MSE       & 20.72 & 20.92 & 21.09 & 21.21 & 21.31 & 21.39 & 21.4 & 21.50 & 21.54 & 21.57 & 21.60 \\ \midrule
                 \bottomrule
               \end{tabular}
@@ -488,26 +488,42 @@
             而我们知道
 
             $$
-              \bm{S}_{b} = \sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top}
+              \begin{aligned}
+                \bm{S}_{b}
+                 & = \sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top} \\
+              \end{aligned}
             $$
+
+            其中我们知道
+
+            $$
+              \sum_{i=1}^{N} m_i(\bm{\mu}_{i}-\bm{\mu}) = \sum_{i=1}^{N} m_i\bm{\mu}_{i}-\bm{\mu}\sum_{i=1}^{N}m_{i} = \bm{0}
+            $$
+
+            也就是
+
+            $$
+              \bm{\mu}_{N} - \bm{\mu} = -\frac{1}{m_{N}}\sum_{i=1}^{N-1}m_i(\bm{\mu}_{i}-\bm{\mu})
+            $$
+
+            即 $(\bm{\mu}_{N} - \bm{\mu})$ 可以由 $(\bm{\mu}_{i} - \bm{\mu})$ 线性表示出来.
 
             因此我们有
 
             $$
               \begin{aligned}
                 \operatorname{rank}(\bm{S}_{w}^{-1}\bm{S}_{b})
-                 & \le \min\{ \operatorname{rank}(\bm{S}_{w}^{-1}), \operatorname{rank}(\bm{S}_{b}) \}              \\
-                 & \le \operatorname{rank}(\bm{S}_{b})                                                              \\
-                 & = \operatorname{rank}(\sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top}) \\
-                 & \le \sum_{i=1}^{N} \operatorname{rank}((\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})    \\
-                 & = \sum_{i=1}^{N} \operatorname{rank}(\bm{\mu}_{i}-\bm{\mu})                                      \\
-                 & = N                                                                                              \\
+                 & \le \min\{ \operatorname{rank}(\bm{S}_{w}^{-1}), \operatorname{rank}(\bm{S}_{b}) \}                \\
+                 & \le \operatorname{rank}(\bm{S}_{b})                                                                \\
+                 & = \operatorname{rank}(\sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})   \\
+                 & = \operatorname{rank}(\sum_{i=1}^{N-1} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top}) \\
+                 & \le \sum_{i=1}^{N-1} \operatorname{rank}((\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})    \\
+                 & = \sum_{i=1}^{N-1} \operatorname{rank}(\bm{\mu}_{i}-\bm{\mu})                                      \\
+                 & = N-1                                                                                              \\
               \end{aligned}
             $$
 
-            因此 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 最多有 $N$ 个非零特征值, 如果选取所有的特征值, 相当于选取了所有的有效特征向量, 也就没有投影的意义了; 所以我们最多只能从 $N$ 个特征值中选择其中最大的 $N-1$ 个特征值, 对应 $N-1$ 个特征向量.
-
-            所以 FDA 投影的维度最多为 $N-1$.
+            因此 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 最多有 $N-1$ 个非零特征值, 对应 $N-1$ 个特征向量. 而 $\bm{W}$ 的每个列向量都是 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 的线性无关的特征向量. 所以 FDA 投影的维度最多为 $N-1$.
     \end{enumerate}
   \end{solution}
 

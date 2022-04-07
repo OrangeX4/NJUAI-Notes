@@ -190,35 +190,35 @@ $$
 \bm{X} = \bm{X}
 $$
 
-右端乘上 $(\bm{X}^{\top}\bm{X}+\lambda I_{d})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}$ 即 $I_{d}$ 则有
+右端乘上 $(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})^{-1}$ 即 $\bm{I}_{d}$ 则有
 
 $$
-\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})^{-1}
 $$
 
 将 $\bm{X}$ 乘入括号内则有
 
 $$
-\bm{X} = (\bm{X}\bm{X}^{\top}\bm{X}+\lambda \bm{X})(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+\bm{X} = (\bm{X}\bm{X}^{\top}\bm{X}+\lambda \bm{X})(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})^{-1}
 $$
 
 再将 $\bm{X}$ 提出至右侧则有
 
 $$
-\bm{X} = (\bm{X}\bm{X}^{\top}+\lambda I_{m})\bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+\bm{X} = (\bm{X}\bm{X}^{\top}+\lambda I_{m})\bm{X}(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})^{-1}
 $$
 
 最后则有
 
 $$
-(\bm{X}\bm{X}^{\top}+\lambda I_{m})^{-1}\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda I_{d})^{-1}
+(\bm{X}\bm{X}^{\top}+\lambda I_{m})^{-1}\bm{X} = \bm{X}(\bm{X}^{\top}\bm{X}+\lambda \bm{I}_{d})^{-1}
 $$
 
 式子成立.
 
 这个结论能够帮助岭回归的计算.
 
-当样例的维度 $d$ 大于样例数目 $m$ 的时候, 将 $\bm{X}(\bm{X}^{\top}\bm{X}+2\lambda I_{d})^{-1}$ 转为 $(\bm{X}\bm{X}^{\top}+2\lambda I_{m})^{-1}\bm{X}$ 能够将矩阵求逆求 $\bm{T}$ 的矩阵维度减少, 进而加快矩阵求逆的速度.
+当样例的维度 $d$ 大于样例数目 $m$ 的时候, 将 $\bm{X}(\bm{X}^{\top}\bm{X}+2\lambda \bm{I}_{d})^{-1}$ 转为 $(\bm{X}\bm{X}^{\top}+2\lambda I_{m})^{-1}\bm{X}$ 能够将矩阵求逆求 $\bm{T}$ 的矩阵维度减少, 进而加快矩阵求逆的速度.
 
 **(3)**
 
@@ -334,8 +334,25 @@ $$
 而我们知道
 
 $$
-\bm{S}_{b} = \sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top}
+\begin{aligned}
+\bm{S}_{b}
+&= \sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top}  \\
+\end{aligned}
 $$
+
+其中我们知道
+
+$$
+\sum_{i=1}^{N} m_i(\bm{\mu}_{i}-\bm{\mu}) = \sum_{i=1}^{N} m_i\bm{\mu}_{i}-\bm{\mu}\sum_{i=1}^{N}m_{i} = \bm{0}
+$$
+
+也就是
+
+$$
+\bm{\mu}_{N} - \bm{\mu} = -\frac{1}{m_{N}}\sum_{i=1}^{N-1}m_i(\bm{\mu}_{i}-\bm{\mu})
+$$
+
+即 $(\bm{\mu}_{N} - \bm{\mu})$ 可以由 $(\bm{\mu}_{i} - \bm{\mu})$ 线性表示出来.
 
 因此我们有
 
@@ -345,15 +362,14 @@ $$
 &\le \min\{ \operatorname{rank}(\bm{S}_{w}^{-1}), \operatorname{rank}(\bm{S}_{b}) \}  \\
 &\le \operatorname{rank}(\bm{S}_{b})  \\
 &= \operatorname{rank}(\sum_{i=1}^{N} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})  \\
-&\le \sum_{i=1}^{N} \operatorname{rank}((\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})  \\
-&= \sum_{i=1}^{N} \operatorname{rank}(\bm{\mu}_{i}-\bm{\mu})  \\
-&= N \\
+&= \operatorname{rank}(\sum_{i=1}^{N-1} m_{i}(\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})  \\
+&\le \sum_{i=1}^{N-1} \operatorname{rank}((\bm{\mu}_{i}-\bm{\mu})(\bm{\mu}_{i}-\bm{\mu})^{\top})  \\
+&= \sum_{i=1}^{N-1} \operatorname{rank}(\bm{\mu}_{i}-\bm{\mu})  \\
+&= N-1 \\
 \end{aligned}
 $$
 
-因此 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 最多有 $N$ 个非零特征值, 如果选取所有的特征值, 相当于选取了所有的有效特征向量, 也就没有投影的意义了; 所以我们最多只能从 $N$ 个特征值中选择其中最大的 $N-1$ 个特征值, 对应 $N-1$ 个特征向量. 
-
-所以 FDA 投影的维度最多为 $N-1$.
+因此 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 最多有 $N-1$ 个非零特征值, 对应 $N-1$ 个特征向量. 而 $\bm{W}$ 的每个列向量都是 $\bm{S}_{w}^{-1}\bm{S}_{b}$ 的线性无关的特征向量. 所以 FDA 投影的维度最多为 $N-1$.
 
 ## 五、
 

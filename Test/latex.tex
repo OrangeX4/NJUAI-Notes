@@ -1,33 +1,21 @@
 \documentclass[UTF8]{ctexart}
-
-% 导言区，只是定义一些信息，不会被渲染
-\title{你好，world!}  % 标题
-\author{Liam}  % 作者
-\date{\today}  % 时间设为今天
-
-% 正文内容
+\usepackage{amsthm}
 \begin{document}
 
-\maketitle  % 渲染标题、作者和时间等信息
-\tableofcontents  % 目录
+行内公式: 
 
-% 各级标题和内容
-\section{你好中国}
-中国在East Asia.
+单位圆 $x^2+y^2=1$
 
-\subsection{Hello Beijing}
-\emph{北京}是capital of China.
+行间公式:
 
-\subsubsection{Hello Dongcheng District}
+% 无编号
+\[
+  x=\rho\cos\theta
+\]
 
-\paragraph{Tian'anmen Square}
-is in the center of Beijing
-
-\subparagraph{Chairman Mao}
-is in the center of 天安门广场。
-
-\subsection{Hello 山东}
-
-\paragraph{山东大学} is one of the best university in 山东。
+% 有编号
+\begin{equation}
+  y=\rho\sin\theta
+\end{equation}
 
 \end{document}

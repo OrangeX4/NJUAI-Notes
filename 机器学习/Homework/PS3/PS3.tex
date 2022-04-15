@@ -1,0 +1,271 @@
+% 请确保文件编码为utf-8，使用XeLaTex进行编译，或者通过overleaf进行编译
+
+\documentclass[answers]{exam}  % 使用此行带有作答模块
+% \documentclass{exam} % 使用此行只显示题目
+
+\usepackage{xeCJK}
+\usepackage{zhnumber}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{floatrow}
+\usepackage{blindtext}
+\usepackage{subcaption}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{南京大学}{机器学习导论}{习题三}
+\runningheader{南京大学}
+{机器学习导论}
+{习题二}
+\runningheadrule
+\firstpagefooter{}{第\thepage\ 页（共\numpages 页）}{}
+\runningfooter{}{第\thepage\ 页（共\numpages 页）}{}
+
+
+\setlength\linefillheight{.5in}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{解：}\par\noindent}
+
+\renewcommand{\thequestion}{\zhnum{question}}
+\renewcommand{\questionlabel}{\thequestion .}
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thepartno .}
+
+\lstset{language=Matlab}%这条命令可以让LaTeX排版时将Matlab关键字突出显示
+\lstset{
+	breaklines,%这条命令可以让LaTeX自动将长的代码行换行排版
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	backgroundcolor=\color[rgb]{0.95,0.95,0.95},
+	keywordstyle=\color{blue},
+	commentstyle=\color{cyan},
+	tabsize=4,numbers=left,
+	numberstyle=\tiny,
+	frame=single,
+	%numbers=left, % Ort der Zeilennummern
+	numberstyle=\tiny, % Stil der Zeilennummern
+	%stepnumber=2, % Abstand zwischen den Zeilennummern
+	numbersep=5pt, % Abstand der Nummern zum Text
+	tabsize=2, % Groesse von Tabs
+	extendedchars=false, %
+	breaklines=true, % Zeilen werden Umgebrochen
+	keywordstyle=\color{red},%这一条命令可以解决代码跨页时, 章节标题, 页眉等汉字不显示的问题
+	stringstyle=\color{white}\ttfamily, % Farbe der String
+	showspaces=false, % Leerzeichen anzeigen ?
+	showtabs=false, % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false % Leerzeichen in Strings anzeigen ?
+}
+\renewcommand{\lstlistingname}{CODE}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+	%[Visual]Basic
+	%Pascal
+	%C
+	Python
+	%XML
+	%HTML
+	%Java
+}
+\input{notations}
+
+\begin{document}
+\Large
+\noindent 
+% 姓名学号
+姓名：张三 \\
+学号：1234567 \\
+\begin{questions}
+\question [20] \textbf{利用信息熵进行决策树划分}
+
+\begin{enumerate}
+    \item  对于不含冲突样本（即属性值相同但标记不同的样本）的训练集, 必存在与训练集一致（训练误差为0）的决策树. 如果训练集可以包含无穷多个样本, 是否一定存在与训练集一致的深度有限的决策树? 并说明理由 (仅考虑每次划分仅包含一次属性判断的决策树).
+    \item 
+    信息熵$\operatorname{Ent}(D)$定义如下
+    \begin{align}
+        \operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|}\; p_{k} \log_{2} p_{k}\label{ch4_eq:entropy}
+    \end{align}
+    请证明信息熵的上下界为
+     \begin{equation}
+        0 \leq \operatorname{Ent}(D)\leq \log _{2}|\mathcal{Y}|
+    \end{equation}
+    并给出等号成立的条件. 
+	\item  在ID3决策树的生成过程中, 需要计算信息增益（information gain）以生成新的结点. 设离散属性$a$有$V$个可能取值$\left\{a^{1}, a^{2}, \cdots, a^{V}\right\}$, 请考教材4.2.1节相关符号的定义证明:
+    \begin{equation}
+        \operatorname{Gain}(D, a)=\operatorname{Ent}(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right) \geq 0
+    \end{equation}
+    即信息增益非负.
+\end{enumerate}
+	\begin{solution}
+		% 请在此处作答
+	\end{solution}
+
+
+\question [15] \textbf{决策树划分计算} \label{ch4_prob:get_tree}
+
+本题主要展现决策树在不同划分标准下划分的具体计算过程. 假设一个包含三个布尔属性$X, Y, Z$的属性空间, 目标函数$f=f(X, Y, Z)$作为标记空间, 它们形成的数据集如\ref{ch4_tab:bool_table}所示. 
+\begin{table}[ht]
+    \centering
+    \caption{布尔运算样例表}\label{ch4_tab:bool_table}
+    \tabcolsep 15pt
+    \begin{tabular}{cccc|c||cccc|c}
+        \hline 
+        编号 & $X$ & $Y$ & $Z$ & $f$ & 编号 & $X$ & $Y$ & $Z$ & $f$ \\
+        \hline 1 & 1 & 0 & 1 & 1 & 5 & 0 & 1 & 0 & 0\\
+        2 & 1 & 1 & 0 & 0 & 6 & 0 & 0 & 1 & 0 \\
+        3 & 0 & 0 & 0 & 0 & 7 & 1 & 0 & 0 & 0\\
+        4 & 0 & 1 & 1 & 1 & 8 & 1 & 1 & 1 & 0\\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{enumerate}
+    \item 请使用信息增益作为划分准则画出决策树的生成过程. 当两个属性信息增益相同时, 依据字母顺序选择属性. 
+    \item 请使用基尼指数作为划分准则画出决策树的生成过程, 当两个属性基尼指数相同时, 依据字母顺序选择属性. 
+\end{enumerate}
+	
+	\begin{solution}
+		%请在此处作答
+	\end{solution}
+
+
+\question [25] \textbf{决策树剪枝处理} \label{ch4_prob:prunning}
+
+教材4.3节介绍了决策树剪枝相关内容, 给定包含5个样例的人造数据集如表\ref{ch4_tab:artificial_training_dataset}所示, 其中“爱运动”、“爱学习”是属性, “成绩高”是标记. 验证集如表\ref{ch4_tab:artificial_testing_dataset}所示. 使用信息增益为划分准则产生如图\ref{ch4_fig:decision_tree_1}所示的两棵决策树. 请回答以下问题: 
+\begin{table}[!htb]
+    \caption{人造数据集}
+    \begin{minipage}[t]{.48\linewidth}
+      \subcaption{训练集}\label{ch4_tab:artificial_training_dataset}
+      \centering
+        \begin{tabular}{cccc}
+        \hline 编号 & 爱运动 & 爱学习 & 成绩高 \\
+        \hline 1 & 是 & 是 & 是 \\
+        2 & 否 & 是 & 是 \\
+        3 & 是 & 否 & 否 \\
+        4 & 是 & 否 & 否 \\
+        5 & 否 & 否 & 是 \\
+        \hline
+\end{tabular}
+    \end{minipage}%
+    \begin{minipage}[t]{.48\linewidth}
+      \centering
+        \subcaption{验证集}\label{ch4_tab:artificial_testing_dataset}
+        \begin{tabular}{cccc}
+		\hline 编号 & 爱运动 & 爱学习 & 成绩高 \\
+		\hline 6 & 是 & 是 & 是 \\
+		7 & 否 & 是 & 否 \\
+		8 & 是 & 否 & 否 \\
+		9 & 否 & 否 & 否 \\
+		\hline
+		\end{tabular}
+    \end{minipage} 
+\end{table}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figure/ch4_decision_tree_1.pdf}
+    \caption{人造数据决策树结果}\label{ch4_fig:decision_tree_1}
+\end{figure}
+\begin{enumerate}
+    \item 
+    请验证这两棵决策树的产生过程.
+    \item 
+     对图\ref{ch4_fig:decision_tree_1}的结果基于该验证集进行预剪枝、后剪枝, 给出剪枝后的决策树. 
+    \item
+    比较预剪枝、后剪枝的结果, 每种剪枝方法在训练集、验证集上的准确率分别为多少？哪种方法拟合能力较强？
+\end{enumerate}
+
+	\begin{solution}
+	    %请在此处作答
+	\end{solution}
+
+\question [20] \textbf{连续与缺失值}
+
+
+
+\begin{enumerate}
+	\item 
+    考虑如表~\ref{ch4_tab:continuous_small_dataset}所示数据集，仅包含一个连续属性，请给出将该属性“数字”作为划分标准时的决策树划分结果。
+    \begin{table}[h]
+    \begin{center}
+    \begin{tabular}{cc}
+    \hline 属性 & 类别 \\
+    \hline 3 & 正 \\
+    4 & 负 \\
+    6 & 负 \\
+    9 & 正 \\
+    \hline
+    \end{tabular}
+    \caption{连续属性数据集}\label{ch4_tab:continuous_small_dataset}
+    \end{center}
+    \end{table}
+	\item 请阐述决策树如何处理训练时存在缺失值的情况，具体如下：考虑表~\ref{ch4_tab:bool_table}的数据集，如果发生部分缺失，变成如表~\ref{ch4_tab:missing_dataset}所示数据集（假设$X, Y, Z$只有0和1两种取值）.
+    \begin{table}[ht]
+    \centering
+    \caption{缺失数据集}\label{ch4_tab:missing_dataset}
+    \begin{tabular}{ccc|c}
+        \hline X & Y & Z & $f$ \\
+        \hline 
+        1 & 0 & - & 1\\
+        - & 1 & 0 & 0\\
+        0 & - & 0 & 0\\
+        0 & 1 & 1 & 1\\
+        - & 1 & 0 & 0\\
+        0 & 0 & - & 0\\
+        1 & - & 0 & 0\\
+        1 & 1 & 1 & 0\\
+        \hline
+    \end{tabular}
+\end{table}
+    在这种情况下，请考虑如何处理数据中的缺失值，并结合问题~\ref{ch4_prob:get_tree}第1小问的答案进行对比，论述方法的特点以及是否有局限性。
+	\item 请阐述决策树如何处理测试时存在缺失值的情况，具体如下：对于问题~\ref{ch4_prob:prunning}训练出的决策树，考虑表~\ref{ch4_tab:artificial_testing_dataset2}所示的含有缺失值的测试集，输出其标签，并论述方法的特点以及是否有局限性。
+	\begin{table}[ht]
+    \centering
+    \caption{缺失数据集}\label{ch4_tab:artificial_testing_dataset2}
+	\begin{tabular}{cccc}
+		\hline 编号 & 爱运动 & 爱学习 & 成绩高 \\
+		\hline 6 & 是 & - &  \\
+		7 & - & 是 &  \\
+		8 & 否 & - &  \\
+		9 & - & 否 &  \\
+		\hline
+	\end{tabular}
+	\end{table}
+    
+\end{enumerate}
+	\begin{solution}
+	    %请在此处作答
+	\end{solution}
+
+
+\question [20] \textbf{多变量决策树}
+
+考虑如下包含10个样本的数据集, 每一列表示一个样本, 每个样本具有二个属性, 即$\vx_i = (x_{i1};\; x_{i2})$.
+\begin{table}[ht]
+    \begin{center}
+    \begin{tabular}{ccccccccccc}
+    \hline 编号 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \hline $A_1$ & 24 & 53 & 23 & 25 & 32 & 52 & 22 & 43 & 52 & 48 \\ 
+    $A_2$ & 40 & 52 & 25 & 77 & 48 & 110 & 38 & 44 & 27 & 65\\
+    \hline 标记 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 1\\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+\begin{enumerate}
+    \item 计算根结点的熵; 
+    \item 构建分类决策树, 描述分类规则和分类误差; 
+    \item 根据 $\alpha x_{1}+\beta x_{2}-1$,  构建多变量决策树,描述树的深度以及 $\alpha$ 和 $\beta$ 的值. 
+\end{enumerate}
+	\begin{solution}
+	    %请在此处作答
+	\end{solution}
+
+\end{questions}
+
+
+\end{document}

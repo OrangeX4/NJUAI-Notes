@@ -1,0 +1,112 @@
+%%% load AMS-Latex Package
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts}
+% \usepackage{amsthm}
+\usepackage{amsopn}
+\usepackage{bm} % bold symbol
+\usepackage{multirow}
+
+
+
+% operator in optimization
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\softmax}{softmax}
+
+% special functions
+\newcommand{\trace}[1]{\operatornamewithlimits{tr}\left\{#1\right\}}
+\newcommand{\diag}{\operatornamewithlimits{diag}}
+\newcommand{\sign}{\operatornamewithlimits{sign}}
+\newcommand{\const}{\operatornamewithlimits{const}}
+
+% special display
+\newcommand{\parde}[2]{\frac{\partial #1}{\partial  #2}}
+
+% define vector and matrix symbols
+\newcommand{\vct}[1]{\boldsymbol{#1}} % vector
+\newcommand{\mat}[1]{\boldsymbol{#1}} % matrix
+\newcommand{\cst}[1]{\mathsf{#1}}  % constant
+
+% shorthand
+\newcommand{\vtheta}{\vct{\theta}}
+\newcommand{\vmu}{\vct{\mu}}
+\newcommand{\vc}{\vct{c}}
+\newcommand{\vp}{\vct{p}}
+\newcommand{\vq}{\vct{q}}
+\newcommand{\vx}{{\vct{x}}}
+\newcommand{\vy}{\vct{y}}
+\newcommand{\vz}{{\vct{z}}}
+\newcommand{\vu}{\vct{u}}
+\newcommand{\vo}{{\vct{o}}}
+\newcommand{\va}{\vct{a}}
+\newcommand{\vb}{\vct{b}}
+\newcommand{\ve}{\vct{e}}
+\newcommand{\vr}{\vct{r}}
+\newcommand{\vt}{\vct{t}}
+%\newcommand{\vpsi}{\vct{\psi}}
+\newcommand{\vs}{\vct{s}}
+\newcommand{\vv}{\vct{v}}
+\newcommand{\vw}{\vct{w}}
+\newcommand{\vzero}{\vct{0}}
+\newcommand{\vf}{\vct{f}}
+\newcommand{\vh}{\vct{h}}
+\newcommand{\vg}{\vct{g}}
+\newcommand{\vphi}{\vct{\phi}}
+\newcommand{\vpsi}{\vct{\psi}}
+\newcommand{\ones}{\vct{1}}
+\newcommand{\mU}{\mat{U}}
+\newcommand{\mA}{\mat{A}}
+\newcommand{\mB}{\mat{B}}
+\newcommand{\mC}{\mat{C}}
+\newcommand{\mD}{\mat{D}}
+\newcommand{\mV}{\mat{V}}
+\newcommand{\mW}{\mat{W}}
+\newcommand{\mH}{\mat{H}}
+\newcommand{\mI}{\mat{I}}
+\newcommand{\mP}{\mat{P}}
+\newcommand{\mS}{\mat{S}}
+\newcommand{\mJ}{\mat{J}}
+\newcommand{\mM}{\mat{M}}
+\newcommand{\mT}{\mat{T}}
+\newcommand{\mZ}{\mat{Z}}
+\newcommand{\mO}{\mat{O}}
+\newcommand{\mX}{\mat{X}}
+\newcommand{\mY}{\mat{Y}}
+\newcommand{\mQ}{\mat{Q}}
+\newcommand{\mLambda}{\mat{\Lambda}}
+% \newcommand{\mL}{\mat{L}}
+\newcommand{\mmI}{\mat{I}}
+\newcommand{\mK}{\mat{K}}
+\newcommand{\mSigma}{\mat{\Sigma}}
+\newcommand{\mOmega}{\mat{\Omega}}
+\newcommand{\cC}{\cst{C}}
+\newcommand{\cM}{\cst{M}}
+\newcommand{\cN}{\cst{N}}
+\newcommand{\cQ}{\cst{Q}}
+\newcommand{\cD}{\cst{D}}
+\newcommand{\cL}{\cst{L}}
+\newcommand{\cK}{\cst{K}}
+\newcommand{\cH}{\cst{H}}
+\newcommand{\cR}{\cst{R}}
+\newcommand{\cU}{\cst{U}}
+\newcommand{\cS}{\cst{S}}
+\newcommand{\cX}{\cst{X}}
+\newcommand{\sQ}{\mathcal{Q}}
+\newcommand{\sS}{\mathcal{S}}
+\newcommand{\sF}{\mathcal{F}}
+\newcommand{\sC}{\mathcal{C}}
+\newcommand{\sX}{\mathcal{X}}
+\newcommand{\sH}{\mathcal{H}}
+
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bH}{\mathbb{H}}
+
+\usepackage{algorithm}  
+% \usepackage{algorithmic}
+%\usepackage{algorithmicx}  
+\usepackage{algpseudocode}  
+
+\floatname{algorithm}{算法}  
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
+\renewcommand{\algorithmicensure}{\textbf{输出:}}  

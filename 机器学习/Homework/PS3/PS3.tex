@@ -244,6 +244,34 @@
 
   \begin{solution}
     %请在此处作答
+    \begin{enumerate}
+      \item
+
+            通过写了一个 Python 程序计算得出:
+
+            对于一开始的八个样本, $X$ 信息增益为 $0$, $Y$ 信息增益为 $0$, $Z$ 信息增益为 $0.31$, 因此首先选择 $Z$.
+
+            其他同理, 最后得出如下图:
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-2-1.png}
+              \label{Fig.main1}
+            \end{figure}
+
+      \item
+
+            对于一开始的八个样本, $X$ 基尼指数为 $0.375$, $Y$ 信息增益为 $0.375$, $Z$ 信息增益为 $0.25$, 因此首先选择最小的 $Z$.
+
+            其他同理, 最后得出如下图:
+
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-2-2.png}
+              \label{Fig.main1}
+            \end{figure}
+    \end{enumerate}
   \end{solution}
 
 
@@ -294,6 +322,63 @@
 
   \begin{solution}
     %请在此处作答
+    \begin{enumerate}
+      \item
+
+            对于一开始的五个样本, "爱运动" 的信息增益为 $0.42$, "爱学习" 的信息增益也为 $0.42$, 所以两棵决策树的第一层无论是选择 "爱运动" 还是 "爱学习", 均是正确的.
+
+            对于左边的决策树, 第二层的 "爱运动" 的信息增益为 $0.92$, 因此左边的决策树验证完毕.
+
+            对于右边的决策树, 第二层的 "爱学习" 的信息增益为 $0.92$, 因此右边的决策树验证完毕.
+
+      \item
+
+            对于左边的决策树:
+
+            首先是预剪枝, 对于 "预剪枝" 若不进行剪枝, 那么每个样本都会被标记为 "是", 编号 $\{ 6 \}$ 的样例被分类正确, 精度为 $25.0\%$. 若进行划分, 那么第 $6$ 个或第 $7$ 个样例会被分类错误, 第 $8$ 和第 $9$ 个样例分类正确, 精度为 $75.0\%$, 因此我们进行划分.
+
+            对于 "爱学习", 如果进行剪枝, 那么第 $9$ 个样例会从正确转为错误, 使得验证集精度变为 $50\%$, 因此我们禁止划分.
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-3-2-1.png}
+              \label{Fig.main1}
+            \end{figure}
+
+            同理有后剪枝的结果:
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-3-2-2.png}
+              \label{Fig.main1}
+            \end{figure}
+
+            对于右边的决策树:
+
+            首先是预剪枝, 对于 "预剪枝" 若不进行剪枝, 那么每个样本都会被标记为 "是", 编号 $\{ 6 \}$ 的样例被分类正确, 精度为 $25.0\%$. 若进行划分, 只有第 $8$ 个样例会被分类正确, 精度为 $25.0\%$, 因此我们禁止划分.
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-3-2-3.png}
+              \label{Fig.main1}
+            \end{figure}
+
+            同理有后剪枝的结果:
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-3-2-4.png}
+              \label{Fig.main1}
+            \end{figure}
+
+      \item
+
+            对于左边的决策树来说, 预剪枝和后剪枝在训练集上的准确率均为 $80\%$, 在测试集上的准确率均为 $75\%$.
+
+            对于右边的决策树来说, 预剪枝在训练集上的准确率均为 $60\%$, 在测试集上的准确率均为 $25\%$. 后剪枝在训练集上的准确率均为 $100\%$, 在测试集上的准确率均为 $50\%$.
+
+            因此我们可知, 后剪枝的拟合能力较强.
+    \end{enumerate}
   \end{solution}
 
   \question [20] \textbf{连续与缺失值}

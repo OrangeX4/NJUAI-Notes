@@ -1,5 +1,7 @@
 import numpy as np
 from typing import Any, Callable, Counter, List, Dict
+from matplotlib import pyplot as plt
+from sklearn.linear_model import Perceptron
 
 
 class DecisionTree:
@@ -200,7 +202,8 @@ class DecisionTree:
         # get the best attribute
         self.gains = []
         for attr in self.attr:
-            gain_conts = self.gain_cont(self.data, attr, self.config['label_index'])
+            gain_conts = self.gain_cont(
+                self.data, attr, self.config['label_index'])
             best_gain_cont = max(gain_conts, key=lambda x: x[1])
             self.gains.append((attr, best_gain_cont[0], best_gain_cont[1]))
         best_gain = max(self.gains, key=lambda x: x[2])
@@ -283,10 +286,10 @@ class DecisionTree:
             self.is_leaf = True
             self.label = Counter(labels).most_common(1)[0][1]
             return
-        self.best_attr = self.decision_fn()
-        default_data = data[data[:, self.best_attr] == -1]
         if 'attr_ranges' in self.config:
             # 对于离散属性
+            self.best_attr = self.decision_fn()
+            default_data = data[data[:, self.best_attr] == -1]
             for val in self.config['attr_ranges'][self.best_attr]:
                 new_data = data[data[:, self.best_attr] == val]
                 if len(default_data) != 0:
@@ -296,7 +299,8 @@ class DecisionTree:
                 if len(new_data) == 0:
                     self.children[val] = DecisionTree(
                         new_data, new_attr, config=self.config, weights=self.weights)
-                    self.children[val].label = Counter(labels).most_common(1)[0][1]
+                    self.children[val].label = Counter(
+                        labels).most_common(1)[0][1]
                 else:
                     def update_weights(this: DecisionTree):
                         for x in default_data:
@@ -305,42 +309,61 @@ class DecisionTree:
                     self.children[val] = DecisionTree(
                         new_data, new_attr, config=self.config, weights=self.weights, before_generate=update_weights)
         else:
-            # 对于连续属性
             if self.config['decision_fn'] == 'gain_cont':
+                # 对于连续属性
+                self.best_attr = self.decision_fn()
                 mid_val = self.mid_val
                 # divide data into negative and positive data
                 neg_data = data[data[:, self.best_attr] <= mid_val]
                 pos_data = data[data[:, self.best_attr] > mid_val]
-                new_attr = attr.copy()
-                if len(neg_data) == 0:
-                    self.children['<='] = DecisionTree(
-                        neg_data, new_attr, config=self.config, weights=self.weights)
-                    self.children['<='].label = Counter(labels).most_common(1)[0][1]
-                else:
-                    self.children['<='] = DecisionTree(
-                        neg_data, new_attr, config=self.config, weights=self.weights)
-                if len(pos_data) == 0:
-                    self.children['>'] = DecisionTree(
-                        pos_data, new_attr, config=self.config, weights=self.weights)
-                    self.children['>'].label = Counter(labels).most_common(1)[0][1]
-                else:
-                    self.children['>'] = DecisionTree(
-                        pos_data, new_attr, config=self.config, weights=self.weights)
+            elif self.config['decision_fn'] == 'perceptron':
+                # 对于线性分类器
+                perceptron = Perceptron(max_iter=1000)
+                X, y = self.data[:, :-1], self.data[:, -1]
+                perceptron.fit(X, y)
+                self.w = perceptron.coef_[0]
+                self.b = perceptron.intercept_
+                # divide data into negative and positive data
+                neg_data = np.array(
+                    [x for x in self.data if self.w @ x[:-1] + self.b <= 0])
+                pos_data = np.array(
+                    [x for x in self.data if self.w @ x[:-1] + self.b > 0])
+            new_attr = attr.copy()
+            if len(neg_data) == 0:
+                self.children['<='] = DecisionTree(
+                    neg_data, new_attr, config=self.config, weights=self.weights)
+                self.children['<='].label = Counter(
+                    labels).most_common(1)[0][1]
+            else:
+                self.children['<='] = DecisionTree(
+                    neg_data, new_attr, config=self.config, weights=self.weights)
+            if len(pos_data) == 0:
+                self.children['>'] = DecisionTree(
+                    pos_data, new_attr, config=self.config, weights=self.weights)
+                self.children['>'].label = Counter(labels).most_common(1)[0][1]
+            else:
+                self.children['>'] = DecisionTree(
+                    pos_data, new_attr, config=self.config, weights=self.weights)
 
     def print(self, indent=0):
         '''
         打印决策树
         '''
-        # print(' ' * indent + 'data: ' + str(self.data).replace('\n', '', -1))
+        print(' ' * indent + 'data: ' + str(self.data).replace('\n', '', -1))
         # print(' ' * indent + 'entropy: ' + str(self.entropy(self.data)))
         if self.is_leaf:
             print(' ' * indent + 'label: ' + str(self.label))
         else:
-            if self.config['decision_fn'] == 'gini':
+            if hasattr(self, 'ginis'):
                 print(' ' * indent + 'ginis: ' + str(self.ginis))
-            else:
+            if hasattr(self, 'gains'):
                 print(' ' * indent + 'gains: ' + str(self.gains))
-            print(' ' * indent + 'best_attr: ' + str(self.best_attr))
+            if hasattr(self, 'w'):
+                print(' ' * indent + 'w: ' + str(self.w))
+            if hasattr(self, 'b'):
+                print(' ' * indent + 'b: ' + str(self.b))
+            if hasattr(self, 'best_attr'):
+                print(' ' * indent + 'best_attr: ' + str(self.best_attr))
             for val, child in self.children.items():
                 print(' ' * indent + 'val: ' + str(val))
                 child.print(indent + 4)
@@ -427,11 +450,34 @@ class DecisionTree:
 #     [1, 1, 1, 0],
 # ])
 
-# 第五题第一问
+# # 第五题第二问
+
+# config = {
+#     'attr_names': ['A1', 'A2', 'f'],
+#     'decision_fn': 'gain_cont',
+# }
+
+# raw_attr = [0, 1]
+
+# raw_data = np.array([
+#     [24, 40, 1],
+#     [53, 52, 0],
+#     [23, 25, 0],
+#     [25, 77, 1],
+#     [32, 48, 1],
+#     [52, 110, 1],
+#     [22, 38, 1],
+#     [43, 44, 0],
+#     [52, 27, 0],
+#     [48, 65, 1],
+# ])
+
+
+# 第五题第三问
 
 config = {
     'attr_names': ['A1', 'A2', 'f'],
-    'decision_fn': 'gain_cont',
+    'decision_fn': 'perceptron',
 }
 
 raw_attr = [0, 1]
@@ -448,6 +494,21 @@ raw_data = np.array([
     [52, 27, 0],
     [48, 65, 1],
 ])
+
+# # 画图观察
+# perceptron = Perceptron(max_iter=1000)
+# X, y = raw_data[:, :-1], raw_data[:, -1]
+# perceptron.fit(X, y)
+# w = perceptron.coef_[0]
+# b = perceptron.intercept_
+# print(w, b)
+
+# label_0_data = raw_data[raw_data[:, -1] == 0]
+# label_1_data = raw_data[raw_data[:, -1] == 1]
+# plt.scatter(label_0_data[:, 0], label_0_data[:, 1], label=label_0_data[:, -1])
+# plt.scatter(label_1_data[:, 0], label_1_data[:, 1], label=label_1_data[:, -1])
+# plt.plot(raw_data[:, 0], (w[0] * raw_data[:, 0] + b) / (-w[1]))
+# plt.show()
 
 # --------------------------------------------------
 

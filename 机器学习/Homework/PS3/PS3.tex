@@ -375,7 +375,7 @@
 
             对于左边的决策树来说, 预剪枝和后剪枝在训练集上的准确率均为 $80\%$, 在测试集上的准确率均为 $75\%$.
 
-            对于右边的决策树来说, 预剪枝在训练集上的准确率均为 $60\%$, 在测试集上的准确率均为 $25\%$. 后剪枝在训练集上的准确率均为 $100\%$, 在测试集上的准确率均为 $50\%$.
+            对于右边的决策树来说, 预剪枝在训练集上的准确率为 $60\%$, 在测试集上的准确率为 $25\%$. 后剪枝在训练集上的准确率为 $100\%$, 在测试集上的准确率为 $50\%$.
 
             因此我们可知, 后剪枝的拟合能力较强.
     \end{enumerate}
@@ -536,6 +536,40 @@
   \end{enumerate}
   \begin{solution}
     %请在此处作答
+    \begin{enumerate}
+      \item
+
+            计算根节点的熵为
+
+            $$
+              \operatorname{Ent}(D) = -(0.4\log_2 0.4 + 0.6\log_2 0.6) = 0.97
+            $$
+
+      \item
+
+            使用连续值属性对应的信息增益方法, 第一层我们算出, 对于 $A_1$ 属性, 最优划分值为 $52$, 信息增益为 $0.14$; 对于 $A_2$ 属性, 最优划分值为 $32.5$, 信息增益为 $0.32$. 因此我们首先选择 $A_2$ 属性的 $32.5$ 划分值.
+
+            其他层同理, 最后画图如下.
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-5-2.png}
+              \label{Fig.main1}
+            \end{figure}
+
+            由于测试集并没有冲突的样例, 因此分类误差为 $0\%$.
+
+      \item
+
+            最后算出多变量决策树的深度为 $1$, 其中 $\alpha=-96, \beta=86$.
+
+            \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.8\textwidth]{./figure/PS3-5-3.png}
+              \label{Fig.main1}
+            \end{figure}
+    \end{enumerate}
+
   \end{solution}
 
 \end{questions}

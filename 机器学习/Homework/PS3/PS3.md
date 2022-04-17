@@ -181,6 +181,27 @@ $$
 
 ## 四、
 
+**(1)**
+
+对于第一层,
+
+计算可得 $T_a = \{ 3.5, 5.0, 7.5 \}$
+
+并且有 $\displaystyle \operatorname{Ent}(D) = -\sum_{k=1}^{2}\frac{1}{2}\log_2 \frac{1}{2} = 1.0$
+
+同理可以算出 $\displaystyle \operatorname{Gain}(D, a, 3.5) = 0.31, \operatorname{Gain}(D, a, 5.0) = 0.0, \operatorname{Gain}(D, a, 7.5) = 0.31$
+
+因此第一层是以 $3.5$ 为划分点进行划分.
+
+对于第二层,
+
+同理可以算出 $\displaystyle \operatorname{Gain}(D', a, 5.0) = 0.25, \operatorname{Gain}(D', a, 7.5) = 0.92$
+
+因此第一层是以 $7.5$ 为划分点进行划分.
+
+![](figure/PS3-4-1.png)
+
+**(2)**
 
 
 

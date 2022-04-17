@@ -83,19 +83,55 @@ class DecisionTree:
             # remove duplicates
             attr_range = np.unique(data[:, attr])
         # calculate the entropy
-        entropy = DecisionTree.entropy(data)
+        entropy = DecisionTree.entropy(data, label_index)
         # count the number of each label
         value_counts = Counter(data[:, attr])
         # convert value_counts to a vector in order of attr_range
         value_vector = np.array([value_counts[val] for val in attr_range])
         # calculate the entropy of each attribute value
         attr_entropies = np.array([DecisionTree.entropy(
-            data[data[:, attr] == val]) for val in attr_range])
+            data[data[:, attr] == val], label_index) for val in attr_range])
         # calculate the sum of attr_entropies with ratio of value_vector
         attr_entropy = (value_vector / data.shape[0]) @ attr_entropies
         # calculate the information gain
         gain = entropy - attr_entropy
         return gain
+
+    @staticmethod
+    def gain_cont_with_mid_val(data: np.ndarray, attr: int, mid_val: float, label_index=-1) -> float:
+        '''
+        计算连续属性的信息增益
+        :param data: 数据集
+        :param attr: 连续属性
+        :param mid_val: 中点划分值
+        :return: 信息增益
+        '''
+        # calculate the entropy
+        entropy = DecisionTree.entropy(data, label_index)
+        # negative data
+        neg_data = data[data[:, attr] <= mid_val]
+        # positive data
+        pos_data = data[data[:, attr] > mid_val]
+        # convert value_counts to a vector in order of attr_range
+        value_vector = np.array([len(neg_data), len(pos_data)])
+        # calculate the entropy of each attribute value
+        attr_entropies = np.array([DecisionTree.entropy(
+            cur_data) for cur_data in [neg_data, pos_data]])
+        # calculate the sum of attr_entropies with ratio of value_vector
+        attr_entropy = (value_vector / data.shape[0]) @ attr_entropies
+        # calculate the information gain
+        gain = entropy - attr_entropy
+        return gain
+
+    @staticmethod
+    def gain_cont(data: np.ndarray, attr: int, label_index=-1) -> float:
+        # calculate mid_vals from data
+        sorted_vals = sorted(data[:, attr])
+        mid_vals = [(sorted_vals[i] + sorted_vals[i + 1]) / 2 for i in range(len(sorted_vals) - 1)]
+        # get the best mid_val
+        gains = [(mid_val, DecisionTree.gain_cont_with_mid_val(data, attr, mid_val, label_index))
+                      for mid_val in mid_vals]
+        return gains
 
     def gain_fn(self):
         # get the best attribute
@@ -205,5 +241,8 @@ class DecisionTree:
                 child.print(indent + 4)
 
 
-tree = DecisionTree(raw_data, raw_attr, config)
-tree.print()
+# tree = DecisionTree(raw_data, raw_attr, config)
+# tree.print()
+# print(DecisionTree.entropy(np.array([[3, 1], [4, 0], [6, 0], [9, 1]])))
+data = np.array([[4, 0], [6, 0], [9, 1]])
+print(DecisionTree.gain_cont(data, 0))

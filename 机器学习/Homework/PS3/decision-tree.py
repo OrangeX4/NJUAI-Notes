@@ -1,64 +1,6 @@
 import numpy as np
 from typing import Any, Callable, Counter, List, Dict
 
-# # 第二题
-
-# config = {
-#     'attr_names': ['X', 'Y', 'Z', 'f'],
-#     'attr_ranges': [[0, 1], [0, 1], [0, 1], [0, 1]],
-# }
-
-# raw_attr = [0, 1, 2]
-
-# raw_data = np.array([
-#     [1, 0, 1, 1],
-#     [1, 1, 0, 0],
-#     [0, 0, 0, 0],
-#     [0, 1, 1, 1],
-#     [0, 1, 0, 0],
-#     [0, 0, 1, 0],
-#     [1, 0, 0, 0],
-#     [1, 1, 1, 0],
-# ])
-
-# # 第三题
-
-# config = {
-#     'attr_names': ['X', 'Y', 'f'],
-#     'attr_ranges': [[0, 1], [0, 1], [0, 1]],
-# }
-
-# raw_attr = [0, 1]
-
-# raw_data = np.array([
-#     [1, 1, 1],
-#     [0, 1, 1],
-#     [1, 0, 0],
-#     [1, 0, 0],
-#     [0, 0, 1],
-# ])
-
-# 第四题
-# 缺失值默认为 -1
-
-config = {
-    'attr_names': ['X', 'Y', 'Z', 'f'],
-    'attr_ranges': [[0, 1], [0, 1], [0, 1], [0, 1]],
-}
-
-raw_attr = [0, 1, 2]
-
-raw_data = np.array([
-    [1, 0, -1, 1],
-    [-1, 1, 0, 0],
-    [0, -1, 0, 0],
-    [0, 1, 1, 1],
-    [-1, 1, 0, 0],
-    [0, 0, -1, 0],
-    [1, -1, 0, 0],
-    [1, 1, 1, 0],
-])
-
 
 class DecisionTree:
 
@@ -70,9 +12,7 @@ class DecisionTree:
         '''
         self.config = {
             'label_index': -1,
-            # 'decision_fn': 'gain',
-            # 'decision_fn': 'gini',
-            'decision_fn': 'gain_with_weight',
+            'decision_fn': 'gain',
         }
         self.data = data
         self.attr = attr
@@ -256,6 +196,17 @@ class DecisionTree:
                                                    self.config['label_index'])) for attr in self.attr]
         return max(self.gains, key=lambda x: x[1])[0]
 
+    def gain_cont_fn(self):
+        # get the best attribute
+        self.gains = []
+        for attr in self.attr:
+            gain_conts = self.gain_cont(self.data, attr, self.config['label_index'])
+            best_gain_cont = max(gain_conts, key=lambda x: x[1])
+            self.gains.append((attr, best_gain_cont[0], best_gain_cont[1]))
+        best_gain = max(self.gains, key=lambda x: x[2])
+        self.mid_val = best_gain[1]
+        return best_gain[0]
+
     @staticmethod
     def gini(data: np.ndarray, label_index=-1) -> float:
         '''
@@ -306,6 +257,8 @@ class DecisionTree:
                 return self.gini_fn
             elif self.config['decision_fn'] == 'gain_with_weight':
                 return self.gain_with_weight_fn
+            elif self.config['decision_fn'] == 'gain_cont':
+                return self.gain_cont_fn
             else:
                 raise ValueError('decision_fn must be gain or gini')
         else:
@@ -332,42 +285,171 @@ class DecisionTree:
             return
         self.best_attr = self.decision_fn()
         default_data = data[data[:, self.best_attr] == -1]
-        for val in self.config['attr_ranges'][self.best_attr]:
-            new_data = data[data[:, self.best_attr] == val]
-            if len(default_data) != 0:
-                new_data = np.vstack([new_data, default_data])
-            new_attr = attr.copy()
-            new_attr.remove(self.best_attr)
-            if len(new_data) == 0:
-                self.children[val] = DecisionTree(
-                    new_data, new_attr, config=self.config, weights=self.weights)
-                self.children[val].label = Counter(labels).most_common(1)[0][1]
-            else:
-                def update_weights(this: DecisionTree):
-                    for x in default_data:
-                        this.set_weight(x, this.r_v(
-                            data[data[:, self.best_attr] != -1], self.best_attr, val) * this.weight(x))
-                self.children[val] = DecisionTree(
-                    new_data, new_attr, config=self.config, weights=self.weights, before_generate=update_weights)
+        if 'attr_ranges' in self.config:
+            # 对于离散属性
+            for val in self.config['attr_ranges'][self.best_attr]:
+                new_data = data[data[:, self.best_attr] == val]
+                if len(default_data) != 0:
+                    new_data = np.vstack([new_data, default_data])
+                new_attr = attr.copy()
+                new_attr.remove(self.best_attr)
+                if len(new_data) == 0:
+                    self.children[val] = DecisionTree(
+                        new_data, new_attr, config=self.config, weights=self.weights)
+                    self.children[val].label = Counter(labels).most_common(1)[0][1]
+                else:
+                    def update_weights(this: DecisionTree):
+                        for x in default_data:
+                            this.set_weight(x, this.r_v(
+                                data[data[:, self.best_attr] != -1], self.best_attr, val) * this.weight(x))
+                    self.children[val] = DecisionTree(
+                        new_data, new_attr, config=self.config, weights=self.weights, before_generate=update_weights)
+        else:
+            # 对于连续属性
+            if self.config['decision_fn'] == 'gain_cont':
+                mid_val = self.mid_val
+                # divide data into negative and positive data
+                neg_data = data[data[:, self.best_attr] <= mid_val]
+                pos_data = data[data[:, self.best_attr] > mid_val]
+                new_attr = attr.copy()
+                if len(neg_data) == 0:
+                    self.children['<='] = DecisionTree(
+                        neg_data, new_attr, config=self.config, weights=self.weights)
+                    self.children['<='].label = Counter(labels).most_common(1)[0][1]
+                else:
+                    self.children['<='] = DecisionTree(
+                        neg_data, new_attr, config=self.config, weights=self.weights)
+                if len(pos_data) == 0:
+                    self.children['>'] = DecisionTree(
+                        pos_data, new_attr, config=self.config, weights=self.weights)
+                    self.children['>'].label = Counter(labels).most_common(1)[0][1]
+                else:
+                    self.children['>'] = DecisionTree(
+                        pos_data, new_attr, config=self.config, weights=self.weights)
 
     def print(self, indent=0):
         '''
         打印决策树
         '''
-        print(' ' * indent + 'data: ' + str(self.data).replace('\n', '', -1))
-        print(' ' * indent + 'entropy: ' + str(self.entropy(self.data)))
+        # print(' ' * indent + 'data: ' + str(self.data).replace('\n', '', -1))
+        # print(' ' * indent + 'entropy: ' + str(self.entropy(self.data)))
         if self.is_leaf:
             print(' ' * indent + 'label: ' + str(self.label))
         else:
-            if self.config['decision_fn'] == 'gain' or self.config['decision_fn'] == 'gain_with_weight':
-                print(' ' * indent + 'gains: ' + str(self.gains))
-            elif self.config['decision_fn'] == 'gini':
+            if self.config['decision_fn'] == 'gini':
                 print(' ' * indent + 'ginis: ' + str(self.ginis))
+            else:
+                print(' ' * indent + 'gains: ' + str(self.gains))
             print(' ' * indent + 'best_attr: ' + str(self.best_attr))
             for val, child in self.children.items():
                 print(' ' * indent + 'val: ' + str(val))
                 child.print(indent + 4)
 
+
+# --------------------------------------------------
+
+# # 第二题
+
+# config = {
+#     'attr_names': ['X', 'Y', 'Z', 'f'],
+#     'attr_ranges': [[0, 1], [0, 1], [0, 1], [0, 1]],
+#     'decision_fn': 'gain',
+#     # 'decision_fn': 'gini',
+# }
+
+# raw_attr = [0, 1, 2]
+
+# raw_data = np.array([
+#     [1, 0, 1, 1],
+#     [1, 1, 0, 0],
+#     [0, 0, 0, 0],
+#     [0, 1, 1, 1],
+#     [0, 1, 0, 0],
+#     [0, 0, 1, 0],
+#     [1, 0, 0, 0],
+#     [1, 1, 1, 0],
+# ])
+
+# # 第三题
+
+# config = {
+#     'attr_names': ['X', 'Y', 'f'],
+#     'attr_ranges': [[0, 1], [0, 1], [0, 1]],
+#     'decision_fn': 'gain',
+# }
+
+# raw_attr = [0, 1]
+
+# raw_data = np.array([
+#     [1, 1, 1],
+#     [0, 1, 1],
+#     [1, 0, 0],
+#     [1, 0, 0],
+#     [0, 0, 1],
+# ])
+
+# # 第四题第一问
+
+# config = {
+#     'attr_names': ['a', 'f'],
+#     'decision_fn': 'gain_cont',
+# }
+
+# raw_attr = [0]
+
+# raw_data = np.array([
+#     [3, 1],
+#     [4, 0],
+#     [6, 0],
+#     [9, 1],
+# ])
+
+# # 第四题第二问
+
+# # 缺失值默认为 -1
+
+# config = {
+#     'attr_names': ['X', 'Y', 'Z', 'f'],
+#     'attr_ranges': [[0, 1], [0, 1], [0, 1], [0, 1]],
+#     'decision_fn': 'gain_with_weight',
+# }
+
+# raw_attr = [0, 1, 2]
+
+# raw_data = np.array([
+#     [1, 0, -1, 1],
+#     [-1, 1, 0, 0],
+#     [0, -1, 0, 0],
+#     [0, 1, 1, 1],
+#     [-1, 1, 0, 0],
+#     [0, 0, -1, 0],
+#     [1, -1, 0, 0],
+#     [1, 1, 1, 0],
+# ])
+
+# 第五题第一问
+
+config = {
+    'attr_names': ['A1', 'A2', 'f'],
+    'decision_fn': 'gain_cont',
+}
+
+raw_attr = [0, 1]
+
+raw_data = np.array([
+    [24, 40, 1],
+    [53, 52, 0],
+    [23, 25, 0],
+    [25, 77, 1],
+    [32, 48, 1],
+    [52, 110, 1],
+    [22, 38, 1],
+    [43, 44, 0],
+    [52, 27, 0],
+    [48, 65, 1],
+])
+
+# --------------------------------------------------
 
 tree = DecisionTree(raw_data, raw_attr, config)
 tree.print()

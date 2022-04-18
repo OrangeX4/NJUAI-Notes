@@ -199,21 +199,17 @@
 
             $$
               \begin{aligned}
-                 & \quad\ \operatorname{Gain}(D, a)                                                                                                                                                                                                                      \\
-                 & = \operatorname{Ent}(D) - \sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\operatorname{Ent}(D^{v})                                                                                                                                                                  \\
-                 & = -\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\sum_{k=1}^{|\mathcal{Y}|}p_k\log_2 p_k + \sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\sum_{k=1}^{|\mathcal{Y}|}p_k^{v}\log_2 p_k^{v}                                                                                        \\
-                 & = -\sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\frac{|D_{k}|}{|D|}\log_2 \frac{|D_{k}|}{|D|} + \sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\frac{|D_k^{v}|}{|D^{v}|}\log_2 \frac{|D_k^{v}|}{|D^{v}|}                    \\
-                 & = -\sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\frac{|D|}{|D_k^{v}|}\frac{|D^{v}|}{|D|}\frac{|D_{k}|}{|D|}\log_2 \frac{|D_{k}|}{|D|} + \sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\log_2 \frac{|D_k^{v}|}{|D^{v}|} \\
-                 & = -\sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\log_2 \frac{|D_{k}|}{|D|}\cdot 2^{\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}} + \sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\log_2 \frac{|D_k^{v}|}{|D^{v}|}      \\
-                 & = -\sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\log_2 \frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}\cdot 2^{\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}}                                                                             \\
-                 & \ge -\log_2\sum_{k=1}^{|\mathcal{Y}|}\sum_{v=1}^{V}\frac{|D_k^{v}|}{|D|}\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}\cdot 2^{\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}}                                                                            \\
-                 & = -\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}\log_2\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\sum_{k=1}^{|\mathcal{Y}|}\frac{|D_{k}|}{|D|}                                                                                                                   \\
-                 & = -\frac{|D^{v}|}{|D_k^{v}|}\frac{|D_{k}|}{|D|}\log_2 1 \cdot 1                                                                                                                                                                                       \\
-                 & = 0                                                                                                                                                                                                                                                   \\
+                 & \quad\ \operatorname{Gain}(D, a)                                                                                                                                    \\
+                 & = \operatorname{Ent}(D) - \sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\operatorname{Ent}(D^{v})                                                                                \\
+                 & = -\sum_{k=1}^{|\mathcal{Y}|}p_k\log_2 p_k + \sum_{v=1}^{V}\frac{|D^{v}|}{|D|}\sum_{k=1}^{|\mathcal{Y}|}p_k^{v}\log_2 p_k^{v}                                       \\
+                 & = -\sum_{k=1}^{|\mathcal{Y}|}p_k\log_2 p_k + \sum_{k=1}^{|\mathcal{Y}|}(\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}p_k^{v}\log_2 p_k^{v})                                     \\
+                 & \ge -\sum_{k=1}^{|\mathcal{Y}|}p_k\log_2 p_k + \sum_{k=1}^{|\mathcal{Y}|}(\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}p_k^{v})\log_2(\sum_{v=1}^{V}\frac{|D^{v}|}{|D|}p_k^{v}) \\
+                 & = -\sum_{k=1}^{|\mathcal{Y}|}p_k\log_2 p_k + \sum_{k=1}^{|\mathcal{Y}|}p_k\log_2p_k                                                                                 \\
+                 & = 0                                                                                                                                                                 \\
               \end{aligned}
             $$
 
-            其中不等号使用了 Jensen 不等式, 即 $\mathbb{E}[f(x)] \ge f(\mathbb{E}[x])$, 其中 $f$ 是凸函数.
+            其中不等号使用了 Jensen 不等式, 即 $\mathbb{E}[f(x)] \ge f(\mathbb{E}[x])$, 其中 $f=x\log_2 x$ 是凸函数.
 
             因此信息增益 $\operatorname{Gain}(D, a)$ 非负.
     \end{enumerate}
@@ -561,7 +557,7 @@
 
       \item
 
-            最后算出多变量决策树的深度为 $1$, 其中 $\alpha=-96, \beta=86$.
+            如图所示, 最后算出多变量决策树的深度为 $2$, 其中 $\alpha=-96, \beta=86$.
 
             \begin{figure}[H]
               \centering

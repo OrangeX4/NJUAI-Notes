@@ -249,3 +249,114 @@ Perterson 算法符合 safety 和 liveness 性质。对于线程 0 想要进入�
 因此平均等待时间最短的算法为 SJF 和非抢占式优先级算法。
 
 
+## 5.
+
+**(a)**
+
+在长期执行后，因为有 20 个 I/O 密集型任务，所以我们可以保证每时每刻都至少会有一个任务已经完成了 I/O 操作，处于可调度状态。
+
+当时间片为 1 ms 时，一共执行了 I/O 密集型任务对应的 20 个 1 ms 的时间片，和 CPU 密集型的 1 个 1 ms 的时间片，上下文切换开销是 21 次。
+
+因此 CPU 利用率为 $\displaystyle \frac{20 \times 1 + 1 \times 1}{21 \times 0.1 + 20 \times 1 + 1 \times 1} = 90.9\%$
+
+**(b)**
+
+同理，当时间片为 1 ms 时，一共执行了 I/O 密集型任务对应的 20 个 1 ms 的时间片，和 CPU 密集型的 1 个 5 ms 的时间片，上下文切换开销是 21 次。
+
+因此 CPU 利用率为 $\displaystyle \frac{20 \times 1 + 1 \times 5}{21 \times 0.1 + 20 \times 1 + 1 \times 5} = 92.3\%$
+
+
+## 6.
+
+由于 P1 的周期 50 ms 小于 P2 的周期 90 ms，因此 P1 的优先级高于 P2。
+
+![](./images/midterm-6.png)
+
+如图所示，在 P1 和 P2 的周期最小公倍数 450 ms 内，单调速率算法能够符合不超时的要求，因此单调速率算法对于这种情况执行正确。
+
+
+## 7.
+
+**(a)**
+
+因为 8 KB 的页面大小对应了 13 位的页内偏移量，因此虚拟页号位数为 36 - 13 = 23 位。因此共有 $2^{23}$ 个页面。
+
+**(b)**
+
+每个页表项占用 4 Bytes，即 32 位。如果将这 32 位全部用来存放物理页号，那么加上 13 位的页内偏移量，则是 45 位。则最大的物理地址为 0x1FFF FFFF FFFF。
+
+**(c)**
+
+虚拟地址最大支持 64 GB 的寻址，进程的平均大小为 8GB，因此大概使用了 $2^{20}$ 个页面。
+
+如果使用一级页表，那么页表需要占用 $2^{23} \times 4$ Bytes 的空间，即 32 MB 的页表大小。
+
+如果使用二级页表，那么页表需要占用 $(2^{11} + 2^{20}) \times 4$ Bytes, 即大约 1 MB 的页表大小。 
+
+如果使用三级页表，那么页表需要占用 $(2^{7} + 2^{12} +  2^{20}) \times 4$ Bytes, 即也是大约 1 MB 的页表大小，但是大于二级页表的大小。 
+
+所以应该选用二级页表，其平均页表大小为 1 MB，并且地址翻译速度快于三级页表。
+
+
+## 8.
+
+- FIFO：选择页面 3 进行置换。因为页面 3 最早被载入。
+- 第二次机会：选择页面 2 进行置换。因为页面 2 是 R 位为 0 的页面中，最早被载入的。
+- NRU：选择页面 2 进行置换。因为页面 2 的 R 和 M 位均为 0。
+- LRU：选择页面 1 进行置换。因为页面 1 的最近一次访问时间最早。
+
+
+## 9.
+
+设总共有 `n` 个进程，对于第 `i` 个进程来说，对应的强制轮转法代码为：
+
+```c
+while (TRUE) {
+  while (turn != i);
+  critical_section();
+  turn = (i + 1) % n;
+  noncritical_section();
+}
+```
+
+
+## 10.
+
+最终修改如下：
+
+```c
+int BUFFER_SIZE = 100;
+int count = 0;
+Condition empty;
+Condition full;
+int mutex = 0;
+
+void producer(void) {
+  int item;
+  while (TRUE) {
+    produce_item(&item);
+    mutex_lock(mutex);
+    while (count == BUFFER_SIZE)
+      wait(full, mutex); 
+    enter_item(item);
+    count++;
+    signal(empty);
+    mutex_unlock(mutex);
+  }
+}
+
+void consumer(void) {
+  int item;
+  while (TRUE) {
+    mutex_lock(mutex);
+    while (count == 0)
+      wait(empty, mutex); 
+    remove_item(&item);
+    count--;
+    signal(full);
+    mutex_unlock(mutex);
+    consume_item(&item);
+  }
+}
+```
+

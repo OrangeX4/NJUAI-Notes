@@ -134,5 +134,6 @@
     "files.associations": {
         "*.json": "jsonc",
         "*.tcc": "c"
-    }
+    },
+    "python.formatting.provider": "autopep8"
 }

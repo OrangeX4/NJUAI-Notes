@@ -198,6 +198,10 @@ class ALC_Elim:
             i = i + 1
             self.Gamma.append([tau for tau in self.Gamma[i - 1] if not self.is_bad(tau, self.Gamma[i - 1])])
         self.i = i
+        self.tau = None
+        for tau in self.Gamma[i]:
+            if self.A0 in tau:
+                self.tau = tau
 
     def __str__(self) -> str:
         s = ''
@@ -260,3 +264,4 @@ print('$i$ = ' + str(len(result.Gamma) - 1))
 print('There is ' + str(len(result.Gamma[0])) + ' types in $\Gamma_0$')
 for i in range(len(result.Gamma)):
     print(f'$\Gamma_{i}$ = ' + str(result.Gamma[i]))
+print('$\\tau$ = ' + str(result.tau))

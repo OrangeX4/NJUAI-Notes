@@ -1,22 +1,17 @@
-A = 'ARTISTOIL'
-n = len(A)
+import requests
+from time import sleep
+from bs4 import BeautifulSoup
 
-def IsWord(s):
-    return s == 'ART' or s == 'IS' or s == 'TOIL' or s == 'ARTIST' or s == 'OIL'
+def content(i: int):
+    url = "https://www.dati56.com/post/13659.html?ipage=" + str(i)
+    sleep(1)
+    content = requests.get(url).content.decode("utf-8")
+    soup = BeautifulSoup(content, "html.parser")
+    text = soup.find('div', class_='content').get_text(separator="\n")
+    p_nums = set([str(num) for num in range(1, 34)])
+    text = '\n'.join((line for line in text.split('\n') if line.strip() != '' and line not in p_nums))
+    return text
 
-# 用于动态规划的数组
-p = [0 for _ in range(n + 1)]
-
-# 初始化 p[0]
-p[0] = 1
-
-# 主循环
-for k in range(1, n + 1):
-    sum = 0
-    for i in range(0, k):
-       if IsWord(A[i : k]):
-           sum += p[i]
-    p[k] = sum
-
-# 输出最后结果
-print(p[n])
+with open('output.txt', 'w', encoding='utf-8') as f:
+    for i in range(1, 34):
+        f.write(content(i) + '\n')

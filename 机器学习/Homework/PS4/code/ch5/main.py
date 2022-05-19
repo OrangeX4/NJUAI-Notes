@@ -134,10 +134,10 @@ def main():
     print('elapsed time for large scale and tensor function:', elapsed_time_for_large_and_tensor)
 
     # test elapsed time for permutation function
-    elapsed_time_for_small_and_plain = test_permutation_function_for_speed(m=10, d=10, n=10000, permutation_function=plain_permutation_function)
-    elapsed_time_for_small_and_matrix = test_permutation_function_for_speed(m=10, d=10, n=10000, permutation_function=matrix_permutation_function)
-    elapsed_time_for_large_and_plain = test_permutation_function_for_speed(m=1000, d=1000, n=10, permutation_function=plain_permutation_function)
-    elapsed_time_for_large_and_matrix = test_permutation_function_for_speed(m=1000, d=1000, n=10, permutation_function=matrix_permutation_function)
+    elapsed_time_for_small_and_plain = test_permutation_function_for_speed(m=10, d=10, n=100000, permutation_function=plain_permutation_function)
+    elapsed_time_for_small_and_matrix = test_permutation_function_for_speed(m=10, d=10, n=100000, permutation_function=matrix_permutation_function)
+    elapsed_time_for_large_and_plain = test_permutation_function_for_speed(m=1000, d=1000, n=1000, permutation_function=plain_permutation_function)
+    elapsed_time_for_large_and_matrix = test_permutation_function_for_speed(m=1000, d=1000, n=1000, permutation_function=matrix_permutation_function)
 
     print('elapsed time for small scale and plain function:', elapsed_time_for_small_and_plain)
     print('elapsed time for small scale and matrix function:', elapsed_time_for_small_and_matrix)

@@ -113,4 +113,94 @@ $
 
 ## 三、
 
+**(1)**
+
+我们对每个样例 $(\bm{x}_i, y_i)$ 附上一个代价系数 $k_i$,
+
+其中 $\displaystyle k_i = \begin{cases} 1, & y_i = +1 \\ k, & y_i = -1 \end{cases}$ 也即 $\displaystyle k_i = 1 - \frac{1}{2}(k - 1)(y_i - 1)$.
+
+然后相应的 SVM 优化问题即可改为
+
+$$
+\begin{aligned}
+\min_{\bm{w}, b, \xi_i} &\quad \frac{1}{2}\left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i \\
+\text{s.t.}
+&\quad y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i  \\
+&\quad \xi_i \ge 0, i \in [m]  \\
+\end{aligned}
+$$
+
+**(2)**
+
+通过拉格朗日乘子法得到拉格朗日函数
+
+$$
+\begin{aligned}
+L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu}) & = \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i  \\
+& \quad +\sum_{i=1}^{m}\alpha_i(1-\xi_i-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) - \sum_{i=1}^{m}\mu_i\xi_i  \\
+\end{aligned}
+$$
+
+其中 $\alpha_i \ge 0, \mu_i \ge 0$ 是拉格朗日乘子.
+
+令 $L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu})$ 对 $\bm{w}, b, \xi_i$ 的偏导等于零可得
+
+$$
+\bm{w} = \sum_{i=1}^{m}\alpha_i y_i \bm{x}_i
+$$
+
+$$
+0 = \sum_{i=1}^{m}\alpha_i y_i
+$$
+
+$$
+k_i C = \alpha_i + \mu_i
+$$
+
+将上三式逐步带入有
+
+$$
+\begin{aligned}
+&\quad L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu}) \\
+&= \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i + \sum_{i=1}^{m}\alpha_i(1-\xi_i-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) - \sum_{i=1}^{m}\mu_i\xi_i \\
+&= \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + \sum_{i=1}^{m}\alpha_i(1-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) + C\sum_{i=1}^{m}k_i\xi_i - \sum_{i=1}^{m}\alpha_i\xi_i - \sum_{i=1}^{m}\mu_i\xi_i \\
+&= -\frac{1}{2}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i^{\mathrm{T}}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i + \sum_{i=1}^{m}\alpha_i + \sum_{i=1}^{m}k_i C \xi_i - \sum_{i=1}^{m}\alpha_i\xi_i - \sum_{i=1}^{m}\mu_i\xi_i \\
+&= -\frac{1}{2}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i^{\mathrm{T}}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i + \sum_{i=1}^{m}\alpha_i + \sum_{i=1}^{m}(k_i C - \alpha_i - \mu_i)\xi_i \\
+&= \sum_{i=1}^{m}\alpha_i - \frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_i\alpha_j y_i y_j\bm{x}_i^{\mathrm{T}}\bm{x}_j \\
+\end{aligned}
+$$
+
+又因为 $\alpha_i \ge 0, \mu_i \ge 0, k_i C = \alpha_i + \mu_i$,
+
+消去 $\mu_i$ 即可得到约束条件 $0 \le \alpha_i \le k_i C$.
+
+因此对偶问题为
+
+$$
+\begin{aligned}
+\max_{\bm{\alpha}} &\quad \sum_{i=1}^{m}\alpha_i - \frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_i\alpha_j y_i y_j\bm{x}_i^{\mathrm{T}}\bm{x}_j\\
+\text{s.t.}
+&\quad \sum_{i=1}^{m}\alpha_i y_i = 0  \\
+&\quad 0 \le \alpha_i \le k_i C  \\
+\end{aligned}
+$$
+
+其中 $\displaystyle k_i = \begin{cases} 1, & y_i = +1 \\ k, & y_i = -1 \end{cases}$ 也即 $\displaystyle k_i = 1 - \frac{1}{2}(k - 1)(y_i - 1)$.
+
+根据 (1) 中的原优化问题所需满足的条件 $y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i$ 可知 $\alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0$, 根据 $\xi_i \ge 0$ 可知 $\mu_i \xi_i = 0$.
+
+因此, KKT 条件要求
+
+$$
+\begin{cases}
+\alpha_i \ge 0, \mu_i \ge 0,  \\
+y_i f(\bm{x}_i) - 1 + \xi_i \ge 0,  \\
+\alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0,  \\
+\xi_i \ge 0, \mu_i \xi_i = 0.
+\end{cases}
+$$
+
+
+
+
 

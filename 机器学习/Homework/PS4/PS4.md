@@ -201,6 +201,113 @@ y_i f(\bm{x}_i) - 1 + \xi_i \ge 0,  \\
 $$
 
 
+## 四、
 
+**(1)**
+
+对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$,
+
+因为 $k_1$ 和 $k_2$ 是核函数, 因此其对应的核矩阵 $\bm{K}_1$ 和 $\bm{K}_2$ 是半正定矩阵,
+
+即有 $\bm{y}^{\mathrm{T}} K_1 \bm{y} \ge 0$ 与 $\bm{y}^{\mathrm{T}} K_2 \bm{y} \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+因为 $\kappa_3 = a_1\kappa_1+a_2\kappa_2$,
+
+所以有 $K_{ij}^{3} = \kappa_3(\bm{x}_i, \bm{x}_j) = a_1\kappa_1(\bm{x}_i, \bm{x}_j) + a_2\kappa_2(\bm{x}_i, \bm{x}_j)$
+
+因此有 $\bm{K}_3 = a_1\bm{K}_1 + a_2\bm{K}_2$.
+
+则我们有 $\bm{y}^{\mathrm{T}}\bm{K}_3\bm{y} = \bm{y}^{\mathrm{T}}(a_1\bm{K}_1 + a_2\bm{K}_2)\bm{y} = a_1\bm{y}^{\mathrm{T}}\bm{K}_1\bm{y} + a_2\bm{y}^{\mathrm{T}}\bm{K}_2\bm{y} \ge 0$
+
+所以可知 $\bm{K}_3$ 也是半正定矩阵, $\kappa_3$ 核函数有效.
+
+**(2)**
+
+对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$, 令
+
+$$
+\bm{G} = \begin{pmatrix} f(\bm{x}_1) & f(\bm{x}_2) &\cdots& f(\bm{x}_m) \\ 0 & 0 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 0 \end{pmatrix}
+$$
+
+则有
+
+$$
+\begin{aligned}
+\bm{G}^{\mathrm{T}}\bm{G} & = \begin{pmatrix} f(\bm{x}_1)f(\bm{x}_1) & f(\bm{x}_1)f(\bm{x}_2) &\cdots& f(\bm{x}_1)f(\bm{x}_m) \\ f(\bm{x}_2)f(\bm{x}_1) & f(\bm{x}_2)f(\bm{x}_2) &\cdots& f(\bm{x}_2)f(\bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ f(\bm{x}_m)f(\bm{x}_1) & f(\bm{x}_m)f(\bm{x}_2) &\cdots& f(\bm{x}_m)f(\bm{x}_m) \end{pmatrix}  \\
+& = \begin{pmatrix} \kappa_4(\bm{x}_1, \bm{x}_1) & \kappa_4(\bm{x}_1, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_1, \bm{x}_m) \\ \kappa_4(\bm{x}_2, \bm{x}_1) & \kappa_4(\bm{x}_2, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_2, \bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ \kappa_4(\bm{x}_m, \bm{x}_1) & \kappa_4(\bm{x}_m, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_m, \bm{x}_m) \end{pmatrix}  \\
+& = \bm{K}_4  \\
+\end{aligned}
+$$
+
+即 $\bm{K}_4 = \bm{G}^{\mathrm{T}}\bm{G}$.
+
+则有 $\bm{y}^{\mathrm{T}}\bm{K}_4\bm{y} = \bm{y}^{\mathrm{T}}\bm{G}^{\mathrm{T}}\bm{G}\bm{y} = (\bm{G}\bm{y})^{\mathrm{T}}(\bm{G}\bm{y}) \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+所以可知 $\bm{K}_4$ 也是半正定矩阵, $\kappa_4$ 核函数有效.
+
+**(3)**
+
+对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$,
+
+因为 $\kappa_1$ 和 $\kappa_2$ 是核函数, 我们可知存在 $\phi^{(1)}$ 和 $\phi^{(2)}$ 使得
+
+$$
+\kappa_1(\bm{x}, \bm{x}') = \phi^{(1)}(\bm{x})^{\mathrm{T}}\phi^{(1)}(\bm{x}') = \sum_{i}\phi_i^{(1)}(\bm{x})\phi_i^{(1)}(\bm{x}')
+$$
+
+$$
+\kappa_2(\bm{x}, \bm{x}') = \phi^{(2)}(\bm{x})^{\mathrm{T}}\phi^{(2)}(\bm{x}') = \sum_{i}\phi_i^{(2)}(\bm{x})\phi_i^{(2)}(\bm{x}')
+$$
+
+因此有
+
+$$
+\begin{aligned}
+\kappa_5(\bm{x}, \bm{x}')
+&= \kappa_1(\bm{x}, \bm{x}')\kappa_2(\bm{x}, \bm{x}')  \\
+&= \sum_{i}\phi_i^{(1)}(\bm{x})\phi_i^{(1)}(\bm{x}')\sum_{j}\phi_j^{(2)}(\bm{x})\phi_j^{(2)}(\bm{x}')  \\
+&= \sum_{i}\sum_{j}(\phi_i^{(1)}(\bm{x})\phi_j^{(2)}(\bm{x}))(\phi_i^{(1)}(\bm{x}')\phi_j^{(2)}(\bm{x}'))  \\
+&= \sum_{i, j}\phi_{i,j}^{(5)}(\bm{x})\phi_{i,j}^{(5)}(\bm{x}')  \\
+&= \phi^{(5)}(\bm{x})^{\mathrm{T}}\phi^{(5)}(\bm{x}')  \\
+\end{aligned}
+$$
+
+因此对于任意 $m$ 维向量 $\bm{y}$, 有
+
+$$
+\begin{aligned}
+\bm{y}^{\mathrm{T}} \bm{K}_5 \bm{y}
+&= \sum_{i=1}^{m}\sum_{j=1}^{m}y_i \kappa_5(\bm{x}_i, \bm{x}_j) y_j  \\
+&= \sum_{i=1}^{m}\sum_{j=1}^{m}y_i \phi^{(5)}(\bm{x}_i)^{\mathrm{T}}\phi^{(5)}(\bm{x}_j) y_j  \\
+&= \sum_{i=1}^{m} (y_i \phi^{(5)}(\bm{x}_i))^{\mathrm{T}}\sum_{j=1}^{m}(y_j \phi^{(5)}(\bm{x}_j))  \\
+&= (\sum_{i=1}^{m} y_i \phi^{(5)}(\bm{x}_i))^{\mathrm{T}} (\sum_{i=1}^{m} y_i \phi^{(5)}(\bm{x}_i))  \\
+&\ge 0 \\
+\end{aligned}
+$$
+
+因此 $\bm{K}_5$ 也是半正定矩阵, $\kappa_5$ 核函数有效.
+
+**(4)**
+
+对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$, 令
+
+$$
+\bm{G} = \begin{pmatrix} f(\bm{x}_1) & 0 &\cdots & 0 \\ 0 & f(\bm{x}_2) & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & f(\bm{x}_m) \end{pmatrix}
+$$
+
+则有
+
+$$
+\begin{aligned}
+& \quad \bm{G}^{\mathrm{T}}\bm{K}_1\bm{G} \\
+& = \begin{pmatrix} f(\bm{x}_1)\kappa_1(\bm{x}_1, \bm{x}_1)f(\bm{x}_1) & f(\bm{x}_1)\kappa_1(\bm{x}_1, \bm{x}_2)f(\bm{x}_2) &\cdots& f(\bm{x}_1)\kappa_1(\bm{x}_1, \bm{x}_m)f(\bm{x}_m) \\ f(\bm{x}_2)\kappa_1(\bm{x}_2, \bm{x}_1)f(\bm{x}_1) & f(\bm{x}_2)\kappa_1(\bm{x}_2, \bm{x}_2)f(\bm{x}_2) &\cdots& f(\bm{x}_2)\kappa_1(\bm{x}_2, \bm{x}_m)f(\bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ f(\bm{x}_m)\kappa_1(\bm{x}_m, \bm{x}_1)f(\bm{x}_1) & f(\bm{x}_m)\kappa_1(\bm{x}_m, \bm{x}_2)f(\bm{x}_2) &\cdots& f(\bm{x}_m)\kappa_1(\bm{x}_m, \bm{x}_m)f(\bm{x}_m) \end{pmatrix}  \\
+& = \begin{pmatrix} \kappa_6(\bm{x}_1, \bm{x}_1) & \kappa_6(\bm{x}_1, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_1, \bm{x}_m) \\ \kappa_6(\bm{x}_2, \bm{x}_1) & \kappa_6(\bm{x}_2, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_2, \bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ \kappa_6(\bm{x}_m, \bm{x}_1) & \kappa_6(\bm{x}_m, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_m, \bm{x}_m) \end{pmatrix}  \\
+& = \bm{K}_6  \\
+\end{aligned}
+$$
+
+则有 $\bm{y}^{\mathrm{T}}\bm{K}_6\bm{y} = \bm{y}^{\mathrm{T}}\bm{G}^{\mathrm{T}}\bm{K}_1\bm{G}\bm{y} = (\bm{G}\bm{y})^{\mathrm{T}}\bm{K}_1(\bm{G}\bm{y}) \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+所以可知 $\bm{K}_6$ 也是半正定矩阵, $\kappa_6$ 核函数有效.
 
 

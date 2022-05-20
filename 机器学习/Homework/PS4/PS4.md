@@ -4,7 +4,7 @@
 
 **(1)**
 
-$
+$$
 \begin{aligned}
 \frac{\partial \ell(y, \hat{y}_1)}{\partial \beta_1}
 & = \frac{\partial \ell(y, \hat{y}_1)}{\partial \hat{y}_1}\frac{\partial \hat{y}_1}{\partial \beta_1}  \\
@@ -12,7 +12,7 @@ $
 & = \hat{y}_1(1-\hat{y}_1)(\frac{1-y}{1-\hat{y}_1} - \frac{y}{\hat{y}_1})  \\
 & = \hat{y}_1 - y  \\
 \end{aligned}
-$
+$$
 
 **(2)**
 
@@ -20,14 +20,14 @@ $
 
 令 $\displaystyle f(x) = \frac{\varphi}{e^{x} + \theta}$, 对其求导得 $\displaystyle f'(x) = - \frac{\varphi}{\theta + e^{x}}(1 - \frac{\theta}{\theta + e^{x}}) = -f(x)(1 - \frac{\theta}{\varphi}f(x))$
 
-$
+$$
 \begin{aligned}
 \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_j}
 & = \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_j}\frac{\partial \hat{y}_j}{\partial \beta_j} + \sum_{k \neq j}\frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_k}\frac{\partial \hat{y}_k}{\partial \beta_j} \\
 & = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k) \\
 & = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k) \\
 \end{aligned}
-$
+$$
 
 **(3)**
 
@@ -35,14 +35,14 @@ $
 
 对于 (2) 中的结果带入 $j = 1$ 即有
 
-$
+$$
 \begin{aligned}
 \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_1}
 & = y_1(\hat{y}_1 - 1) + y_0(1 - \frac{\beta_1}{\beta_1}\hat{y}_0) \\
 & = y_1(\hat{y}_1 - 1) + (1 - y_1)\hat{y}_1 \\
 & = \hat{y}_1 - y_{1} \\
 \end{aligned}
-$
+$$
 
 和 (1) 中的结果相同, 因为 (1) 中的 $y$ 即为 $y_1$, 他们的计算结果均为 $\hat{y}_1 - y_1$.
 
@@ -54,14 +54,14 @@ Softmax 对两个类别均输出对应的概率, 并且两个类别概率的和�
 
 **(4)**
 
-$
+$$
 \begin{aligned}
 \displaystyle D_{\mathrm{KL}}(P || Q) & = \sum_{x \in \mathcal{X}}P(x)\log(\frac{P(x)}{Q(x)})  \\
 & = \sum_{x \in \mathcal{X}}P(x)\log P(x) - \sum_{x \in \mathcal{X}}P(x)\log Q(x)  \\
 & = b - \sum_{x \in \mathcal{X}}P(x)\log Q(x)  \\
 & = b + \ell(\bm{y}, \hat{\bm{y}})  \\
 \end{aligned}
-$
+$$
 
 其中 $x$ 为第几个类别 (也即是 $j$), $\mathcal{X}$ 是类别的取值空间, $P(x) = P(j) = y_j, Q(x) = Q(j) = \hat{y}_j$,
 
@@ -187,7 +187,7 @@ $$
 
 其中 $\displaystyle k_i = \begin{cases} 1, & y_i = +1 \\ k, & y_i = -1 \end{cases}$ 也即 $\displaystyle k_i = 1 - \frac{1}{2}(k - 1)(y_i - 1)$.
 
-根据 (1) 中的原优化问题所需满足的条件 $y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i$ 可知 $\alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0$, 根据 $\xi_i \ge 0$ 可知 $\mu_i \xi_i = 0$.
+根据 (1) 中的原优化问题所需满足的条件 $y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i$ 可知 KKT 条件 $\alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0$, 根据 $\xi_i \ge 0$ 可知 $\mu_i \xi_i = 0$.
 
 因此, KKT 条件要求
 
@@ -310,4 +310,123 @@ $$
 
 所以可知 $\bm{K}_6$ 也是半正定矩阵, $\kappa_6$ 核函数有效.
 
+
+## 五、
+
+**(1)**
+
+因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
+
+因此 $\mathbb{E}[y_i] = \mathbb{E}[\bm{u}_i^{\mathrm{T}}\bm{x} + a_i] = \bm{\mu}_i^{\mathrm{T}}\mathbb{E}[\bm{x}] + a_i = 0$.
+
+又因为 $\mathbb{E}[\bm{x}] = \bm{\mu}$,
+
+所以有 $a_i = -\bm{\mu}_i^{\mathrm{T}}\bm{\mu}$.
+
+**(2)**
+
+对于随机变量 $\{ y_i \}_{i=1}^{d'}$ 来说, 方差为
+
+$$
+\begin{aligned}
+\operatorname{var}(y_i) & = \mathbb{E}[y_i^{2}] - (\mathbb{E}[y_i])^{2}  \\
+& = \mathbb{E}[y_i^{2}] - 0 \\
+& = \mathbb{E}[\bm{u}_i^{\mathrm{T}}(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}\bm{u}_i]  \\
+& = \bm{u}_i^{\mathrm{T}}\mathbb{E}[(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}]\bm{u}_i  \\
+& = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i  \\
+\end{aligned}
+$$
+
+我们要最大化的目标函数即为 $\displaystyle \sum_{i=1}^{d'}\operatorname{var}(y_i) = \sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$. 具体优化问题为
+
+$$
+\begin{aligned}
+\min_{\bm{\mu}_i} &\quad -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i  \\
+\text{s.t.} &\quad \bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i = 1, i = 1, \cdots, d'  \\
+\end{aligned}
+$$
+
+注: 在 (3) 我们还会证明还有约束条件 $\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_j = 0$, 其中 $i \neq j$. 但是这里我们先不加上这个约束条件.
+
+构造拉格朗日函数得
+
+$$
+L(\bm{\mu}_i, \lambda_i) = -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i + \sum_{i=1}^{d'}\lambda_i(\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i - 1)
+$$
+
+对 $\bm{\mu}_i$ 求偏导并令其等于零即有
+
+$$
+\frac{\partial L(\bm{\mu}_i, \lambda_i)}{\partial \bm{\mu}_i} = -2\bm{\Sigma} \bm{\mu}_i + 2\lambda_i \bm{\mu}_i = 0
+$$
+
+即有
+
+$$
+\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i
+$$
+
+因此 $\lambda_i$ 是 $\bm{\Sigma}$ 的特征值, $\bm{\mu}_i$ 是 $\bm{\Sigma}$ 和 $\lambda_i$ 的对应的特征向量.
+
+我们将 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$ 带入 $\operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$ 则有
+
+$$
+\operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i = \bm{u}_i^{\mathrm{T}}\lambda_i\bm{u}_i = \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_i = \lambda_i
+$$
+
+即 $y_i$ 的方差 $\operatorname{var}(y_i)$ 大小等于其对应的特征值.
+
+又因为 $\operatorname{var}(y_1) \ge \operatorname{var}(y_2) \ge \cdots \ge \operatorname{var}(y_{d'})$, 即有 $y_1$ 的方差最大,
+
+因此 $y_1$ 中的 $\mu_1$ 是 $\bm{\Sigma}$ 最大的特征值 $\lambda_1$ 对应的特征向量.
+
+**(3)**
+
+因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
+
+因此 $\mathbb{E}[y_i y_j] = \mathbb{E}[y_i]\mathbb{E}[y_j] = 0$, 其中 $i \neq j$, 并且我们有 (1) 中的 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$, 即有
+
+$$
+\begin{aligned}
+\mathbb{E}[y_i y_j]
+&= \mathbb{E}[(\bm{u}_i^{\mathrm{T}}\bm{x} + a_i)(\bm{u}_j^{\mathrm{T}}\bm{x} + a_j)]  \\
+&= \mathbb{E}[\bm{u}_i^{\mathrm{T}}(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}\bm{u}_j]  \\
+&= \bm{u}_i^{\mathrm{T}}\mathbb{E}[(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}]\bm{u}_j  \\
+&= \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_j  \\
+&= \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j  \\
+&= \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j  \\
+&= \mathbb{E}[y_i]\mathbb{E}[y_j]  \\
+& = 0  \\
+\end{aligned}
+$$
+
+因为 $\bm{\Sigma}$ 没有重复的特征值, 因此 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$, 所以
+
+$$
+\lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j - \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j = (\lambda_i - \lambda_j)\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0 - 0 = 0
+$$
+
+因此有
+
+$$
+\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0
+$$
+
+因此 $\bm{\mu}_i$ 和 $\bm{\mu}_j$ 是相互正交的特征单位向量, 他们对应的特征值 $\lambda_i$ 和 $\lambda_j$ 也互不相同.
+
+又因为 $\operatorname{var}(y_1) \ge \operatorname{var}(y_2) \ge \cdots \ge \operatorname{var}(y_{d'})$,
+
+因此有 $\lambda_1 > \lambda_2 > \cdots > \lambda_{d'}$,
+
+即有答案所需的 $\bm{u}_2^{\mathrm{T}}\bm{u}_1 = 0$ 且 $\bm{\mu}_2$ 是 $\bm{\Sigma}$ 第二大特征值对应的特征向量.
+
+**(4)**
+
+我们可以对降维后的随机变量 $\{ y_i \}_{i=1}^{d'}$ 都除去对应的标准差, 即方差的开方, 进行 "归一化".
+
+即令 $\displaystyle y_i' = \frac{y_i}{\sqrt{\operatorname{var}(y_i)}} = \frac{y_i}{\sqrt{\lambda_i}}$.
+
+则我们求 $\{ y_i' \}_{i=1}^{d'}$ 的方差即有 $\displaystyle \operatorname{var}(y_i') = (\frac{1}{\sqrt{\operatorname{var}(y_i)}})^{2} \cdot \operatorname{var}(y_i) = 1$.
+
+这样, 降维后的 $\{ y_i' \}_{i=1}^{d'}$ 方差均为 $1$, 也就有大致相同的数值范围了.
 

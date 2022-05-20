@@ -77,48 +77,48 @@
 
 \begin{document}
 \Large
-\noindent 
+\noindent
 % 姓名学号
-姓名：张三 \\
-学号：1234567 \\
+姓名：方盛俊 \\
+学号：201300035 \\
 \begin{questions}
-\question [20] \textbf{神经网络基础} \\
+  \question [20] \textbf{神经网络基础} \\
 
-给定训练集$D=\{(\vx_1, \vy_1), (\vx_2, \vy_2), ..., (\vx_m, \vy_m)\}$. 其中$\vx_i \in \bR^d$,
-$\vy_i \in \bR^l$表示输入示例由$d$个属性描述,
-输出$l$维实值向量.
-图~\ref{ch5_img:mlp}给出了一个有$d$个输入神经元、$l$个输出神经元、$q$个隐层神经元的多层神经网络, 其中输出层第$j$个神经元的阈值用$\theta_j$表示, 隐层第$h$个神经元的阈值用$\gamma_h$表示. 输入层第$i$个神经元与隐层第$h$个神经元之间的连接权为$v_{ih}$,
-隐层第$h$个神经元与输出层第$j$个神经元之间的连接权为$w_{hj}$.
-记隐层第$h$个神经元接收到的输入为$\alpha_h=\sum_{i=1}^d v_{ih}x_i$,
-输出层第$j$个神经元接收到的输入为$\beta_j=\sum_{h=1}^q w_{hj}b_h$,
-其中$b_h$为隐层第$h$个神经元的输出.
-\begin{figure}[ht]
+  给定训练集$D=\{(\vx_1, \vy_1), (\vx_2, \vy_2), ..., (\vx_m, \vy_m)\}$. 其中$\vx_i \in \bR^d$,
+  $\vy_i \in \bR^l$表示输入示例由$d$个属性描述,
+  输出$l$维实值向量.
+  图~\ref{ch5_img:mlp}给出了一个有$d$个输入神经元、$l$个输出神经元、$q$个隐层神经元的多层神经网络, 其中输出层第$j$个神经元的阈值用$\theta_j$表示, 隐层第$h$个神经元的阈值用$\gamma_h$表示. 输入层第$i$个神经元与隐层第$h$个神经元之间的连接权为$v_{ih}$,
+  隐层第$h$个神经元与输出层第$j$个神经元之间的连接权为$w_{hj}$.
+  记隐层第$h$个神经元接收到的输入为$\alpha_h=\sum_{i=1}^d v_{ih}x_i$,
+  输出层第$j$个神经元接收到的输入为$\beta_j=\sum_{h=1}^q w_{hj}b_h$,
+  其中$b_h$为隐层第$h$个神经元的输出.
+  \begin{figure}[ht]
     \centering
     \includegraphics[width=0.70\textwidth]{figure/ch5_nn.pdf}
     \caption{多层神经网络（教材图5.7）}\label{ch5_img:mlp}
-\end{figure}
+  \end{figure}
 
-不同任务中神经网络的输出层往往使用不同的激活函数和损失函数,
-本题介绍几种常见的激活和损失函数, 并对其梯度进行推导.
-\begin{enumerate}
+  不同任务中神经网络的输出层往往使用不同的激活函数和损失函数,
+  本题介绍几种常见的激活和损失函数, 并对其梯度进行推导.
+  \begin{enumerate}
     \item 在二分类问题中（$l=1$）, 标记$y\in\{0,1\}$, 一般使用Sigmoid函数作为激活函数,
-    使输出值在$[0, 1]$范围内, 使模型预测结果可直接作为概率输出.
-    Sigmoid函数的输出一般配合二元交叉熵 (Binary Cross-Entropy) 损失函数使用,
-    对于一个训练样本$(\vx, y)$有
-    \begin{equation}
-    \ell(y, \hat{y}_1) = - \left[ y \log(\hat{y}_1) + (1 - y) \log(1 - \hat{y}_1) \right]
-     \end{equation}
+          使输出值在$[0, 1]$范围内, 使模型预测结果可直接作为概率输出.
+          Sigmoid函数的输出一般配合二元交叉熵 (Binary Cross-Entropy) 损失函数使用,
+          对于一个训练样本$(\vx, y)$有
+          \begin{equation}
+            \ell(y, \hat{y}_1) = - \left[ y \log(\hat{y}_1) + (1 - y) \log(1 - \hat{y}_1) \right]
+          \end{equation}
           %   请计算$\frac{\partial \ell(y, \hat{y}_1)}{\partial \beta_j}$, 
           %   并写出其向量形式, 即$\frac{\partial \ell(y, \hat{y}_1)}{\partial \vct{\beta}}$.
           记$\hat{y}_1$为模型对样本属于正类的预测结果, 请计算$\frac{\partial \ell(y, \hat{y}_1)}{\partial \beta_1}$,
     \item 当$l>1$, 网络的预测结果为$\hat{\vy}\in\mathbb{R}^l$, 其中$\hat{y}_i$表示输入被预测为第$i$类的概率. 对于第$i$类的样本, 其标记$\vy\in\{0,1\}^l$, 有$y_i=1$,
           $y_j=0, j \neq i$. 对于一个训练样本$(\vx, \vy)$, 交叉熵损失函数$\ell(\vy, \hat{\vy})$的定义如下
           \begin{equation}
-              \ell(\vy, \hat{\vy}) = - \sum_{j = 1}^{l} y_j \log \hat{y}_j
+            \ell(\vy, \hat{\vy}) = - \sum_{j = 1}^{l} y_j \log \hat{y}_j
           \end{equation}
-    在多分类问题中, 一般使用Softmax层作为输出, Softmax层的计算公式如下
+          在多分类问题中, 一般使用Softmax层作为输出, Softmax层的计算公式如下
           \begin{equation}
-              \hat{y}_j = \frac{e^{{\beta}_j}}{\sum_{k=1}^{l} e^{\vct{\beta}_k}}
+            \hat{y}_j = \frac{e^{{\beta}_j}}{\sum_{k=1}^{l} e^{\vct{\beta}_k}}
           \end{equation}\label{ch5_ep:softmax}
           易见Softmax函数输出的$\hat{\vy}$
           符合$\sum_{j=1}^{l} \hat{y}_j = 1$,
@@ -129,86 +129,521 @@ $\vy_i \in \bR^l$表示输入示例由$d$个属性描述,
     \item 分析在二分类中使用Softmax和Sigmoid的联系与区别.
     \item KL散度 (Kullback-Leibler divergence) 定义了两个分布之间的距离, 对于两个离散分布$Q(x)$和$P(x)$, 其定义为
           \begin{equation}
-              D_{\operatorname{KL}}(P\;\|\;Q) = \sum_{x \in \mathcal{X}} P(x)\log \left(\frac{P(x)}{Q(x)} \right)
+            D_{\operatorname{KL}}(P\;\|\;Q) = \sum_{x \in \mathcal{X}} P(x)\log \left(\frac{P(x)}{Q(x)} \right)
           \end{equation}
-    其中$\mathcal{X}$为$x$的取值空间. 试分析交叉熵损失函数和KL散度的关系.
-    
-\end{enumerate}
+          其中$\mathcal{X}$为$x$的取值空间. 试分析交叉熵损失函数和KL散度的关系.
+
+  \end{enumerate}
 
 
-\begin{solution}
-	% 请在此处作答
-\end{solution}
+  \begin{solution}
+    \begin{enumerate}
+      \item
 
-\question [20] \textbf{运算的向量化} \\
-在编程实践中, 一般需要将运算写成向量或者矩阵运算的形式, 这叫做运算的向量化 (vectorization).
-向量化可以充分利用计算机体系结构对矩阵运算的支持加速计算,
-大部分数学运算库例如\lstinline{numpy}也对矩阵计算有专门的优化.
-另一方面, 如果一个运算可以写成向量计算的形式, 会更容易写出其导数形式并进行优化.
-本题中举两个简单的例子
-\begin{enumerate}
+            $$
+              \begin{aligned}
+                \frac{\partial \ell(y, \hat{y}_1)}{\partial \beta_1}
+                 & = \frac{\partial \ell(y, \hat{y}_1)}{\partial \hat{y}_1}\frac{\partial \hat{y}_1}{\partial \beta_1} \\
+                 & = (\frac{1-y}{1-\hat{y}_1} - \frac{y}{\hat{y}_1}) \cdot f'(\beta_1 - \theta_1)                      \\
+                 & = \hat{y}_1(1-\hat{y}_1)(\frac{1-y}{1-\hat{y}_1} - \frac{y}{\hat{y}_1})                             \\
+                 & = \hat{y}_1 - y                                                                                     \\
+              \end{aligned}
+            $$
+
+      \item
+
+            令 $\displaystyle f(x) = \frac{e^{x}}{e^{x} + \theta}$, 对其求导得 $\displaystyle f'(x) = \frac{e^{x}}{\theta + e^{x}}(1 - \frac{e^{x}}{\theta + e^{x}}) = f(x)(1-f(x))$
+
+            令 $\displaystyle f(x) = \frac{\varphi}{e^{x} + \theta}$, 对其求导得 $\displaystyle f'(x) = - \frac{\varphi}{\theta + e^{x}}(1 - \frac{\theta}{\theta + e^{x}}) = -f(x)(1 - \frac{\theta}{\varphi}f(x))$
+
+            $$
+              \begin{aligned}
+                \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_j}
+                 & = \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_j}\frac{\partial \hat{y}_j}{\partial \beta_j} + \sum_{k \neq j}\frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_k}\frac{\partial \hat{y}_k}{\partial \beta_j} \\
+                 & = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k)                                                           \\
+                 & = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k)                                                                                                                          \\
+              \end{aligned}
+            $$
+
+      \item
+
+            二分类, 即 $l = 1$.
+
+            对于 (2) 中的结果带入 $j = 1$ 即有
+
+            $$
+              \begin{aligned}
+                \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_1}
+                 & = y_1(\hat{y}_1 - 1) + y_0(1 - \frac{\beta_1}{\beta_1}\hat{y}_0) \\
+                 & = y_1(\hat{y}_1 - 1) + (1 - y_1)\hat{y}_1                        \\
+                 & = \hat{y}_1 - y_{1}                                              \\
+              \end{aligned}
+            $$
+
+            和 (1) 中的结果相同, 因为 (1) 中的 $y$ 即为 $y_1$, 他们的计算结果均为 $\hat{y}_1 - y_1$.
+
+            而 Sigmoid 函数 $\displaystyle \operatorname{sigmoid}(x) = \frac{1}{1 + e^{-x}}$,
+
+            也与 Softmax 函数 $\displaystyle \operatorname{softmax}(x_1, x_2) = \frac{e^{x_1}}{e^{x_1} + e^{x_2}} = \frac{1}{1 + e^{-(x_1-x_2)}}$ 完全相同 (在 $x = x_1 - x_2$ 的定义的基础上).
+
+            虽然说在理论上对于二分类问题 Sigmoid 函数与 Softmax 函数完全相同, 但是对于建模之后的实际模型还是有所不同的.
+
+            Softmax 对两个类别均输出对应的概率, 并且两个类别概率的和为 $1$; Sigmoid 只输出一个类别的概率, 另一个类别使用 $1$ 减去前一类别的概率取得, 因此两个类别概率和仍为 $1$. 但是 Softmax 输出两类的概率, 而 Sigmoid 只输出一个类别的概率. 因此在实际模型构建和计算中, 肯定也还是会有所不同.
+
+      \item
+
+            $$
+              \begin{aligned}
+                \displaystyle D_{\mathrm{KL}}(P || Q) & = \sum_{x \in \mathcal{X}}P(x)\log(\frac{P(x)}{Q(x)})                           \\
+                                                      & = \sum_{x \in \mathcal{X}}P(x)\log P(x) - \sum_{x \in \mathcal{X}}P(x)\log Q(x) \\
+                                                      & = b - \sum_{x \in \mathcal{X}}P(x)\log Q(x)                                     \\
+                                                      & = b + \ell(\bm{y}, \hat{\bm{y}})                                                \\
+              \end{aligned}
+            $$
+
+            其中 $x$ 为第几个类别 (也即是 $j$), $\mathcal{X}$ 是类别的取值空间, $P(x) = P(j) = y_j, Q(x) = Q(j) = \hat{y}_j$,
+
+            则我们有 $D_{\mathrm{KL}}(P || Q) = b + \ell(\bm{y}, \hat{\bm{y}})$, 其中 $b$ 只与 $P(x)$ 有关, 因此在 $P(x)$ 即 $y_j$ 分布不变的情况下可以视为一个常数.
+
+            所以我们可知, $D_{\mathrm{KL}}(P || Q)$ 与 $\ell(\bm{y}, \hat{\bm{y}})$ 只在所加的常数上有所区别. 我们最小化 $D_{\mathrm{KL}}(P || Q)$ 等价于最小化 $\ell(\bm{y}, \hat{\bm{y}})$.
+    \end{enumerate}
+  \end{solution}
+
+  \question [20] \textbf{运算的向量化} \\
+  在编程实践中, 一般需要将运算写成向量或者矩阵运算的形式, 这叫做运算的向量化 (vectorization).
+  向量化可以充分利用计算机体系结构对矩阵运算的支持加速计算,
+  大部分数学运算库例如\lstinline{numpy}也对矩阵计算有专门的优化.
+  另一方面, 如果一个运算可以写成向量计算的形式, 会更容易写出其导数形式并进行优化.
+  本题中举两个简单的例子
+  \begin{enumerate}
     \item 给定示例矩阵$\mX \in \bR^{m\times d}$, 表示$m$个示例（向量）, 每个示例有$d$维,
-    计算$m$个示例两两之间的距离矩阵$\mD \in \bR^{m\times m}$,
-    两个向量之间的欧式距离定义为$\|\vx - \vy\|_2=\sqrt{\sum_{i=1}^{d} (x_i - y_i)^2}$.
-    求距离矩阵可以通过循环的方式, 即\lstinline{plain_distance_function}中实现的方法;
-    \lstinputlisting[language=Python]{code/ch5/vectorization_plain_distance.py}
+          计算$m$个示例两两之间的距离矩阵$\mD \in \bR^{m\times m}$,
+          两个向量之间的欧式距离定义为$\|\vx - \vy\|_2=\sqrt{\sum_{i=1}^{d} (x_i - y_i)^2}$.
+          求距离矩阵可以通过循环的方式, 即\lstinline{plain_distance_function}中实现的方法;
+          \lstinputlisting[language=Python]{code/ch5/vectorization_plain_distance.py}
     \item 输入一个矩阵$\mX \in \bR^{m\times d}$, 表示$m$个向量, 每个向量有$d$维,
-    要求对输入矩阵的行按照一个给定的排列$\vct{p}=\{p_{1}, p_{2}, ..., p_m\}$进行重新排列.
-    即输出一个新的矩阵$\mX^\prime$, 其中第$i$行的内容为输入矩阵的第$p_{i}$行.
-    假设重排列为一个函数$\operatorname{perm}$即$\mX^\prime = \operatorname{perm}(\mX)$, 已知梯度$\frac{\partial \ell}{\partial \mX^\prime}$,
-    需要计算$\frac{\partial \ell}{\partial \mX}$. 对矩阵的行进行排列可以采用简单的循环实现, 例如\lstinline{plain_permutation_function}中的实现方法.
-    \lstinputlisting[language=Python]{code/ch5/vectorization_plain_permutation.py}
-\end{enumerate}
-请给出上述两种任务的向量化实现方案，并分析上述实现方法和向量化实现方法之间运行时间的差异。（提示：比如可以针对不同规模的矩阵大小来尝试分析主要操作的运行时间）
+          要求对输入矩阵的行按照一个给定的排列$\vct{p}=\{p_{1}, p_{2}, ..., p_m\}$进行重新排列.
+          即输出一个新的矩阵$\mX^\prime$, 其中第$i$行的内容为输入矩阵的第$p_{i}$行.
+          假设重排列为一个函数$\operatorname{perm}$即$\mX^\prime = \operatorname{perm}(\mX)$, 已知梯度$\frac{\partial \ell}{\partial \mX^\prime}$,
+          需要计算$\frac{\partial \ell}{\partial \mX}$. 对矩阵的行进行排列可以采用简单的循环实现, 例如\lstinline{plain_permutation_function}中的实现方法.
+          \lstinputlisting[language=Python]{code/ch5/vectorization_plain_permutation.py}
+  \end{enumerate}
+  请给出上述两种任务的向量化实现方案，并分析上述实现方法和向量化实现方法之间运行时间的差异。（提示：比如可以针对不同规模的矩阵大小来尝试分析主要操作的运行时间）
 
-	\begin{solution}
-		%请在此处作答
-	\end{solution}
+  \begin{solution}
+    \begin{enumerate}
+      \item
+
+            使用 numpy 可以有两种方式将向量距离矩阵计算出来.
+
+            一种是使用 numpy 的张量功能 (这里即为 3 阶张量, 即三维数组), 通过生成新的维度即可保证不互相冲突. 然后一句简洁
+
+            "np.sqrt(((X[:, np.newaxis, :] - X[np.newaxis, :, :])**2).sum(axis=-1))"
+
+            即可计算出结果. 我们记这种方法为 "tensor\_distance\_function".
+
+            另一种是将 $\sum_{i=1}^{d}(x_i-y_i)^{2}$ 拆分成 $\sum_{i=1}^{d}x_i^{2} + \sum_{i=1}^{d}y_i^{2} - 2\sum_{i=1}^{d}x_iy_i$, 即拆分成三个不同的矩阵分别计算.
+
+            我们记这种方法为 "matrix\_distance\_function".
+
+            为了计算第一个矩阵 $\sum_{i=1}^{d}x_i^{2}$, 即 $\bm{X}$ 的所有行向量逐元素平方后与 $\bm{1}$ 向量点乘. 我们首先要定义一个 $d \times m$ 的全一矩阵 $\bm{1}$, 然后就可以通过 $\bm{M}_1 = \operatorname{square}(X) \cdot \bm{1}$ 计算出第一个矩阵; 第二个矩阵 $\sum_{i=1}^{d}y_i^{2}$ 可以通过 $\bm{M}_1$ 转置生成, 即 $\bm{M}_2 = \bm{M}_1^{\mathrm{T}}$; 而 $\sum_{i=1}^{d}x_i y_i$ 矩阵则更为简单, 通过点乘即 $\bm{M}_3 = \bm{X} \cdot \bm{X}^{\mathrm{T}}$ 即可计算出第三个矩阵.
+
+            最后对这三个矩阵加权求和并开方即可算出最后的矩阵, 即 $\bm{M} = \operatorname{sqrt}(\bm{M}_1 + \bm{M}_2 - 2 \bm{M}_3)$.
+
+            不过这个式子理论上正确, 实际上却会出问题. 对角线元素本来应该计算为 $0$, 不过由于计算的误差, 计算结果很有可能生成一个非常小的负数, 而负数是无法开方的, 导致生成 $\mathrm{NaN}$ 而计算结果出错. 所以我们需要在原来式子基础上加上一个很小的正数, 最终为 $\bm{M} = \operatorname{sqrt}(\bm{M}_1 + \bm{M}_2 - 2 \bm{M}_3 + 10^{-10} \cdot \bm{1})$
+
+            最终计算结果如下 ($m$ 和 $d$ 为矩阵维度, $n$ 代表循环次数):
+
+            \begin{table}[H]
+              \centering
+              \begin{tabular}{cccc}
+                \hline
+                size                         & plain              & tensor             & matrix           \\
+                \hline
+                $m = 10, d = 10, n = 10000$  & $16.97 \text{ s}$  & $0.23 \text{ s}$   & $0.39 \text{ s}$ \\
+                $m = 1000, d = 1000, n = 10$ & $179.39 \text{ s}$ & $186.22 \text{ s}$ & $0.93 \text{ s}$ \\
+                \hline
+              \end{tabular}
+            \end{table}
+
+            可以看出, 对于维度小的矩阵, 使用张量法和矩阵法效率差不多, 而且运行时间是朴素方法的 $1 / 100$ 级别; 对于维度大的矩阵, 使用矩阵法的运行时间 $0.93$ 秒远远小于张量法和朴素法的超过 $100$ 秒.
+
+            因此, 对于这个问题, 使用矩阵法所取得的效果十分显著.
+
+      \item
+
+            我们可以对于任何一个给定的排列 $\bm{p} = \{ p_1, p_2, \cdots, p_m \}$, 生成一个 $m \times m$ permutation 矩阵 $\bm{P}$. 其中 $\bm{P}$ 矩阵的生成方式为, 对于矩阵 $\bm{P}$ 第 $i$ 行, 在第 $p_i$ 列的位置置 $1$, 其余均为 $0$. 则 $\bm{X}' = \bm{P} \cdot \bm{X}$ 则为重新排列行向量的矩阵.
+
+            最终计算结果如下 ($m$ 和 $d$ 为矩阵维度, $n$ 代表循环次数):
+
+            \begin{table}[H]
+              \centering
+              \begin{tabular}{ccc}
+                \hline
+                size                           & plain             & matrix            \\
+                \hline
+                $m = 10, d = 10, n = 100000$   & $3.90 \text{ s}$  & $2.18 \text{ s}$  \\
+                $m = 1000, d = 1000, n = 1000$ & $12.69 \text{ s}$ & $63.58 \text{ s}$ \\
+                \hline
+              \end{tabular}
+            \end{table}
+
+            可以看出, 对于维度小的矩阵, 使用朴素法和矩阵法效率差不多, 矩阵法最多比朴素法快了 $1 / 3$; 但是对于维度大的矩阵就恰好相反了, 因为矩阵法每次都需要生成巨大的 permutation 矩阵 $\bm{P}$, 最后总耗时反而是朴素法的 $6$ 倍.
+    \end{enumerate}
+  \end{solution}
 
 
-\question [20] \textbf{支持向量机}
+  \question [20] \textbf{支持向量机}
 
-考虑标准的SVM优化问题如下(即教材公式(6.35)), 
-\begin{equation}
+  考虑标准的SVM优化问题如下(即教材公式(6.35)),
+  \begin{equation}
     \begin{aligned}
-\min _{\vw, b, \xi_{i}} \quad & \frac{1}{2}\|\vw\|^{2}+C \sum_{i=1}^{m} \xi_{i} \\
-\text { s.t. } \quad & y_{i}\left(\vw^\top \vx_{i}+b\right) \geq 1-\xi_{i} \\
-& \xi_{i} \geq 0, i\in [m] .
-\end{aligned}
-\end{equation}
-注意到, 在(2.1)中, 对于正例和负例, 其在目标函数中分类错误的“惩罚”是相同的. 在实际场景中, 很多时候正例和负例错分的“惩罚”代价是不同的（参考教材2.3.4节）. 比如考虑癌症诊断问题, 将一个确实患有癌症的人误分类为健康人, 以及将健康人误分类为患有癌症, 产生的错误影响以及代价不应该认为是等同的. 所以对负例分类错误的样本(即false positive)施加$k>0$倍于正例中被分错的样本的“惩罚”. 对于此类场景下
-\begin{enumerate}
+      \min _{\vw, b, \xi_{i}} \quad & \frac{1}{2}\|\vw\|^{2}+C \sum_{i=1}^{m} \xi_{i}     \\
+      \text { s.t. } \quad          & y_{i}\left(\vw^\top \vx_{i}+b\right) \geq 1-\xi_{i} \\
+                                    & \xi_{i} \geq 0, i\in [m] .
+    \end{aligned}
+  \end{equation}
+  注意到, 在(2.1)中, 对于正例和负例, 其在目标函数中分类错误的“惩罚”是相同的. 在实际场景中, 很多时候正例和负例错分的“惩罚”代价是不同的（参考教材2.3.4节）. 比如考虑癌症诊断问题, 将一个确实患有癌症的人误分类为健康人, 以及将健康人误分类为患有癌症, 产生的错误影响以及代价不应该认为是等同的. 所以对负例分类错误的样本(即false positive)施加$k>0$倍于正例中被分错的样本的“惩罚”. 对于此类场景下
+  \begin{enumerate}
     \item 请给出相应的SVM优化问题.
     \item 请给出相应的对偶问题, 要求详细的推导步骤, 如KKT条件等.
-\end{enumerate}
+  \end{enumerate}
 
-	\begin{solution}
-	    %请在此处作答
-	\end{solution}
-\question [20] \textbf{核函数} \\
-教材6.3节介绍了Mercer定理, 说明对于一个二元函数 $k(\cdot, \cdot)$, 当且仅当对任意 $m$ 和 $\{\vx_{1}, \vx_{2}, \ldots, \vx_{m}\}$, 它对应的Gram矩阵（核矩阵）是半正定的时, 它是一个有效的核函数. 核矩阵 $\mK$ 中的元素为 $K_{i j}=\kappa\left(\vx_{i}, \vx_{j}\right)$. 请根据Mercer定理证明以下核函数是有效的.
+  \begin{solution}
+    \begin{enumerate}
+      \item
 
-\begin{enumerate}
+            我们对每个样例 $(\bm{x}_i, y_i)$ 附上一个代价系数 $k_i$,
+
+            其中 $\displaystyle k_i = \begin{cases} 1, & y_i = +1 \\ k, & y_i = -1 \end{cases}$ 也即 $\displaystyle k_i = 1 - \frac{1}{2}(k - 1)(y_i - 1)$.
+
+            然后相应的 SVM 优化问题即可改为
+
+            $$
+              \begin{aligned}
+                \min_{\bm{w}, b, \xi_i} & \quad \frac{1}{2}\left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i \\
+                \text{s.t.}
+                                        & \quad y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i                   \\
+                                        & \quad \xi_i \ge 0, i \in [m]                                               \\
+              \end{aligned}
+            $$
+
+      \item
+
+            通过拉格朗日乘子法得到拉格朗日函数
+
+            $$
+              \begin{aligned}
+                L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu}) & = \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i                                \\
+                                                              & \quad +\sum_{i=1}^{m}\alpha_i(1-\xi_i-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) - \sum_{i=1}^{m}\mu_i\xi_i \\
+              \end{aligned}
+            $$
+
+            其中 $\alpha_i \ge 0, \mu_i \ge 0$ 是拉格朗日乘子.
+
+            令 $L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu})$ 对 $\bm{w}, b, \xi_i$ 的偏导等于零可得
+
+            $$
+              \bm{w} = \sum_{i=1}^{m}\alpha_i y_i \bm{x}_i
+            $$
+
+            $$
+              0 = \sum_{i=1}^{m}\alpha_i y_i
+            $$
+
+            $$
+              k_i C = \alpha_i + \mu_i
+            $$
+
+            将上三式逐步带入有
+
+            $$
+              \begin{aligned}
+                 & \quad L(\bm{w}, b, \bm{\alpha}, \bm{\xi}, \bm{\mu})                                                                                                                                                             \\
+                 & = \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + C\sum_{i=1}^{m}k_i\xi_i + \sum_{i=1}^{m}\alpha_i(1-\xi_i-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) - \sum_{i=1}^{m}\mu_i\xi_i                                       \\
+                 & = \frac{1}{2} \left\| \bm{w} \right\|_{2}^{2} + \sum_{i=1}^{m}\alpha_i(1-y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b)) + C\sum_{i=1}^{m}k_i\xi_i - \sum_{i=1}^{m}\alpha_i\xi_i - \sum_{i=1}^{m}\mu_i\xi_i               \\
+                 & = -\frac{1}{2}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i^{\mathrm{T}}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i + \sum_{i=1}^{m}\alpha_i + \sum_{i=1}^{m}k_i C \xi_i - \sum_{i=1}^{m}\alpha_i\xi_i - \sum_{i=1}^{m}\mu_i\xi_i \\
+                 & = -\frac{1}{2}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i^{\mathrm{T}}\sum_{i=1}^{m}\alpha_i y_i \bm{x}_i + \sum_{i=1}^{m}\alpha_i + \sum_{i=1}^{m}(k_i C - \alpha_i - \mu_i)\xi_i                                      \\
+                 & = \sum_{i=1}^{m}\alpha_i - \frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_i\alpha_j y_i y_j\bm{x}_i^{\mathrm{T}}\bm{x}_j                                                                                         \\
+              \end{aligned}
+            $$
+
+            又因为 $\alpha_i \ge 0, \mu_i \ge 0, k_i C = \alpha_i + \mu_i$,
+
+            消去 $\mu_i$ 即可得到约束条件 $0 \le \alpha_i \le k_i C$.
+
+            因此对偶问题为
+
+            $$
+              \begin{aligned}
+                \max_{\bm{\alpha}} & \quad \sum_{i=1}^{m}\alpha_i - \frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_i\alpha_j y_i y_j\bm{x}_i^{\mathrm{T}}\bm{x}_j \\
+                \text{s.t.}
+                                   & \quad \sum_{i=1}^{m}\alpha_i y_i = 0                                                                                        \\
+                                   & \quad 0 \le \alpha_i \le k_i C                                                                                              \\
+              \end{aligned}
+            $$
+
+            其中 $\displaystyle k_i = \begin{cases} 1, & y_i = +1 \\ k, & y_i = -1 \end{cases}$ 也即 $\displaystyle k_i = 1 - \frac{1}{2}(k - 1)(y_i - 1)$.
+
+            根据 (1) 中的原优化问题所需满足的条件 $y_i(\bm{w}^{\mathrm{T}}\bm{x}_i + b) \ge 1 - \xi_i$ 可知 KKT 条件 $\alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0$, 根据 $\xi_i \ge 0$ 可知 $\mu_i \xi_i = 0$.
+
+            因此, KKT 条件要求
+
+            $$
+              \begin{cases}
+                \alpha_i \ge 0, \mu_i \ge 0,               \\
+                y_i f(\bm{x}_i) - 1 + \xi_i \ge 0,         \\
+                \alpha_i(y_i f(\bm{x}_i) - 1 + \xi_i) = 0, \\
+                \xi_i \ge 0, \mu_i \xi_i = 0.
+              \end{cases}
+            $$
+    \end{enumerate}
+  \end{solution}
+  \question [20] \textbf{核函数} \\
+  教材6.3节介绍了Mercer定理, 说明对于一个二元函数 $k(\cdot, \cdot)$, 当且仅当对任意 $m$ 和 $\{\vx_{1}, \vx_{2}, \ldots, \vx_{m}\}$, 它对应的Gram矩阵（核矩阵）是半正定的时, 它是一个有效的核函数. 核矩阵 $\mK$ 中的元素为 $K_{i j}=\kappa\left(\vx_{i}, \vx_{j}\right)$. 请根据Mercer定理证明以下核函数是有效的.
+
+  \begin{enumerate}
     \item $\kappa_{3}=a_{1} \kappa_{1}+a_{2} \kappa_{2}$, 其中 $a_{1}, a_{2} \geq 0$.
     \item $f(\cdot)$ 是任意实值函数, 由 $\kappa_{4}\left(\vx, \vx^{\prime}\right)=f(\vx) f\left(\vx^{\prime}\right)$ 定义的 $\kappa_{4}$.
     \item 由 $\kappa_{5}\left(\vx, \vx^{\prime}\right)=\kappa_{1}\left(\vx, \vx^{\prime}\right) \kappa_{2}\left(\vx, \vx^{\prime}\right)$ 定义的 $\kappa_{5}$.
     \item 由 $\kappa_{6}\left(\vx, \vx^{\prime}\right)=f(\vx) \kappa_{1}\left(\vx, \vx^{\prime}\right)f(\vx')$定义的 $\kappa_{6}$
-\end{enumerate}
-	\begin{solution}
-	    %请在此处作答
-	\end{solution}
+  \end{enumerate}
+  \begin{solution}
+    \begin{enumerate}
+      \item
 
-\question [20] \textbf{主成成分分析} \\
-    $\vx \in \bR^{d}$ 是一个随机向量, 其均值和协方差分别是 $\vmu=\mathbb{E}(\vx) \in \bR^{d}$, $\mSigma=\mathbb{E}(\vx-\vmu_\vx)(\vx-\vmu_\vx)^{\top} \in \bR^{d \times  d}$. 定义随机变量 $\{y_{i}=\vu_{i}^{\top} \vx+a_{i} \in \bR, i=1, \ldots, {d'} \leq d\}$ 为 $\vx$ 的主成分, 其中 $\vu_{i} \in \bR^{d}$ 是单位向量($\vu_i^\top \vu_i = 1$), $a_{i} \in \bR$, $\left\{y_{i}\right\}_{i=1}^{{d'}}$ 是互不相关的零均值随机变量, 它们的方差满足 $\operatorname{var}\left(y_{1}\right) \geq \operatorname{var}\left(y_{2}\right) \geq \cdots \geq \operatorname{var}\left(y_{{d'}}\right)$. 假设 $\mSigma$ 没有重复的特征值.
-\begin{enumerate}
-	\item  请证明$\{a_{i}=-\vu_{i}^{\top} \vmu\}_{i=1}^{d'}$.
-	\item 请证明$\vu_{1}$ 是 $\mSigma$ 最大的特征值对应的特征向量. (提示: 写出要最大化的目标函数, 写出约束条件, 使用拉格朗日乘子法)
-	\item 请证明$\vu_{2}^{\top} \vu_{1}=0$，且 $\vu_{2}$ 是 $\mSigma$ 第二大特征值对应的特征向量. (提示: 由 $\left\{y_{i}\right\}_{i=1}^{d}$ 是互不相关的零均值随机变量可推出 $\vu_{2}^{\top} \vu_{1}=0$, 可作为第二小问的约束条件之一)
-	\item 通过PCA进行降维, 得到的随机变量满足$\operatorname{var}\left(y_{1}\right) \geq \operatorname{var}\left(y_{2}\right) \geq \cdots \geq \operatorname{var}\left(y_{d}\right)$, 也就是降维后的数据 在不同维度上有不同的方差, 从而导致不同维度的数值范围差异很大, 如果想要降维后的样本在不同维度具有大致相同的数值范围, 应该怎么做?
-\end{enumerate}
-	\begin{solution}
-	    %请在此处作答
-	\end{solution}
+            对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$,
+
+            因为 $k_1$ 和 $k_2$ 是核函数, 因此其对应的核矩阵 $\bm{K}_1$ 和 $\bm{K}_2$ 是半正定矩阵,
+
+            即有 $\bm{y}^{\mathrm{T}} K_1 \bm{y} \ge 0$ 与 $\bm{y}^{\mathrm{T}} K_2 \bm{y} \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+            因为 $\kappa_3 = a_1\kappa_1+a_2\kappa_2$,
+
+            所以有 $K_{ij}^{3} = \kappa_3(\bm{x}_i, \bm{x}_j) = a_1\kappa_1(\bm{x}_i, \bm{x}_j) + a_2\kappa_2(\bm{x}_i, \bm{x}_j)$
+
+            因此有 $\bm{K}_3 = a_1\bm{K}_1 + a_2\bm{K}_2$.
+
+            则我们有 $\bm{y}^{\mathrm{T}}\bm{K}_3\bm{y} = \bm{y}^{\mathrm{T}}(a_1\bm{K}_1 + a_2\bm{K}_2)\bm{y} = a_1\bm{y}^{\mathrm{T}}\bm{K}_1\bm{y} + a_2\bm{y}^{\mathrm{T}}\bm{K}_2\bm{y} \ge 0$
+
+            所以可知 $\bm{K}_3$ 也是半正定矩阵, $\kappa_3$ 核函数有效.
+
+      \item
+
+            对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$, 令
+
+            $$
+              \bm{G} = \begin{pmatrix} f(\bm{x}_1) & f(\bm{x}_2) &\cdots& f(\bm{x}_m) \\ 0 & 0 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 0 \end{pmatrix}
+            $$
+
+            则有
+
+            $$
+              \begin{aligned}
+                \bm{G}^{\mathrm{T}}\bm{G} & = \begin{pmatrix} f(\bm{x}_1)f(\bm{x}_1) & f(\bm{x}_1)f(\bm{x}_2) &\cdots& f(\bm{x}_1)f(\bm{x}_m) \\ f(\bm{x}_2)f(\bm{x}_1) & f(\bm{x}_2)f(\bm{x}_2) &\cdots& f(\bm{x}_2)f(\bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ f(\bm{x}_m)f(\bm{x}_1) & f(\bm{x}_m)f(\bm{x}_2) &\cdots& f(\bm{x}_m)f(\bm{x}_m) \end{pmatrix}                                                       \\
+                                          & = \begin{pmatrix} \kappa_4(\bm{x}_1, \bm{x}_1) & \kappa_4(\bm{x}_1, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_1, \bm{x}_m) \\ \kappa_4(\bm{x}_2, \bm{x}_1) & \kappa_4(\bm{x}_2, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_2, \bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ \kappa_4(\bm{x}_m, \bm{x}_1) & \kappa_4(\bm{x}_m, \bm{x}_2) &\cdots& \kappa_4(\bm{x}_m, \bm{x}_m) \end{pmatrix} \\
+                                          & = \bm{K}_4                                                                                                                                                                                                                                                                                                                                                                       \\
+              \end{aligned}
+            $$
+
+            即 $\bm{K}_4 = \bm{G}^{\mathrm{T}}\bm{G}$.
+
+            则有 $\bm{y}^{\mathrm{T}}\bm{K}_4\bm{y} = \bm{y}^{\mathrm{T}}\bm{G}^{\mathrm{T}}\bm{G}\bm{y} = (\bm{G}\bm{y})^{\mathrm{T}}(\bm{G}\bm{y}) \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+            所以可知 $\bm{K}_4$ 也是半正定矩阵, $\kappa_4$ 核函数有效.
+
+      \item
+
+            对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$,
+
+            因为 $\kappa_1$ 和 $\kappa_2$ 是核函数, 我们可知存在 $\phi^{(1)}$ 和 $\phi^{(2)}$ 使得
+
+            $$
+              \kappa_1(\bm{x}, \bm{x}') = \phi^{(1)}(\bm{x})^{\mathrm{T}}\phi^{(1)}(\bm{x}') = \sum_{i}\phi_i^{(1)}(\bm{x})\phi_i^{(1)}(\bm{x}')
+            $$
+
+            $$
+              \kappa_2(\bm{x}, \bm{x}') = \phi^{(2)}(\bm{x})^{\mathrm{T}}\phi^{(2)}(\bm{x}') = \sum_{i}\phi_i^{(2)}(\bm{x})\phi_i^{(2)}(\bm{x}')
+            $$
+
+            因此有
+
+            $$
+              \begin{aligned}
+                \kappa_5(\bm{x}, \bm{x}')
+                 & = \kappa_1(\bm{x}, \bm{x}')\kappa_2(\bm{x}, \bm{x}')                                                     \\
+                 & = \sum_{i}\phi_i^{(1)}(\bm{x})\phi_i^{(1)}(\bm{x}')\sum_{j}\phi_j^{(2)}(\bm{x})\phi_j^{(2)}(\bm{x}')     \\
+                 & = \sum_{i}\sum_{j}(\phi_i^{(1)}(\bm{x})\phi_j^{(2)}(\bm{x}))(\phi_i^{(1)}(\bm{x}')\phi_j^{(2)}(\bm{x}')) \\
+                 & = \sum_{i, j}\phi_{i,j}^{(5)}(\bm{x})\phi_{i,j}^{(5)}(\bm{x}')                                           \\
+                 & = \phi^{(5)}(\bm{x})^{\mathrm{T}}\phi^{(5)}(\bm{x}')                                                     \\
+              \end{aligned}
+            $$
+
+            因此对于任意 $m$ 维向量 $\bm{y}$, 有
+
+            $$
+              \begin{aligned}
+                \bm{y}^{\mathrm{T}} \bm{K}_5 \bm{y}
+                 & = \sum_{i=1}^{m}\sum_{j=1}^{m}y_i \kappa_5(\bm{x}_i, \bm{x}_j) y_j                                       \\
+                 & = \sum_{i=1}^{m}\sum_{j=1}^{m}y_i \phi^{(5)}(\bm{x}_i)^{\mathrm{T}}\phi^{(5)}(\bm{x}_j) y_j              \\
+                 & = \sum_{i=1}^{m} (y_i \phi^{(5)}(\bm{x}_i))^{\mathrm{T}}\sum_{j=1}^{m}(y_j \phi^{(5)}(\bm{x}_j))         \\
+                 & = (\sum_{i=1}^{m} y_i \phi^{(5)}(\bm{x}_i))^{\mathrm{T}} (\sum_{i=1}^{m} y_i \phi^{(5)}(\bm{x}_i)) \ge 0 \\
+              \end{aligned}
+            $$
+
+            因此 $\bm{K}_5$ 也是半正定矩阵, $\kappa_5$ 核函数有效.
+
+      \item
+
+            对于任意 $m$ 和 $\{ \bm{x}_1, \bm{x}_2, \cdots, \bm{x}_{m} \}$, 令
+
+            $$
+              \bm{G} = \begin{pmatrix} f(\bm{x}_1) & 0 &\cdots & 0 \\ 0 & f(\bm{x}_2) & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & f(\bm{x}_m) \end{pmatrix}
+            $$
+
+            则有
+
+            $$
+              \begin{aligned}
+                 & \quad \bm{G}^{\mathrm{T}}\bm{K}_1\bm{G}                                                                                                                                                                                                                                                                                                                                                                        \\
+                 & = \begin{pmatrix} f(\bm{x}_1)\kappa_1(\bm{x}_1, \bm{x}_1)f(\bm{x}_1) &\cdots& f(\bm{x}_1)\kappa_1(\bm{x}_1, \bm{x}_m)f(\bm{x}_m) \\ f(\bm{x}_2)\kappa_1(\bm{x}_2, \bm{x}_1)f(\bm{x}_1) &\cdots& f(\bm{x}_2)\kappa_1(\bm{x}_2, \bm{x}_m)f(\bm{x}_m) \\ \vdots & \ddots & \vdots \\ f(\bm{x}_m)\kappa_1(\bm{x}_m, \bm{x}_1)f(\bm{x}_1) &\cdots& f(\bm{x}_m)\kappa_1(\bm{x}_m, \bm{x}_m)f(\bm{x}_m) \end{pmatrix} \\
+                 & = \begin{pmatrix} \kappa_6(\bm{x}_1, \bm{x}_1) & \kappa_6(\bm{x}_1, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_1, \bm{x}_m) \\ \kappa_6(\bm{x}_2, \bm{x}_1) & \kappa_6(\bm{x}_2, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_2, \bm{x}_m) \\ \vdots & \vdots & \ddots & \vdots \\ \kappa_6(\bm{x}_m, \bm{x}_1) & \kappa_6(\bm{x}_m, \bm{x}_2) &\cdots& \kappa_6(\bm{x}_m, \bm{x}_m) \end{pmatrix}                               \\
+                 & = \bm{K}_6                                                                                                                                                                                                                                                                                                                                                                                                     \\
+              \end{aligned}
+            $$
+
+            则有 $\bm{y}^{\mathrm{T}}\bm{K}_6\bm{y} = \bm{y}^{\mathrm{T}}\bm{G}^{\mathrm{T}}\bm{K}_1\bm{G}\bm{y} = (\bm{G}\bm{y})^{\mathrm{T}}\bm{K}_1(\bm{G}\bm{y}) \ge 0$, 对于任何 $m$ 维向量 $\bm{y}$.
+
+            所以可知 $\bm{K}_6$ 也是半正定矩阵, $\kappa_6$ 核函数有效.
+    \end{enumerate}
+  \end{solution}
+
+  \question [20] \textbf{主成成分分析} \\
+  $\vx \in \bR^{d}$ 是一个随机向量, 其均值和协方差分别是 $\vmu=\mathbb{E}(\vx) \in \bR^{d}$, $\mSigma=\mathbb{E}(\vx-\vmu_\vx)(\vx-\vmu_\vx)^{\top} \in \bR^{d \times  d}$. 定义随机变量 $\{y_{i}=\vu_{i}^{\top} \vx+a_{i} \in \bR, i=1, \ldots, {d'} \leq d\}$ 为 $\vx$ 的主成分, 其中 $\vu_{i} \in \bR^{d}$ 是单位向量($\vu_i^\top \vu_i = 1$), $a_{i} \in \bR$, $\left\{y_{i}\right\}_{i=1}^{{d'}}$ 是互不相关的零均值随机变量, 它们的方差满足 $\operatorname{var}\left(y_{1}\right) \geq \operatorname{var}\left(y_{2}\right) \geq \cdots \geq \operatorname{var}\left(y_{{d'}}\right)$. 假设 $\mSigma$ 没有重复的特征值.
+  \begin{enumerate}
+    \item  请证明$\{a_{i}=-\vu_{i}^{\top} \vmu\}_{i=1}^{d'}$.
+    \item 请证明$\vu_{1}$ 是 $\mSigma$ 最大的特征值对应的特征向量. (提示: 写出要最大化的目标函数, 写出约束条件, 使用拉格朗日乘子法)
+    \item 请证明$\vu_{2}^{\top} \vu_{1}=0$，且 $\vu_{2}$ 是 $\mSigma$ 第二大特征值对应的特征向量. (提示: 由 $\left\{y_{i}\right\}_{i=1}^{d}$ 是互不相关的零均值随机变量可推出 $\vu_{2}^{\top} \vu_{1}=0$, 可作为第二小问的约束条件之一)
+    \item 通过PCA进行降维, 得到的随机变量满足$\operatorname{var}\left(y_{1}\right) \geq \operatorname{var}\left(y_{2}\right) \geq \cdots \geq \operatorname{var}\left(y_{d}\right)$, 也就是降维后的数据 在不同维度上有不同的方差, 从而导致不同维度的数值范围差异很大, 如果想要降维后的样本在不同维度具有大致相同的数值范围, 应该怎么做?
+  \end{enumerate}
+  \begin{solution}
+    \begin{enumerate}
+      \item
+
+            因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
+
+            因此 $\mathbb{E}[y_i] = \mathbb{E}[\bm{u}_i^{\mathrm{T}}\bm{x} + a_i] = \bm{\mu}_i^{\mathrm{T}}\mathbb{E}[\bm{x}] + a_i = 0$.
+
+            又因为 $\mathbb{E}[\bm{x}] = \bm{\mu}$,
+
+            所以有 $a_i = -\bm{\mu}_i^{\mathrm{T}}\bm{\mu}$.
+
+      \item
+
+            对于随机变量 $\{ y_i \}_{i=1}^{d'}$ 来说, 方差为
+
+            $$
+              \begin{aligned}
+                \operatorname{var}(y_i) & = \mathbb{E}[y_i^{2}] - (\mathbb{E}[y_i])^{2}                                                  \\
+                                        & = \mathbb{E}[y_i^{2}] - 0                                                                      \\
+                                        & = \mathbb{E}[\bm{u}_i^{\mathrm{T}}(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}\bm{u}_i] \\
+                                        & = \bm{u}_i^{\mathrm{T}}\mathbb{E}[(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}]\bm{u}_i \\
+                                        & = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i                                                     \\
+              \end{aligned}
+            $$
+
+            我们要最大化的目标函数即为 $\displaystyle \sum_{i=1}^{d'}\operatorname{var}(y_i) = \sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$. 具体优化问题为
+
+            $$
+              \begin{aligned}
+                \min_{\bm{\mu}_i} & \quad -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i \\
+                \text{s.t.}       & \quad \bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i = 1, i = 1, \cdots, d' \\
+              \end{aligned}
+            $$
+
+            注: 在 (3) 我们还会证明还有约束条件 $\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_j = 0$, 其中 $i \neq j$. 但是这里我们先不加上这个约束条件.
+
+            构造拉格朗日函数得
+
+            $$
+              L(\bm{\mu}_i, \lambda_i) = -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i + \sum_{i=1}^{d'}\lambda_i(\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i - 1)
+            $$
+
+            对 $\bm{\mu}_i$ 求偏导并令其等于零即有
+
+            $$
+              \frac{\partial L(\bm{\mu}_i, \lambda_i)}{\partial \bm{\mu}_i} = -2\bm{\Sigma} \bm{\mu}_i + 2\lambda_i \bm{\mu}_i = 0
+            $$
+
+            即有
+
+            $$
+              \bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i
+            $$
+
+            因此 $\lambda_i$ 是 $\bm{\Sigma}$ 的特征值, $\bm{\mu}_i$ 是 $\bm{\Sigma}$ 和 $\lambda_i$ 的对应的特征向量.
+
+            我们将 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$ 带入 $\operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$ 则有
+
+            $$
+              \operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i = \bm{u}_i^{\mathrm{T}}\lambda_i\bm{u}_i = \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_i = \lambda_i
+            $$
+
+            即 $y_i$ 的方差 $\operatorname{var}(y_i)$ 大小等于其对应的特征值.
+
+            又因为 $\operatorname{var}(y_1) \ge \operatorname{var}(y_2) \ge \cdots \ge \operatorname{var}(y_{d'})$, 即有 $y_1$ 的方差最大,
+
+            因此 $y_1$ 中的 $\mu_1$ 是 $\bm{\Sigma}$ 最大的特征值 $\lambda_1$ 对应的特征向量.
+
+      \item
+
+            因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
+
+            因此 $\mathbb{E}[y_i y_j] = \mathbb{E}[y_i]\mathbb{E}[y_j] = 0$, 其中 $i \neq j$, 并且我们有 (1) 中的 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$, 即有
+
+            $$
+              \begin{aligned}
+                \mathbb{E}[y_i y_j]
+                 & = \mathbb{E}[(\bm{u}_i^{\mathrm{T}}\bm{x} + a_i)(\bm{u}_j^{\mathrm{T}}\bm{x} + a_j)]           \\
+                 & = \bm{u}_i^{\mathrm{T}}\mathbb{E}[(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}]\bm{u}_j \\
+                 & = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_j                                                     \\
+                 & = \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j                                                       \\
+                 & = \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j                                                       \\
+                 & = \mathbb{E}[y_i]\mathbb{E}[y_j]  = 0                                                          \\
+              \end{aligned}
+            $$
+
+            因为 $\bm{\Sigma}$ 没有重复的特征值, 因此 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$, 所以
+
+            $$
+              \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j - \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j = (\lambda_i - \lambda_j)\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0 - 0 = 0
+            $$
+
+            因此有
+
+            $$
+              \bm{u}_i^{\mathrm{T}}\bm{u}_j = 0
+            $$
+
+            因此 $\bm{\mu}_i$ 和 $\bm{\mu}_j$ 是相互正交的特征单位向量, 他们对应的特征值 $\lambda_i$ 和 $\lambda_j$ 也互不相同.
+
+            又因为 $\operatorname{var}(y_1) \ge \operatorname{var}(y_2) \ge \cdots \ge \operatorname{var}(y_{d'})$,
+
+            因此有 $\lambda_1 > \lambda_2 > \cdots > \lambda_{d'}$,
+
+            即有答案所需的 $\bm{u}_2^{\mathrm{T}}\bm{u}_1 = 0$ 且 $\bm{\mu}_2$ 是 $\bm{\Sigma}$ 第二大特征值对应的特征向量.
+
+      \item
+
+            我们可以对降维后的随机变量 $\{ y_i \}_{i=1}^{d'}$ 都除去对应的标准差, 即方差的开方, 进行 "归一化".
+
+            即令 $\displaystyle y_i' = \frac{y_i}{\sqrt{\operatorname{var}(y_i)}} = \frac{y_i}{\sqrt{\lambda_i}}$.
+
+            则我们求 $\{ y_i' \}_{i=1}^{d'}$ 的方差即有 $\displaystyle \operatorname{var}(y_i') = (\frac{1}{\sqrt{\operatorname{var}(y_i)}})^{2} \cdot \operatorname{var}(y_i) = 1$.
+
+            这样, 降维后的 $\{ y_i' \}_{i=1}^{d'}$ 方差均为 $1$, 也就有大致相同的数值范围了.
+    \end{enumerate}
+  \end{solution}
 \end{questions}
 
 

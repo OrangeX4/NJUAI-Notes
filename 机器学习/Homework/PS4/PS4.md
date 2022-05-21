@@ -24,8 +24,8 @@ $$
 \begin{aligned}
 \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_j}
 & = \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_j}\frac{\partial \hat{y}_j}{\partial \beta_j} + \sum_{k \neq j}\frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_k}\frac{\partial \hat{y}_k}{\partial \beta_j} \\
-& = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k) \\
-& = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq k}e^{\beta_i}}{e^{\beta_j}}\hat{y}_k) \\
+& = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k) \\
+& = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k) \\
 \end{aligned}
 $$
 
@@ -38,7 +38,7 @@ $$
 $$
 \begin{aligned}
 \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_1}
-& = y_1(\hat{y}_1 - 1) + y_0(1 - \frac{\beta_1}{\beta_1}\hat{y}_0) \\
+& = y_1(\hat{y}_1 - 1) + y_0(1 - \frac{\beta_0}{\beta_0}\hat{y}_0) \\
 & = y_1(\hat{y}_1 - 1) + (1 - y_1)\hat{y}_1 \\
 & = \hat{y}_1 - y_{1} \\
 \end{aligned}

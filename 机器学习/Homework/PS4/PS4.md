@@ -400,7 +400,11 @@ $$
 \end{aligned}
 $$
 
-因为 $\bm{\Sigma}$ 没有重复的特征值, 因此 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$, 所以
+因为 $\bm{\Sigma}$ 没有重复的特征值, 我们证明 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$.
+
+假设 $\lambda_i = \lambda_j$, 则有 $\bm{u}_i = \bm{u}_j$, 则有 $\bm{u}_i^{\mathrm{T}}\bm{u}_j = 1$, 则有 $\lambda_i = \lambda_j = 0$, 尤其是 $\lambda_1 = \lambda_2 = 0$, 这是明显矛盾的, 因为这样达不到降维的效果.
+
+所以我们有 $\lambda_i \neq \lambda_j$, 则有
 
 $$
 \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j - \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j = (\lambda_i - \lambda_j)\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0 - 0 = 0
@@ -422,7 +426,7 @@ $$
 
 **(4)**
 
-我们可以对降维后的随机变量 $\{ y_i \}_{i=1}^{d'}$ 都除去对应的标准差, 即方差的开方, 进行 "归一化".
+我们可以对降维后的随机变量 $\{ y_i \}_{i=1}^{d'}$ 都除去对应的标准差, 即方差的开方, 进行 "标准化".
 
 即令 $\displaystyle y_i' = \frac{y_i}{\sqrt{\operatorname{var}(y_i)}} = \frac{y_i}{\sqrt{\lambda_i}}$.
 

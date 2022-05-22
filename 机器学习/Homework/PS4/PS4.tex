@@ -157,11 +157,11 @@
             令 $\displaystyle f(x) = \frac{\varphi}{e^{x} + \theta}$, 对其求导得 $\displaystyle f'(x) = - \frac{\varphi}{\theta + e^{x}}(1 - \frac{\theta}{\theta + e^{x}}) = -f(x)(1 - \frac{\theta}{\varphi}f(x))$
 
             $$
-            \begin{aligned}
-              \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_j}
-              & = \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_j}\frac{\partial \hat{y}_j}{\partial \beta_j} + \sum_{k \neq j}\frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_k}\frac{\partial \hat{y}_k}{\partial \beta_j} \\
-              & = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k) \\
-              & = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k) \\
+              \begin{aligned}
+                \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \beta_j}
+                 & = \frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_j}\frac{\partial \hat{y}_j}{\partial \beta_j} + \sum_{k \neq j}\frac{\partial \ell(\bm{y}, \hat{\bm{y}})}{\partial \hat{y}_k}\frac{\partial \hat{y}_k}{\partial \beta_j} \\
+                 & = -\frac{y_j}{\hat{y}_j} \cdot \hat{y}_j(1 - \hat{y}_j) + \sum_{k \neq j} \frac{y_k}{\hat{y}_k} \cdot \hat{y}_k(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k)                                                           \\
+                 & = -y_{j} (1 - \hat{y}_j) + \sum_{k \neq j} y_{k}(1 - \frac{\sum_{i \neq j}e^{\beta_i}}{e^{\beta_k}}\hat{y}_k)                                                                                                                          \\
               \end{aligned}
             $$
 
@@ -557,7 +557,7 @@
             $$
               \begin{aligned}
                 \min_{\bm{u}_i} & \quad -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i \\
-                \text{s.t.}       & \quad \bm{u}_i^{\mathrm{T}}\bm{u}_i = 1, i = 1, \cdots, d' \\
+                \text{s.t.}     & \quad \bm{u}_i^{\mathrm{T}}\bm{u}_i = 1, i = 1, \cdots, d'     \\
               \end{aligned}
             $$
 
@@ -605,15 +605,21 @@
               \begin{aligned}
                 \mathbb{E}[y_i y_j]
                  & = \mathbb{E}[(\bm{u}_i^{\mathrm{T}}\bm{x} + a_i)(\bm{u}_j^{\mathrm{T}}\bm{x} + a_j)]           \\
+                 & = \mathbb{E}[\bm{u}_i^{\mathrm{T}}(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}\bm{u}_j] \\
                  & = \bm{u}_i^{\mathrm{T}}\mathbb{E}[(\bm{x} - \bm{\mu})(\bm{x} - \bm{\mu})^{\mathrm{T}}]\bm{u}_j \\
                  & = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_j                                                     \\
                  & = \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j                                                       \\
                  & = \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j                                                       \\
-                 & = \mathbb{E}[y_i]\mathbb{E}[y_j]  = 0                                                          \\
+                 & = \mathbb{E}[y_i]\mathbb{E}[y_j]                                                               \\
+                 & = 0                                                                                            \\
               \end{aligned}
             $$
 
-            因为 $\bm{\Sigma}$ 没有重复的特征值, 因此 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$, 所以
+            因为 $\bm{\Sigma}$ 没有重复的特征值, 我们证明 $\lambda_i \neq \lambda_j$ 即 $\lambda_i - \lambda_j \neq 0$.
+
+            假设 $\lambda_i = \lambda_j$, 则有 $\bm{u}_i = \bm{u}_j$, 则有 $\bm{u}_i^{\mathrm{T}}\bm{u}_j = 1$, 则有 $\lambda_i = \lambda_j = 0$, 尤其是 $\lambda_1 = \lambda_2 = 0$, 这是明显矛盾的, 因为这样达不到降维的效果.
+
+            所以我们有 $\lambda_i \neq \lambda_j$, 则有
 
             $$
               \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_j - \lambda_j\bm{u}_i^{\mathrm{T}}\bm{u}_j = (\lambda_i - \lambda_j)\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0 - 0 = 0

@@ -317,11 +317,11 @@ $$
 
 因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
 
-因此 $\mathbb{E}[y_i] = \mathbb{E}[\bm{u}_i^{\mathrm{T}}\bm{x} + a_i] = \bm{\mu}_i^{\mathrm{T}}\mathbb{E}[\bm{x}] + a_i = 0$.
+因此 $\mathbb{E}[y_i] = \mathbb{E}[\bm{u}_i^{\mathrm{T}}\bm{x} + a_i] = \bm{u}_i^{\mathrm{T}}\mathbb{E}[\bm{x}] + a_i = 0$.
 
 又因为 $\mathbb{E}[\bm{x}] = \bm{\mu}$,
 
-所以有 $a_i = -\bm{\mu}_i^{\mathrm{T}}\bm{\mu}$.
+所以有 $a_i = -\bm{u}_i^{\mathrm{T}}\bm{\mu}$.
 
 **(2)**
 
@@ -341,34 +341,34 @@ $$
 
 $$
 \begin{aligned}
-\min_{\bm{\mu}_i} &\quad -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i  \\
-\text{s.t.} &\quad \bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i = 1, i = 1, \cdots, d'  \\
+\min_{\bm{u}_i} &\quad -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i  \\
+\text{s.t.} &\quad \bm{u}_i^{\mathrm{T}}\bm{u}_i = 1, i = 1, \cdots, d'  \\
 \end{aligned}
 $$
 
-注: 在 (3) 我们还会证明还有约束条件 $\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_j = 0$, 其中 $i \neq j$. 但是这里我们先不加上这个约束条件.
+注: 在 (3) 我们还会证明还有约束条件 $\bm{u}_i^{\mathrm{T}}\bm{u}_j = 0$, 其中 $i \neq j$. 但是这里我们先不加上这个约束条件.
 
 构造拉格朗日函数得
 
 $$
-L(\bm{\mu}_i, \lambda_i) = -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i + \sum_{i=1}^{d'}\lambda_i(\bm{\mu}_i^{\mathrm{T}}\bm{\mu}_i - 1)
+L(\bm{u}_i, \lambda_i) = -\sum_{i=1}^{d'}\bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i + \sum_{i=1}^{d'}\lambda_i(\bm{u}_i^{\mathrm{T}}\bm{u}_i - 1)
 $$
 
-对 $\bm{\mu}_i$ 求偏导并令其等于零即有
+对 $\bm{u}_i$ 求偏导并令其等于零即有
 
 $$
-\frac{\partial L(\bm{\mu}_i, \lambda_i)}{\partial \bm{\mu}_i} = -2\bm{\Sigma} \bm{\mu}_i + 2\lambda_i \bm{\mu}_i = 0
+\frac{\partial L(\bm{u}_i, \lambda_i)}{\partial \bm{u}_i} = -2\bm{\Sigma} \bm{u}_i + 2\lambda_i \bm{u}_i = 0
 $$
 
 即有
 
 $$
-\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i
+\bm{\Sigma} \bm{u}_i = \lambda_i \bm{u}_i
 $$
 
-因此 $\lambda_i$ 是 $\bm{\Sigma}$ 的特征值, $\bm{\mu}_i$ 是 $\bm{\Sigma}$ 和 $\lambda_i$ 的对应的特征向量.
+因此 $\lambda_i$ 是 $\bm{\Sigma}$ 的特征值, $\bm{u}_i$ 是 $\bm{\Sigma}$ 和 $\lambda_i$ 的对应的特征向量.
 
-我们将 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$ 带入 $\operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$ 则有
+我们将 $\bm{\Sigma} \bm{u}_i = \lambda_i \bm{u}_i$ 带入 $\operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i$ 则有
 
 $$
 \operatorname{var}(y_i) = \bm{u}_i^{\mathrm{T}}\bm{\Sigma}\bm{u}_i = \bm{u}_i^{\mathrm{T}}\lambda_i\bm{u}_i = \lambda_i\bm{u}_i^{\mathrm{T}}\bm{u}_i = \lambda_i
@@ -384,7 +384,7 @@ $$
 
 因为 $\{ y_i = \bm{u}_i^{\mathrm{T}}\bm{x} + a_i \in \mathbb{R} \}_{i=1}^{d'}$ 是互不相关的零均值随机变量,
 
-因此 $\mathbb{E}[y_i y_j] = \mathbb{E}[y_i]\mathbb{E}[y_j] = 0$, 其中 $i \neq j$, 并且我们有 (1) 中的 $\bm{\Sigma} \bm{\mu}_i = \lambda_i \bm{\mu}_i$, 即有
+因此 $\mathbb{E}[y_i y_j] = \mathbb{E}[y_i]\mathbb{E}[y_j] = 0$, 其中 $i \neq j$, 并且我们有 (1) 中的 $\bm{\Sigma} \bm{u}_i = \lambda_i \bm{u}_i$, 即有
 
 $$
 \begin{aligned}
@@ -412,13 +412,13 @@ $$
 \bm{u}_i^{\mathrm{T}}\bm{u}_j = 0
 $$
 
-因此 $\bm{\mu}_i$ 和 $\bm{\mu}_j$ 是相互正交的特征单位向量, 他们对应的特征值 $\lambda_i$ 和 $\lambda_j$ 也互不相同.
+因此 $\bm{u}_i$ 和 $\bm{u}_j$ 是相互正交的特征单位向量, 他们对应的特征值 $\lambda_i$ 和 $\lambda_j$ 也互不相同.
 
 又因为 $\operatorname{var}(y_1) \ge \operatorname{var}(y_2) \ge \cdots \ge \operatorname{var}(y_{d'})$,
 
 因此有 $\lambda_1 > \lambda_2 > \cdots > \lambda_{d'}$,
 
-即有答案所需的 $\bm{u}_2^{\mathrm{T}}\bm{u}_1 = 0$ 且 $\bm{\mu}_2$ 是 $\bm{\Sigma}$ 第二大特征值对应的特征向量.
+即有答案所需的 $\bm{u}_2^{\mathrm{T}}\bm{u}_1 = 0$ 且 $\bm{u}_2$ 是 $\bm{\Sigma}$ 第二大特征值对应的特征向量.
 
 **(4)**
 

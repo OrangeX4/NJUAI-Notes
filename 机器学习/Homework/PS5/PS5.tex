@@ -1,0 +1,265 @@
+% 请确保文件编码为utf-8，使用XeLaTex进行编译，或者通过overleaf进行编译
+
+\documentclass[answers]{exam}  % 使用此行带有作答模块
+% \documentclass{exam} % 使用此行只显示题目
+
+\usepackage{xeCJK}
+\usepackage{zhnumber}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{floatrow}
+\usepackage{blindtext}
+\usepackage{subcaption}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{南京大学}{机器学习导论}{习题五}
+\runningheader{南京大学}
+{机器学习导论}
+{习题五}
+\runningheadrule
+\firstpagefooter{}{第\thepage\ 页（共\numpages 页）}{}
+\runningfooter{}{第\thepage\ 页（共\numpages 页）}{}
+
+
+\setlength\linefillheight{.8in}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{解：}\par\noindent}
+
+\renewcommand{\thequestion}{\zhnum{question}}
+\renewcommand{\questionlabel}{\thequestion .}
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thepartno .}
+
+\lstset{language=Matlab}%这条命令可以让LaTeX排版时将Matlab关键字突出显示
+\lstset{
+	breaklines,%这条命令可以让LaTeX自动将长的代码行换行排版
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	backgroundcolor=\color[rgb]{0.95,0.95,0.95},
+	keywordstyle=\color{blue},
+	commentstyle=\color{cyan},
+	tabsize=4,numbers=left,
+	numberstyle=\tiny,
+	frame=single,
+	%numbers=left, % Ort der Zeilennummern
+	numberstyle=\tiny, % Stil der Zeilennummern
+	%stepnumber=2, % Abstand zwischen den Zeilennummern
+	numbersep=5pt, % Abstand der Nummern zum Text
+	tabsize=2, % Groesse von Tabs
+	extendedchars=false, %
+	breaklines=true, % Zeilen werden Umgebrochen
+	keywordstyle=\color{red},%这一条命令可以解决代码跨页时, 章节标题, 页眉等汉字不显示的问题
+	stringstyle=\color{white}\ttfamily, % Farbe der String
+	showspaces=false, % Leerzeichen anzeigen ?
+	showtabs=false, % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false % Leerzeichen in Strings anzeigen ?
+}
+\renewcommand{\lstlistingname}{CODE}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+	%[Visual]Basic
+	%Pascal
+	%C
+	Python
+	%XML
+	%HTML
+	%Java
+}
+\input{notations}
+
+\begin{document}
+% \Large
+\noindent 
+% 姓名学号
+姓名：张三 \\
+学号：1234567 \\
+\begin{questions}
+\question [20] \textbf{贝叶斯决策论} \\
+教材7.1节介绍了贝叶斯决策论, 它是一种解决统计决策问题的通用准则. 考虑一个带有“拒绝”选项的$N$分类问题, 给定一个样例, 分类器可以选择预测这个样例的标记, 也可以选择拒绝判断并将样例交给人类专家处理. 设类别标记的集合为$\mathcal{Y}=\{c_1,c_2,\ldots,c_N\}$, $\lambda_{ij}$是将一个真实标记为$c_i$的样例误分类为$c_j$所产生的损失, 而人类专家处理一个样例需要额外$\lambda_{h}$费用. 假设后验概率$P(c\mid\vx)$已知, 且$\lambda_{ij}\geq 0$, $\lambda_{h}\geq 0$. 请思考下列问题:
+\begin{enumerate}
+	\item 基于期望风险最小化原则, 写出此时贝叶斯最优分类器$h^\star(\vx)$的表达式;
+	\item 人类专家的判断成本$\lambda_{h}$取何值时, 分类器$h^\star$将一直拒绝分类? 当$\lambda_{h}$取何值时, 分类器$h^\star$不会拒绝分类任何样例?
+	\item 考虑一个具体的二分类问题, 其损失矩阵为
+	\begin{equation}
+		\mat{\Lambda}=\left(\begin{array}{cc}
+			\lambda_{11} & \lambda_{12} \\
+			\lambda_{21} & \lambda_{22} \end{array}\right)=\left(\begin{array}{cc}
+			0 & 1 \\
+			1 & 0 \end{array}\right)\;,
+	\label{ch7_eq:cost_matrix}
+	\end{equation}
+	且人类专家处理一个样例的代价为$\lambda_{h}=0.3$. 对于一个样例$\vx$, 设$p_1=P(c_1\mid\vx)$, 证明存在$\theta_1,\theta_2\in[0,1]$, 使得贝叶斯最优决策恰好为: 当$p_1<\theta_1$时, 预测为第二类, 当$\theta_1\leq p_1\leq \theta_2$时, 拒绝预测, 当$\theta_2<p_1$时, 预测为第一类.
+\end{enumerate}
+
+\begin{solution}
+	% 请在此处作答
+\end{solution}
+
+\question [20] \textbf{极大似然估计} \\
+教材7.2节介绍了极大似然估计方法用于确定概率模型的参数. 其基本思想为: 概率模型的参数应当使得当前观测到的样本是最有可能被观测到的, 即当前数据的似然最大. 本题通过抛硬币的例子理解极大似然估计的核心思想. 
+\begin{enumerate}
+	\item 现有一枚硬币, 抛掷这枚硬币后它可能正面向上也可能反面向上. 我们已经独立重复地抛掷了这枚硬币$99$次, 均为正面向上. 现在, 请使用极大似然估计来求解第$100$次抛掷这枚硬币时其正面向上的概率;
+	\item 仍然考虑上一问的问题. 但现在, 有一位抛硬币的专家仔细观察了这枚硬币, 发现该硬币质地十分均匀, 并猜测这枚硬币“肯定有$50\%$的概率正面向上”. 如果同时考虑已经观测到的数据和专家的见解, 第$100$次抛掷这枚硬币时, 其正面向上的概率为多少?
+	
+	\item 若同时考虑专家先验和实验数据来对硬币正面朝上的概率做估计. 设这枚硬币正面朝上的概率为$\theta$, 某抛硬币专家主观认为$\theta\sim\mathcal{N}(\frac{1}{2}, \frac{1}{900})$, 即$\theta$服从均值为$\frac{1}{2}$, 方差为$\frac{1}{900}$的高斯分布. 另一方面, 我们独立重复地抛掷了这枚硬币$400$次, 记第$i$次的结果为$x_i$, 若$x_i=1$则表示硬币正面朝上, 若$x_i=0$则表示硬币反面朝上. 经统计, 其中有$100$次正面向上, 有$300$次反面向上. 现在, 基于专家先验和观测到的数据$\vx=\{x_1, x_2, \ldots, x_{400}\}$, 对参数$\theta$分别做极大似然估计和最大后验估计;
+    
+    \item 如何理解上一小问中极大似然估计的结果和最大后验估计的结果？
+\end{enumerate}
+
+\begin{solution}
+	%请在此处作答
+\end{solution}
+
+
+\question [20] \textbf{朴素贝叶斯分类器} \\
+朴素贝叶斯算法有很多实际应用, 本题以sklearn中的Iris数据集为例, 探讨实践中朴素贝叶斯算法的技术细节. 可以通过sklearn中的内置函数直接获取Iris数据集, 代码如下:
+\begin{lstlisting}[language=Python]
+def load_data():
+    # 以feature, label的形式返回数据集
+    feature, label = datasets.load_iris(return_X_y=True)
+    print(feature.shape) # (150, 4)
+    print(label.shape) # (150,)
+    return feature, label
+\end{lstlisting}
+上述代码返回Iris数据集的特征和标记, 其中feature变量是形状为$(150, 4)$的numpy数组, 包含了$150$个样本的$4$维特征, 而label变量是形状为$(150)$的numpy数组, 包含了$150$个样本的类别标记. Iris数据集中一共包含$3$类样本, 所以类别标记的取值集合为$\{0,1,2\}$. Iris数据集是类别平衡的, 每类均包含$50$个样本. 我们进一步将完整的数据集划分为训练集和测试集, 其中训练集样本量占总样本量的$80\%$, 即$120$个样本, 剩余$30$个样本作为测试样本.
+\begin{lstlisting}[language=Python]
+feature_train, feature_test, label_train, label_test = \
+    train_test_split(feature, label, test_size=0.2, random_state=0)
+\end{lstlisting}
+朴素贝叶斯分类器会将一个样例的标记预测为类别后验概率最大的那一类对应的标记, 即:
+\begin{equation}
+\hat{y}=\argmax_{y\in\{0,1,2\}}P(y)\prod_{i=1}^{d}P(x_i\mid y)\;.
+\end{equation}
+因此, 为了构建一个朴素贝叶斯分类器, 我们需要在{\em 训练集}上获取所有类别的先验概率$P(y)$以及所有类别所有属性上的类条件概率$P(x_i\mid y)$.
+
+\begin{enumerate}
+    \item 请检查训练集上的类别分布情况, 并基于多项分布假设对$P(y)$做极大似然估计;
+    \item 在Iris数据集中, 每个样例$\vx$都包含$4$维实数特征, 分别记作$x_1$, $x_2$, $x_3$和$x_4$. 为了计算类条件概率$P(x_i\mid y)$, 首先需要对$P(x_i\mid y)$的概率形式做出假设. 在本小问中, 我们假设每一维特征在给定类别标记时是独立的（朴素贝叶斯的基本假设）, 并假设它们服从高斯分布. 试基于sklearn中的GaussianNB类构建分类器, 并在测试集上测试性能;
+    \item 在GaussianNB类中手动指定类别先验为三个类上的均匀分布, 再次测试模型性能;
+    \item 在朴素贝叶斯模型中, 对类条件概率的形式做出正确的假设也很重要. 请检查每个类别下特征的数值分布, 并讨论该如何选定类条件概率的形式.
+\end{enumerate}
+
+\begin{solution}
+    %请在此处作答
+\end{solution}
+\question [20] \textbf{Boosting} \\
+Boosting算法有序地训练一批弱学习器进行集成得到一个强学习器, 核心思想是使用当前学习器``提升"已训练弱学习器的能力. 教材8.2节介绍的AdaBoost是一种典型的Boosting算法, 通过调整数据分布使新学习器重点关注之前学习器分类错误的样本. 教材介绍的AdaBoost关注的是二分类问题, 即样本$\vx$对应的标记$y(\vx)\in \{-1, +1\}$. 记第$t$个基学习器及其权重为$h_t$和$\alpha_t$, 采用$T$个基学习器加权得到的集成学习器为$H(\vx)=\sum_{t=1}^T \alpha_t h_t(\vx)$. AdaBoost最小化指数损失: $\ell_{\text{exp}}=\mathbb{E}_{\vx \sim \mathcal{D}}\left[ e^{-y(\vx)H(\vx)} \right]$. 
+
+% 不同的``提升"方法对应不同的Boosting算法. 
+
+% 则第$t$时刻和第$t-1$时刻得到的集成模型的关系为: $H_t(\vx)=H_{t-1}(\vx)+\alpha_t h_t(\vx)$
+
+\begin{enumerate}
+    \item  在AdaBoost训练过程中, 记前$t$个弱学习器的集成为$H_t(\vx) = \sum_{i=1}^t \alpha_i h_i(\vx)$, 该阶段优化目标为: 
+    \begin{equation}
+        \ell_{\text{exp},t} = \mathbb{E}_{\vx \sim \mathcal{D}}\left[ e^{-y(\vx)H_t(\vx)} \right]. \label{ch8_eq:boost-exp-loss}
+    \end{equation}
+    如果记训练数据集的初始分布为$\mathcal{D}_0=\mathcal{D}$, 那么第一个弱学习器的训练依赖于数据分布$\mathcal{D}_0$. AdaBoost根据第一个弱学习器的训练结果将训练集数据分布调整为$\mathcal{D}_1$, 然后基于$\mathcal{D}_1$训练第二个弱学习器. 依次类推, 训练完前$t-1$个学习器之后的数据分布变为$\mathcal{D}_{t-1}$. 根据以上描述并结合``加性模型"(Additive Model), 请推导AdaBoost调整数据分布的具体过程, 即$\mathcal{D}_t$与$\mathcal{D}_{t-1}$的关系; 
+    \item AdaBoost算法可以拓展到$N$分类问题. 现有一种设计方法, 将样本标记编码为$N$维向量$\vy$, 其中目标类别对应位置的值为$1$, 其余类别对应位置的值为$-\frac{1}{N-1}$. 这种编码的一种性质是$\sum_{n=1}^N \vy_n = 0$, 即所有类别对应位置的值的和为零. 同样地, 学习器的输出为一个$N$维向量, 且约束其输出结果的和为零, 即: $\sum_{n=1}^N [h_t(\vx)]_n = 0$. $[h_t(\vx)]_{n}$表示基分类器输出的$N$维向量的第$n$个值. 在这种设计下, 多分类情况下的指数损失为: 
+    \begin{equation}
+        \ell_{\text{multi-exp}} = \mathbb{E}_{\vx \sim \mathcal{D}}\left[  e^{-\frac{1}{N}\sum_{n=1}^N \vy_n [H(\vx)]_n} \right] = \mathbb{E}_{\vx \sim \mathcal{D}}\left[  e^{- \frac{1}{N} \vy^\top H(\vx)} \right]. \label{ch8_eq:boost-multi-exp-loss}
+    \end{equation}
+    请分析为何如此设计;
+    \item 教材8.2节已经证明AdaBoost在指数损失下得到的决策函数$\text{sign}(H(\vx))$可以达到贝叶斯最优误差. 仿照教材中的证明, 请从贝叶斯最优误差的角度验证式\eqref{ch8_eq:boost-multi-exp-loss}的合理性.
+\end{enumerate}
+
+\begin{solution}
+    %请在此处作答
+\end{solution}
+
+\question [20] \textbf{Bagging} \\
+考虑一个回归学习任务$f:\mathbb{R}^d \rightarrow \mathbb{R}$. 假设已经学得$T$个学习器$\{h_1(\vx), h_2(\vx), \dots, h_T(\vx)\}$. 将学习器的预测值视为真实值项加上误差项:
+\begin{equation}
+h_t(\vx)=y(\vx)+\epsilon_t(\vx).
+\end{equation}
+
+每个学习器的期望平方误差为$\mathbb{E}_{\vx}[\epsilon_t(\vx)^2]$. 所有学习器的期望平方误差的平均值为:
+\begin{equation}
+E_{av}=\frac{1}{T}\sum_{t=1}^T \mathbb{E}_{\vx}[\epsilon_t(\vx)^2].
+\end{equation}
+
+$T$个学习器得到的Bagging模型为:
+\begin{equation}
+H_{bag}(\vx)=\frac{1}{T}\sum_{t=1}^T h_t(\vx).
+\end{equation}
+
+Bagging模型的误差为:
+\begin{equation}
+\epsilon_{bag}(\vx)=H_{bag}(\vx)-y(\vx)=\frac{1}{T}\sum_{t=1}^T \epsilon_t(\vx),
+\end{equation}
+
+其期望平均误差为:
+\begin{equation}
+E_{bag}=\mathbb{E}_{\vx}[\epsilon_{bag}(\vx)^2].
+\end{equation}
+
+\begin{enumerate}
+\item 假设$\forall t\neq l$, $\mathbb{E}_{\vx}[\epsilon_t(\vx)]=0$, $ \mathbb{E}_{\vx}[\epsilon_t(\vx)\epsilon_l(\vx)]=0$. 证明:
+\begin{equation}
+E_{bag}=E_{av}.
+\end{equation}
+
+\item 请证明无需对$\epsilon_t(\vx)$做任何假设, $E_{bag}\leq E_{av}$始终成立. 
+\end{enumerate}
+
+\begin{solution}
+    %请在此处作答
+\end{solution}
+
+\question [20] \textbf{$k$均值算法} \\
+\label{ch9_prob:kmeans}
+教材9.4.1节介绍了最经典的原型聚类算法---$k$均值算法 ($k$-means). 给定包含$m$个样本的数据集$D =\left\{\vx_{1}, \vx_{2}, \ldots, \vx_{m}\right\}$, 其中$k$是聚类簇的数目, $k$均值算法希望获得簇划分$\mathcal{C}=\left\{C_{1}, C_{2}, \cdots, C_{k}\right\}$
+使得教材式(9.24)最小化, 目标函数如下: 
+\begin{equation}
+ E=\sum_{i=i}^{k}\sum_{\vx \in C_{i}}\left\| \vx-\vu_{i} \right\|^{2}\;.
+\end{equation}
+其中$\vmu_{1}, \ldots, \vmu_{k}$为$k$个簇的中心. 目标函数$E$也被称作均方误差和~(Sum of Squared Error, SSE), 
+这一过程可等价地写为最小化如下目标函数
+\begin{equation} \label{ch9_kmeans_obj}
+E\left(\mathbf{\Gamma}, \vmu_{1}, \ldots, \vmu_{k}\right)=\sum_{i=1}^{m} \sum_{j=1}^{k} {\Gamma}_{i j}\left\|\vx_{i}-\vmu_{j}\right\|^{2}\;.
+\end{equation}
+其中$\mathbf{\Gamma} \in \mathbb{R}^{m \times k}$为指示矩阵(indicator matrix)定义如
+下: 若$\vx_{i}$属于第$j$个簇, 即$\vx_i\in C_j$, 则${\Gamma}_{i j}=1$, 否则为0.
+$k$均值聚类算法流程如算法\ref{ch9_alg:kmeans}中所示~（即教材中图9.2所述算法）. 请回答以下问题: 
+{\begin{algorithm}[ht]
+		\caption{ $k$均值算法 }
+		\label{ch9_alg:kmeans}
+		\begin{algorithmic}[1]{
+				\State 初始化所有簇中心 $\vmu_{1}, \ldots, \vmu_{k}$;
+				\Repeat
+				\State {\bf{Step 1:}} 确定 $\left\{\vx_{i}\right\}_{i=1}^{m}$所属的簇, 将它们分配到最近的簇中心所在的簇.
+				\begin{align}{\Gamma}_{i j}=\left\{\begin{array}{ll}
+				1, & \left\|\vx_{i}-\vmu_{j}\right\|^{2} \leq \left\|\vx_{i}-\vmu_{j^{\prime}}\right\|^{2}, \forall j^{\prime} \\
+				0, & \text { otherwise }
+				\end{array}\right.\end{align} \label{ch9_:step1}
+				\State {\bf{Step 2:}} 对所有的簇 $j \in\{1, \cdots, k\}$, 重新计算簇内所有样本的均值, 得到新的簇中心$\vmu_j$  :
+			\begin{align}\vmu_{j}=\frac{\sum_{i=1}^{m} {\Gamma}_{i j} \vx_{i}}{\sum_{i=1}^{m} {\Gamma}_{i j}}\end{align}	
+		
+				\Until 目标函数 $J$ 不再变化.}
+		\end{algorithmic}
+\end{algorithm}}
+\begin{enumerate}
+    \item 请证明, 在算法\ref{ch9_alg:kmeans}中, Step 1和Step 2都会使目标函数$J$的值降低（或不增加）;
+    \item 请证明, 算法\ref{ch9_alg:kmeans}会在有限步内停止;
+    \item 请证明, 目标函数$E$的最小值是关于$k$的非增函数.
+\end{enumerate}
+
+
+\begin{solution}
+    %请在此处作答
+\end{solution}
+
+\end{questions}
+
+
+
+
+\end{document}

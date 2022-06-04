@@ -1,6 +1,6 @@
 # PS5
 
-<!-- ## 一、
+## 一、
 
 **(1)**
 
@@ -214,7 +214,7 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
 
 我们画出每个类别 ($y=0,1,2$) 下不同特征 $(x_1, x_2, x_3, x_4)$ 对应的频率直方图, 这些图像部分地展现了其真实的数值分布的形状, 我们可以根据这些图像形状判断出应该使用哪一类概率分布形式.
 
-如图所示, 基本所有图像都呈现出 "中间高, 两边低" 的形状, 基本没有出现 "均匀分布" 或者 "多峰" 的形状, 因此我们选择高斯分布, 就能较为真实地反映条件概率的形式. -->
+如图所示, 基本所有图像都呈现出 "中间高, 两边低" 的形状, 基本没有出现 "均匀分布" 或者 "多峰" 的形状, 因此我们选择高斯分布, 就能较为真实地反映条件概率的形式.
 
 
 ## 四、
@@ -225,4 +225,84 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
 
 ## 六、
 
+**(1)**
 
+对于 Step 1:
+
+由于我们有新 $\Gamma'$:
+
+$$
+\Gamma_{ij}' = \begin{cases}
+1, & \left\| \bm{x}_{i} - \bm{\mu}_{j} \right\|^{2} \le \left\| \bm{x}_{i} - \bm{\mu}_{j'} \right\|^{2}, \forall j' \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+因此新目标函数值减去原目标函数值为
+
+$$
+\begin{aligned}
+E' - E &= \sum_{i=1}^{m}\sum_{j=1}^{k}\Gamma'_{ij}\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2} - \sum_{i=1}^{m}\sum_{j=1}^{k}\Gamma_{ij}\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2} \\
+&= \sum_{i=1}^{m}\sum_{j=1}^{k}(\Gamma'_{ij}-\Gamma_{ij})\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2} \\
+&= \sum_{i=1}^{m}(\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2} - \left\| \bm{x}_i - \bm{\mu}_{j'} \right\|^{2}) \\
+&\le 0
+\end{aligned}
+$$
+
+其中 $\bm{\mu}_j$ 是离 $\bm{x}_i$ 最近的簇, 而 $\bm{\mu}_{j'}$ 可能是任意一个簇, 因此我们有 $E' \le E$. 即 Step 1 会使目标函数 $J$ 的值降低或不增加.
+
+对于 Step 2:
+
+对于任意一个簇 $j$ 来说, 它的簇中心原来是 $\bm{\mu}_{j}$, 可能是任意一个向量, 之后被优化为
+
+$$
+\bm{\mu}_j' = \frac{\sum_{i=1}^{m}\Gamma_{ij}\bm{x}_i}{\sum_{i=1}^{m}\Gamma_{ij}}
+$$
+
+原来的目标函数可以改写为
+
+$$
+E = \sum_{j=1}^{k}\sum_{i=1}^{m}\Gamma_{ij}\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2}
+$$
+
+即交换求和符号, 这样我们只需要证明 $\displaystyle E_{j} = \sum_{i=1}^{m}\Gamma_{ij}\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2}$ 降低或不增加即可.
+
+$$
+\begin{aligned}
+E_j' - E_j & = \sum_{i=1}^{m}\Gamma_{ij}\left\| \bm{x}_i - \bm{\mu}_j' \right\|^{2} - \sum_{i=1}^{m}\Gamma_{ij}\left\| \bm{x}_i - \bm{\mu}_j \right\|^{2}  \\
+& = \sum_{i=1}^{m}\Gamma_{ij}(\left\| \bm{x}_i - \bm{\mu}_j' \right\|^{2} - \left\| \bm{x}_i - \bm{\mu}_j \right\|^{2})  \\
+& = \sum_{i=1}^{m}\Gamma_{ij}(\bm{x}_i - \bm{\mu}_j' + \bm{x}_i - \bm{\mu}_j)^{\mathrm{T}}(\bm{x}_i - \bm{\mu}_j' - \bm{x}_i + \bm{\mu}_j)  \\
+& = \sum_{i=1}^{m}\Gamma_{ij}(\bm{\mu}_j - \bm{\mu}_j')^{\mathrm{T}}(2\bm{x}_i - \bm{\mu}_j' - \bm{\mu}_j)  \\
+& = (\bm{\mu}_j - \bm{\mu}_j')^{\mathrm{T}}(2(\sum_{i=1}^{m}\Gamma_{ij}\bm{x}_i) - (\sum_{i=1}^{m}\Gamma_{ij})(\bm{\mu}_j' + \bm{\mu}_j))  \\
+& = (\sum_{i=1}^{m}\Gamma_{ij})(\bm{\mu}_j - \bm{\mu}_j')^{\mathrm{T}}(2\frac{\sum_{i=1}^{m}\Gamma_{ij}\bm{x}_i}{\sum_{i=1}^{m}\Gamma_{ij}} - \bm{\mu}_j' - \bm{\mu}_j)  \\
+& = (\sum_{i=1}^{m}\Gamma_{ij})(\bm{\mu}_j - \bm{\mu}_j')^{\mathrm{T}}(2\bm{\mu}_j' - \bm{\mu}_j' - \bm{\mu}_j)  \\
+& = -(\sum_{i=1}^{m}\Gamma_{ij})(\bm{\mu}_j - \bm{\mu}_j')^{\mathrm{T}}(\bm{\mu}_j - \bm{\mu}_j')  \\
+& \le 0  \\
+\end{aligned}
+$$
+
+因此我们有 $E_j' - E_j$, 也即有 Step 2 会使目标函数 $J$ 的值降低或不增加.
+
+**(2)**
+
+假设算法不会在有限步内停止, 则目标函数的值 $E$ 一直在变化.
+
+由 (1) 可知, 目标函数 $E$ 的值降低或不增加, 又因为 $E$ 一直在变化, 可以将一系列 $E$ 的值视作严格单调递减数列, 由于 $E \ge 0$, 有下界, 因此一定收敛.
+
+并且我们可知, $E$ 的值由簇的分类 $C_j$ 和簇中心 $\bm{\mu}_j$ 唯一确定, 而 $\displaystyle \bm{\mu}_j = \frac{\sum_{i=1}^{m}\Gamma_{ij}\bm{x}_{i}}{\sum_{i=1}^{m}\Gamma_{ij}}$, 因此 $\bm{\mu}_j$ 也由 $C_j$ 唯一确定, 也即 $E$ 由 $C_j$ 唯一确定, 其中 $j = 1, \cdots, k$.
+
+由于样本 $\bm{x}_i$ 是有限个的, 因此 $C_j$ 的划分方式是有限个的, 也就是 $E$ 的取值是离散的有限个的值, 再由 $E$ 是严格单调递减数列且有下界可知, 一定会有一个最小值 $E_{\min} \le E$, 对于任何一个 $E$ 值来说. 因此 $E$ 一定会在 $E_{\min}$ 的时候停止, 与假设矛盾.
+
+因此算法会在有限步内停止.
+
+**(3)**
+
+假设我们对于 $k$ 已经有了目标函数的最小值 $E_{k}$, 也就是说此时的算法已经停止了, 有了一系列的簇中心 $\bm{\mu}_1, \cdots, \bm{\mu}_k$.
+
+我们在这一系列簇中心的基础上, 加入一个随机的簇中心 $\bm{\mu}_{k+1}$, 令其等于任意一个样本, 形成一系列新的簇中心 $\bm{\mu}_1, \cdots, \bm{\mu}_k, \bm{\mu}_{k+1}$, 再重新将这一系列簇中心投入算法中.
+
+在再次投入算法之前, 可以认为 $C_{k+1}$ 簇中没有任何样本, 因此此时目标函数值依然等于 $E_{k}$, 没有变化.
+
+而由 (1) 可知, 等到算法终止之后, 目标函数的值 $E_{k+1}$ 也仍然只会降低或不增加.
+
+这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数.

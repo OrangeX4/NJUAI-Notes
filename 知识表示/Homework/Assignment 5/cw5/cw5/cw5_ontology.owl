@@ -1,0 +1,981 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://owl.cs.manchester.ac.uk/msc/fhkb.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://owl.cs.manchester.ac.uk/msc/fhkb.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Ancestor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Descendant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#DomainEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#FemaleAncestor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#FemaleDescendant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Femaleness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#MaleAncestor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#MaleDescendant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Maleness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRichard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRobert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRichard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRichardAndRobert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRobert"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isFatherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isMotherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandfatherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandmotherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasChild"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasDaughter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatAunt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatUncle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isAuntOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isChildOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isDaughterOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isGreatAuntOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isGreatUncleOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSisterOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSonOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isUncleOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Charles_Herbert_Rever_1895"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Clare_Bright_1966"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Ian_Bright_1959"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Iris_Ellen_Archer_1906"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#James_Bright_1964"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Julie_Bright_1966"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Anthony_Heath_1960"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Nicholas_Charles_Heath_1964"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Violet_Sylvia_Steward_1894"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_Bright_1970"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_George_Bright_1901"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Ancestor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Descendant"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#FemaleAncestor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#FemaleDescendant"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#MaleAncestor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#MaleDescendant"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Maleness"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <ObjectUnionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+        <ObjectUnionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Femaleness"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Maleness"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+                <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Femaleness"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRichard"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf"/>
+                <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRobert"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf"/>
+                <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRichard"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+                <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRichardAndRobert"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+                <ObjectOneOf>
+                    <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+                    <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+                </ObjectOneOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#ParentOfRobert"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+                <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Femaleness"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Maleness"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#DomainEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <ObjectMaxCardinality cardinality="2">
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#DomainEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRichard"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_6.owl#GrandparentOfRobert"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Femaleness"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Maleness"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Charles_Herbert_Rever_1895"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Clare_Bright_1966"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Ian_Bright_1959"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Iris_Ellen_Archer_1906"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#James_Bright_1964"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Julie_Bright_1966"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Anthony_Heath_1960"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Nicholas_Charles_Heath_1964"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Violet_Sylvia_Steward_1894"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_Bright_1970"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_George_Bright_1901"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Clare_Bright_1966"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_George_Bright_1901"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Iris_Ellen_Archer_1906"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Charles_Herbert_Rever_1895"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Violet_Sylvia_Steward_1894"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Ian_Bright_1959"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#James_Bright_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSisterOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_Bright_1970"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSisterOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSisterOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Ian_Bright_1959"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_George_Bright_1901"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Iris_Ellen_Archer_1906"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Julie_Bright_1966"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Charles_Herbert_Rever_1895"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Violet_Sylvia_Steward_1894"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Anthony_Heath_1960"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_Bright_1970"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Janet_Bright_1964"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Mark_Bright_1956"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Ian_Bright_1959"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Nicholas_Charles_Heath_1964"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Eileen_Mary_Rever_1929"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_George_Bright_1901"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Peter_William_Bright_1941"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Iris_Ellen_Archer_1906"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#David_Bright_1934"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Margaret_Grace_Rever_1934"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Robert_David_Bright_1965"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#Richard_John_Bright_1962"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#William_Bright_1970"/>
+        <NamedIndividual IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#John_Bright_1930"/>
+    </ObjectPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isChildOf"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasChild"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasDaughter"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasChild"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatAunt"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatUncle"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSon"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasChild"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isChildOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isDaughterOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSonOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isFatherOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isMotherOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandfatherOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandmotherOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isAuntOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isBrotherOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isChildOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasChild"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasDaughter"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isDaughterOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatAunt"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isGreatAuntOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isGreatUncleOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatUncle"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSisterOf"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSon"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isSonOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#isUncleOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBloodrelation"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#hasSex"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Sex"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Woman"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+        <Class IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_4.owl#Man"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#isParentOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSibling"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatAunt"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasBrother"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasSister"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasAunt"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent"/>
+            <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasUncle"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_5.owl#hasGreatUncle"/>
+    </SubObjectPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

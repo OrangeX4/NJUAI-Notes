@@ -220,10 +220,31 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
 ## 四、
 
 
+
+
 ## 五、
 
+**(1)**
 
-## 六、
+$$
+\begin{aligned}
+E_{bag} &= \mathbb{E}_{\bm{x}}[(\frac{1}{T}\sum_{t=1}^{T}\epsilon_{t}(\bm{x}))^{2}]  \\
+&= \frac{1}{T^{2}}\mathbb{E}_{\bm{x}}[(\sum_{t=1}^{T}\epsilon_{t}(\bm{x}))^{2}]  \\
+&= \frac{1}{T^{2}}\mathbb{E}_{\bm{x}}[\sum_{t=1}^{T}\epsilon_{t}(\bm{x})^{2} + 2\sum_{t < l}\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]  \\
+&= \frac{1}{T^{2}}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}] + \frac{2}{T^{2}}\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]  \\
+&= \frac{1}{T^{2}}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}]  \\
+&= \frac{1}{T}E_{av}  \\
+\end{aligned}
+$$
+
+因此我们有 $E_{bag}$ 和 $E_{av}$ 关系为 $\displaystyle E_{bag} = \frac{1}{T}E_{av}$.
+
+**(2)**
+
+
+
+
+<!-- ## 六、
 
 **(1)**
 
@@ -305,4 +326,4 @@ $$
 
 而由 (1) 可知, 等到算法终止之后, 目标函数的值 $E_{k+1}$ 也仍然只会降低或不增加.
 
-这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数.
+这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数. -->

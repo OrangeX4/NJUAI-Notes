@@ -219,7 +219,103 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
 
 ## 四、
 
+**(1)**
 
+AdaBoost 算法在获得 $H_{t-1}$ 之后样本分布会进行调整, 使下一轮的基学习器 $h_t$ 能纠正 $H_{t-1}$ 的一些错误. 理想的 $h_{t}$ 能够最小化
+
+$$
+\begin{aligned}
+\ell_{\exp}(H_{t-1} + \alpha_{t} h_{t} | \mathcal{D}) & = \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})(H_{t-1}(\bm{x}) + \alpha_{t}h_{t}(\bm{x}))}]  \\
+& = \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}e^{-\alpha_{t}f(\bm{x})h_{t}(\bm{x})}]  \\
+\end{aligned}
+$$
+
+注意到 $f^{2}(\bm{x}) = h_{t}^{2}(\bm{x})=1$, 因此可以对 $e^{-\alpha_{t}f(\bm{x})h_{t}(\bm{x})}$ 的泰勒展式近似为
+
+$$
+\begin{aligned}
+\ell_{\exp}(H_{t-1} + \alpha_{t} h_{t} | \mathcal{D}) & \simeq  \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}(1-\alpha_{t}f(\bm{x})h_{t}(\bm{x}) + \frac{\alpha_{t}^{2}f^{2}(\bm{x})h_{t}^{2}(\bm{x})}{2})]  \\
+& \simeq  \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}(1-\alpha_{t}f(\bm{x})h_{t}(\bm{x}) + \frac{\alpha_{t}^{2}}{2})]  \\
+\end{aligned}
+$$
+
+于是, 理想的基学习器
+
+$$
+\begin{aligned}
+h_{t}(\bm{x}) & = \argmin_{h} \ell_{\exp}(H_{t-1}+\alpha_{t}h | \mathcal{D})  \\
+& \simeq  \argmin_{h} \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}(1-\alpha_{t}f(\bm{x})h(\bm{x}) + \frac{\alpha_{t}^{2}}{2})]  \\
+& = \argmax_{h} \mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}f(\bm{x})h(\bm{x})]  \\
+& = \argmax_{h} \mathbb{E}_{\bm{x}\sim \mathcal{D}}[\frac{e^{-f(\bm{x})H_{t-1}(\bm{x})}}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}f(\bm{x})h(\bm{x})]  \\
+\end{aligned}
+$$
+
+注意到 $\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]$ 是一个常数. 令 $\mathcal{D}_{t}$ 表示一个分布
+
+$$
+\mathcal{D}_{t}(\bm{x}) = \frac{\mathcal{D}(\bm{x})e^{-f(\bm{x})H_{t-1}(\bm{x})}}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}
+$$
+
+则根据数学期望的定义, 这等价于令
+
+$$
+\begin{aligned}
+h_{t}(\bm{x}) & = \argmax_{h} \mathbb{E}_{\bm{x}\sim \mathcal{D}}[\frac{e^{-f(\bm{x})H_{t-1}(\bm{x})}}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}f(\bm{x})h(\bm{x})]  \\
+& = \argmax_{h} \mathbb{E}_{\bm{x}\sim \mathcal{D}_{t}}[f(\bm{x})h(\bm{x})]  \\
+\end{aligned}
+$$
+
+由 $f(\bm{x}), h(\bm{x}) \sim \{ -1, +1 \}$, 有
+
+$$
+f(\bm{x})h(\bm{x}) = 1-2\mathbb{I}(f(\bm{x}) \neq h(\bm{x}))
+$$
+
+则理想的基学习器
+
+$$
+h_{t}(\bm{x}) = \argmin_{h}\mathbb{E}_{\bm{x}\sim \mathcal{D}_{t}}[\mathbb{I}(f(\bm{x}) \neq h(\bm{x}))]
+$$
+
+考虑到 $\mathcal{D}_{t}$ 和 $\mathcal{D}_{t-1}$ 的关系, 有
+
+$$
+\begin{aligned}
+\mathcal{D}_{t}(\bm{x}) & = \frac{\mathcal{D}(\bm{x})e^{-f(\bm{x})H_{t-1}(\bm{x})}}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}  \\
+& = \frac{\mathcal{D}(\bm{x})e^{-f(\bm{x})H_{t-2}(\bm{x})}e^{-f(\bm{x})\alpha_{t-1}h_{t-1}(\bm{x})}}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}  \\
+& = \mathcal{D}_{t-1}(\bm{x})e^{-f(\bm{x})\alpha_{t-1}h_{t-1}(\bm{x})}\frac{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-2}(\bm{x})}]}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}  \\
+\end{aligned}
+$$
+
+因此 $\mathcal{D}_{t}$ 和 $\mathcal{D}_{t-1}$ 的关系为
+
+$$
+\mathcal{D}_{t} = \frac{\mathcal{D}_{t-1}(\bm{x})e^{-f(\bm{x})\alpha_{t-1}h_{t-1}(\bm{x})}}{Z_{t-1}}
+$$
+
+其中规范化因子 $Z_{t-1}$ 为
+
+$$
+Z_{t-1} = \frac{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-1}(\bm{x})}]}{\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-f(\bm{x})H_{t-2}(\bm{x})}]}
+$$
+
+**(2)**
+
+**(3)**
+
+<!-- 若 $H(\bm{x})$ 能令指数损失函数最小化, 则对 $H(\bm{x})$ 的偏导
+
+$$
+\frac{\partial \ell_{\exp}(H|\mathcal{D})}{\partial H(\bm{x})} = \sum_{n=1}^{N} e^{-\frac{1}{N}H(\bm{x})}
+$$
+
+
+$$
+\begin{aligned}
+\max_{n}[H(\bm{x})]_{n} & = \argmax_{n \in \mathcal{Y}}P(f(\bm{x})=n|\bm{x})  \\
+& = \argmax_{y \in \mathcal{Y}}P(f(\bm{x})=y|\bm{x})  \\
+\end{aligned}
+$$ -->
 
 
 ## 五、
@@ -241,10 +337,22 @@ $$
 
 **(2)**
 
+$$
+\begin{aligned}
+&\quad\ \sum_{t < l}^{T}\mathbb{E}_{\bm{x}}[(\epsilon_{t}(\bm{x})-\epsilon_{l}(\bm{x}))^{2}]  \\
+&= \mathbb{E}_{\bm{x}}[\sum_{t < l}^{T}(\epsilon_{t}(\bm{x})^{2}+\epsilon_{l}(\bm{x})^{2} - 2\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x}))]  \\
+& = \mathbb{E}_{\bm{x}}[(T-1)\sum_{t=1}^{T}\epsilon_{t}(\bm{x})^{2} - 2\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]]  \\
+& = (T-1)\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}] - 2\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]  \\
+& = T^{2}((\frac{1}{T}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}]) - (\frac{1}{T^{2}}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}] + \frac{2}{T^{2}}\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]))  \\
+& = T^{2}(E_{av} - E_{bag})  \\
+& \ge 0  \\
+\end{aligned}
+$$
+
+因此无需对 $\epsilon_{t}(\bm{x})$ 做任何假设即有 $E_{bag} \le E_{av}$.
 
 
-
-<!-- ## 六、
+## 六、
 
 **(1)**
 
@@ -326,4 +434,4 @@ $$
 
 而由 (1) 可知, 等到算法终止之后, 目标函数的值 $E_{k+1}$ 也仍然只会降低或不增加.
 
-这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数. -->
+这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数.

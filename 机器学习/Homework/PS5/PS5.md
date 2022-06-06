@@ -78,6 +78,8 @@ $$
 
 则在第 100 次抛硬币时, 其正面朝上的概率为 $P(B|A) = 0.5$.
 
+如果使用贝叶斯学派的思想, 将 $P(x)=0.5$ 视作先验, 对其进行最大后验估计. 由于我们无法确定参数 $\theta$ 的分布, 因此我们也无法准确地计算出 $\hat{\theta}$ 的值, 也就无法知道最终的概率. 但是我们知道的是, 最终概率介于 $0.5$ 和 $1.0$ 之间, 具体的值依选取的分布而定. 
+
 
 **(3)**
 
@@ -322,6 +324,8 @@ $$ -->
 
 **(1)**
 
+对式子展开则有
+
 $$
 \begin{aligned}
 E_{bag} &= \mathbb{E}_{\bm{x}}[(\frac{1}{T}\sum_{t=1}^{T}\epsilon_{t}(\bm{x}))^{2}]  \\
@@ -337,11 +341,13 @@ $$
 
 **(2)**
 
+可构造出式子
+
 $$
 \begin{aligned}
 &\quad\ \sum_{t < l}^{T}\mathbb{E}_{\bm{x}}[(\epsilon_{t}(\bm{x})-\epsilon_{l}(\bm{x}))^{2}]  \\
 &= \mathbb{E}_{\bm{x}}[\sum_{t < l}^{T}(\epsilon_{t}(\bm{x})^{2}+\epsilon_{l}(\bm{x})^{2} - 2\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x}))]  \\
-& = \mathbb{E}_{\bm{x}}[(T-1)\sum_{t=1}^{T}\epsilon_{t}(\bm{x})^{2} - 2\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]]  \\
+& = \mathbb{E}_{\bm{x}}[(T-1)\sum_{t=1}^{T}\epsilon_{t}(\bm{x})^{2} - 2\sum_{t < l}\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]  \\
 & = (T-1)\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}] - 2\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]  \\
 & = T^{2}((\frac{1}{T}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}]) - (\frac{1}{T^{2}}\sum_{t=1}^{T}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})^{2}] + \frac{2}{T^{2}}\sum_{t < l}\mathbb{E}_{\bm{x}}[\epsilon_{t}(\bm{x})\epsilon_{l}(\bm{x})]))  \\
 & = T^{2}(E_{av} - E_{bag})  \\

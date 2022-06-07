@@ -303,21 +303,102 @@ $$
 
 **(2)**
 
+考虑指数损失函数 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 的含义. 对于任意一个样本 $\bm{x}$ 来说, 预测值 $H(\bm{x})$ 与真实值 $\bm{y}$ 越相近时, $\bm{y}^{\mathrm{T}}H(\bm{x})$ 就越大, 因此 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 就越小, 作为一个损失函数来说满足了需求.
+
+假如 $H(\bm{x})$ 无法判断属于哪个类别, 则会有 $[H(\bm{x})]_{n} = 0$, 最后使得 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}=1$, 恰好处于一个分隔线位置.
+
+而加上了 $\frac{1}{N}$ 也是为了标准化损失函数的值域范围, 因为 $\bm{y}^{\mathrm{T}}H(\bm{x})$ 结果值受到分类数也就是 $N$ 的大小的影响, 因此应该乘上一个 $\frac{1}{N}$ 消除分类数目的影响.
+
 **(3)**
 
-<!-- 若 $H(\bm{x})$ 能令指数损失函数最小化, 则对 $H(\bm{x})$ 的偏导
+可以将 $\ell_{\text{multi-exp}}$ 化为
 
 $$
-\frac{\partial \ell_{\exp}(H|\mathcal{D})}{\partial H(\bm{x})} = \sum_{n=1}^{N} e^{-\frac{1}{N}H(\bm{x})}
+\ell_{\text{multi-exp}} = \mathbb{E}_{\bm{x}\sim \mathcal{D}}[\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}]
 $$
 
+并且我们知道 $\sum_{n=1}^{N}\bm{y}_{n}=\bm{1}\bm{y}=0$ 且 $\sum_{n=1}^{N}[H(\bm{x})]_{n}=\bm{1}H(\bm{x})=0$, 构造拉格朗日函数有
+
+$$
+L = \sum_{\bm{y}}\mathbb{E}_{\bm{x}\sim \mathcal{D}}[\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}] + \mu \bm{1}\bm{y} + \lambda \bm{1}H(\bm{x})
+$$
+
+若 $H(\bm{x})$ 能令指数损失函数最小化, 则对 $H(\bm{x})$ 求偏导得
 
 $$
 \begin{aligned}
-\max_{n}[H(\bm{x})]_{n} & = \argmax_{n \in \mathcal{Y}}P(f(\bm{x})=n|\bm{x})  \\
-& = \argmax_{y \in \mathcal{Y}}P(f(\bm{x})=y|\bm{x})  \\
+\frac{\partial L}{\partial H(\bm{x})} & = \frac{\partial}{\partial H(\bm{x})}(\sum_{\bm{y}}\mathbb{E}_{\bm{x}\sim \mathcal{D}}[\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}] + \mu \bm{1}\bm{y} + \lambda \bm{1}H(\bm{x}))  \\
+& = \sum_{\bm{y}}P(\bm{y}|\bm{x})\frac{\partial}{\partial H(\bm{x})}e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})} + \lambda \bm{1}  \\
+& = \sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\frac{\partial}{\partial H(\bm{x})}(-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})) + \lambda \bm{1}  \\
+& = -\frac{1}{N}\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{y} + \lambda \bm{1}  \\
 \end{aligned}
-$$ -->
+$$
+
+令该式等于零即有
+
+$$
+-\frac{1}{N}\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{y} + \lambda \bm{1} = 0
+$$
+
+两端同时乘上 $\bm{1}^{\mathrm{T}}$ 有
+
+$$
+-\frac{1}{N}\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{1}^{\mathrm{T}}\bm{y} + \lambda \bm{1}^{\mathrm{T}}\bm{1} = N\lambda = 0
+$$
+
+因此 $\lambda = 0$, 可以从原式中消除.
+
+对于原式, 我们选取其中一个 $\bm{y}$, 将与 $\bm{y}$ 无关的项移到右侧
+
+$$
+P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{y} = - \sum_{\bm{y}' \neq \bm{y}}P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})}\bm{y}'
+$$
+
+不妨令 $\bm{y}_{n} = 1$, 则有 $\displaystyle \bm{y}_{n}' = -\frac{1}{N-1}$, 也就可以将式子
+
+$$
+P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{y}_{n} = - \sum_{\bm{y}' \neq \bm{y}}P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})}\bm{y}_{n}'
+$$
+
+变为
+
+$$
+P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})} = - \sum_{\bm{y}' \neq \bm{y}}P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})}(-\frac{1}{N-1})
+$$
+
+则我们有
+
+$$
+\sum_{\bm{y}' \neq \bm{y}}(P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})} - P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}) = 0
+$$
+
+对任意 $\bm{y}$ 都成立, 则可推出
+
+$$
+P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})} = P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}
+$$
+
+对任意 $\bm{y} \neq \bm{y}'$ 都成立. 因此由
+
+$$
+e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})} = \frac{P(\bm{y}|\bm{x})}{P(\bm{y}'|\bm{x})}
+$$
+
+解得
+
+$$
+\bm{y}^{\mathrm{T}}H(\bm{x})-\bm{y}'^{\mathrm{T}}H(\bm{x}) = N \ln \frac{P(\bm{y}|\bm{x})}{P(\bm{y}'|\bm{x})}
+$$
+
+所以可知 $\bm{y}^{\mathrm{T}}H(\bm{x}) \ge \bm{y}'^{\mathrm{T}}H(\bm{x})$ 当且仅当 $P(\bm{y}|\bm{x}) \ge P(\bm{y}'|\bm{x})$, 对于 $\forall \bm{y}'$.
+
+因此有
+
+$$
+\argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})] = \argmax_{\bm{y}}P(\bm{y}|\bm{x})
+$$
+
+这也就意味着目标函数 $\bm{y}^{\mathrm{T}}H(\bm{x})$ 达到了贝叶斯最优错误率.
 
 
 ## 五、

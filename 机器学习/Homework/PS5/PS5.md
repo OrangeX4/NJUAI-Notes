@@ -1,6 +1,6 @@
 # PS5
 
-## 一、
+<!-- ## 一、
 
 **(1)**
 
@@ -332,7 +332,7 @@ $$
 & = \sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\frac{\partial}{\partial H(\bm{x})}(-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})) + \lambda \bm{1}  \\
 & = -\frac{1}{N}\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}\bm{y} + \lambda \bm{1}  \\
 \end{aligned}
-$$
+$$ -->
 
 令该式等于零即有
 
@@ -398,10 +398,21 @@ $$
 \argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})] = \argmax_{\bm{y}}P(\bm{y}|\bm{x})
 $$
 
-这也就意味着目标函数 $\bm{y}^{\mathrm{T}}H(\bm{x})$ 达到了贝叶斯最优错误率.
+并且又有
+
+$$
+\begin{aligned}
+\argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})] & = \argmax_{n}\sum_{n'=1}^{N}\bm{y}_{n'}[H(\bm{x})]_{n'} \\
+& = \argmax_{n}(1 \cdot [H(\bm{x})]_{n} + \sum_{n'\neq n}(-\frac{1}{N-1})[H(\bm{x})]_{n'}) \\
+& = \argmax_{n}((1+\frac{1}{N-1})[H(\bm{x})]_{n} + \sum_{n' = 1}^{N}(-\frac{1}{N-1})[H(\bm{x})]_{n'})  \\
+& = \argmax_{n} [H(\bm{x})]_{n}  \\
+\end{aligned}
+$$
+
+这也就意味着目标函数 $\argmax_{n}[H(\bm{x})]_{n}$ 或 $\argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})]$ 达到了贝叶斯最优错误率.
 
 
-## 五、
+<!-- ## 五、
 
 **(1)**
 
@@ -521,4 +532,4 @@ $$
 
 而由 (1) 可知, 等到算法终止之后, 目标函数的值 $E_{k+1}$ 也仍然只会降低或不增加.
 
-这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数.
+这样, 我们便证明了目标函数的最小值是关于 $k$ 的非增函数. -->

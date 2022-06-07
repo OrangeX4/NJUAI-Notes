@@ -564,7 +564,18 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
               \argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})] = \argmax_{\bm{y}}P(\bm{y}|\bm{x})
             $$
 
-            这也就意味着目标函数 $\bm{y}^{\mathrm{T}}H(\bm{x})$ 达到了贝叶斯最优错误率.
+            并且又有
+
+            $$
+              \begin{aligned}
+                \argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})] & = \argmax_{n}\sum_{n'=1}^{N}\bm{y}_{n'}[H(\bm{x})]_{n'}                                             \\
+                                                               & = \argmax_{n}(1 \cdot [H(\bm{x})]_{n} + \sum_{n'\neq n}(-\frac{1}{N-1})[H(\bm{x})]_{n'})            \\
+                                                               & = \argmax_{n}((1+\frac{1}{N-1})[H(\bm{x})]_{n} + \sum_{n' = 1}^{N}(-\frac{1}{N-1})[H(\bm{x})]_{n'}) \\
+                                                               & = \argmax_{n} [H(\bm{x})]_{n}                                                                       \\
+              \end{aligned}
+            $$
+
+            这也就意味着目标函数 $\argmax_{n}[H(\bm{x})]_{n}$ 或 $\argmax_{\bm{y}}[\bm{y}^{\mathrm{T}}H(\bm{x})]$ 达到了贝叶斯最优错误率.
     \end{enumerate}
   \end{solution}
 

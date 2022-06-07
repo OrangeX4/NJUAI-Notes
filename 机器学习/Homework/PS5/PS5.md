@@ -372,7 +372,7 @@ $$
 \sum_{\bm{y}' \neq \bm{y}}(P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})} - P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}) = 0
 $$
 
-对任意 $\bm{y}$ 都成立, 则可推出
+对任意 $\bm{y}$ 都成立, 对 $N$ 个 $\bm{y}$ 对应的 $N$ 个式子进行变换, 则最终可推出
 
 $$
 P(\bm{y}'|\bm{x})e^{-\frac{1}{N}\bm{y}'^{\mathrm{T}}H(\bm{x})} = P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}

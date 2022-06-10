@@ -311,6 +311,15 @@ $$
 
 **(3)**
 
+因为
+
+$$
+\begin{aligned}
+\mathbb{E}_{\bm{x}\sim \mathcal{D}}[e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}] & = \sum_{\bm{x}}\sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}  \\
+& = \sum_{\bm{y}}P(\bm{y}|\bm{x})e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})} + \sum_{\bm{x}'\neq \bm{x}}\sum_{\bm{y}}P(\bm{y}|\bm{x}')e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x}')}  \\
+\end{aligned}
+$$
+
 可以将 $\ell_{\text{multi-exp}}$ 化为
 
 $$

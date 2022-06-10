@@ -184,7 +184,7 @@
             设前 $99$ 次均为正面为事件 $A$, 第 $100$ 次为正面为事件 $B$, 则有
 
             $$
-              P(B|A) = \frac{P(B)P(A|B)}{P(A)} = \frac{\theta \cdot \theta^{99}}{\theta^{99}} = \theta = 0.5
+              P(B|A) = \frac{P(B)P(A|B)}{P(A)} = \frac{0.5 \cdot \theta^{99}}{\theta^{99}} = \theta = 0.5
             $$
 
             则在第 100 次抛硬币时, 其正面朝上的概率为 $P(B|A) = 0.5$.
@@ -469,9 +469,9 @@ print(f"score: {GNB_classifier.score(feature_test, label_test)}")
 
       \item
 
-            考虑指数损失函数 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 的含义. 对于任意一个样本 $\bm{x}$ 来说, 预测值 $H(\bm{x})$ 与真实值 $\bm{y}$ 越相近时, $\bm{y}^{\mathrm{T}}H(\bm{x})$ 就越大, 因此 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 就越小, 作为一个损失函数来说满足了需求.
+            考虑指数损失函数 $e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 的含义. 对于任意一个样本 $\bm{x}$ 来说, 预测值 $H(\bm{x})$ 与真实值 $\bm{y}$ 越相近时, $\bm{y}^{\mathrm{T}}H(\bm{x})$ 就越大, 因此 $e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}$ 就越小, 作为一个损失函数来说满足了需求.
 
-            假如 $H(\bm{x})$ 无法判断属于哪个类别, 则会有 $[H(\bm{x})]_{n} = 0$, 最后使得 $e^{\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}=1$, 恰好处于一个分隔线位置.
+            假如 $H(\bm{x})$ 无法判断属于哪个类别, 则会有 $[H(\bm{x})]_{n} = 0$, 最后使得 $e^{-\frac{1}{N}\bm{y}^{\mathrm{T}}H(\bm{x})}=1$, 恰好处于一个分隔线位置.
 
             而加上了 $\frac{1}{N}$ 也是为了标准化损失函数的值域范围, 因为 $\bm{y}^{\mathrm{T}}H(\bm{x})$ 结果值受到分类数也就是 $N$ 的大小的影响, 因此应该乘上一个 $\frac{1}{N}$ 消除分类数目的影响.
 

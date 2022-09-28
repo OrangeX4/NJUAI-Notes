@@ -7,6 +7,7 @@
         {
             "name": "Python: 当前文件",
             "type": "python",
+            "cwd": "${fileDirname}",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"

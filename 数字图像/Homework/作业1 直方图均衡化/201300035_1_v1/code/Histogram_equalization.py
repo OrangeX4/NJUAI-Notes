@@ -166,10 +166,8 @@ class Image:
         for i in range(1, gray_level):
             cum_hist[i] = cum_hist[i - 1] + hist[i]
         # 计算映射函数
-        s = np.zeros(gray_level)
-        for i in range(gray_level):
-            s[i] = round((gray_level - 1) * cum_hist[i] /
-                         (image.shape[0] * image.shape[1]))
+        s = (((gray_level - 1) /
+             (image.shape[0] * image.shape[1])) * cum_hist).astype(np.uint8)
         # 映射
         new_image = np.zeros(
             image.shape, dtype=np.uint8 if gray_level <= 256 else np.uint16)
@@ -236,7 +234,8 @@ class Image:
         RGB = np.dstack([R, G, B])
         RGB = np.where(RGB < 0, 0, RGB)
         RGB = np.where(RGB > 1, 1, RGB)
-        RGB = (RGB * (gray_level - 1)).astype(np.uint8 if gray_level <= 256 else np.uint16)
+        RGB = (RGB * (gray_level - 1)
+               ).astype(np.uint8 if gray_level <= 256 else np.uint16)
 
         # # 循环版本 (速度慢)
         # # HSI 矩阵
@@ -310,33 +309,34 @@ class Image:
 
 if __name__ == '__main__':
 
+    # 灰色图像直方图均衡化
     # 图像加载
-    img = Image(mpimg.imread('../asset/image/color.jpg'))
-
-    # 显示直方图
-    # img.show_hist()
-    # img.histeq().show_hist()
-
-    # 比较直方图
-    # img.histeq().compare_hist_with(img)
-
-    # 直方图均衡化
     img = Image(mpimg.imread('../asset/image/gray.jpg'))
+    # 显示直方图
+    img.show_hist()
+    # 比较图像
     img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
+    # 比较直方图
+    img.histeq().compare_hist_with(img)
 
+    # 彩色图像直方图均衡化
     img = Image(mpimg.imread('../asset/image/color.jpg'))
     img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
+    img.histeq().compare_hist_with(img)
+    # 基于 HSI 色彩空间的直方图均衡化
     img.histeq(method='hsi').compare_with(img)
-    # img.histeq(method='hsi').compare_hist_with(img)
+    img.histeq(method='hsi').compare_hist_with(img)
 
+    # 实验介绍文档中使用的图片
     # img = Image(mpimg.imread('../asset/image/boat.jpg'))
     # img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
     # img.histeq(method='hsi').compare_with(img)
     # img.histeq(method='hsi').compare_hist_with(img)
 
+    ############################################################
+
+    # 其他图片
     # img = Image(mpimg.imread('../asset/image/genshin.jpg'))
     # img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
@@ -349,5 +349,6 @@ if __name__ == '__main__':
     # img.histeq(method='hsi').compare_with(img)
     # img.histeq(method='hsi').compare_hist_with(img)
 
+    # Debug 时使用的单像素图片
     # img = np.array([[[3.91174, 0.08026, 0.94510]]])
     # Image(img).HSI2RGB(img)

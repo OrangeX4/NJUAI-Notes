@@ -61,10 +61,13 @@ class Image:
         '''
         获取灰度图像的直方图, 返回一个一维数组, 灰阶默认为 256, 数组的每个元素对应图像的每个灰度级的像素个数
         '''
+        # 循环版本 (速度慢)
         # hist = np.zeros(gray_level)
         # for i in range(gray_image.shape[0]):
         #     for j in range(gray_image.shape[1]):
         #         hist[gray_image[i][j]] += 1
+
+        # 矩阵版本 (速度快)
         hist = np.bincount(gray_image.flatten(), minlength=gray_level)
         return hist
 
@@ -192,7 +195,7 @@ class Image:
                           (np.sqrt((R - G) ** 2 + (R - B) * (G - B)) + 1e-10))
         H = np.where(B <= G, theta, 2 * np.pi - theta)
         # 2. 计算 Saturation 饱和度分量
-        S = 1 - 3 / (R + G + B) * np.min([R, G, B], axis=0)
+        S = 1 - 3 / (R + G + B + 1e-10) * np.min([R, G, B], axis=0)
         # 3. 计算 Intensity 强度分量
         I = (R + G + B) / 3
         # 综合
@@ -216,6 +219,7 @@ class Image:
            B = I * (1 + S * cos(H - 240) / cos(300 - H))
            R = 3 * I - (G + B)
         '''
+        # 矩阵版本 (速度快)
         # HSI 矩阵
         H, S, I = image[:, :, 0], image[:, :, 1], image[:, :, 2]
         # 计算 RGB 分量
@@ -228,9 +232,43 @@ class Image:
         B = np.where(H < 2 / 3 * np.pi, I * (1 - S),
                      np.where(H < 4 / 3 * np.pi, 3 * I - (I * (1 - S) + I * (1 + S * np.cos(H - 2 / 3 * np.pi) / (np.cos(np.pi - H) + 1e-10))),
                               I * (1 + S * np.cos(H - 4 / 3 * np.pi) / (np.cos(5 * np.pi / 3 - H) + 1e-10))))
-        # 综合
-        RGB = (np.dstack([R, G, B]) * (gray_level - 1)
-               ).astype(np.uint8 if gray_level <= 256 else np.uint16)
+        # 截断到 0 和 1 之间
+        RGB = np.dstack([R, G, B])
+        RGB = np.where(RGB < 0, 0, RGB)
+        RGB = np.where(RGB > 1, 1, RGB)
+        RGB = (RGB * (gray_level - 1)).astype(np.uint8 if gray_level <= 256 else np.uint16)
+
+        # # 循环版本 (速度慢)
+        # # HSI 矩阵
+        # H, S, I = image[:, :, 0], image[:, :, 1], image[:, :, 2]
+        # RGB = np.zeros(
+        #     image.shape, dtype=np.uint8 if gray_level <= 256 else np.uint16)
+        # for i in range(image.shape[0]):
+        #     for j in range(image.shape[1]):
+        #         if H[i][j] < 2 / 3 * np.pi:
+        #             _H = H[i][j]
+        #             B = I[i][j] * (1 - S[i][j])
+        #             R = I[i][j] * (1 + S[i][j] * np.cos(_H) /
+        #                            (np.cos(np.pi / 3 - _H) + 1e-10))
+        #             G = 3 * I[i][j] - (R + B)
+        #         elif H[i][j] < 4 / 3 * np.pi:
+        #             _H = H[i][j] - 2 / 3 * np.pi
+        #             R = I[i][j] * (1 - S[i][j])
+        #             G = I[i][j] * (1 + S[i][j] * np.cos(_H) /
+        #                            (np.cos(np.pi / 3 - _H) + 1e-10))
+        #             B = 3 * I[i][j] - (R + G)
+        #         else:
+        #             _H = H[i][j] - 4 / 3 * np.pi
+        #             G = I[i][j] * (1 - S[i][j])
+        #             B = I[i][j] * (1 + S[i][j] * np.cos(_H) /
+        #                            (np.cos(np.pi / 3 - _H) + 1e-10))
+        #             R = 3 * I[i][j] - (G + B)
+        #         # 预防溢出
+        #         R = max(0, min(R, 1))
+        #         G = max(0, min(G, 1))
+        #         B = max(0, min(B, 1))
+        #         # 最后统合
+        #         RGB[i][j][:] = np.array([R, G, B]) * (gray_level - 1)
         return RGB
 
     def histeq(self, *, method='gray') -> Image:
@@ -253,7 +291,18 @@ class Image:
                         self._image[:, :, i], gray_level=self._gray_level)
             elif method == 'hsi':
                 # 2. HSI 空间直方图均衡化
-                new_image = self.HSI2RGB(self.RGB2HSI(self._image))
+                HSI = self.RGB2HSI(self._image)
+                H, S, I = HSI[:, :, 0], HSI[:, :, 1], HSI[:, :, 2]
+                # 单独对 Intensity 强度分量进行直方图均衡化
+                # 转换为整数灰阶图像矩阵
+                I = (I * (self._gray_level - 1)
+                     ).astype(np.uint8 if self._gray_level <= 256 else np.uint16)
+                I = self.histeq_for_gray_image(I, gray_level=self._gray_level)
+                # 转换为浮点数强度图像矩阵
+                I = I / (self._gray_level - 1)
+                # 恢复 HSI 矩阵
+                HSI = np.dstack([H, S, I])
+                new_image = self.HSI2RGB(HSI)
             else:
                 raise ValueError('method must be "gray" or "hsi"')
         return Image(new_image, gray_level=self._gray_level)
@@ -272,24 +321,33 @@ if __name__ == '__main__':
     # img.histeq().compare_hist_with(img)
 
     # 直方图均衡化
-    # img = Image(mpimg.imread('../asset/image/gray.jpg'))
-    # img.histeq().compare_with(img)
+    img = Image(mpimg.imread('../asset/image/gray.jpg'))
+    img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
 
-    # img = Image(mpimg.imread('../asset/image/color.jpg'))
-    # img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
-
-    img = Image(mpimg.imread('../asset/image/boat.jpg'))
-    # img.histeq().compare_with(img)
+    img = Image(mpimg.imread('../asset/image/color.jpg'))
+    img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
     img.histeq(method='hsi').compare_with(img)
-    img.histeq(method='hsi').compare_hist_with(img)
+    # img.histeq(method='hsi').compare_hist_with(img)
+
+    # img = Image(mpimg.imread('../asset/image/boat.jpg'))
+    # img.histeq().compare_with(img)
+    # img.histeq().compare_hist_with(img)
+    # img.histeq(method='hsi').compare_with(img)
+    # img.histeq(method='hsi').compare_hist_with(img)
 
     # img = Image(mpimg.imread('../asset/image/genshin.jpg'))
     # img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
+    # img.histeq(method='hsi').compare_with(img)
+    # img.histeq(method='hsi').compare_hist_with(img)
 
     # img = Image(mpimg.imread('../asset/image/night.jpg'))
     # img.histeq().compare_with(img)
     # img.histeq().compare_hist_with(img)
+    # img.histeq(method='hsi').compare_with(img)
+    # img.histeq(method='hsi').compare_hist_with(img)
+
+    # img = np.array([[[3.91174, 0.08026, 0.94510]]])
+    # Image(img).HSI2RGB(img)

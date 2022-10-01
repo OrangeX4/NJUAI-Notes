@@ -44,7 +44,7 @@ class Image:
         与前一张图像进行对比显示
         '''
         plt.figure(figsize=(20, 20))
-        plt.subplots_adjust(wspace=0.5, hspace=1.0)
+        plt.subplots_adjust(wspace=0.2, hspace=1.0)
         # 显示两张图像
         plt.subplot(1, 2, 1)
         plt.title('Before')
@@ -328,26 +328,26 @@ if __name__ == '__main__':
     img.histeq(method='hsi').compare_hist_with(img)
 
     # 实验介绍文档中使用的图片
-    # img = Image(mpimg.imread('../asset/image/boat.jpg'))
-    # img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
-    # img.histeq(method='hsi').compare_with(img)
-    # img.histeq(method='hsi').compare_hist_with(img)
+    img = Image(mpimg.imread('../asset/image/boat.jpg'))
+    img.histeq().compare_with(img)
+    img.histeq().compare_hist_with(img)
+    img.histeq(method='hsi').compare_with(img)
+    img.histeq(method='hsi').compare_hist_with(img)
 
     ############################################################
 
     # 其他图片
-    # img = Image(mpimg.imread('../asset/image/genshin.jpg'))
-    # img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
-    # img.histeq(method='hsi').compare_with(img)
-    # img.histeq(method='hsi').compare_hist_with(img)
+    img = Image(mpimg.imread('../asset/image/genshin.jpg'))
+    img.histeq().compare_with(img)
+    img.histeq().compare_hist_with(img)
+    img.histeq(method='hsi').compare_with(img)
+    img.histeq(method='hsi').compare_hist_with(img)
 
-    # img = Image(mpimg.imread('../asset/image/night.jpg'))
-    # img.histeq().compare_with(img)
-    # img.histeq().compare_hist_with(img)
-    # img.histeq(method='hsi').compare_with(img)
-    # img.histeq(method='hsi').compare_hist_with(img)
+    img = Image(mpimg.imread('../asset/image/night.jpg'))
+    img.histeq().compare_with(img)
+    img.histeq().compare_hist_with(img)
+    img.histeq(method='hsi').compare_with(img)
+    img.histeq(method='hsi').compare_hist_with(img)
 
     # Debug 时使用的单像素图片
     # img = np.array([[[3.91174, 0.08026, 0.94510]]])

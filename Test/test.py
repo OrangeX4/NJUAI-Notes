@@ -1,24 +1,21 @@
-class Dog:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+import io
 
-    def sit(self):
-        print(f"please sit down {self.name}")
+def match_a(inp):
+    return inp.read(1) == 'a'
 
+def match_end(inp):
+    return inp.read(1) == ''
 
-class Battery:
-    def __init__(self, size):
-        self.size = size
+def match_S(inp):
+    fallback = inp.tell()
+    if match_a(inp) and match_S(inp) and match_a(inp):
+        return True
+    inp.seek(fallback)
+    if match_a(inp) and match_a(inp):
+        return True
+    return False
 
-    def describe(self):
-        print(f"The size is{self.size}")
+def match(inp):
+    return match_S(inp) and match_end(inp)
 
-
-class ElectriCar(Dog):
-    def __init__(self, name, age):
-        super().__init__(name, age)
-        self.Body = Battery(75)
-
-
-my = ElectriCar("kk", 16)
+print(match(io.StringIO(6 * 'a')))

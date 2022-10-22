@@ -1,21 +1,10 @@
-import io
+from multiprocessing import Pool
 
-def match_a(inp):
-    return inp.read(1) == 'a'
+def f(x):
+    for _ in range(20000000):
+        x = x + 0.000001
+    return x * x
 
-def match_end(inp):
-    return inp.read(1) == ''
-
-def match_S(inp):
-    fallback = inp.tell()
-    if match_a(inp) and match_S(inp) and match_a(inp):
-        return True
-    inp.seek(fallback)
-    if match_a(inp) and match_a(inp):
-        return True
-    return False
-
-def match(inp):
-    return match_S(inp) and match_end(inp)
-
-print(match(io.StringIO(6 * 'a')))
+if __name__ == '__main__':
+    with Pool(16) as p:
+        print(p.map(f, [1, 2, 3, 1, 2, 3]))

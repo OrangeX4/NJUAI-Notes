@@ -12,6 +12,12 @@ $\displaystyle x(t)*\delta(t) = \int_{-\infty}^{+\infty}x(\tau)\delta(t-\tau)\ma
 
 这也相等于说明了函数可以看作一个无穷维的向量, 其中 $\delta(t-\tau)$ 是一系列正交基.
 
+![](images/2022-11-08-22-05-50.png)
+
+![](images/2022-11-08-22-06-43.png)
+
+![](images/2022-11-08-22-08-17.png)
+
 
 ## 1. 傅里叶级数
 
@@ -94,7 +100,9 @@ $\displaystyle X_n = \frac{\left<x(t), e^{jn\omega t} \right>}{\left<e^{jn\omega
 - 合成公式: $\displaystyle x(t) = \sum_{n=-\infty}^{+\infty}X_n e^{jn\omega t}$
 
 
-## 2. 傅里叶变换
+## 2. 数字信号处理的傅里叶变换
+
+### 2.1 傅里叶变换
 
 重新定义 $\displaystyle \omega_0 = \frac{2\pi}{T}$, 有
 
@@ -129,3 +137,58 @@ $\displaystyle X_n = \frac{\left<x(t), e^{jn\omega t} \right>}{\left<e^{jn\omega
 如果 $x(t)$ 是实函数, 则 $|X(\omega)|$ 是偶函数, $\varphi(\omega)$ 是奇函数.
 
 ![](images/2022-11-08-15-56-05.png)
+
+### 2.2 周期函数的傅里叶变换
+
+由于周期信号不满足傅里叶变换的绝对可积条件, 所以我们无法直接使用
+
+- $\displaystyle X(j\omega) = \int_{-\infty}^{+\infty}x(t)e^{-j\omega t}\mathrm{d}t$
+- $\displaystyle x(t) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega t}\mathrm{d}\omega$
+
+但是我们可以通过周期函数的傅里叶级数来推导
+
+由 $\mathcal{F}[1]=2\pi \delta(\omega)$ 和频移特性可得 $\mathcal{F}[e^{j\omega_0t}] = 2\pi\delta(\omega-\omega_0)$
+
+$x(t)$ 的傅里叶级数为
+
+$\displaystyle x(t) = \sum_{n=-\infty}^{+\infty}X_n e^{jn\omega_0t}$
+
+两边同时取傅里叶变换得
+
+$\displaystyle \mathcal{F}[x(t)] = \mathcal{F}\left[ \sum_{n=-\infty}^{\infty}X_ne^{jn\omega_0t} \right] = \sum_{n=-\infty}^{\infty}X_n\mathcal{F}\left[ e^{jn\omega_0t} \right] = 2\pi\sum_{n=-\infty}^{+\infty}X_n\delta(\omega-n\omega_0)$
+
+因此有
+
+- $\displaystyle \mathcal{F}[x(t)] = 2\pi\sum_{n=-\infty}^{+\infty}X_n\delta(\omega-n\omega_0)$
+- $\displaystyle X_n = \frac{1}{T}\int_{t_0}^{t_0+T}x(t)e^{-jn\omega_0t}\mathrm{d}t$
+
+说明有
+
+- 周期信号 $x(t)$ 的傅里叶变换有位于 $0, \pm \omega_0, \pm 2\omega_0, \cdots$ 处的冲激信号组成, 冲激信号的强度等于对应傅里叶级数系数的 $2\pi$ 倍.
+- 傅里叶变换反应频谱密度, 因此周期信号的傅里叶变换不是有限值, 是冲激函数, 表明在无穷小的频带范围内取得无穷大的频谱值.
+- 周期信号的频谱是离散的.
+
+### 2.3 时域采样的频域分析
+
+由于
+
+$\displaystyle \mathcal{F}[\delta_{T_s}(t)] = X(j\omega) = 2\pi\sum_{-\infty}^{+\infty}X_n\delta(\omega-n\omega_s)=\omega_s\sum_{n=-\infty}^{+\infty}\delta(\omega-n\omega_s)$
+
+因此有
+
+$\displaystyle \mathcal{F}[x_s(t)] = \frac{1}{2\pi}[X(j\omega)*\omega_s\sum_{-\infty}^{+\infty}\delta(\omega-n\omega_s)] = \frac{1}{T_s}\sum_{-\infty}^{+\infty}X(j(\omega-n\omega_s))$
+
+时域对信号做离散化, 频域表现为原始时域信号频谱 $X(j\omega)$ 的周期延拓 (重复), 时域的离散化导致了频域的周期性.
+
+反之亦然, 因此一个域的离散化和另一个域的周期性相对应.
+
+### 2.4 时域采样定理
+
+采样定理: 若连续信号 $x(t)$ 是一个频带受限信号 (若 $\left| \omega \right| > \omega_m$ 则 $X(j\omega)=0, \omega_m=2\pi f_m$), $x(t)$ 的等间隔样本值 $x_s(t)$, 用 $x_s(t)$ 唯一表示 $x(t)$ 的条件是
+
+$\displaystyle T_s < \frac{1}{2 f_m}$ 即 $\omega_s > 2\omega_m$
+
+$f_s = 2 f_m$ 为最小采样频率, 称为 Nyquist Rate.
+
+
+

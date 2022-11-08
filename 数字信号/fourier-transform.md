@@ -174,6 +174,8 @@ $\displaystyle \mathcal{F}[x(t)] = \mathcal{F}\left[ \sum_{n=-\infty}^{\infty}X_
 
 $\displaystyle \mathcal{F}[\delta_{T_s}(t)] = X(j\omega) = 2\pi\sum_{-\infty}^{+\infty}X_n\delta(\omega-n\omega_s)=\omega_s\sum_{n=-\infty}^{+\infty}\delta(\omega-n\omega_s)$
 
+(冲击串的傅里叶变换仍然是冲击串)
+
 因此有
 
 $\displaystyle \mathcal{F}[x_s(t)] = \frac{1}{2\pi}[X(j\omega)*\omega_s\sum_{-\infty}^{+\infty}\delta(\omega-n\omega_s)] = \frac{1}{T_s}\sum_{-\infty}^{+\infty}X(j(\omega-n\omega_s))$
@@ -191,4 +193,165 @@ $\displaystyle T_s < \frac{1}{2 f_m}$ 即 $\omega_s > 2\omega_m$
 $f_s = 2 f_m$ 为最小采样频率, 称为 Nyquist Rate.
 
 
+## 3. 数字图像处理的傅里叶变换
+
+### 3.1 傅里叶变换
+
+实际上, 还有另外一种傅里叶变换的定义方法, 即傅里叶变换对
+
+- $\displaystyle F(\mu) = \int_{-\infty}^{+\infty}f(t)e^{-j 2\pi\mu t}\mathrm{d}t$
+- $\displaystyle f(t) = \int_{-\infty}^{+\infty}F(\mu)e^{j 2\pi\mu t}\mathrm{d}\mu$
+
+和先前的傅里叶变换不一样之处在于系数的不同.
+
+或者使用欧拉公式表示为
+
+- $\displaystyle F(\mu) = \int_{-\infty}^{+\infty}f(t)[\cos (2\pi \mu t)-j\sin (2\pi\mu t)]\mathrm{d}t$
+
+证明如下:
+
+$
+\begin{aligned}
+\int_{-\infty}^{+\infty}F(\mu)e^{j 2\pi\mu t}\mathrm{d}\mu &= \int_{-\infty}^{+\infty} \left( \int_{-\infty}^{+\infty} f(t)e^{-j 2\pi\mu t}\mathrm{d}t \right) e^{j 2\pi\mu t}\mathrm{d}\mu \\
+&= \int_{-\infty}^{+\infty} \left( \int_{-\infty}^{+\infty} f(t')e^{-j 2\pi\mu t'}\mathrm{d}t' \right) e^{j 2\pi\mu t}\mathrm{d}\mu \\
+&= \int_{-\infty}^{+\infty} f(t')\left( \int_{-\infty}^{+\infty} e^{j 2\pi\mu (t-t')}\mathrm{d}\mu \right) \mathrm{d}t' \\
+&= \int_{-\infty}^{+\infty} f(t') \delta(t-t') \mathrm{d}t' \\
+&= f(t) * \delta(t) \\
+&= f(t)
+\end{aligned}
+$
+
+其中用到了 $\displaystyle \int_{-\infty}^{+\infty}e^{j 2\pi\mu t}\mathrm{d}\mu = \delta(t)$, 即 $1_{\mathbb{R}}$ 和 $\delta(t)$ 互为傅里叶变换.
+
+### 3.2 对称性
+
+- $f(t)$ 的傅里叶变换为 $F(\mu)$
+- $F(t)$ 的傅里叶变换为 $f(-\mu)$
+
+对于冲击函数我们还有
+
+- $\delta(t-t_0)$ 傅里叶变换为 $e^{-j 2\pi\mu t_0}$
+- $e^{-j 2\pi at}$ 傅里叶变换为 $\delta(-\mu-a)$
+- $e^{j 2\pi at}$ 傅里叶变换为 $\delta(\mu-a)$
+
+### 3.3 冲击串
+
+对于冲击串 $\displaystyle s_{\Delta T}(t) = \sum_{n=-\infty}^{+\infty}\delta(t-n\Delta T)$
+
+我们有傅里叶级数系数 $\displaystyle c_n = \frac{1}{\Delta T}\int_{-\Delta T / 2}^{\Delta T / 2}s_{\Delta T}(t)e^{-j \frac{2\pi n}{\Delta T}t}\mathrm{d}t = \frac{1}{\Delta T}$
+
+因此有傅里叶级数 $\displaystyle s_{\Delta T}(t) = \sum_{n=-\infty}^{\infty}c_n e^{j \frac{2\pi n}{\Delta T}t}\mathrm{d}t = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}e^{j \frac{2\pi n}{\Delta T}t}\mathrm{d}t$
+
+两边同时进行傅里叶变换可得
+
+$\displaystyle S(\mu) = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \mathfrak{F}\left\{ e^{j \frac{2\pi n}{\Delta T}t}\mathrm{d}t \right\} = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \delta(\mu - \frac{n}{\Delta T})$
+
+冲激串的傅里叶变换还是冲激串, 但是周期由 $\Delta T$ 变为 $\displaystyle \frac{1}{\Delta T}$.
+
+### 3.4 卷积
+
+- 平移性质
+    - $\displaystyle \mathfrak{F}\{ h(t-\tau) \} = H(\mu)e^{-j 2\pi \mu\tau}$
+- 卷积定理
+    - $f(t)*h(t) \Leftrightarrow H(\mu)F(\mu)$
+    - $f(t)h(t) \Leftrightarrow H(\mu)*F(\mu)$
+
+### 3.5 采样
+
+采样后函数 $\displaystyle \tilde{f}(t) = f(t)s_{\Delta T}(t) = \sum_{n=-\infty}^{\infty}f(t)\delta(t-n\Delta T)$
+
+采样后函数的傅里叶变换
+
+$
+\begin{aligned}
+\tilde{F}(\mu) &= F(\mu)*S(\mu) \\
+&= \int_{-\infty}^{\infty}F(\tau)S(\mu-\tau)\mathrm{d}\tau \\
+&= \int_{-\infty}^{\infty}F(\tau)\frac{1}{\Delta T}\sum_{-\infty}^{\infty}\delta(\mu-\tau-\frac{n}{\Delta T})\mathrm{d}\tau \\
+&= \frac{1}{\Delta T}\sum_{-\infty}^{\infty}\int_{-\infty}^{\infty}F(\tau)\delta(\mu-\frac{n}{\Delta T}-\tau)\mathrm{d}\tau \\
+&= \frac{1}{\Delta T}\sum_{-\infty}^{\infty}F(\mu-\frac{n}{\Delta T}) \\
+\end{aligned}
+$
+
+可见采样后函数的傅里叶变换是无限周期性拷贝的, 间隔 $\displaystyle \frac{1}{\Delta T}$.
+
+因此我们有采样定理, 对于带限函数 $f(t)$ 来说, 其傅里叶变换后的非零频率属于 $[-\mu_m, \mu_m]$, 因此只要
+
+$\displaystyle \frac{1}{2\Delta} > \mu_m$ 即 $\displaystyle \frac{1}{\Delta T} > 2\mu_m$
+
+即可完美复原, 其中 $2\mu_m$ 称为奈奎斯特频率 (Nyquist Frequency).
+
+但是带限函数这个要求太严格了, 很少有函数能够做到.
+
+尤其是有限持续时间函数 (即有限长度采样), 有限持续时间函数必然是不带限的, 因此混淆是不可避免的.
+
+抗混淆一定是事先防止或减轻混淆, 通过平滑输入函数，减少高频分量来实现抗混淆.
+
+### 3.6 离散傅里叶变换 (DFT)
+
+对于采样后函数 $\displaystyle \tilde{f}(t) = f(t)s_{\Delta T}(t) = \sum_{n=-\infty}^{\infty}f(t)\delta(t-n\Delta T)$
+
+我们还可以直接进行傅里叶变换
+
+$
+\begin{aligned}
+\tilde{F}(\mu) &= \int_{-\infty}^{+\infty}\tilde{f}(t)e^{-j 2\pi \mu t}\mathrm{d}t \\
+&= \int_{-\infty}^{+\infty}\sum_{n=-\infty}^{\infty}f(t)\delta(t-n\Delta T)e^{-j 2\pi \mu t}\mathrm{d}t \\
+&= \sum_{n=-\infty}^{\infty}\int_{-\infty}^{+\infty}f(t)\delta(t-n\Delta T)e^{-j 2\pi \mu t}\mathrm{d}t \\
+&= \sum_{n=-\infty}^{\infty}f_n e^{-j 2\pi \mu n \Delta T}, \quad [f_n=f(n \Delta T)] \\
+\end{aligned}
+$
+
+我们在之前已经证明了 $\tilde{F}(\mu)$ 是以 $\displaystyle \frac{1}{\Delta T}$ 为周期的周期函数, 因此我们这里只考虑 $\tilde{F}(\mu)$ 的一个周期 $\displaystyle [0, \frac{1}{\Delta T}]$.
+
+我们在 $\tilde{F}(\mu)$ 的一个周期 $\displaystyle [0, \frac{1}{\Delta T}]$ 上采样 $M$ 个样本, 即通过
+
+$\displaystyle \mu = \frac{m}{M \Delta T}, m = 0,1,2,\cdots, M-1$
+
+采样得到
+
+$\displaystyle F_m = \sum_{n=0}^{M-1}f_n e^{-j 2\pi mn / M}, m = 0,1,2,\cdots, M-1$
+
+此即离散傅里叶变换 (DFT).
+
+同理我们有离散傅里叶反变换 (IDFT)
+
+$\displaystyle f_n = \frac{1}{M}\sum_{n=0}^{M-1}F_m e^{-j 2\pi mn / M}, m = 0,1,2,\cdots, M-1$
+
+因此有
+
+- 离散傅里叶变换 (DFT):
+    - $\displaystyle F(u) = \sum_{n=0}^{M-1}f(x) e^{-j 2\pi ux / M}, u = 0,1,2,\cdots, M-1$
+- 离散傅里叶反变换 (IDFT):
+    - $\displaystyle f(x) = \frac{1}{M}\sum_{n=0}^{M-1}F(u) e^{-j 2\pi ux / M}, x = 0,1,2,\cdots, M-1$
+
+可以看出表达式不依赖采样间隔和频率间隔, 因此适用于任何均匀取样的有限离散样本集.
+
+并且它们有着无限周期, 周期为 $M$ 的性质.
+
+- $F(u) = F(u+KM)$
+- $f(u) = f(x+KM)$
+
+如果我们有
+
+- 采样间隔为 $\Delta T$
+
+则有
+
+- 总时间长度为 $T = M \Delta T$
+- 频率间隔为 $\displaystyle \Delta u = \frac{1}{M\Delta T} = \frac{1}{T}$
+- 频域范围为 $\displaystyle \Omega = M \Delta u = \frac{1}{\Delta T}$
+
+### 3.7 二维连续傅里叶变换
+
+- 二维傅里叶变换
+    - $\displaystyle F(u,v) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(t,z)e^{-j 2\pi(ut+vz)}\mathrm{d}t\mathrm{d}z$
+- 二维傅里叶反变换
+    - $\displaystyle f(t,z) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}F(u,v)e^{j 2\pi(ut+vz)}\mathrm{d}u\mathrm{d}v$
+
+### 3.8 二维离散傅里叶变换 (DFT)
+
+- 二维离散傅里叶变换 (DFT)
+    - $\displaystyle F(u,v) = \sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{-j 2\pi(ux / M + vy / N)}$
+- 二维离散傅里叶反变换 (IDFT)
+    - $\displaystyle f(x,y) = \frac{1}{MN}\sum_{u=0}^{M-1}\sum_{v=0}^{N-1}F(u,v)e^{j 2\pi(ux / M + vy / N)}$
 

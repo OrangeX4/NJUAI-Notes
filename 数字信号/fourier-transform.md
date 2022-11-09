@@ -427,11 +427,11 @@ $
 我们将 $\omega_{M}^{k} = e^{j 2\pi k / M}$ 给抽取出来, 则有
 
 - 离散傅里叶变换 (DFT):
-    - $\displaystyle F(u) = \sum_{x=0}^{M-1}f(x) (e^{-j 2\pi u / M})^x = \sum_{x=0}^{M-1}f(x)(\omega_{M}^{-u})^{x}$
+    - $\displaystyle F(u) = \sum_{x=0}^{M-1}f(x) (e^{-j 2\pi u / M})^x = \sum_{x=0}^{M-1}f(x)(\omega_{M}^{u})^{x}$
 - 离散傅里叶反变换 (IDFT):
-    - $\displaystyle f(x) = \frac{1}{M}\sum_{u=0}^{M-1}F(u) (e^{j 2\pi x / M})^u = \frac{1}{M}\sum_{u=0}^{M-1}F(u)(\omega_{M}^{x})^u$
+    - $\displaystyle f(x) = \frac{1}{M}\sum_{u=0}^{M-1}F(u) (e^{j 2\pi x / M})^u = \frac{1}{M}\sum_{u=0}^{M-1}F(u)(\omega_{M}^{-x})^u$
 
-其中 $\omega_{M}^{k} = e^{j 2\pi k / M}$ 代表着复平面上将单位圆 $M$ 等分, 并以原点为起点, 以 $k$ 等分点为终点形成的向量. 
+其中 $\omega_{M}^{k} = e^{-j 2\pi k / M}$ 代表着复平面上将单位圆 $M$ 等分, 并以原点为起点, 以 $k$ 等分点为终点形成的向量. 
 
 因此我们很自然地就能得到两个相关性质:
 

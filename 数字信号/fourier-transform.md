@@ -244,14 +244,14 @@ $
 
 两边同时进行傅里叶变换可得
 
-$\displaystyle S(\mu) = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \mathfrak{F}\left\{ e^{j \frac{2\pi n}{\Delta T}t}\mathrm{d}t \right\} = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \delta(\mu - \frac{n}{\Delta T})$
+$\displaystyle S(\mu) = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \mathfrak{I}\left\{ e^{j \frac{2\pi n}{\Delta T}t}\mathrm{d}t \right\} = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty} \delta(\mu - \frac{n}{\Delta T})$
 
 冲激串的傅里叶变换还是冲激串, 但是周期由 $\Delta T$ 变为 $\displaystyle \frac{1}{\Delta T}$.
 
 ### 3.4 卷积
 
 - 平移性质
-    - $\displaystyle \mathfrak{F}\{ h(t-\tau) \} = H(\mu)e^{-j 2\pi \mu\tau}$
+    - $\displaystyle \mathfrak{I}\{ h(t-\tau) \} = H(\mu)e^{-j 2\pi \mu\tau}$
 - 卷积定理
     - $f(t)*h(t) \Leftrightarrow H(\mu)F(\mu)$
     - $f(t)h(t) \Leftrightarrow H(\mu)*F(\mu)$
@@ -354,4 +354,66 @@ $\displaystyle f_n = \frac{1}{M}\sum_{n=0}^{M-1}F_m e^{-j 2\pi mn / M}, m = 0,1,
     - $\displaystyle F(u,v) = \sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{-j 2\pi(ux / M + vy / N)}$
 - 二维离散傅里叶反变换 (IDFT)
     - $\displaystyle f(x,y) = \frac{1}{MN}\sum_{u=0}^{M-1}\sum_{v=0}^{N-1}F(u,v)e^{j 2\pi(ux / M + vy / N)}$
+
+旋转性:
+
+- $\displaystyle f(r,\theta+\theta_0) \Leftrightarrow F(\omega, \varphi+\theta_0)$
+
+其中使用的是极坐标.
+
+平移性:
+
+- $\displaystyle f(x,y)e^{j 2\pi(u_0x / M + v_0y / N)} \Leftrightarrow F(u-u_0,v-v_0)$
+- $\displaystyle f(x-x_0,y-y_0) \Leftrightarrow F(u,v)e^{-j 2\pi(x_0u / M + y_0v / N)}$
+
+如果我们令 $u_0=M/2$, $v_0=N/2$, 则有
+
+- $f(x,y)(-1)^{x+y} \Leftrightarrow F(u-M/2,v-N/2)$
+
+幅度, 相角与功率谱:
+
+- 极坐标表示: $\displaystyle F(u,v)=|F(u,v)|e^{j\phi(u,v)}$
+- 幅度 (傅里叶谱): $|F(u,v)| = [R^{2}(u,v)+I^{2}(u,v)]^{\frac{1}{2}}$
+- 相角 ($[-\pi, \pi]$): $\displaystyle \phi(u,v) = \arctan \left[ \frac{I(u,v)}{R(u,v)} \right]$
+- 功率谱: $P(u,v) = |F(u,v)|^{2} = R^{2}(u,v) + I^{2}(u,v)$
+
+二维离散卷积:
+
+- $\displaystyle f(x,y)*h(x,y) = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}f(m,n)h(x-m,y-n)$
+    - 该式给出了一个二维周期序列中的一个周期, 因此也被称为循环卷积
+- $f(x,y)*h(x,y) \Leftrightarrow F(u,v)H(u,v)$
+- $f(x,y)h(x,y) \Leftrightarrow F(u,v)*H(u,v)$
+
+要理解循环卷积, 我们可以使用一个一维序列来说明:
+
+对于 $\displaystyle y(x) = f(x)*h(x) = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}f(m,n)h(x-m,y-n)$
+
+用矩阵形式表示就是
+
+$
+\begin{bmatrix} y(0) \\ y(1) \\ y(2) \\ \vdots \\ y(M-1) \\\end{bmatrix} = \begin{bmatrix} h(0) & h(M-1) & h(M-2) & \cdots  & h(1) \\ h(1) & h(0) & h(M-1) & \cdots & h(2) \\ h(2) & h(1) & h(0) & \cdots & h(3) \\ \vdots & \vdots & \vdots & \vdots & \vdots\\ h(M-1) & h(M-2) & h(M-3) & \cdots &h(0) \end{bmatrix}\begin{bmatrix} f(0) \\ f(1) \\ f(2) \\ \vdots \\ f(M-1) \\\end{bmatrix}
+$
+
+可以看出, 如果周期过于相近的话, 会产生缠绕错误, 所以我们要在 $f(x)$ 和 $h(x)$ 末尾处进行零填充, 使得 $M \ge M_{f}+M_{h}-1$.
+
+二维同理, 也要进行零填充.
+
+但是有一个问题, 我们如何对频率域滤波器 $H(u,v)$ 进行零填充?
+
+- 先将 $H(u,v)$ 转为空间域的 $h(x,y)$, 进行零填充后再转回来
+    - 会出现振铃现象, 因此并不实用
+- 不进行零填充, 直接构造一个与 $F(u,v)$ 一样大小的 $H(u,v)$
+    - 没有完全解决缠绕问题, 但是问题不大, 因为图像已经经过零填充了
+
+频率域滤波步骤:
+
+1. 给定一副大小为 $M \times N$ 的输入图像 $f(x, y)$, 选择填充参数 $P$ 和 $Q$. 典型地, 我们选择 $P = 2M$ 和 $Q = 2N$.
+2. 对 $f(x, y)$ 添加必要数量的 $0$, 形成大小为 $P × Q$ 的填充后图像 $f_{p}(x, y)$.
+3. 用 $(−1)^{x+y}$ 乘以 $f(x,y)$ 移到其变换的中心.
+4. 计算来自步骤 3 的图像的 DFT, 得到 $F(u, v)$.
+5. 生成一个实的、对称的滤波函数 $H(u, v)$, 其大小为 $P \times Q$, 中心在 $(P / 2, Q / 2)$ 处. 用阵列相乘形成乘积 $G(u,v)=H(u,v)F(u,v)$.
+6. 得到处理后的图像: $g_{p}(x,y) = \{ \operatorname{real}[\mathfrak{I}^{-1}[G(u,v)]] \}(-1)^{x+y}$
+7. 通过 $g_{p}(x,y)$ 的左上象限提取 $M \times N$ 区域，得到最终处理结果 $g(x,y)$.
+
+
 

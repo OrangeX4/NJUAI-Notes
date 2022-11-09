@@ -57,6 +57,7 @@ def fft(a: np.ndarray, n=None, inverse=False) -> np.ndarray:
     # fft
     if n == 1:
         return a
+    # 解决非 2 的幂次的问题
     if n % 2 != 0:
         return dft(a, n, inverse)
     else:
@@ -207,6 +208,12 @@ def main():
     g_zero_padded = my_imfilter(f, P, Q, H, use_numpy=use_numpy)
     plt.subplot(1, 3, 3)
     plt.imshow(g_zero_padded, cmap='gray')
+
+    # 保存图像 g_no_zero_padded 和 g_zero_padded
+    mpimg.imsave('../asset/result/432_g_no_zero_padded.jpg',
+                 g_no_zero_padded, cmap='gray')
+    mpimg.imsave('../asset/result/432_g_zero_padded.jpg',
+                 g_zero_padded, cmap='gray')
 
     plt.show()
 

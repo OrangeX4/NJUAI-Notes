@@ -315,14 +315,14 @@ $\displaystyle F_m = \sum_{n=0}^{M-1}f_n e^{-j 2\pi mn / M}, m = 0,1,2,\cdots, M
 
 同理我们有离散傅里叶反变换 (IDFT)
 
-$\displaystyle f_n = \frac{1}{M}\sum_{n=0}^{M-1}F_m e^{-j 2\pi mn / M}, m = 0,1,2,\cdots, M-1$
+$\displaystyle f_n = \frac{1}{M}\sum_{m=0}^{M-1}F_m e^{j 2\pi mn / M}, m = 0,1,2,\cdots, M-1$
 
 因此有
 
 - 离散傅里叶变换 (DFT):
-    - $\displaystyle F(u) = \sum_{n=0}^{M-1}f(x) e^{-j 2\pi ux / M}, u = 0,1,2,\cdots, M-1$
+    - $\displaystyle F(u) = \sum_{x=0}^{M-1}f(x) e^{-j 2\pi ux / M}, u = 0,1,2,\cdots, M-1$
 - 离散傅里叶反变换 (IDFT):
-    - $\displaystyle f(x) = \frac{1}{M}\sum_{n=0}^{M-1}F(u) e^{-j 2\pi ux / M}, x = 0,1,2,\cdots, M-1$
+    - $\displaystyle f(x) = \frac{1}{M}\sum_{u=0}^{M-1}F(u) e^{j 2\pi ux / M}, x = 0,1,2,\cdots, M-1$
 
 可以看出表达式不依赖采样间隔和频率间隔, 因此适用于任何均匀取样的有限离散样本集.
 
@@ -415,5 +415,96 @@ $
 6. 得到处理后的图像: $g_{p}(x,y) = \{ \operatorname{real}[\mathfrak{I}^{-1}[G(u,v)]] \}(-1)^{x+y}$
 7. 通过 $g_{p}(x,y)$ 的左上象限提取 $M \times N$ 区域，得到最终处理结果 $g(x,y)$.
 
+### 3.9 快速傅里叶变换 (FFT)
+
+对于离散傅里叶变换对
+
+- 离散傅里叶变换 (DFT):
+    - $\displaystyle F(u) = \sum_{x=0}^{M-1}f(x) e^{-j 2\pi ux / M}, u = 0,1,2,\cdots, M-1$
+- 离散傅里叶反变换 (IDFT):
+    - $\displaystyle f(x) = \frac{1}{M}\sum_{u=0}^{M-1}F(u) e^{j 2\pi ux / M}, x = 0,1,2,\cdots, M-1$
+
+我们将 $\omega_{M}^{k} = e^{j 2\pi k / M}$ 给抽取出来, 则有
+
+- 离散傅里叶变换 (DFT):
+    - $\displaystyle F(u) = \sum_{x=0}^{M-1}f(x) (e^{-j 2\pi u / M})^x = \sum_{x=0}^{M-1}f(x)(\omega_{M}^{-u})^{x}$
+- 离散傅里叶反变换 (IDFT):
+    - $\displaystyle f(x) = \frac{1}{M}\sum_{u=0}^{M-1}F(u) (e^{j 2\pi x / M})^u = \frac{1}{M}\sum_{u=0}^{M-1}F(u)(\omega_{M}^{x})^u$
+
+其中 $\omega_{M}^{k} = e^{j 2\pi k / M}$ 代表着复平面上将单位圆 $M$ 等分, 并以原点为起点, 以 $k$ 等分点为终点形成的向量. 
+
+因此我们很自然地就能得到两个相关性质:
+
+- 折半引理: $\omega_{2M}^{2k} = \omega_{M}^{k}$
+    - 由几何意义可知, 两者表示的向量终点是一样的.
+- 消去引理: $\omega_{M}^{k + M / 2} = -\omega_{M}^{k}$
+    - 由几何意义可知, 两者表示的向量方向恰好相反.
+
+> 一个 $n - 1$ 次多项式在 $n$ 个不同点处的取值唯一确定了该多项式.
+
+因此, 我们也可以将离散傅里叶变换视作 **多项式的点值表示** 过程. 其中 $f(x)$ 是多项式的系数, $\omega_{M}^{k}$ 是我们带入的不同点, 最后求出点值表示 $F(u)$.
+
+我们对多项式 $\displaystyle f(x) = \sum_{i=0}^{n-1}a_ix^{i}$ 进行研究, 我们带入 $x=\omega_{n}^{k}$, 并对多项式以奇偶的方式进行划分, 则有
+
+$
+\begin{aligned}
+f(x) &= (a_0x^{0} + a_2x^{2} + \cdots + a_{n-2}x^{n-2}) \\
+&+ (a_1x^{1} + a_3x^{3} + \cdots + a_{n-1}x^{n-1}) \\
+\end{aligned}
+$
+
+令 $f_1(x) = a_0x^{0} + a_2x^{1} + \cdots + a_{n-2}x^{\frac{n}{2}-1}$, $f_2(x) = a_1x^{0} + a_3x^{1} + \cdots + a_{n-1}x^{\frac{n}{2}-1}$
+
+则有 $f(x) = f_1(x^{2}) + xf_2(x^{2})$
+
+带入 $x = \omega_{n}^{k}$ 有
+
+$
+\begin{aligned}
+f(\omega_{n}^{k}) &= f_1(\omega_{n}^{2k}) + \omega_{n}^{k}f_2(\omega_{n}^{2k}) \\
+&= f_1(\omega_{\frac{n}{2}}^{k}) + \omega_{n}^{k}f_2(\omega_{\frac{n}{2}}^{k}) \\
+\end{aligned}
+$
+
+带入 $x = \omega_{n}^{k+\frac{n}{2}}$ 有
+
+$
+\begin{aligned}
+f(\omega_{n}^{k+\frac{n}{2}}) &= f_1(\omega_{n}^{2k+n}) + \omega_{n}^{k+\frac{n}{2}}f_2(\omega_{n}^{2k+n}) \\
+&= f_1(\omega_{n}^{2k}\cdot \omega_{n}^{n}) - \omega_{n}^{k}f_2(\omega_{n}^{2k}\cdot \omega_{n}^{n}) \\
+&= f_1(\omega_{n}^{2k}) - \omega_{n}^{k}f_2(\omega_{n}^{2k}) \\
+&= f_1(\omega_{\frac{n}{2}}^{k}) - \omega_{n}^{k}f_2(\omega_{\frac{n}{2}}^{k}) \\
+\end{aligned}
+$
+
+其中 $\displaystyle k < \frac{n}{2}$.
+
+由此可见, 我们只需要递归地求出 $f_1(\omega_{\frac{n}{2}}^{k}), f_2(\omega_{\frac{n}{2}}^{k})$ 即可 $O(1)$ 地合并结果.
+
+因此我们能够用 $O(\log n)$ 的时间复杂度求出 $f(\omega_{n}^{k})$, 进而可以用 $O(n\log n)$ 的时间复杂度求出所有的 $f(\omega_{n}^{k}), k=0,2,\cdots,n-1$.
+
+同理, 对于离散傅里叶反变换, 我们只需要将傅里叶正变换中乘上的单位根变为其共轭复数, 分治完的每一项除以 $n$ 即可得到原多项式的每一项系数.
+
+相比于直接进行离散傅里叶变换 (DFT) 所用的 $O(n^{2})$ 的时间复杂度, 快速傅里叶变换 (FFT) 的 $O(n\log n)$ 有着显著的加速.
+
+我们将划分情况推演出来
+
+![](images/2022-11-09-18-24-12.png)
+
+可以发现 $\omega_{n}^{i}$ 在最终的序列中的位置下标相当于 $i$ 二进制下翻转得到的数.
+
+因此我们可以将自顶向下的递归算法改为自底向上的循环算法, 可以实现算法常数级别的优化.
+
+
+### 3.10 二维快速傅里叶变换 (FFT2)
+
+二维傅里叶变换是在一维傅里叶变换基础上实现的, 实现方法为:
+
+1. 对 2 维输入数据的每一行进行 FFT 变换, 变换结果仍然按行存入一个二维数组中;
+2. 对按行 FFT 变换后的结果, 对每一列进行FFT变换, 变换结果仍然按列存入一个二维数组中, 该数组即为 2 维FFT变换结果.
+
+对于一个 $M \times N$ 的二维数据, FFT2 的时间复杂度为 $O(MN\log(MN))$.
+
+若 $M=N$, 则时间复杂度可以简化为 $O(N^2\log N)$, 优于暴力算法的 $O(N^{3})$.
 
 

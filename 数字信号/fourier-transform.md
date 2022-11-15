@@ -180,9 +180,12 @@ $\displaystyle \mathcal{F}[\delta_{T_s}(t)] = X(j\omega) = 2\pi\sum_{-\infty}^{+
 
 $\displaystyle \mathcal{F}[x_s(t)] = \frac{1}{2\pi}[X(j\omega)*\omega_s\sum_{-\infty}^{+\infty}\delta(\omega-n\omega_s)] = \frac{1}{T_s}\sum_{-\infty}^{+\infty}X(j(\omega-n\omega_s))$
 
-时域对信号做离散化, 频域表现为原始时域信号频谱 $X(j\omega)$ 的周期延拓 (重复), 时域的离散化导致了频域的周期性.
+时域对信号做离散化, 频域表现为原始时域信号频谱 $X(j\omega)$ 的周期延拓 (重复), 时域的离散化导致了频域的周期性. 
 
 反之亦然, 因此一个域的离散化和另一个域的周期性相对应.
+
+$\displaystyle \mathcal{F}^{-1}[X_s(j\omega)] = x(t)*[\frac{1}{\omega_s}\sum_{-\infty}^{+\infty}\delta(t-nT_s)] = \frac{1}{\omega_s}\sum_{-\infty}^{+\infty}x(t-nT_s)$
+
 
 ### 2.4 时域采样定理
 
@@ -191,6 +194,12 @@ $\displaystyle \mathcal{F}[x_s(t)] = \frac{1}{2\pi}[X(j\omega)*\omega_s\sum_{-\i
 $\displaystyle T_s < \frac{1}{2 f_m}$ 即 $\omega_s > 2\omega_m$
 
 $f_s = 2 f_m$ 为最小采样频率, 称为 Nyquist Rate.
+
+若 $x(t)$ 的最高频率为 $f_m$, 当 $a > b > 1$ 时, 有
+
+- $x(at)$ 最小采样频率 $2a f_m$
+- $x(at)*x(bt)$ 最小采样频率 $2b f_m$
+- $x(at)\cdot x(bt)$ 最小采样频率 $2(a+b) f_m$
 
 
 ## 3. 数字图像处理的傅里叶变换

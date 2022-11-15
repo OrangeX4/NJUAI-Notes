@@ -55,3 +55,37 @@ $s^{2} (s^{2} + 24 s + 60)=0 = [ s = 0, \  s = -12 - 2 \sqrt{21} = -21.165151389
 $\displaystyle (-\frac{s^{3}}{(s+10)(s+2)})|_{s=-12 - 2 \sqrt{21}} = \frac{81}{4} + \frac{21 \sqrt{21}}{4} = 44.3085223985182$
 
 $\displaystyle s\frac{1}{1+\frac{K(s+10)(s+2)}{s^{3}}}\frac{1}{s^{2}} = \frac{s^{2}}{K (s + 2) (s + 10) + s^{3}}$
+
+$\displaystyle \frac{\mathrm{d}}{\mathrm{d}s}(-\frac{s(s-1)(s+20)}{s+2}) = - \frac{2 s^{3} + 25 s^{2} + 76 s - 40}{(s + 2)^{2}}$
+
+$\displaystyle 2 s^{3} + 25 s^{2} + 76 s - 40=0 = [ s = -6.47777988977318 - 1.39298228873163 i, \  s = -6.47777988977318 + 1.39298228873163 i, \  s = 0.45555977954636]$
+
+$\displaystyle (K(s+2)+s(s-1)(s+20))|_{s=jw} = i K w - i w^{3} - 20 i w + 2 K - 19 w^{2}$
+
+$\displaystyle (i K w - i w^{3} - 20 i w)|_{K=\frac{19 w^{2}}{2}} = \frac{i w (17 w^{2} - 40)}{2}$
+
+$\displaystyle \frac{(17 w^{2} - 40)}{2}=0 = [ w = - \frac{2 \sqrt{170}}{17}, \  w = \frac{2 \sqrt{170}}{17} = \frac{2 \sqrt{170}}{17}]$
+
+$2 K - 19 w^{2} =0 = [ w = - \frac{\sqrt{38} \sqrt{K}}{19}, \  w = \frac{\sqrt{38} \sqrt{K}}{19}, \  K = \frac{19 w^{2}}{2}]$
+
+$K = (\frac{19 w^{2}}{2})|_{w=\frac{2 \sqrt{170}}{17}} = \frac{380}{17} = 22.3529411764706$
+
+$\displaystyle \frac{a s}{5 s^{2} + 4} + 1=0$
+
+$5 s^{2} + 4=0 = [ s = - \frac{2 \sqrt{5} i}{5}, \  s = \frac{2 \sqrt{5} i}{5}]$
+
+$\displaystyle \frac{\mathrm{d}}{\mathrm{d}s}(-\frac{5s^{2}+4}{s}) = - \frac{5 s^{2} - 4}{s^{2}}$
+
+$\displaystyle 5 s^{2} - 4=0 = [ s = - \frac{2 \sqrt{5}}{5} = -0.894427190999916, \  s = \frac{2 \sqrt{5}}{5}]$
+
+$\displaystyle s(s+p)+4(s+10) = p s + s^{2} + 4 s + 40 = 0$
+
+$\displaystyle \frac{p s}{s^{2} + 4 s + 40} + 1 = 0$
+
+$s^{2} + 4 s + 40=0 = [ s = -2 - 6 i, \  s = -2 + 6 i]$
+
+$\displaystyle \frac{\mathrm{d}}{\mathrm{d}s}(-\frac{s^{2}+4s+40}{s}) = - \frac{s^{2} - 40}{s^{2}}$
+
+$s^{2} - 40=0 = [ s = - 2 \sqrt{10} = -6.32455532033676, \  s = 2 \sqrt{10}]$
+
+$\displaystyle (\arctan \frac{1}{3})\cdot \frac{360}{2\pi}= 18.434948822922$

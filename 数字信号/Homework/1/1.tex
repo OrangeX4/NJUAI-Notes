@@ -102,7 +102,62 @@
 \begin{framed}
 \begin{spacing}{1.5}
     \begin{itemize}
-    \item 你的解答。
+      \item (1)
+      
+      $\displaystyle x(t) = \sin ^{2}t + \cos \pi t = \frac{1}{2}-\frac{1}{2}\cos 2t + \cos \pi t$
+      
+      其中 $\cos 2t$ 周期为 $\displaystyle T_1 = \frac{2\pi}{2} = \pi$, $\cos \pi t$ 的周期为 $\displaystyle T_2 = \frac{2\pi}{\pi} = 2$.
+      
+      由于 $\displaystyle \frac{T_1}{T_2} = \frac{\pi}{2}$ 为无理数, 因此 $x(t)$ 不是周期信号.
+      
+      \item (2)
+      
+      $
+      \begin{aligned}
+      x(t) &= (\sin 2t + \cos t)^{2} \\
+      &= \sin^{2} 2t + 2\sin 2t\cos t + \cos^{2} t \\
+      &= \frac{1}{2}-\frac{1}{2}\cos 4t + (\sin (2t+t)+\sin (2t-t)) + \frac{1}{2}\cos 2t+\frac{1}{2} \\
+      &= -\frac{1}{2}\cos 4t + \sin 3 t + \frac{1}{2}\cos 2t+\sin t+1 \\
+      \end{aligned}
+      $
+      
+      由于 $\cos 4t, \sin 3t, \cos 2t, \sin t$ 的周期分别为 $\displaystyle \frac{\pi}{2}, \frac{2\pi}{3}, \pi, 2\pi$.
+      
+      它们两两间的周期之比为有理数, 因此 $x(t)$ 为周期信号, 周期为它们的最小公倍数 $\displaystyle 2\pi$.
+      
+      \item (3)
+      
+      $
+      \begin{aligned}
+      x(t) &= \frac{\cos 2t + 1 + \sin t + \sin 2t + \sin 3t}{\cos t} \\
+      &= \frac{2\cos^{2} t + \sin t + 2\sin t\cos t + 3\sin t - 4\sin^{3} t}{\cos t} \\
+      &= \frac{2\cos^{2} t + 4\sin t + 2\sin t\cos t - 4\sin t(1 - \cos^{2} t)}{\cos t} \\
+      &= \frac{2\cos^{2} t + 2\sin t\cos t + 4\sin t\cos^{2} t}{\cos t} \\
+      &= \frac{2\cos^{2} t + 2\sin t\cos t + 2\sin 2t\cos t}{\cos t} \\
+      &= 2\cos t + 2\sin t + 2\sin 2t \\
+      \end{aligned}
+      $
+      
+      其中 $\cos t, \sin t, \sin 2t$ 的周期分别为 $2\pi, 2\pi, \pi$.
+      
+      它们两两间的周期之比为有理数, 因此 $x(t)$ 为周期信号, 周期为它们的最小公倍数 $\displaystyle 2\pi$.
+      
+      \item (4)
+      
+      $x(t) = \sin et + \cos \pi t$
+      
+      其中 $\sin et, \cos \pi t$ 的周期分别为 $\displaystyle \frac{2\pi}{e}, 2$.
+      
+      由于 $\displaystyle \frac{T_1}{T_2} = \frac{\pi}{e}$ 为无理数, 因此 $x(t)$ 不是周期信号.
+      
+      \item (5)
+      
+      $x(n) = \sin 2kn + \cos 3kn$
+      
+      其中 $\sin 2kn, \cos 3kn$ 的周期分别为 $\displaystyle \frac{\pi}{k}, \frac{2\pi}{3k}$.
+      
+      由于 $\displaystyle \frac{T_1}{T_2} = \frac{3}{2}$ 为有理数, 因此 $x(t)$ 是周期信号, 周期为最小公倍数 $\displaystyle \frac{2\pi}{k}$.
+      
     \end{itemize}
 \end{spacing}
 \end{framed}

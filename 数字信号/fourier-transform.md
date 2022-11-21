@@ -186,6 +186,16 @@ $\displaystyle \mathcal{F}[x_s(t)] = \frac{1}{2\pi}[X(j\omega)*\omega_s\sum_{-\i
 
 $\displaystyle \mathcal{F}^{-1}[X_s(j\omega)] = x(t)*[\frac{1}{\omega_s}\sum_{-\infty}^{+\infty}\delta(t-nT_s)] = \frac{1}{\omega_s}\sum_{-\infty}^{+\infty}x(t-nT_s)$
 
+### 2.4 离散傅里叶变换
+
+傅里叶级数
+
+$\displaystyle x(t) = \sum_{k=-\infty}^{\infty}X_k e^{jk\omega t}$
+
+变为
+
+$\displaystyle \tilde{X}[n] = \sum_{k=0}^{N-1}\tilde{x}[k]e^{-jk \frac{2\pi}{N} n} = \sum_{k=0}^{N-1}\tilde{x}[k]e^{-j 2\pi kn / N} = \sum_{n=0}^{N-1}\tilde{x}[n]W_{N}^{kn}$
+
 
 ### 2.4 时域采样定理
 

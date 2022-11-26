@@ -328,9 +328,9 @@
       观察可知 $\displaystyle \frac{2\sin \Omega}{\Omega}$ 为一个矩形信号 $r(t) = \begin{cases}
           A, & |t| \le \frac{\tau}{2} \\
           0, & |t| > \frac{\tau}{2} \\
-      \end{cases}$ 的傅里叶变换 $\displaystyle A\tau \cdot \frac{\sin \frac{\pi \Omega \tau}{2}}{\frac{\pi \Omega \tau}{2}}$
+      \end{cases}$ 的傅里叶变换 $\displaystyle A\tau \cdot \frac{\sin \frac{\Omega \tau}{2}}{\frac{\Omega \tau}{2}}$
       
-      因此令 $\displaystyle \frac{\pi \Omega\tau}{2} = \Omega$, $A\tau = 2$ 可得 $\displaystyle \tau = \frac{2}{\pi}$, $A = \pi$
+      因此令 $\displaystyle \frac{\Omega\tau}{2} = \Omega$, $A\tau = 2$ 可得 $\tau = 2$, $A = 1$
       
       令新函数 $\displaystyle y(t) = x(t) * r(t) = \int_{-\infty}^{+\infty}x(\tau)r(t-\tau)\mathrm{d}\tau$
       
@@ -338,15 +338,15 @@
       \begin{aligned}
       \displaystyle 2\pi y(3) & = \int_{-\infty}^{+\infty}X(j\Omega)\frac{2\sin \Omega}{\Omega}e^{j 3\Omega}\mathrm{d}\Omega  \\
       & = 2\pi \int_{-\infty}^{+\infty}x(\tau)r(3-\tau)\mathrm{d}\tau  \\
-      & = 2\pi \int_{3-\frac{1}{\pi}}^{3+\frac{1}{\pi}}\pi x(\tau)\mathrm{d}\tau  \\
-      & = 2\pi \int_{3-\frac{1}{\pi}}^{3}2\pi\mathrm{d}\tau  \\
+      & = 2\pi \int_{3-1}^{3+1}x(\tau)\mathrm{d}\tau  \\
+      & = 2\pi \int_{3-1}^{3}2\mathrm{d}\tau  \\
       & = 4 \pi  \\
       \end{aligned}
       $
       
       \item (4)
       
-      $\displaystyle \int_{-\infty}^{+\infty}|X(j\Omega)|^{2}\mathrm{d}\Omega = 2\pi \int_{-\infty}^{+\infty}|x(t)|^{2}\mathrm{d}t = 2 \times 4 + 2\int_{1}^{2}t \mathrm{d}t = 11$
+      $\displaystyle \int_{-\infty}^{+\infty}|X(j\Omega)|^{2}\mathrm{d}\Omega = 2\pi \int_{-\infty}^{+\infty}|x(t)|^{2}\mathrm{d}t = 2\pi(2 \times 4 + 2\int_{1}^{2}t^{2} \mathrm{d}t ) = \frac{76 \pi}{3}$
     \end{itemize}
 \end{spacing}
 \end{framed}
@@ -377,13 +377,13 @@
       观察可知 $\displaystyle \frac{\sin 2t}{t}$ 为一个矩形信号 $X(j \Omega) = \begin{cases}
           2\pi A, & |\Omega| \le \frac{\tau}{2} \\
           0, & |\Omega| > \frac{\tau}{2} \\
-      \end{cases}$ 的反傅里叶变换 $\displaystyle A\tau \cdot \frac{\sin \frac{\pi t \tau}{2}}{\frac{\pi t \tau}{2}}$
+      \end{cases}$ 的反傅里叶变换 $\displaystyle A\tau \cdot \frac{\sin \frac{t \tau}{2}}{\frac{t \tau}{2}}$
       
-      因此令 $\displaystyle \frac{\pi t \tau}{2} = 2t$, $\displaystyle A\tau = 2$ 可得 $\displaystyle \tau = \frac{4}{\pi}$, $\displaystyle A = \frac{\pi}{2}$, $\displaystyle 2\pi A = \pi^{2}$
+      因此令 $\displaystyle \frac{t \tau}{2} = 2t$, $\displaystyle A\tau = 2$ 可得 $\displaystyle \tau = 4$, $\displaystyle A = \frac{1}{2}$, $\displaystyle 2\pi A = \pi$
       
       因此由帕斯瓦尔定理有
       
-      $\displaystyle \int_{-\infty}^{+\infty}\left( \frac{\sin 2t}{t} \right)^{2}\mathrm{d}t = \frac{1}{2\pi}\int_{-\frac{2}{\pi}}^{\frac{2}{\pi}}(\pi^{2})^{2}\mathrm{d}\Omega = 2 \pi^{2}$
+      $\displaystyle \int_{-\infty}^{+\infty}\left( \frac{\sin 2t}{t} \right)^{2}\mathrm{d}t = \frac{1}{2\pi}\int_{-2}^{2}\pi^{2}\mathrm{d}\Omega = 2 \pi$
       
       \item (2)
       

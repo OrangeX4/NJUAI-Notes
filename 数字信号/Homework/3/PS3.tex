@@ -1,0 +1,207 @@
+\documentclass[a4paper,UTF8]{article}
+\usepackage{ctex}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{mdframed}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{listings}
+
+\newmdtheoremenv{thm-box}{myThm}
+\newmdtheoremenv{prop-box}{Proposition}
+\newmdtheoremenv{def-box}{定义}
+
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\topmargin}{-0.5in}
+% \setlength{\textheight}{9.5in}
+%%%%%%%%%%%%%%%%%%此处用于设置页眉页脚%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}                                             
+\footskip = 10pt 
+\pagestyle{fancy}                    % 设置页眉                 
+\lhead{2022年秋季}                    
+\chead{数字信号处理}                                                
+% \rhead{第\thepage/\pageref{LastPage}页} 
+\rhead{作业三}                                                                                               
+\cfoot{\thepage}                                                
+\renewcommand{\headrulewidth}{1pt}  			%页眉线宽，设为0可以去页眉线
+\setlength{\skip\footins}{0.5cm}    			%脚注与正文的距离           
+\renewcommand{\footrulewidth}{0pt}  			%页脚线宽，设为0可以去页脚线
+
+\makeatletter 									%设置双线页眉                                        
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%
+		\hrule\@height 1.0pt \@width\headwidth\vskip1pt	%上面线为1pt粗  
+		\hrule\@height 0.5pt\@width\headwidth  			%下面0.5pt粗            
+		\vskip-2\headrulewidth\vskip-1pt}      			%两条线的距离1pt        
+	\vspace{6mm}}     								%双线与下面正文之间的垂直间距              
+\makeatother  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+%\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\newtheorem{myThm}{myThm}
+\newtheorem*{myDef}{Definition}
+\newtheorem*{mySol}{Solution}
+\newtheorem*{myProof}{Proof}
+\newtheorem*{myRemark}{备注}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\hat}{\widehat}
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+\newcommand*\diff{\mathop{}\!{d}}
+\setlength{\parindent}{0pt}
+\usepackage{multirow}
+
+
+\lstset{language=Matlab}%这条命令可以让LaTeX排版时将Matlab关键字突出显示
+\lstset{
+	breaklines,%这条命令可以让LaTeX自动将长的代码行换行排版
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	backgroundcolor=\color[rgb]{0.95,0.95,0.95},
+	keywordstyle=\color{blue},
+	commentstyle=\color{cyan},
+	tabsize=4,numbers=left,
+	numberstyle=\tiny,
+	frame=single,
+	%numbers=left, % Ort der Zeilennummern
+	numberstyle=\tiny, % Stil der Zeilennummern
+	%stepnumber=2, % Abstand zwischen den Zeilennummern
+	numbersep=5pt, % Abstand der Nummern zum Text
+	tabsize=2, % Groesse von Tabs
+	extendedchars=false, %
+	breaklines=true, % Zeilen werden Umgebrochen
+	keywordstyle=\color{red},%这一条命令可以解决代码跨页时, 章节标题, 页眉等汉字不显示的问题
+	stringstyle=\color{white}\ttfamily, % Farbe der String
+	showspaces=false, % Leerzeichen anzeigen ?
+	showtabs=false, % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false % Leerzeichen in Strings anzeigen ?
+}
+\renewcommand{\lstlistingname}{CODE}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+	%[Visual]Basic
+	%Pascal
+	%C
+	Python
+	%XML
+	%HTML
+	%Java
+}
+
+%--
+
+%--
+\begin{document}
+	
+	\title{数字信号处理\\
+		作业三}
+	\author{你的名字\, 你的学号} 
+	\maketitle
+	%%%%%%%% 注意: 使用XeLatex 编译可能会报错，请使用 pdfLaTex 编译 %%%%%%%
+	
+	\section*{作业提交注意事项}
+	\begin{tcolorbox}
+		\begin{enumerate}
+			\item[(1)] 本次作业提交截止时间为~\textcolor{red}{\textbf{2022/12/07  23:59:59}}，截止时间后不再接收作业，本次作业记零分；
+			\item[(2)] 作业提交方式：使用此 \LaTeX 模板书写解答，只需提交编译生成的~pdf~文件，将~pdf~文件以 sftp 方式上传，账号为 dsp2022，密码为 12345asd!@。请远程连接 sftp://www.lamda.nju.edu.cn，提交到 /D:/courses/DSP2022/HW/HW3 路径下。
+			\item[(3)] 文件命名方式：学号-姓名-作业号-v版本号, 例~ MG1900000-张三-3-v1；如果需要更改已提交的解答，请在截止时间之前提交新版本的解答，并将版本号加一；
+			\item[(4)] 未按照要求提交作业，或~pdf~命名方式不正确，将会被扣除部分作业分数。
+			
+		\end{enumerate}
+	\end{tcolorbox}
+	
+	
+	\newpage
+	\section{[30pts] 信号的抽样}
+	\begin{itemize}
+		\item[1.]有一理想抽样系统, 抽样频率为 $\Omega_{s}=6 \pi$, 抽样后经理想低通滤波器 $H_a({j} \Omega)$ 还原,其中
+		$$
+		H_a({j} \Omega)= \begin{cases}\frac{1}{2}, & |\Omega|<3 \pi \\ 0, & |\Omega| \geqslant 3 \pi\end{cases}
+		$$
+		
+		现有两个输入 $x_{a_1}(t)=\cos 2 \pi t$, $x_{a_2}(t)=\cos 5 \pi t$. 问输出信号 $y_{a_1}(t), y_{a_2}(t)$ 有无失真? 为什么?
+		\item[2.] 已知实信号 $x(t)$ 的奈奎斯特频率为 $\omega_0$, 试计算对下列各信号抽样不混叠的最小抽样频率.
+		\begin{itemize}
+			\item[(1)]$ x(t)+x(t-t_0) $
+			\item[(2)]$ x'(t) $
+			\item[(3)]$ x^2(t) $
+			\item[(4)]$ x(t)\cos \omega_0 t $
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{framed}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 你的解答。
+			\end{itemize}
+		\end{spacing}
+	\end{framed}
+	
+	\newpage
+	\section{[10pts] DFS}
+	求周期为 6 的序列$ x(n)=\{\cdots, 14, 12, 10, 8, 6, 10, \cdots\} $的傅里叶级数的系数.
+	
+	\begin{framed}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 你的解答。
+			\end{itemize}
+		\end{spacing}
+	\end{framed}
+	
+	\newpage
+	\section{[30pts] DTFT 及其逆变换}
+	\begin{itemize}
+		\item[1.] 对以下各序列, 试求其 DTFT.
+		\begin{itemize}
+			\item[(1)] $x(n)=(0.6)^n[u(n)-u(n-15)]$
+			\item[(2)] $x(n)=n(0.8)^n[u(n)-u(n-40)]$
+		\end{itemize}
+		\item[2.] $ X(e^{j\omega})= \begin{cases}2j, & 0<\omega \leqslant \pi \\ -2j, & -\pi<\omega \leqslant 0\end{cases} $, 求解其逆变换 $ x(n) $
+	\end{itemize}
+	
+	\begin{framed}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 你的解答。
+			\end{itemize}
+		\end{spacing}
+	\end{framed}
+	
+	\newpage
+	\section{[30pts] DTFT 和 DFS}
+	已知 $x(n)=\{2,1,4,2,3\}$
+	\begin{itemize}
+		\item[(1)]计算 $X({e}^{{j}\omega})=\operatorname{DTFT}[x(n)]$ 及 $X(k)=\operatorname{DFT}[x(n)]$.
+		\item[(2)]将 $x(n)$ 的尾部补零, 得到 $x_0(n)=\{2, 1,4,2,3,0,0,0\}$. 计算 $X_0({e}^{j \omega})=\operatorname{DTFT}[x_0(n)]$ 及 $X_0(k)=\operatorname{DFT}[x_0(n)]$.
+		\item[(3)]将 (1), (2) 的结果加以比较, 得出相应的结论.
+	\end{itemize}
+	
+	\begin{framed}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 你的解答。
+			\end{itemize}
+		\end{spacing}
+	\end{framed}
+	
+	
+\end{document}

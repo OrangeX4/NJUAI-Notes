@@ -1,0 +1,181 @@
+\documentclass[a4paper,UTF8]{article}
+\usepackage{ctex}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{mdframed}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{listings}
+
+\newmdtheoremenv{thm-box}{myThm}
+\newmdtheoremenv{prop-box}{Proposition}
+\newmdtheoremenv{def-box}{定义}
+
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\topmargin}{-0.5in}
+% \setlength{\textheight}{9.5in}
+%%%%%%%%%%%%%%%%%%此处用于设置页眉页脚%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}                                
+\usepackage{lastpage}                                           
+\usepackage{layout}                                             
+\footskip = 10pt 
+\pagestyle{fancy}                    % 设置页眉  
+
+
+%%%%%%%%%%%% 这里也填一下 %%%%%%%%%%%%%%%%%%                
+\lhead{你的学号}           
+%%%%%%%%%%%% 这里也填一下 %%%%%%%%%%%%%%%%%% 
+
+           
+\chead{数字信号处理}                                                
+% \rhead{第\thepage/\pageref{LastPage}页} 
+\rhead{作业四}                                                                                               
+\cfoot{\thepage}                                                
+\renewcommand{\headrulewidth}{1pt}  			%页眉线宽，设为0可以去页眉线
+\setlength{\skip\footins}{0.5cm}    			%脚注与正文的距离           
+\renewcommand{\footrulewidth}{0pt}  			%页脚线宽，设为0可以去页脚线
+
+\makeatletter 									%设置双线页眉                                        
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%
+		\hrule\@height 1.0pt \@width\headwidth\vskip1pt	%上面线为1pt粗  
+		\hrule\@height 0.5pt\@width\headwidth  			%下面0.5pt粗            
+		\vskip-2\headrulewidth\vskip-1pt}      			%两条线的距离1pt        
+	\vspace{6mm}}     								%双线与下面正文之间的垂直间距              
+\makeatother  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+%\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\newtheorem{myThm}{myThm}
+\newtheorem*{myDef}{Definition}
+\newtheorem*{mySol}{Solution}
+\newtheorem*{myProof}{Proof}
+\newtheorem*{myRemark}{备注}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\hat}{\widehat}
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+\newcommand*\diff{\mathop{}\!{d}}
+\setlength{\parindent}{0pt}
+\usepackage{multirow}
+
+\lstset{language=Matlab}%这条命令可以让LaTeX排版时将Matlab关键字突出显示
+\lstset{
+	breaklines,%这条命令可以让LaTeX自动将长的代码行换行排版
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	backgroundcolor=\color[rgb]{0.95,0.95,0.95},
+	keywordstyle=\color{blue},
+	commentstyle=\color{cyan},
+	tabsize=4,numbers=left,
+	numberstyle=\tiny,
+	frame=single,
+	%numbers=left, % Ort der Zeilennummern
+	numberstyle=\tiny, % Stil der Zeilennummern
+	%stepnumber=2, % Abstand zwischen den Zeilennummern
+	numbersep=5pt, % Abstand der Nummern zum Text
+	tabsize=2, % Groesse von Tabs
+	extendedchars=false, %
+	breaklines=true, % Zeilen werden Umgebrochen
+	keywordstyle=\color{red},%这一条命令可以解决代码跨页时, 章节标题, 页眉等汉字不显示的问题
+	stringstyle=\color{white}\ttfamily, % Farbe der String
+	showspaces=false, % Leerzeichen anzeigen ?
+	showtabs=false, % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false % Leerzeichen in Strings anzeigen ?
+}
+\renewcommand{\lstlistingname}{CODE}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+	%[Visual]Basic
+	%Pascal
+	%C
+	Python
+	%XML
+	%HTML
+	%Java
+}
+
+
+%--
+
+%--
+\begin{document}
+	
+	\title{数字信号处理\\
+		作业四}
+	\author{你的名字\, 你的学号} 
+	\maketitle
+	%%%%%%%% 注意: 使用XeLatex 编译可能会报错，请使用 pdfLaTex 编译 %%%%%%%
+	
+	\section*{作业提交注意事项}
+	\begin{tcolorbox}
+		\begin{enumerate}
+			\item[(1)] 本次作业提交截止时间为~\textcolor{red}{\textbf{2022/12/18  23:59:59}}，截止时间后不再接收作业，本次作业记零分；
+			\item[(2)] 作业提交方式：使用此 \LaTeX 模板书写解答，只需提交编译生成的~pdf~文件，将~pdf~文件以 sftp 方式上传，账号为 dsp2022，密码为 12345asd!@。请远程连接 sftp://www.lamda.nju.edu.cn，提交到 /D:/courses/DSP2022/HW/HW4 路径下。
+			\item[(3)] 文件命名方式：学号-姓名-作业号-v版本号, 例~ MG1900000-张三-4-v1；如果需要更改已提交的解答，请在截止时间之前提交新版本的解答，并将版本号加一；
+			\item[(4)] 未按照要求提交作业，或~pdf~命名方式不正确，将会被扣除部分作业分数。
+		\end{enumerate}
+	\end{tcolorbox}
+	
+	
+	\newpage
+	\section{[60pts] 拉普拉斯变换}
+	\begin{itemize}
+		\item[1.]计算下列函数的拉普拉斯变换.
+		\begin{itemize}
+			\item[(1)]$ te^{-(t-2)}u(t-1) $
+			\item[(2)]$ e^{-at}f\!\left(\frac{t}{a}\right) $, 已知 $\mathcal{L}[f(t)]=F(s)$
+			\item[(3)]$ t^2\cos(2t) $
+			\item[(4)]$ t^nu(t) $
+			\item[(5)]$ f(t)=\left\{\begin{array}{ll}
+				\sin (\omega t) & 0<t<\frac{T}{2},\ T=\frac{2 \pi}{\omega} \\
+				0 & t \text { 为其他值 }
+			\end{array} \right. $
+		\end{itemize}
+		
+		\item[2.]求 $ \displaystyle \frac{4s+5}{s^2+5s+6} $ 的拉普拉斯反变换.
+	\end{itemize}
+	
+	
+	\begin{framed}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 你的解答。
+			\end{itemize}
+		\end{spacing}
+	\end{framed}
+	
+	
+	
+	
+	\newpage
+	\section{[40pts] 拉普拉斯变换的应用}
+	已知一连续时间 LTI 系统的零状态响应
+	$$
+	y(t)=\left(1+0.6e^{-20t}-1.6e^{-10t}\right) x(t)
+	$$
+	已知 $x(t)=u(t)$, 由 $s$ 域求解:
+	\begin{itemize}
+		\item[(1)]该系统的系统函数 $H(s)$ 并画出零极点分布图;
+		\item[(2)]写出描述系统的微分方程和系统, 并求 $h(t)$;
+		\item[(3)]判断系统是否因果稳定.
+	\end{itemize}
+	
+	
+\end{document}

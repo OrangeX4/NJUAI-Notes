@@ -3,5 +3,6 @@
         "*.json": "jsonc",
         "*.tcc": "c"
     },
-    "python.formatting.provider": "autopep8"
+    "python.formatting.provider": "autopep8",
+    "python.analysis.typeCheckingMode": "basic"
 }

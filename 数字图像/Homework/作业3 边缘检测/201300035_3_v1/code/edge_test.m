@@ -26,7 +26,7 @@ imtool(img_edge);
 %now call your function my_edgelinking, you can use matlab bwtraceboundary 
 %function to see the last result as a reference first. please trace as many 
 %different object boundaries as you can, and choose different start edge points.
-Bxpc = bwtraceboundary(img_edge, [197, 329], 'N');
+Bxpc = bwtraceboundary(img_edge, [231, 329], 'N');
 %Bxpc = my_edgelinking(img_edge, 197, 329);
 hold on
 plot(Bxpc(:,2), Bxpc(:,1), 'w', 'LineWidth', 1);

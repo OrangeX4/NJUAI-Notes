@@ -84,7 +84,7 @@ def test_edge_link():
 
 if __name__ == '__main__':
     # 边缘检测测试
-    filename = 'rubberband_cap.png'
+    filename = '../asset/image/rubberband_cap.png'
     # filename = '../asset/image/building_original.jpg'
     # filename = '../asset/image/ayu.jpg'
     # filename = '../asset/image/giraffe.jpg'

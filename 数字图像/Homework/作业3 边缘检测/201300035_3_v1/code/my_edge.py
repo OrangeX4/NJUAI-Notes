@@ -206,7 +206,7 @@ def test_edge(filename: str, edge_func: Callable, *, args={}, title='Edge Image'
 
 if __name__ == '__main__':
 
-    filename = 'rubberband_cap.png'
+    filename = '../asset/image/rubberband_cap.png'
     # filename = '../asset/image/building_original.jpg'
     # filename = '../asset/image/ayu.jpg'
     # filename = '../asset/image/giraffe.jpg'

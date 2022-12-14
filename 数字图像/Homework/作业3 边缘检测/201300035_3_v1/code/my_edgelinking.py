@@ -143,7 +143,7 @@ def test_edge_link(filename: str, edge_func: Callable, k=3, *, args={}, title='E
 
 if __name__ == '__main__':
 
-    filename = 'rubberband_cap.png'
+    filename = '../asset/image/rubberband_cap.png'
 
     # test_edge_link(filename, my_gradient_thresholding,
     #     args={'threshold': 200}, title='Gradient Thresholding Edge Image')

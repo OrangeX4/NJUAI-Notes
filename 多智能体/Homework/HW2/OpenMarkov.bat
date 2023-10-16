@@ -1,0 +1,1 @@
+java -jar ./OpenMarkov-0.4.3.jar %*

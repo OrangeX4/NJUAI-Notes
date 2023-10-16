@@ -1,36 +1,50 @@
-# 凸优化
+# 矩阵微积分
 
-## 复习重点
+## 导数
 
-![](images/2022-01-07-23-46-30.png)
+假定 $f: \mathbb{R}^{n} \to \mathbb{R}^{m}, x \in \text{intdom } f$, 存在矩阵 $Df(x) \in \mathbb{R}^{m \times n}$ 满足
 
-![](images/2022-01-07-23-46-45.png)
+$$
+\lim_{z\in \text{dom }f, z\neq x, z \to x} \frac{\left\| f(z)-f(x)-Df(x)(z-x) \right\|_{2}}{\left\| z-x \right\|_{2}} = 0
+$$
 
-## 0. 前置知识
+则称 $Df(x)$ 为 $f$ 在 $x$ 处的 **导数** 或 **Jacobian 矩阵**.
 
-### 0.1 范数
+我们将 $z$ 的仿射函数
 
-- 非负性: $f(x)\geqslant 0$
-- 正定性: 当且仅当 $x=0$ 时有 $f(x)=0$
-- 齐次性: $f(tx)=|t|f(x)$
-- 三角不等式: $f(x+y)\leqslant f(x)+f(y)$
+$$
+f(x) + Df(x)(z-x)
+$$
 
-对偶范数 $\|z\|_{*}=\sup \{z^{T}x|\|x\|\leqslant 1\}$, 因此有不等式 $z^{T}x\leqslant \|x\|\|z\|_{*}$
+称为 $f$ 在 $x$ 处的一次逼近.
 
-常见对偶范数存在关系 $\displaystyle \frac{1}{p}+\frac{1}{q}=1$
+可以通过计算偏导数
 
-比如 $l_{2}$ 范数和 $l_{2}$ 范数自身是对偶范数.
+$$
+Df(x)_{ij} = \frac{\partial f_{i}(x)}{\partial x_j}, i = 1, \cdots, m, j = 1,\cdots ,n
+$$
 
-还可以对矩阵定义算子范数:
+来计算导数矩阵.
 
-$\|X\|_{a,b}=\sup \{\|Xu\|_{a}|\|u\|_{b}\leqslant 1\}$
 
-当均为 Euclid 范数时, $X$ 的算子范数就是它的最大奇异值, 用 $\|X\|_{2}$ 表示, 称作谱范数
+## 梯度
 
-$\|X\|_{2}=\sigma_{\max}(X)=(\lambda_{\max}(X^{T}X))^{\frac{1}{2}}$
+对于实函数 $f: \mathbb{R}^{n} \to \mathbb{R}$ 来说, 导数 $Df(x)$ 是 $1\times n$ 矩阵, 即行向量, 它的转置是一个列向量, 称为 **梯度**
 
-其对偶范数为奇异值之和, 称作核范数
+$$
+\nabla f(x) = Df(x)^{\top}
+$$
 
-$\|Z\|_{2*}=\sigma_1(Z)+\cdots+\sigma_{r}(Z)=tr(Z^{T}Z)^{\frac{1}{2}}$
+所以求梯度的话, 可以先求出导数, 再转置成为梯度.
 
-$\displays
+## 链式法则
+
+对于 $h(z)=g(f(z))$ 有
+
+$$
+Dh(x) = Dg(f(x))Df(x)
+$$
+
+
+
+

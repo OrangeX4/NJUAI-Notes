@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DEC_POMDP">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Agents />
+    <TimeUnit unit="YEAR" Value="1.0" />
+    <Variables>
+      <Variable name="State" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="279" y="161" />
+        <States>
+          <State name="Tiger_Left" />
+          <State name="Tiger_Right" />
+        </States>
+      </Variable>
+      <Variable name="State" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="667" y="161" />
+        <States>
+          <State name="Tiger_Left" />
+          <State name="Tiger_Right" />
+        </States>
+      </Variable>
+      <Variable name="Observation1" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="666" y="70" />
+        <States>
+          <State name="Roar_Left" />
+          <State name="Roar_Right" />
+        </States>
+      </Variable>
+      <Variable name="Observation2" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="666" y="248" />
+        <States>
+          <State name="Roar_Left" />
+          <State name="Roar_Right" />
+        </States>
+      </Variable>
+      <Variable name="Action1" timeSlice="0" type="finiteStates" role="decision">
+        <Coordinates x="397" y="70" />
+        <States>
+          <State name="Listen" />
+          <State name="Open_Left" />
+          <State name="Open_Right" />
+        </States>
+      </Variable>
+      <Variable name="Action2" timeSlice="0" type="finiteStates" role="decision">
+        <Coordinates x="400" y="248" />
+        <States>
+          <State name="Listen" />
+          <State name="Open_Left" />
+          <State name="Open_Right" />
+        </States>
+      </Variable>
+      <Variable name="Action1" timeSlice="1" type="finiteStates" role="decision">
+        <Coordinates x="913" y="71" />
+        <States>
+          <State name="Listen" />
+          <State name="Open_Left" />
+          <State name="Open_Right" />
+        </States>
+      </Variable>
+      <Variable name="Action2" timeSlice="1" type="finiteStates" role="decision">
+        <Coordinates x="915" y="248" />
+        <States>
+          <State name="Listen" />
+          <State name="Open_Left" />
+          <State name="Open_Right" />
+        </States>
+      </Variable>
+      <Variable name="Utility" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="73" y="161" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Utility" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="1" />
+        <Variable name="Observation1" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="1" />
+        <Variable name="Observation2" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Observation1" timeSlice="1" />
+        <Variable name="Action1" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Observation2" timeSlice="1" />
+        <Variable name="Action2" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action1" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action1" timeSlice="0" />
+        <Variable name="Observation1" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action1" timeSlice="0" />
+        <Variable name="Utility" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action1" timeSlice="0" />
+        <Variable name="Observation2" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action2" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action2" timeSlice="0" />
+        <Variable name="Observation2" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action2" timeSlice="0" />
+        <Variable name="Utility" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Action2" timeSlice="0" />
+        <Variable name="Observation1" timeSlice="1" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="1" />
+          <Variable name="State" timeSlice="0" />
+          <Variable name="Action1" timeSlice="0" />
+          <Variable name="Action2" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Action1" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="Open_Left" />
+              <State name="Open_Right" />
+            </States>
+            <Potential type="Uniform">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+              </Variables>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Listen" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+                <Variable name="State" timeSlice="0" />
+                <Variable name="Action2" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Action2" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="Open_Right" />
+                    <State name="Open_Left" />
+                  </States>
+                  <Potential type="Uniform">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                    </Variables>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="Listen" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                      <Variable name="State" timeSlice="0" />
+                    </Variables>
+                    <TopVariable name="State" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Right" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <Values>0.0 1.0</Values>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Left" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <Values>1.0 0.0</Values>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Observation1" timeSlice="1" />
+          <Variable name="Action1" timeSlice="0" />
+          <Variable name="Action2" timeSlice="0" />
+          <Variable name="State" timeSlice="1" />
+        </Variables>
+        <TopVariable name="Action1" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="Open_Right" />
+            </States>
+            <Potential type="Uniform">
+              <Variables>
+                <Variable name="Observation1" timeSlice="1" />
+              </Variables>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Open_Left" />
+            </States>
+            <Potential type="Uniform">
+              <Variables>
+                <Variable name="Observation1" timeSlice="1" />
+              </Variables>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Listen" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Observation1" timeSlice="1" />
+                <Variable name="Action2" timeSlice="0" />
+                <Variable name="State" timeSlice="1" />
+              </Variables>
+              <TopVariable name="Action2" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="Open_Right" />
+                  </States>
+                  <Potential type="Uniform">
+                    <Variables>
+                      <Variable name="Observation1" timeSlice="1" />
+                    </Variables>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="Open_Left" />
+                  </States>
+                  <Potential type="Uniform">
+                    <Variables>
+                      <Variable name="Observation1" timeSlice="1" />
+                    </Variables>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="Listen" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Observation1" timeSlice="1" />
+                      <Variable name="State" timeSlice="1" />
+                    </Variables>
+                    <TopVariable name="State" timeSlice="1" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Right" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Observation1" timeSlice="1" />
+                          </Variables>
+                          <Values>0.85 0.15</Values>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Left" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Observation1" timeSlice="1" />
+                          </Variables>
+                          <Values>0.15 0.85</Values>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Observation2" timeSlice="1" />
+          <Variable name="Action1" timeSlice="0" />
+          <Variable name="Action2" timeSlice="0" />
+          <Variable name="State" timeSlice="1" />
+        </Variables>
+        <TopVariable name="Action1" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="Open_Right" />
+            </States>
+            <Potential type="Uniform">
+              <Variables>
+                <Variable name="Observation2" timeSlice="1" />
+              </Variables>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Open_Left" />
+            </States>
+            <Potential type="Uniform">
+              <Variables>
+                <Variable name="Observation2" timeSlice="1" />
+              </Variables>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Listen" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Observation2" timeSlice="1" />
+                <Variable name="Action2" timeSlice="0" />
+                <Variable name="State" timeSlice="1" />
+              </Variables>
+              <TopVariable name="Action2" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="Open_Right" />
+                  </States>
+                  <Potential type="Uniform">
+                    <Variables>
+                      <Variable name="Observation2" timeSlice="1" />
+                    </Variables>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="Open_Left" />
+                  </States>
+                  <Potential type="Uniform">
+                    <Variables>
+                      <Variable name="Observation2" timeSlice="1" />
+                    </Variables>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="Listen" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Observation2" timeSlice="1" />
+                      <Variable name="State" timeSlice="1" />
+                    </Variables>
+                    <TopVariable name="State" timeSlice="1" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Right" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Observation2" timeSlice="1" />
+                          </Variables>
+                          <Values>0.85 0.15</Values>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="Tiger_Left" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Observation2" timeSlice="1" />
+                          </Variables>
+                          <Values>0.15 0.85</Values>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Utility" timeSlice="0" />
+        <Variables>
+          <Variable name="Action1" timeSlice="0" />
+          <Variable name="Action2" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>-1.0 -100.0 10.0 -100.0 -50.0 -100.0 10.0 -100.0 20.0 -1.0 10.0 -100.0 10.0 20.0 -100.0 -100.0 -100.0 -50.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+    <TemporalOptions>
+      <Slices>0</Slices>
+      <Transition>BEGINNING</Transition>
+      <DiscountRates>
+        <DiscountRate Criterion="---" value="0.0" unit="YEAR" />
+      </DiscountRates>
+    </TemporalOptions>
+  </InferenceOptions>
+  <Policies>
+    <Potential type="Table" role="conditionalProbability">
+      <Variables>
+        <Variable name="Action1" timeSlice="0" />
+      </Variables>
+      <Values>0.3333333333333333 0.3333333333333333 0.3333333333333333</Values>
+    </Potential>
+    <Potential type="Uniform" role="conditionalProbability">
+      <Variables>
+        <Variable name="Action2" timeSlice="0" />
+      </Variables>
+    </Potential>
+    <Potential type="Table" role="conditionalProbability">
+      <Variables>
+        <Variable name="Action1" timeSlice="1" />
+        <Variable name="Observation1" timeSlice="1" />
+      </Variables>
+      <Values>0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333</Values>
+    </Potential>
+    <Potential type="Uniform" role="conditionalProbability">
+      <Variables>
+        <Variable name="Action2" timeSlice="1" />
+        <Variable name="Observation2" timeSlice="1" />
+      </Variables>
+    </Potential>
+  </Policies>
+</ProbModelXML>

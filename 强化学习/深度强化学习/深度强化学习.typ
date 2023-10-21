@@ -377,4 +377,145 @@ SARSA 算法不存在最大化这个问题，但仍然存在自举问题，因�
 
 = 策略学习
 
-TODO
+策略学习的意思是通过求解一个优化问题，学出最优策略函数或它的近似。
+
+== 策略网络
+
+对于离散动作空间来说，策略函数 $pi$ 是个条件概率质量函数： 
+
+$ pi(a|s) eq.delta PP(A=a | S=s) $
+
+为了得到这样要给策略函数，当前最有效的方法是通过神经网络 $pi(a|s\;theta)$ 近似策略函数 $pi(a|s)$。神经网络 $pi(a|s\;theta)$ 被称为策略网络。
+
+== 策略学习的目标函数
+
+我们有动作值函数
+
+$ Q_(pi)(s_t, a_t) = EE[U_t | S_t = s_t, A_t = a_t] $
+
+则也有状态值函数
+
+$ V_(pi)(s_t) = EE_(A_t tilde pi(dot|s_t \; theta))[Q_(pi)(s_t, A_t)] $
+
+如果一个策略很好，那么对所有的状态 $S$，状态价值 $V_(pi)(S)$ 的均值应该很大，因此我们可以定义目标函数
+
+#emph-box($ J(theta) = EE_(S)[V_(pi)(S)] $)
+
+这个目标函数排除了状态 $S$ 的影响，只依赖于策略网络 $pi$ 的参数 $theta$，因此策略学习可以描述为优化问题
+
+#emph-box($ max_(theta) J(theta) $)
+
+我们使用梯度上升可得
+
+$ theta_("new") <- theta_("now") + beta dot nabla_(theta) J(theta_("now")) $
+
+其中梯度
+
+$ nabla_(theta) J(theta_("now")) eq.delta (diff J(theta))/(diff theta)|_(theta=theta_("now")) $
+
+被称为策略梯度，我们可以使用 *策略梯度定理*：
+
+#theorem-box(title: "策略梯度定理（不严谨表述）", $ (diff J(theta))/(diff theta) = EE_(S)[EE_(A tilde pi(dot|S \; theta))[(diff ln pi(A|S \; theta))/(diff theta) dot Q_(pi)(S, A)]] $)
+
+更严格的表述是
+
+#theorem-box(title: "策略梯度定理（完整表述）", $ (diff J(theta))/(diff theta) = (1 - gamma^(n))/(1 - gamma) EE_(S tilde d(dot))[EE_(A tilde pi(dot|S \; theta))[(diff ln pi(A|S \; theta))/(diff theta) dot Q_(pi)(S, A)]] $)
+
+其中 $d(dot)$ 是马尔科夫链的稳态分布，而系数 $(1 - gamma^(n)) / (1 - gamma)$ 无关紧要，因为会被学习率 $beta$ 吸收掉。
+
+
+== 近似策略梯度
+
+为了进行梯度上升：
+
+$ theta_("new") <- theta_("now") + beta dot nabla_(theta) J(theta_("now")) $
+
+*策略梯度定理* 证明：
+
+$ nabla_(theta) J(theta) = EE_(S)[EE_(A tilde pi(dot|S \; theta))[(diff ln pi(A|S \; theta))/(diff theta) dot Q_(pi)(S, A)]] $
+
+解析求出这个期望是不可能的，因为我们并不知道状态 $S$ 概率密度函数，即使我们知道，我们也不愿意这样做，因为连加或定积分的计算量非常大。
+
+我们可以使用期望的蒙特卡洛近似，用于近似策略梯度中的期望。每次从环境中观测一个状态 $s$，它相当于随机变量 $S$ 的观测值，然后再根据当前最新的策略网络随机抽样得出一个动作：
+
+$ a tilde pi(dot|s \; theta) $
+
+计算得到随机梯度
+
+#emph-box($ g(s, a; theta) eq.delta Q_(pi)(s, a) dot nabla_(theta) ln pi(a|s\;theta) $)
+
+很显然，$g(s, a; theta)$ 是策略梯度 $nabla_(theta) J(theta)$ 的无偏估计，于是我们有结论
+
+#conclusion-box(title: "结论")[
+  随机梯度 $g(s, a; theta) eq.delta Q_(pi)(s, a) dot nabla_(theta) ln pi(a|s\;theta)$ 是策略梯度 $nabla_(theta) J(theta)$ 的无偏估计。
+]
+
+应用上述结论，则可以通过随机梯度上升来更新 $theta$：
+
+$ theta <- theta + beta dot g(s, a; theta) $
+
+但是这种方法仍然不可行，因为我们不知道动作价值函数 $Q_(pi)(s, a)$。在后面，我们可以有两种方法对 $Q_(pi)(s, a)$ 近似，一种是 REINFORCE，用实际观测的回报 $u$ 近似 $Q_(pi)(s, a)$；另一种方法是 Actor-Critic，用神经网络 $q(s, a; w)$ 近似 $Q_(pi)(s, a)$。
+
+
+== REINFORCE
+
+由于动作价值定义为 $U_t$ 的条件期望
+
+$ Q_(pi)(s_t, a_t) = EE[U_t | S_t = s_t, A_t = a_t] $
+
+让智能体完成一局游戏，观测到所有奖励，然后计算出 $u_t = sum_(k=t)^(n) gamma^(k - t) dot r_k$。由于 $u_t$ 是 $U_t$ 的观测值，所以是该公式的蒙特卡洛近似。实践中，可以使用 $u_t$ 代替 $Q_(pi)(s_t, a_t)$，那么随机梯度 $g(s_t, a_t; theta)$ 可以近似成
+
+#emph-box($ tilde(g)(s_t, a_t; theta) = u_t dot nabla_(theta) ln pi(a_t|s_t\;theta) $)
+
+$tilde(g)$ 是 $g$ 的无偏估计，所以也是策略梯度 $nabla_(theta) J(theta)$ 的无偏估计；$tilde(g)$ 也是一种随机梯度。
+
+这种方法就叫 REINFORCE。
+
+*训练流程*：
+
++ 用策略网络 $theta_("now")$ 控制智能体从头玩一局游戏，得到一条轨迹： $ s_1, a_1, r_1, quad, s_2, a_2, r_2, quad ..., quad, s_n, a_n, r_n $
++ 计算所有的回报： $ u_t = sum_(k=t)^(n) gamma^(k-t) dot r_k, quad forall t = 1, ..., n $
++ 用 ${(s_t, a_t)}_(t=1)^(n)$ 作为数据，做反向传播计算： $ nabla_(theta) ln pi(a_t|s_t\;theta_("now")), quad nabla forall t = 1, ..., n $
++ 做随机梯度上升更新策略网络参数： $ theta_("new") <- theta_("now") + beta dot sum_(t=1)^(n) gamma^(t-1) dot underbrace(u_t dot nabla_(theta) ln pi(a_t|s_t\;theta_("now")), zh("即随机梯度") tilde(g)(s_t, a_t; theta_("now"))) $
+
+注意，REINFORCE 是一种 *同策略* 方法，要求行为策略与目标策略相同，因此不适用经验回放。
+
+
+== Actor-Critic
+
+Actor-Critic 方法使用神经网络近似动作价值函数 $Q_(pi)(s, a)$，这个神经网络叫做价值网络，记作 $q(s, a; w)$。
+
+价值网络与 DQN 的区别：
+
+- 价值网络是对动作价值函数 $Q_(pi)(s, a)$ 的近似，而 DQN 则是对最优动作价值函数 $Q_(star)(s, a)$ 的近似。
+- 对价值网络的训练使用的是 SARSA 算法，是同策略算法，不能用经验回放；而 DQN 训练使用的是 Q 学习算法，属于异策略，可以用经验回放。
+
+Actor-Critic 翻译成「演员—评委」方法。策略网络 $pi(a|s\;theta)$ 相当于演员，它基于状态 $s$ 做出动作 $a$。价值网络 $q(s, a; w)$ 相当于评委，它给演员打分，量化在状态 $s$ 下做动作 $a$ 的好坏程度。
+
+为什么我们不能直接将当前奖励 $R$ 反馈给策略网络（演员），而是要用价值网络（评委）这一个中介呢？这是因为策略学习的目标函数 $J(theta)$ 是回报 $U$ 的期望，而不是奖励 $R$ 的期望。虽然我们能观测到当前奖励 $R$，但是它对策略网络毫无意义。而我们使用 $R$ 帮忙训练价值网络，价值网络经过训练后能够估算出回报 $U$ 的期望。
+
+而加入中介价值网络（评委）的好处是不再需要像 REINFORCE 一样要完成一整局游戏后才能进行一次更新。
+
+将之前的策略梯度无偏估计：
+
+$ g(s, a; theta) eq.delta Q_(pi)(s, a) dot nabla_(theta) ln pi(a|s\;theta) $
+
+里的动作价值函数 $Q_(pi)(s, a)$ 替换成价值网络即可得到近似策略梯度：
+
+#emph-box($ hat(g)(s, a; theta) eq.delta q(s, a; w) dot nabla_(theta) ln pi(a|s\;theta) $)
+
+最后做梯度上升即可。
+
+*训练流程（使用 SARSA 训练，含目标网络）*：
+
++ 观测到当前状态 $s_t$，根据策略网络做决策：$a_t tilde pi(dot|s_t\;theta_("now"))$，并让智能体执行动作 $a_t$。
++ 从环境中观测到奖励 $r_t$ 和新状态 $s_(t+1)$。
++ 根据策略网络做决策：$tilde(a)_(t+1) tilde pi(dot|s_(t+1)\; theta_("now"))$，但不让智能体执行动作 $tilde(a)_(t+1)$。
++ 让价值网络给 $s_t, a_t$ 打分： $ hat(q)_t = q(s_t, a_t; w_("now")). $
++ 让目标网络给 $s_(t+1), tilde(a)_(t+1)$ 打分： $ hat(q)_(t+1)^(-) = q(s_(t+1), tilde(a)_(t+1); w_("now")^(-)). $
++ 计算 TD 目标与 TD 误差： $ hat(y)_t^(-) = r_t + gamma dot hat(q)_(t+1)^(-) quad zh("和") quad delta_t = hat(q)_t - hat(y)_t^(-). $
++ 更新价值网络： $ w_("new") <- w_("now") - alpha dot delta_t dot nabla_(w) q(s_t, a_t; w_("now")). $
++ 更新策略网络： $ theta_("new") <- theta_("now") + beta dot hat(q)_t dot nabla_(theta) ln pi(a_t|s_t\;theta_("now")). $
++ 设 $tau in (0, 1)$ 是需要手动调的超参数。做加权平均更新目标网络的参数： $ w_("new")^(-) <- tau dot w_("new") + (1 - tau) dot w_("now")^(-). $
+
+

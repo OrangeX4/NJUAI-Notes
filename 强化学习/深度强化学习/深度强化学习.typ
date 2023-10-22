@@ -1,6 +1,7 @@
 #import "@local/mytemplate:0.1.0": *
 
 #set heading(numbering: Numbering.with(first-level: "一、", "1.1"))
+#set enum(numbering: "1.a.")
 
 // apply the template
 #show: report.with(
@@ -136,7 +137,7 @@ $ Q_(star)(s_t, a_t) = max_(pi) Q_(pi)(s_t, a_t), quad forall s_t in cal(S), thi
 
 最优策略函数：
 
-$ pi^(star)(s_t, a_t) = arg max_(pi) Q_(pi)(s_t, a_t), quad forall s_t in cal(S), thick a_t in cal(A) $
+$ pi^(star)(s_t, a_t) = argmax_(pi) Q_(pi)(s_t, a_t), quad forall s_t in cal(S), thick a_t in cal(A) $
 
 ==== 状态价值函数
 
@@ -231,7 +232,7 @@ $ w <- w - alpha dot delta_t dot nabla_(w) Q(s_t, a_t; w) $
 
 === 用 Q 学习训练 DQN
 
-+ *收集训练数据*：使用行为策略（Behavior Prolicy）如 $epsilon$-greedy 策略 $ a_t = cases(arg max_(a) Q(s_t, a; w)\, & quad zh("以概率") (1 - epsilon), zh("均匀抽取") cal(A) zh("中的一个动作")\, & quad zh("以概率") epsilon) $ 收集到一局游戏中的轨迹，并且划分成 $n$ 个 $(s_t, a_t, r_t, s_(t+1))$ 这种四元组，存入 *经验回放数组*（Replay Buffer）。
++ *收集训练数据*：使用行为策略（Behavior Prolicy）如 $epsilon$-greedy 策略 $ a_t = cases(argmax_(a) Q(s_t, a; w)\, & quad zh("以概率") (1 - epsilon), zh("均匀抽取") cal(A) zh("中的一个动作")\, & quad zh("以概率") epsilon) $ 收集到一局游戏中的轨迹，并且划分成 $n$ 个 $(s_t, a_t, r_t, s_(t+1))$ 这种四元组，存入 *经验回放数组*（Replay Buffer）。
 + *更新 DQN 参数 $w$*：取出一个四元组 $(s_j, a_j, r_j, s_(j+1))$。
   + 对 DQN 做正向传播，得到 Q 值：$ hat(q)_j = Q(s_j, a_j; w_("now")) zh("和") hat(q)_(j+1) = max_(a in cal(A)) Q(s_(j+1), a; w_("now")) $
   + 计算 TD 目标和 TD 误差：$ hat(y)_j = r_j + gamma dot hat(q)_(j+1) zh("和") delta_j = hat(q)_j - hat(y)_j $
@@ -665,5 +666,89 @@ $ hat(y)_t ::= r_t + gamma dot v(s_(t+1); w) quad zh("和") quad delta_t ::= v(s
 + 更新价值网络： $ w_("new") <- w_("now") - alpha dot delta_t dot nabla_(w) v(s_t; w_("now")). $
 + 更新策略网络： $ theta_("new") <- theta_("now") - beta dot delta_t dot nabla_(theta) ln pi(a_t|s_t\;theta_("now")). $
 + 设 $tau in (0, 1)$ 是需要手动调的超参数。做加权平均更新目标网络的参数： $ w_("new")^(-) <- tau dot w_("new") + (1 - tau) dot w_("now")^(-). $
+
+
+
+= 策略学习高级技巧
+
+== Trust Region Policy Optimization（TRPO）
+
+置信域策略优化是一种策略学习方法，可以代替策略梯度方法。跟策略梯度方法相比，TRPO 有两个优势：第一，TRPO 表现更稳定，收敛曲线不会剧烈波动，而且对学习率不敏感；第二，TRPO 用更少的经验就能达到与策略梯度方法相同的表现。
+
+学习 TRPO 的关键在于理解置信域方法（Trust Region Methods）。
+
+=== 置信域方法
+
+置信域方法需要构造一个函数 $L(theta|theta_("now"))$，这个函数要满足条件：
+
+$ L(theta|theta_("now")) zh("很接近") J(theta), quad forall theta in cal(N)(theta_("now")), $
+
+那么集合 $cal(N)(theta_("now"))$ 就被称作 *置信域*。顾名思义，在 $theta_("now")$ 的邻域上，我们可以信任 $L(theta|theta_("now"))$，可以拿 $L(theta|theta_("now"))$ 来替代目标函数 $J(theta)$。
+
+因此置信域方法主要分两步：
+
+- *第一步——做近似*：给定 $theta_("now")$，构造函数 $L(theta|theta_("now"))$，使得对于所有 $theta in cal(N)(theta_("now"))$，函数值 $L(theta|theta_("now"))$ 与 $J(theta)$ 足够接近。
+  - 近似的方法多种多样，如蒙特卡洛、二阶泰勒展开等。
+- *第二步——最大化*：在置信域 $cal(N)(theta_("now"))$ 中寻找变量 $theta$ 的值，使得函数 $L$ 的值最大化。把找到的值记作 $ theta_("new") - argmax_(theta in cal(N)(theta_("now"))) L(theta | theta_("now")) $
+  - 需要求解一个带约束的最大化问题，求解这个问题的数值优化方法很多，如梯度投影算法、拉格朗日法等。
+  - 置信域 $cal(N)(theta_("now"))$ 也有很多选择，既可以是球，也可以是两个概率分布的 KL 散度（KL Divergence）。
+
+
+=== 策略学习
+
+状态价值函数可以转化为等价形式：
+
+$
+V_(pi)(s) &= EE_(A tilde pi(dot|s\;theta))[Q_(pi)(s, A)] = sum_(a in cal(A)) pi(a|s\;theta) dot Q_(pi)(s, a)  \
+&= sum_(a in cal(A)) pi(a|s\;theta_("now")) dot pi(a|s\; theta)/pi(a|s\; theta_("now")) dot Q_(pi)(s, a)  \
+&= EE_(A tilde pi(dot|s\;theta_("now"))) [pi(A|s\; theta)/pi(A|s\; theta_("now")) dot Q_(pi)(s, A)]  \
+$
+
+因此策略学习的目标函数 $J(theta) = EE_(S)[V_(pi)(S)]$ 也可以转化为等价形式。
+
+#theorem-box(title: "目标函数等价形式")[
+  目标函数 $J(theta)$ 可以等价写成：
+
+  $ J(theta) = EE_(S)[EE_(A tilde pi(dot|s\;theta_("now"))) [pi(A|s\; theta)/pi(A|s\; theta_("now")) dot Q_(pi)(s, A)]] $
+
+  上面 $Q_(pi)$ 中的 $pi$ 指的是 $pi(A|S\; theta)$。
+]
+
+
+=== 训练流程
+
++ 做近似——构造函数 $tilde(L)$ 近似目标函数 $J(theta)$：
+  + 设当前策略网络参数是 $theta_("now")$。用策略网络 $pi(a|s\;theta_("now"))$ 控制智能体与环境交互，玩完一局游戏，记下轨迹： $ s_1, a_1, r_1, quad s_2, a_2, r_2, quad ..., quad s_n, a_n, r_n. $
+  + 对于所有的 $t = 1, ..., n$，计算折扣回报 $u_t = sum_(k=t)^(n) gamma^(k - t) dot r_k$。
+  + 得出无偏的蒙特卡洛近似函数： $ tilde(L)(theta | theta_("now")) = sum_(t=1)^(n) pi(a_t|s_t\;theta)/pi(a_t|s_t\;theta_("now")) dot u_t. $
++ 最大化——用某种数值算法求解带约束的最大化问题： $ theta_("new") = argmax_(theta) tilde(L)(theta|theta_("now")); quad "s.t." norm(theta - theta_("now"))_(2) <= Delta. $ 此处的约束时二范数距离，也可以替换成 KL 散度，即 $ theta_("new") = argmax_(theta) tilde(L)(theta|theta_("now")); quad "s.t." 1/t sum_(i=1)^(t) op("KL")[pi(dot|s_i\; theta_("now"))|| pi(dot|s_i\; theta)] <= Delta. $
+
+由于 KL 散度能够衡量两个概率质量函数的接近程度，因此效果一般比球置信域的效果要好。
+
+TRPO 有两个要调的超参数：一个是置信域的半径 $Delta$，另一个是求解最大化问题中数值算法的学习率。一般而言，$Delta$ 在算法运行过程中要逐渐缩小。
+
+
+== 熵正则
+
+策略学习的目标是学习一个策略网络 $pi(a|s\;theta)$ 用于控制智能体，我们希望策略网络的输出的概率不要集中在一个动作上，至少要给其他动作一些非零概率。我们可以用熵来衡量概率分布的不确定性，熵小代表概率质量集中，熵大说明随机性很大。
+
+因此我们不妨把熵作为正则项，放在策略学习的目标函数中。策略网络的输出是维度等于 $|cal(A)|$ 的向量，这是动作空间上的离散概率分布，这个概率分布的熵定义为：
+
+#emph-box($ H(s; theta) ::= op("Entropy")[pi(dot|s\;theta)] = - sum_(a in cal(A)) pi(a|s\;theta) dot ln pi(a|s\;theta). $)
+
+因此加入正则项后最大化问题变为：
+
+#emph-box($ max_(theta) J(theta) + lambda dot EE_(S)[H(S; theta)] $)
+
+带熵正则的最大化问题可以用各种方法求解，其中使用策略梯度方法求关于 $theta$ 的梯度是：
+
+$ g(theta) ::= nabla_(theta)[J(theta) + lambda dot EE_(S)[H(S; theta)]]. $
+
+观测到状态 $s$，按照策略网络做随机抽样，得到动作 $a tilde pi(dot|s\; theta)$。那么
+
+$ tilde(g)(s,a;theta) ::= [Q_(pi)(s, a) - lambda dot ln pi(a|s\;theta) - lambda] dot nabla_(theta) ln pi(a|s\; theta) $
+
+是梯度 $g(theta)$ 的无偏估计。
+
 
 

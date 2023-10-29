@@ -15,6 +15,10 @@
     show-outline: false,
 )
 
+// 每一章都作为单页的开头
+#show heading.where(level: 1): it => pagebreak(weak: true) + it
+
+
 = 基础知识
 
 == 蒙特卡洛方法
@@ -749,6 +753,217 @@ $ g(theta) ::= nabla_(theta)[J(theta) + lambda dot EE_(S)[H(S; theta)]]. $
 $ tilde(g)(s,a;theta) ::= [Q_(pi)(s, a) - lambda dot ln pi(a|s\;theta) - lambda] dot nabla_(theta) ln pi(a|s\; theta) $
 
 是梯度 $g(theta)$ 的无偏估计。
+
+
+
+
+= 连续控制
+
+- *离散控制*：动作空间是一个离散的集合。
+- *连续控制*：动作空间是一个连续的集合。
+  - 方法一：把连续连续空间离散化，那么离散控制的方法就能直接解决连续控制问题。
+  - 方法二：直接使用连续控制方法。
+
+
+== 离散控制与连续控制的区别
+
+对动作空间离散化之后，就可以应用之前学过的方法训练 DQN 或策略网络。但是这样有个缺点，就是自由度 $d$ 越大，动作空间可执行动作数目越大，且随着 $d$ 指数增长，造成了 *维度灾难*。
+
+
+
+== 确定策略梯度（DPG）
+
+确定策略梯度（Deterministic Policy Gradient, DPG）是最常用的连续控制方法，也是一种 Actor-Critic 方法，有策略网络（演员）和价值网络（评委）。
+
+
+=== 策略网络与价值网络
+
+本节的策略网络与前面章节的策略网络不同。
+
+- *之前章节的策略网络 $pi(a|s\; theta)$ 带有随机性*：输出结果是包含了 *每一个动作* 的概率值的概率分布向量。
+- *本章节的确定策略网络 $mu$ 没有随机性*：对于确定状态 $s$, 策略网络 $mu$ 输出的动作 $a$ 是确定的 $d$ 维向量。
+
+本节的价值网络 $q(s, a; w)$ 是对动作价值函数 $Q_(pi)(s, a)$ 的近似。
+
+
+=== 算法推导
+
+*用行为策略收集经验*：
+
+本节的确定策略网络属于异策略（Off-policy）方法，即行为策略可以不同于目标策略。目标策略即确定策略网络 $mu(s\;theta_("now"))$，其中 $theta_("now")$ 是策略网络最新参数；而行为策略可以是任意的，例如
+
+$ a = mu(s\; theta_("old")) + epsilon.alt. $
+
+意思是可以使用过时的参数，而且可以加入噪声。
+
+因此我们可以收集轨迹，得到由四元组 $s_j, a_j, r_j, s_(j+1)$ 组成的经验回放数组。
+
+*训练策略网络*：
+
+根据之前的经验我们可以知道，目标函数是 $q$ 对 $mu$ 打分的相对于状态 $s$ 的期望：
+
+#emph-box[
+  $ J(theta) = EE_(S)[q(S, mu(S\; theta)\; w)] $
+]
+
+可以用梯度上升来增大 $J(theta)$。每次用随机变量 $S$ 的一个观测值（记作 $(s_j)$）来计算梯度：
+
+$ g_j ::= nabla_(theta) q(s_j, mu(s_j\; theta)\; w) $
+
+它是 $nabla_(theta) J(theta)$ 的无偏估计。$g_j$ 叫做确定策略梯度（Deterministic Policy Gradient），缩写 DPG。
+
+应用链式法则，我们得到下面的定理。
+
+#theorem-box(title: "确定策略梯度")[
+  $ nabla_(theta) q(s_j, mu(s_j\;theta)\; theta) = nabla_(theta) mu(s_j\;theta) dot nabla_(a) q(s_j, hat(a)_j\; w), zh("其中") hat(a)_j = mu(s_j\; theta) $
+]
+
+因此就得到了更新 $theta$ 的算法，每次从经验回放数组里随机抽取一个状态，记作 $s_j$。计算 $hat(a)_j = mu(s_j\; theta)$。用梯度上升更新一次 $theta$:
+
+#emph-box[
+  $ theta <- theta + beta dot nabla_(theta) mu(s_j\; theta) dot nabla_(a) q(s_j, hat(a)_j\; w) $
+]
+
+*训练价值网络*：
+
+基本上和前面的一致。
+
+
+=== 训练流程
+
+每次从经验回放数组中抽取一个四元组，记作 $(s_j, a_j, r_j, s_(j+1))$。把神经网络当前参数记作 $w_("now")$ 和 $theta_("now")$。执行下列步骤进行更新：
+
++ 让策略网络做预测： $ hat(a)_j = mu(s_j\; theta) zh("和") hat(a)_(j+1) = mu(s_(j+1)\; theta). $ 注：计算动作 $hat(a)_j$ 用的时当前的策略网络 $mu(s_j\; theta_("now"))$，用 $hat(a)_j$ 来更新 $theta_("now")$；而从经验回放数组中抽取的 $a_j$ 则是用过时的策略网络 $mu(s_j\; theta_("old"))$ 计算出来的，用 $a_j$ 来更新 $w_("now")$，需要注意两者的区别。
++ 让价值网络做预测： $ hat(q)_j = q(s_j, a_j\; w_("now")) zh("和") delta_j = hat(q)_j - hat(y)_j. $
++ 计算 TD 目标和 TD 误差： $ hat(y)_j = r_j + gamma dot hat(q)_(j+1) zh("和") delta_j = hat(q)_j - hat(y)_j. $
++ 更新价值网络： $ w_("new") <- w_("now") - alpha dot delta_j dot nabla_(w) q(s_j, a_j\; w_("now")). $
++ 更新策略网络： $ theta_("new") <- theta_("now") + beta dot nabla_(theta) mu(s_j\; theta_("now")) dot nabla_(a) q(s_j, hat(a)_j\; w_("now")). $
+
+#question-box(title: "疑问")[
+  但是这样做感觉也很奇怪，SARSA 也不是不能改成这样来用经验回放数组，反正 $hat(a)_(j+1)$ 每次都是要重新算的，那这里的经验回放不就只剩下一个随机打乱当前状态的作用了嘛，感觉效果确实不会变好。
+]
+
+
+== 深入分析 DPG
+
++ 即使用了经验回放数组，这里的 $q(s, a\; w)$ 近似的仍然是动作价值函数 $Q_(pi)(s, a)$ 而不是最优动作价值函数 $Q_(star)(s, a)$。但是训练 DPG 的目的也是让 $mu(s\; theta)$ 趋向于最优策略 $pi^(star)$，在理想情况的话。
++ 价值网络 $q(s, a\; w)$ 近似的是 $Q_(pi)(s, a)$，其中的 $pi$ 是目标策略而不是行为策略。而行为策略影响到的只是经验回放数组的收集效果，不会对训练的最终目标产生影响。极端一点说，你使用随机策略当成行为策略收集数据，也只是会影响拟合的速度罢了。
++ 本质上 DQN 最后的决策方式是 $a_t = argmax_(a in cal(A)) Q(s_t, a\; w)$，对于离散动作空间很容易实现，但是对连续动作空间就不好做了，所以这时候我们就可以把 DPG 看作对最优动作价值函数 $Q_(star)(s, a)$ 的另一种近似方式。我们可以把 $mu$ 和 $q$ 看作 $Q_(star)$ 的近似分解。 $ q(s, mu(s\;theta)\; w) ~~ max_(a in cal(A)) Q_(star)(s, a) $
++ DPG 也是一个将目标策略 $mu$ 进行最大化拟合价值函数，进而会有最大化造成高估和自举造成偏差传播，也即高估问题。
+
+#question-box(title: "疑问")[
+  也就是说高估问题本质上来源于最大化 $max$ 操作，而最大化 $max$ 操作又来源于 *确定性*，所以可以说：*高估问题是由确定性策略函数带来的？*
+]
+
+
+== 双延时确定策略梯度（TD3）
+
+我们不用改变神经网络结构，只需要从 DPG 换成 Twin Delayed Deep Deterministic Policy Gradient（TD3）即可大幅提升算法表现。
+
+=== 解决高估问题
+
+第一种方案是目标网络，可以添加两个目标网络 $q(s, a; w^(-))$ 和 $mu(s\; theta^(-))$.
+
+但是依然有严重的高估问题。
+
+第二种方案是截断双 Q 学习（Clipped Double Q-Learning）：这种方法使用两个价值网络和一个策略网络：
+
+$ q(s,a;w_1), quad q(s, a; w_2), quad mu(s\;theta) $
+
+三个神经网络各对应一个目标网络：
+
+$ q(s,a;w_1^(-)), quad q(s, a; w_2^(-)), quad mu(s\;theta^(-)) $
+
+用目标策略网络计算动作：
+
+$ hat(a)_(j+1)^(-) = mu(s_(j+1)\;theta^(-)) $
+
+然后用两个目标价值网络计算：
+
+$ hat(y)_(j, 1) = r_j + gamma dot q(s_(j+1), hat(a)_(j+1)^(-); w_1^(-)) $
+
+$ hat(y)_(j, 2) = r_j + gamma dot q(s_(j+1), hat(a)_(j+1)^(-); w_2^(-)) $
+
+取两者较小者为 TD 目标：
+
+$ hat(y)_j = min{hat(y)_(j,1), hat(y)_(j,2)} $
+
+#question-box(title: "疑问")[
+  本质上就是避免极端情况过大的 TD 目标 $hat(y)_j$ 由于自举被传播出去？借助两个参数初始值不同的随机性增加稳健性。
+]
+
+
+=== 往动作中加入噪声
+
+将用目标网络计算动作：
+
+$ hat(a)_(j+1)^(-) = mu(s_(j+1)\;theta^(-)) $
+
+改成：
+
+$ hat(a)_(j+1)^(-) = mu(s_(j+1)\;theta^(-)) + xi $
+
+其中噪声 $xi$ 是从截断正态分布（Clipped Normal Distribution）中抽取的，这是为了避免噪声过大。
+
+#question-box(title: "疑问")[
+  给选取动作时添加一定的随机性以增加稳健性？
+]
+
+
+=== 减少更新策略网络和目标网络的频率
+
+如果价值网络 $q$ 本身不可靠，那么用价值网络 $q$ 给动作打分是不准确的，无助于改进策略网络 $mu$。更好的方法是每一轮更新一次价值网络，但是每隔 $k$ 轮更新一次策略网络和三个目标网络，其中 $k$ 是超参数。
+
+
+=== 训练流程
+
+如果以上的三个技巧都使用了，则就是双延时确定策略梯度，缩写是 TD3。
+
++ 让目标策略网络做预测：$hat(a)_(j+1)^(-) = mu(s_(j+1)\; theta_("now")^(-)) + xi$。其中向量 $xi$ 的每隔元素都独立从截断正态分布 $cal(C N)(0, sigma^2, -c, c)$ 中抽取。
++ 让两个目标价值网络做预测： $ hat(q)_(1,j+1)^(-) = q(s_(j+1), hat(a)_(j+1)^(-); w_(1,"now")^(-)) zh("和") hat(q)_(2, j+1)^(-) = q(s_(j+1), hat(a)_(j+1)^(-); w_(2, "now")^(-)) $
++ 计算 TD 目标： $ hat(y)_j = r_j + gamma dot min{hat(q)_(1, j+1)^(-), hat(q)_(1, j+1)^(-)} $
++ 让两个价值网络做预测： $ hat(q)_(1+j) = q(s_j, a_j; w_(1, "now")) zh("和") hat(q)_(2,j) = q(s_j, a_j; w_(2, "now")) $
++ 计算 TD 误差： $ delta_(1,j) = hat(q)_(1,j) - hat(y)_j zh("和") delta_(2,j) = hat(q)_(2, j) - hat(y)_(j)  $
++ 更新价值网络：$ w_(1, "new") <- w_(1, "now") - alpha dot delta_(1, j) dot nabla_(w) q(s_j, a_j; w_(1, "now")) \ w_(2, "new") <- w_(2, "now") - alpha dot delta_(2, j) dot nabla_(w) q(s_j, a_j; w_(2, "now")) $
++ 每隔 $k$ 轮更新一次策略网络和三个目标网络：
+  + 让策略网络做预测：$hat(a)_j = mu(s_j\;theta)$。然后更新策略网络： $ theta_("new") <- theta_("now") + beta dot nabla_(theta) mu(s_j\; theta_("now")) dot nabla_(a) q*s_j, hat(a)_j; w_(1, "now") $
+  + 更新目标网络的参数： $ theta_("new")^(-) & <- tau theta_("new") + (1-tau) theta_("now")^(-), \ w_(1, "new")^(-) & <- tau w_(1, "new") + (1-tau) w_(1, "now")^(-), \ w_(2, "new")^(-) & <- tau w_(2, "new") + (1-tau) w_(2, "now")^(-). $ 
+
+
+== 随机高斯策略
+
+本节用不同于确定策略网络的方法做连续控制。
+
+=== 基本思路
+
+确定策略网络的问题的输出是确定性的，即使神经网络对预测结果的置信度并不高，但也只能被迫选出一个“最佳”的动作。因此一个很自然的想法就是给输出结果增加随机性。但是又不可能多增加太多维度，所以很自然地，我们可以引入一个「方差」的输出维度，进而使用正态分布的概率密度函数来作为策略函数：
+
+$ pi(a|s) = 1/(sqrt(2 pi) dot sigma(s)) dot exp(-[a-mu(s)]^2/(2 dot sigma^2(s))). $
+
+因此我们需要训练两个神经网络：
+
+$ mu(s\;theta) zh("和") rho(s\;theta) $
+
+后面就是具体的推导细节了。
+
+其中又会碰到不知道动作价值 $Q_(pi)(s, a)$ 的问题，不过依然可以通过 REIFORCE 和 Actor-Critic 来解决。
+
+
+
+= 对状态的不完全观测
+
+很多实际应用中，完全观测假设往往不符合实际，例如玩一局游戏，屏幕上的画面并不能反映出游戏的完整状态。
+
+虽然我们可以用当前的观测 $o_t$ 代替状态 $s_t$，但是效果一定不会好。
+
+一种更合理的方法是让智能体记住过去的观测，这样就能对状态的观测越来越完整，做出越来越理性的决策，也即需要记忆能力，那么策略网络记作：
+
+$ pi(a_t|o_(1:t)\;theta) $
+
+这里就带来了 $o_(1:t)$ 入参大小变化的问题，这时候就不能简单地使用卷积和全连接层，而是要用到循环神经网络了。
+
+
+
 
 
 

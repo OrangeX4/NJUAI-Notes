@@ -10,19 +10,20 @@
   show-outline: false,
 )
 
-= 深度学习科研代码管理和实验管理面临的问题
+= 深度学习科研代码管理和任务管理面临的问题
 
-深度学习模型结构变化程度大、参数多，如何高效地进行代码和实验管理？
+深度学习模型结构变化程度大、参数多，如何高效地进行代码和任务管理？
 
 + *环境管理*：如何保证代码运行环境可复现；
 + *模块管理*：如何划分模型的核心和任务，以及一些辅助的目录；
 + *分支管理*：如何划分 git 分支；
++ *开发流程*：如何规划开发流程；
 + *大文件管理*：如何管理数据集、模型文件等大型二进制文件；
 + *参数管理*：如何管理训练参数；
 + *调试模式*：如何实现小数据集的调试模式，避免执行用时过长；
 + *断点处理*：如何避免 Python 中的错误中断，以及如何进行断点训练；
 + *进度管理*：如何可视化训练进度、训练用时；
-+ *结果管理*：如何管理日志、输出数据和实验结果；
++ *结果管理*：如何管理日志、输出数据和任务结果；
 + *性能测量*：如何测量代码执行的效率，找出瓶颈和优化点；
 + *图表管理*：如何管理论文中可能用到的文档图表；
 + *文档管理*：如何编写和管理文档，包括笔记、报告、论文和 slides。
@@ -78,10 +79,10 @@ while read requirement; do conda install --yes $requirement || pip install $requ
 
 = 模块管理
 
-良好的目录划分和模块划分是可维护性的关键。一般可以分为这几大块：
+良好的目录划分和模块划分是可维护性的关键。一般根据代码的易变程度可以分为这两大块：
 
 #treemap[
-  - 稳定部分
+  - 核心（稳定部分）
     - 代码
       - I/O 模块
       - 预处理模块
@@ -95,30 +96,30 @@ while read requirement; do conda install --yes $requirement || pip install $requ
       - 原始数据
       - 预处理数据
       - 持久模型文件
-      - 汇总实验结果
+      - 汇总任务结果
       - 文档
-  - 易变部分
+  - 任务（易变部分）
     - 代码
-      - 实验参数配置
+      - 任务参数配置
       - 训练/测试脚本
     - 数据
       - 临时模型文件
       - 日志数据
-      - 实验数据
+      - 任务数据
 ]
 
-其中稳定部分不易变，我们可以通过「版本号」来唯一标识，并直接依靠 git 管理。
+核心（稳定部分）不易变，我们可以通过「版本号」来唯一标识，因此可以直接放在根目录下，并直接依靠 git 管理。
 
-易变部分主要是涉及到更改实验参数后的一次次的实验执行与结果记录，同一个版本可能会有多次不同的实验，这些实验的实验结果我们都应该记录下来，并且最后我们应该可以自动化地汇总所有的实验结果并整理实验报告。
+任务（易变部分）主要是涉及到更改任务参数后的一次次的任务执行与结果记录，同一个核心版本可能会有多次不同的任务，这些任务的任务结果我们都应该记录下来，并且最后我们应该可以自动化地汇总所有的任务结果并整理任务报告。
 
-因此一个比较好的办法就是创建一个 `exper` 目录，并在里面创建一个「当前分支名」目录，例如对于 `main` 分支就是 `exper/main` 目录，里面放置了模型参数文件 `config.yaml` 和训练脚本，创建实验分支时就会复制 `exper/main` 目录到 `exper/exper-xxx` 目录，更改超参数等工作均在这个「易变部分」的目录里完成，并且可以在外层封装一个根据当前分支名来选择执行的 Python 文件的简单脚本。
+因此一个比较好的办法就是创建一个 `tasks` 目录，并在里面创建一个「当前分支名」目录，例如对于 `main` 分支就是 `tasks/main` 目录，里面放置了模型参数文件 `config.yaml` 和训练脚本，创建任务分支时就会复制 `tasks/main` 目录到 `tasks/task-version-time-xxx` 目录，更改超参数等工作均在这个「易变部分」的目录里完成，并且可以在外层封装一个根据当前分支名来选择执行的 Python 文件的简单脚本。
 
-代码模块化非常重要，部分人会把系统写得过于耦合，例如损失函数和模型写到一起，这就导致了牵一发而动全身。我们应该把不同的模块互相解耦，例如划分数据加载、模型主体和损失函数等模块，最后在「实验」里的训练脚本和测试脚本里把这几个模块组装起来，这样 Yaml 配置文件可以有不同的结构，并且可以使用 `importlib` 动态选择导入具体的模型或者哪一个子模型。
+代码模块化非常重要，部分人可能会把系统写得过于耦合，例如损失函数和模型写到一起，这就导致了牵一发而动全身。我们应该把不同的模块互相解耦，例如划分数据加载、模型主体和损失函数等模块，最后在「任务」里的训练脚本和测试脚本里把这几个模块组装起来，这样既可以让 Yaml 配置文件可以有不同的结构，也可以使用 `importlib` 动态选择导入具体的模型，或者导入哪一个子模型。
 
 
 = 分支管理
 
-我们应该使用 git 分支管理管理好我们的主分支和实验分支，并且分支的命名要有一定的规则，必要的话可以通过脚本来自动化。
+我们应该使用 git 分支管理管理好我们的主分支和任务分支，并且分支的命名要有一定的规则，必要的话可以通过脚本来自动化。
 
 这里的分支管理规则参考了常见的 #link("https://www.ruanyifeng.com/blog/2012/07/git.html", "Git Flow") 开发流程（推荐 10 到 20 人共同开发），并根据深度学习科研的代码管理特性进行了一定的改良。
 
@@ -152,7 +153,7 @@ git merge main
 
 == dev 开发分支
 
-长期分支，用于保持最新的开发进度，主要开发工作都应该在这个分支进行。
+长期分支，用于保持最新的开发进度，主要开发工作都应该在这个分支进行。如果你能确定 main 分支不需要那么强的稳定性，也可以去除 `dev` 分支，只使用 `main` 分支和 `feature-xxx` 分支。
 
 由于深度学习科研中的代码常常仅由单人（或几个人）进行开发，所以应当允许在 dev 分支直接进行开发和提交 commit。
 
@@ -176,28 +177,28 @@ git merge main
 
 `hotfix-xxx` 分支可以直接合并到 `dev` 和 `main` 分支。
 
-== exper-xxx 实验分支
+== task-version-time-xxx 任务分支
 
-临时分支，用于修改实验参数，然后跑一次实验，并记录结果。
+临时分支，用于修改任务参数，然后执行一次任务，并记录结果。
 
-只能从 `main` 中分支出来（模型变更后需要先更新模型版本，并打一个 git tag），并且应该由一个自动化脚本创建，根据模型版本-时间戳-模型参数的维度命名，便于辨识。
+只能从 `main` 或其他任务分支 `task-yyy` 中分支出来（模型变更后需要先更新核心版本，并打一个 git tag），并且应该由一个自动化脚本创建，根据核心版本-时间戳-模型参数的维度命名，便于辨识。
 
-只应该用于修改超参数后执行一次实验，并记录结果，不应该更改具体的代码。如果认为需要修改具体代码，请考虑是否应该新增一个超参数用于控制，或者是否应该在其他如 `dev` 和 `hotfix-xxx` 分支中进行修复。
+只能修改 `tasks/task-version-time-xxx` 目录下的文件，然后执行一次任务，并记录结果。如果认为需要修改其他目录的代码，请考虑是否应该新增一个超参数用于控制，或者是否应该在其他如 `dev`、`feature-xxx` 和 `hotfix-xxx` 分支中进行修改。
 
 记录的内容可以包括：
 
-- 复制 `exper/main` 目录下的文件到 `exper/exper-xxx` 目录；
+- 复制 `tasks/main` 目录下的文件到 `tasks/task-version-time-xxx` 目录；
 - 记录代码执行的 log 日志；
 - 需要持久化的模型文件；
-- 记录实验的原始图表数据文件（便于后续生成图表）；
-- 实验的具体输出结果；
+- 记录任务的原始图表数据文件（便于后续生成图表）；
+- 任务的具体输出结果；
 - 也许可以保留的 checkpoint models。
 
 由于没有代码层面的变更，执行完成后可以直接合并到 `dev` 和 `main` 分支中。
 
-== debug-xxx 调试分支
+== debug-version-time-xxx 调试分支
 
-临时分支，用于在 debug 模式下跑一次实验，用于验证是否能正常地跑通训练流程。
+临时分支，用于在 debug 模式下跑一次任务，用于验证是否能正常地跑通训练流程。
 
 可以从 `main` 或 `dev` 中分支出来，并且应该由一个自动化脚本创建。
 
@@ -217,9 +218,44 @@ git merge main
 
 深度学习科研代码新增规范：
 
-- `exper`: 合并一个 `exper-xxx` 分支的实验执行结果。
+- `task`: 合并一个 `task-version-time-xxx` 分支的任务执行结果。
 
 在 merge 到 `main` 主分支时，merge 的 commit 信息也应该遵循这个规范。
+
+
+= 开发流程
+
++ *初始化*：从 `main` 分支开始，通过 `git checkout -b dev` 创建并切换到 `dev` 分支。
++ *模块开发*：
+  + 在 `dev` 分支 `git checkout -b feature-xxx` 创建并切换到 `feature-xxx` 分支。
+  + 完成 `feature-xxx` 分支的开发工作。
+  + 执行 `git checkout dev` 切换到 `dev` 分支。
+  + 执行 `git merge feature-xxx` 合并 `xxx` 模块的代码到 `dev` 分支。
++ *调试代码*：
+  + 在 `dev` 分支执行自动化脚本，实现
+    + 执行 `git checkout -b debug-version-time-xxx` 切换到调试分支。
+    + 复制 `tasks/main` 目录到 `tasks/debug-version-time-xxx` 目录。
+  + 在 `tasks/debug-version-time-xxx` 目录以 debug 模式执行一次任务，检验代码逻辑是否有误。
+  + 发现错误后，进行代码的修复，修复完后重新验证。
+  + 通过 `git add <code-files>` 和 `git stash`，仅保留代码变更，不保留日志文件等临时输出数据文件。
+  + 可以提交 commit 到 `debug-version-time-xxx` 分支，将日志文件等数据保留，或者直接 discard 遗弃。
+  + 执行 `git checkout dev` 切换到 `dev` 分支。
+  + 执行 `git stash pop` 将修改后的代码取出，并给 `dev` 分支提交 commit。
++ *合并代码*：
+  + 执行 `git checkout main` 切换到 `main` 分支。
+  + 执行 `git merge --squash dev` 或 `git merge --no-ff dev` 将 `dev` 分支的变更合并到 `main` 分支。
+  + 在 `tasks/main` 的 Yaml 配置文件中给 `VERSION` 自增版本号，并提交 commit。
+  + 执行 `git tag -a v0.1.0 -m "my version 0.1.0"` 给版本号打上 tag。
+  + 切换到 `dev` 分支并通过 `git merge main` 合并 `main` 的最新版本。
++ *执行任务*：
+  + 在 `main` 分支执行自动化脚本，实现
+    + 执行 `git checkout -b task-version-time-xxx` 切换到任务分支。
+    + 复制 `tasks/main` 目录到 `tasks/task-version-time-xxx` 目录。
+  + 修改 `tasks/task-version-time-xxx` 目录下的 Yaml 配置文件。
+  + 执行 `tasks/task-version-time-xxx` 目录下的训练或测试脚本。
+  + 将执行结果通过 commit 提交到任务分支上。
+  + 执行 `git checkout main` 切换到 main 分支。
+  + 合并任务结果到 `main` 分支。
 
 = 大文件管理
 
@@ -260,19 +296,19 @@ dvc checkout
 
 = 参数管理
 
-什么是参数？参数是运行一次实验所需要配置的所有输入参数。在任意时刻，一台机器上应当最多只能运行一个实验，如果需要同时运行多个实验，可以考虑增加子实验的概念，在一次实验中运行多个子实验。
+什么是参数？参数是运行一次任务所需要配置的所有输入参数。在任意时刻，一台机器上应当最多只能运行一个任务，如果需要同时运行多个任务，可以考虑增加子任务的概念，在一次任务中运行多个子任务。
 
-命令行 input argparse 并不是必须的，这里更加推荐使用 Yaml 文件来管理参数，参数包括项目设置、模型参数等。
+命令行 input argparse 并不是必须的，这里更加推荐使用 Yaml 文件来管理参数，参数包括项目设置、模型参数等。这样方便我们给每一个任务设定一个参数 Yaml 文件，也能够在每一次 checkpoint 的时候记录一个断点 Yaml 配置，可以用于下一次断点训练或者 finetune。
 
 参数文件里至少要包含：
 
-- `VERSION`：用于记录当前的模型版本，例如 `0.1.0`。
+- `VERSION`：用于记录当前的核心版本，例如 `0.1.0`。
 - `DEBUG`：是否开启 debug 模式，即使用小型数据集。
 - `RESUME`：从哪个 checkpoint 开始断点训练。
 - `TRAIN`：是否是训练模式。
 - `TEST`：是否是测试模式。
 - `MODEL_PATH`：加载的模型文件路径，指定是外层目录、当前目录或者是 checkpoint model。
-- `RANDOM_SEED`: 全局的随机数种子，使得实验更具可复现性。
+- `RANDOM_SEED`: 全局的随机数种子，使得任务更具可复现性。
 
 其他可以包含的参数可以是训练批次、学习率等超参数。
 
@@ -293,23 +329,100 @@ dvc checkout
 
 = 进度管理
 
-使用 tensorboard、tqdm 等工具。
+使用 tqdm、tensorboard 与 wandb 等工具进行可视化。
+
+可以参考 PyTorch #link("https://datawhalechina.github.io/thorough-pytorch/第七章/", "可视化教程")或#link("https://zhuanlan.zhihu.com/p/484289017", "知乎文章")。
 
 
 = 结果管理
 
 == 日志管理
 
-原则：日志要如实记录，并且只能新增不能覆盖。
+参考#link("https://zhuanlan.zhihu.com/p/39849027", "文章")，关于 log 日志，我们首先确认一下我们的需求：
+
++ 同时在终端和日志文件中进行写入 log 的能力；
++ 能在终端与 tqdm 进度条一起使用且不发生冲突，并且日志文件不输出 tqdm 的进度条；
++ 能够自定义 log 文档的格式，能够在必要的地方插入时间信息；
+  + 方便通过时间定位到训练内容等日志信息；
+  + 方便进行性能测量；
++ 对日志信息进行级别的控制。
+
+因此，我们可以用 Python 的基础库：#link("https://docs.python.org/zh-cn/3/library/logging.html", "logging")。
+
+```python
+import logging
+from time import sleep
+from tqdm import tqdm
+
+class TqdmLoggingHandler(logging.Handler):
+    def __init__(self, level=logging.NOTSET):
+        super().__init__(level)
+
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            tqdm.write(msg)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+# 配置日志格式
+formatter = logging.Formatter(
+  fmt="%(asctime)s.%(msecs)3d %(levelname)-8s \
+[%(filename)s %(funcName)s: %(lineno)s] %(message)s",
+  datefmt="%Y-%m-%d %H:%M:%S"
+)
+
+# 添加适配 tqdm 的 stream 处理器
+stream_handler = TqdmLoggingHandler()
+stream_handler.setLevel(logging.DEBUG)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+# 添加日志文件处理器
+logfile_handler = logging.FileHandler("task.log", mode='a')
+logfile_handler.setLevel(logging.INFO)
+logfile_handler.setFormatter(formatter)
+logger.addHandler(logfile_handler)
+
+for i in tqdm(range(5)):
+  # 五种级别
+  logging.critical(f"CRITICAL {i}")
+  logging.error(f"ERROR {i}")
+  logging.warning(f"WARNING {i}")
+  logging.info(f"INFO {i}")
+  logging.debug(f"DEBUG {i}")
+  sleep(0.5)
+```
+
+会输出这样的日志：
+
+```
+2023-11-22 20:00:06.947 CRITICAL [test.py <module>: 40] CRITICAL 0
+2023-11-22 20:00:06.948 ERROR    [test.py <module>: 41] ERROR 0   
+2023-11-22 20:00:06.948 WARNING  [test.py <module>: 42] WARNING 0 
+2023-11-22 20:00:06.948 INFO     [test.py <module>: 43] INFO 0    
+2023-11-22 20:00:06.949 DEBUG    [test.py <module>: 44] DEBUG 0 
+```
+
+并且会以追加模式保存到 `task.log` 文件中。
+
+这里推荐在 VS Code 安装 Log File Highlighter 和 Filter Lines 插件用于日志文件分析。前者提供了后缀为 `.log` 的日志文件高亮；后者提供了通过正则表达式或字符串按行筛选日志文件的功能。
 
 == 输出数据
 
-不生成具体的图表，而是记录图表的原始数据，需要用到图表时再统一生成。
+对于需要在论文或报告中使用的输出数据，我们不应该只生成具体的图表，而是也记录图表的原始数据，需要用到图表时再统一生成。
+
+由于每个任务都有一个专属的目录，因此可以放心地生成对应的数据文件，不用担心被覆盖。
 
 
 = 性能测量
 
-通过某种方式嵌入测量代码运行时间的测量，便于后续找出代码瓶颈，进行代码优化。
+我们需要对代码进行性能测量，便于后续找出代码瓶颈，进行代码优化。
+
+简单的分析，可以通过分析日志文件的输出时间来计算运行用时，这种做法不用嵌入
 
 
 = 图表管理
@@ -320,5 +433,3 @@ dvc checkout
 = 文档管理
 
 使用 Typst 管理文档。
-
-

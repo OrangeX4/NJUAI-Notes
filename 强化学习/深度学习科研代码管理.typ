@@ -24,6 +24,7 @@
 + *断点处理*：如何避免 Python 中的错误中断，以及如何进行断点训练；
 + *进度管理*：如何可视化训练进度、训练用时；
 + *结果管理*：如何管理日志、输出数据和任务结果；
++ *代码风格*：如果规定代码风格和 formatter；
 + *性能测量*：如何测量代码执行的效率，找出瓶颈和优化点；
 + *图表管理*：如何管理论文中可能用到的文档图表；
 + *文档管理*：如何编写和管理文档，包括笔记、报告、论文和 slides。
@@ -366,26 +367,32 @@ class TqdmLoggingHandler(logging.Handler):
         except Exception:
             self.handleError(record)
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
 
-# 配置日志格式
-formatter = logging.Formatter(
-  fmt="%(asctime)s.%(msecs)3d %(levelname)-8s \
-[%(filename)s %(funcName)s: %(lineno)s] %(message)s",
-  datefmt="%Y-%m-%d %H:%M:%S"
-)
+def get_logger(task_log_file="task.log", mode='a'):
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
 
-# 添加适配 tqdm 的 stream 处理器
-stream_handler = TqdmLoggingHandler()
-stream_handler.setLevel(logging.DEBUG)
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
-# 添加日志文件处理器
-logfile_handler = logging.FileHandler("task.log", mode='a')
-logfile_handler.setLevel(logging.INFO)
-logfile_handler.setFormatter(formatter)
-logger.addHandler(logfile_handler)
+    # 配置日志格式
+    formatter = logging.Formatter(
+        fmt="%(asctime)s.%(msecs)03d %(levelname)-8s \
+  [%(filename)s %(funcName)s: %(lineno)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+
+    # 添加适配 tqdm 的 stream 处理器
+    stream_handler = TqdmLoggingHandler()
+    stream_handler.setLevel(logging.DEBUG)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
+    # 添加日志文件处理器
+    logfile_handler = logging.FileHandler(task_log_file, mode=mode)
+    logfile_handler.setLevel(logging.INFO)
+    logfile_handler.setFormatter(formatter)
+    logger.addHandler(logfile_handler)
+
+    return logger
+
+logger = get_logger()
 
 for i in tqdm(range(5)):
   # 五种级别
@@ -416,6 +423,26 @@ for i in tqdm(range(5)):
 对于需要在论文或报告中使用的输出数据，我们不应该只生成具体的图表，而是也记录图表的原始数据，需要用到图表时再统一生成。
 
 由于每个任务都有一个专属的目录，因此可以放心地生成对应的数据文件，不用担心被覆盖。
+
+
+= 代码风格
+
+我们应该使用 Black 来对 Python 代码进行 Format，只需要安装 VS Code 的 Black Formatter 插件，并且加入对应 settings 配置即可。
+
+```json
+{
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "black-formatter.args": [
+    "--skip-string-normalization"
+  ]
+}
+```
+
+这些配置会开启保存时自动 Format，就不再需要手动 Format 了。
 
 
 = 性能测量
